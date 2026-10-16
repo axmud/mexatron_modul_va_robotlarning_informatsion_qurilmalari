@@ -73,7 +73,7 @@
   #text(
     size: 14pt,
     weight: "bold",
-  )[INFORMATSIYA NAZARIYASIDAN UMUMIY MAʼLUMOTLAR. \ MEXATRON MODULLAR VA ROBOTLARNING ASOSIY TURLARI]
+  )[Informatsiya nazariyasidan umumiy maʼlumotlar. \ Mexatron modullar va robotlarning asosiy turlari]
 ]
 
 #v(0.8em)
