@@ -28,7 +28,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(font: "Latin Modern Roman", size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz")
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -65,7 +65,7 @@
 #align(center)[
   #text(size: 16pt, weight: "bold", fill: headingblue)[MAʼRUZA №1]
   #v(0.3em)
-  #text(size: 14pt, weight: "bold")[FANNING TARIXI, RIVOJLANISHI, DOLZARB MUAMMOLARI]
+  #text(size: 14pt, weight: "bold")[Fanning tarixi, rivojlanishi, dolzarb muammolari]
   #v(0.2em)
   #text(size: 12pt, style: "italic")[(kirish maʼruzasi)]
 ]
