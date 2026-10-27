@@ -11,7 +11,7 @@
 #let lightorange = rgb("#fbe3cf")
 
 #set document(
-  title: "Maʼruza №11. Mexatron modullar va robotlarning informatsion qurilmalarini avtomatlashgan loyihalash tizimlarining tuzilishi va xususiyatlari",
+  title: "Maʼruza №11. Mexatron modullar va robotlarning informatsion qurilmalarini avtomatlaşgan loyihalaş tizimlarining tuzilişi va xususiyatlari",
 )
 #set page(
   paper: "a4",
@@ -32,7 +32,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -72,7 +72,7 @@
   #text(
     size: 14pt,
     weight: "bold",
-  )[Mavzu: Mexatron modullar va robotlarning informatsion qurilmalarini avtomatlashgan loyihalash tizimlarining tuzilishi va xususiyatlari]
+  )[Mavzu: Mexatron modullar va robotlarning informatsion qurilmalarini avtomatlaşgan loyihalaş tizimlarining tuzilişi va xususiyatlari]
 ]
 
 #v(0.8em)
@@ -80,39 +80,39 @@
 #block[
   #set par(first-line-indent: 0pt)
   *Reja:*
-  + Avtomatlashgan loyihalash tizimi tushunchasi. CAD, CAE, CAM, PDM va PLM.
-  + Mexatron qurilmalarni loyihalash bosqichlari. V-model.
-  + Avtomatlashgan loyihalash tizimining tuzilishi va taʼminot turlari.
-  + Informatsion qurilmalarni loyihalashda qoʻllanadigan ALT lar.
-  + Chekli elementlar usuli asoslari.
-  + Loyihalash misoli: tenzometrik kuch datchigi.
-  + ALT lar orasida maʼlumot almashish. ALT larning xususiyatlari va rivojlanish tendensiyalari.
+  + Avtomatlaşgan loyihalaş tizimi tuşunçasi. CAD, CAE, CAM, PDM va PLM.
+  + Mexatron qurilmalarni loyihalaş bosqiçlari. V-model.
+  + Avtomatlaşgan loyihalaş tizimining tuzilişi va taʼminot turlari.
+  + Informatsion qurilmalarni loyihalaşda qöllanadigan ALT lar.
+  + Çekli elementlar usuli asoslari.
+  + Loyihalaş misoli: tenzometrik kuç datçigi.
+  + ALT lar orasida maʼlumot almaşiş. ALT larning xususiyatlari va rivojlaniş tendensiyalari.
 
-  *Tayanch iboralar:* avtomatlashgan loyihalash tizimi (ALT), CAD, CAE, CAM, EDA, PDM, PLM, V-model, verifikatsiya, validatsiya, texnik, matematik, dasturiy, informatsion taʼminot, parametrik modellashtirish, chekli elementlar usuli, bikrlik matritsasi, tor (mesh), SPICE, bosma plata, ko-simulyatsiya, STEP, FMI, raqamli egizak.
+  *Tayanç iboralar:* avtomatlaşgan loyihalaş tizimi (ALT), CAD, CAE, CAM, EDA, PDM, PLM, V-model, verifikatsiya, validatsiya, texnik, matematik, dasturiy, informatsion taʼminot, parametrik modellaştiriş, çekli elementlar usuli, bikrlik matritsasi, tor (mesh), SPICE, bosma plata, ko-simulyatsiya, STEP, FMI, raqamli egizak.
 ]
 
 // =====================================================================
-= Avtomatlashgan loyihalash tizimi tushunchasi
+= Avtomatlaşgan loyihalaş tizimi tuşunçasi
 // =====================================================================
 
-Informatsion qurilma — datchik, kamera moduli yoki intellektual datchik — bir vaqtning oʻzida mexanik konstruksiya, fizik oʻzgartirgich, elektron sxema va dasturiy taʼminotdan iborat. Bunday qurilmani faqat qogʻozda hisoblash va tajriba namunalarini koʻp marta yasash orqali loyihalash uzoq va qimmat. Shuning uchun zamonaviy loyihalash kompyuter yordamida, *avtomatlashgan loyihalash tizimlari* (ALT) vositasida bajariladi.
+Informatsion qurilma — datçik, kamera moduli yoki intellektual datçik — bir vaqtning özida mexanik konstruksiya, fizik özgartirgiç, elektron sxema va dasturiy taʼminotdan iborat. Bunday qurilmani faqat qoğozda hisoblaş va tajriba namunalarini köp marta yasaş orqali loyihalaş uzoq va qimmat. Şuning uçun zamonaviy loyihalaş kompyuter yordamida, *avtomatlaşgan loyihalaş tizimlari* (ALT) vositasida bajariladi.
 
-*Avtomatlashgan loyihalash tizimi* — loyihalash jarayonini avtomatlashtiruvchi, loyihalovchilar va kompyuter vositalarining oʻzaro taʼsirida ishlaydigan tashkiliy-texnik tizim. U loyihalovchini almashtirmaydi, balki koʻp mehnat talab qiladigan hisoblash, chizish, modellashtirish va hujjatlashtirish ishlarini bajarib, unga variantlarni tez solishtirish va asosli qaror qabul qilish imkonini beradi.
+*Avtomatlaşgan loyihalaş tizimi* — loyihalaş jarayonini avtomatlaştiruvçi, loyihalovçilar va kompyuter vositalarining özaro taʼsirida işlaydigan taşkiliy-texnik tizim. U loyihalovçini almaştirmaydi, balki köp mehnat talab qiladigan hisoblaş, çiziş, modellaştiriş va hujjatlaştiriş işlarini bajarib, unga variantlarni tez soliştiriş va asosli qaror qabul qiliş imkonini beradi.
 
 Xalqaro amaliyotda ALT turlari quyidagi qisqartmalar bilan ataladi:
-- *CAD* (_Computer-Aided Design_) — geometrik modellashtirish va chizmalar tayyorlash;
-- *CAE* (_Computer-Aided Engineering_) — muhandislik tahlili: mustahkamlik, tebranishlar, issiqlik, elektromagnit maydonlar, oqimlar;
-- *CAM* (_Computer-Aided Manufacturing_) — ishlab chiqarishni tayyorlash, raqamli dasturiy boshqariladigan dastgohlar uchun dasturlar;
-- *EDA* (_Electronic Design Automation_) — elektron sxemalar va bosma platalarni loyihalash;
-- *PDM / PLM* (_Product Data / Lifecycle Management_) — mahsulot haqidagi barcha maʼlumotlar va uning hayotiy siklini boshqarish.
+- *CAD* (_Computer-Aided Design_) — geometrik modellaştiriş va çizmalar tayyorlaş;
+- *CAE* (_Computer-Aided Engineering_) — muhandislik tahlili: mustahkamlik, tebranişlar, issiqlik, elektromagnit maydonlar, oqimlar;
+- *CAM* (_Computer-Aided Manufacturing_) — işlab çiqarişni tayyorlaş, raqamli dasturiy boşqariladigan dastgohlar uçun dasturlar;
+- *EDA* (_Electronic Design Automation_) — elektron sxemalar va bosma platalarni loyihalaş;
+- *PDM / PLM* (_Product Data / Lifecycle Management_) — mahsulot haqidagi barça maʼlumotlar va uning hayotiy siklini boşqariş.
 
-ALT qoʻllanishi loyihalash muddatini va tajriba namunalari sonini qisqartiradi, xatolarni erta bosqichlarda — mahsulot hali yasalmasdan aniqlash imkonini beradi, loyiha sifatini oshiradi va hujjatlarni tartibli saqlashni taʼminlaydi.
+ALT qöllanişi loyihalaş muddatini va tajriba namunalari sonini qisqartiradi, xatolarni erta bosqiçlarda — mahsulot hali yasalmasdan aniqlaş imkonini beradi, loyiha sifatini oşiradi va hujjatlarni tartibli saqlaşni taʼminlaydi.
 
 // =====================================================================
-= Mexatron qurilmalarni loyihalash bosqichlari. V-model
+= Mexatron qurilmalarni loyihalaş bosqiçlari. V-model
 // =====================================================================
 
-Anʼanaviy loyihalashda mexanika, elektronika va dastur ketma-ket ishlab chiqilgan. Mexatron qurilmalarda esa bu sohalar bir-biri bilan chambarchas bogʻliq, shuning uchun ular parallel va kelishilgan holda loyihalanadi. Mexatron tizimlarni loyihalash metodikasi sifatida keng tarqalgan *V-model* (Germaniya muhandislar uyushmasining VDI 2206 tavsiyasi) 1-rasmda koʻrsatilgan.
+Anʼanaviy loyihalaşda mexanika, elektronika va dastur ketma-ket işlab çiqilgan. Mexatron qurilmalarda esa bu sohalar bir-biri bilan çambarças boğliq, şuning uçun ular parallel va kelişilgan holda loyihalanadi. Mexatron tizimlarni loyihalaş metodikasi sifatida keng tarqalgan *V-model* (Germaniya muhandislar uyuşmasining VDI 2206 tavsiyasi) 1-rasmda körsatilgan.
 
 #figure(
   diagram(
@@ -124,9 +124,9 @@ Anʼanaviy loyihalashda mexanika, elektronika va dastur ketma-ket ishlab chiqilg
     edge-stroke: 1pt,
     node((0, 0), [Talablar], fill: lightorange, name: <t>),
     node((1, 1), [Tizim \ loyihasi], name: <tl>),
-    node((2, 2), [Sohalar boʻyicha \ loyihalash], name: <sl>),
+    node((2, 2), [Sohalar böyiça \ loyihalaş], name: <sl>),
     node((3, 1), [Tizim \ integratsiyasi], name: <ti>),
-    node((4, 0), [Tasdiqlash, \ mahsulot], fill: lightorange, name: <xt>),
+    node((4, 0), [Tasdiqlaş, \ mahsulot], fill: lightorange, name: <xt>),
     edge(<t>, <tl>, "->"),
     edge(<tl>, <sl>, "->"),
     edge(<sl>, <ti>, "->"),
@@ -134,185 +134,185 @@ Anʼanaviy loyihalashda mexanika, elektronika va dastur ketma-ket ishlab chiqilg
     edge(<t>, <xt>, "<->", stroke: (dash: "dashed", thickness: 1pt), [verifikatsiya, validatsiya], label-side: left),
     edge(<tl>, <ti>, "<->", stroke: (dash: "dashed", thickness: 1pt)),
   ),
-  caption: [Mexatron tizimlarni loyihalashning V-modeli],
+  caption: [Mexatron tizimlarni loyihalaşning V-modeli],
 ) <fig-v>
 
-V-modelning chap tarmogʻida loyiha yuqoridan pastga — talablardan tizim konsepsiyasiga, soʻngra alohida sohalar (mexanika, elektronika, dasturiy taʼminot) boʻyicha batafsil loyihaga qarab aniqlashtiriladi. Oʻng tarmogʻida esa alohida qismlar birlashtiriladi va har bir sathda chap tarmoqdagi mos talablarga muvofiqligi tekshiriladi: *verifikatsiya* — qurilma loyihada belgilanganidek toʻgʻri yasalganini tekshirish, *validatsiya* — qurilma haqiqatan foydalanuvchi talablarini qondirishini tasdiqlash. Barcha bosqichlarda modellashtirish va model tahlili parallel olib boriladi. Murakkab qurilmalarda V-model bir necha marta takrorlanadi: har bir sikl natijasida tobora mukammalroq namuna (laboratoriya maketi, tajriba namunasi, seriyaga tayyor namuna) olinadi.
+V-modelning çap tarmoğida loyiha yuqoridan pastga — talablardan tizim konsepsiyasiga, söngra alohida sohalar (mexanika, elektronika, dasturiy taʼminot) böyiça batafsil loyihaga qarab aniqlaştiriladi. Öng tarmoğida esa alohida qismlar birlaştiriladi va har bir sathda çap tarmoqdagi mos talablarga muvofiqligi tekşiriladi: *verifikatsiya* — qurilma loyihada belgilanganidek töğri yasalganini tekşiriş, *validatsiya* — qurilma haqiqatan foydalanuvçi talablarini qondirişini tasdiqlaş. Barça bosqiçlarda modellaştiriş va model tahlili parallel olib boriladi. Murakkab qurilmalarda V-model bir neça marta takrorlanadi: har bir sikl natijasida tobora mukammalroq namuna (laboratoriya maketi, tajriba namunasi, seriyaga tayyor namuna) olinadi.
 
-Informatsion qurilmalar uchun bosqichlar mazmuni quyidagicha:
-+ *talablar* — oʻlchanadigan kattalik, diapazon, aniqlik, tezkorlik, ish sharoiti, oʻlcham, interfeys, narx;
-+ *tizim loyihasi* — fizik prinsipni tanlash, struktura sxemasini tuzish, xatolik «byudjetini» elementlar oʻrtasida taqsimlash (9-maʼruza);
-+ *sohalar boʻyicha loyihalash* — sezgir element va korpus konstruksiyasi (CAD, CAE), elektron sxema va plata (EDA), mikrodastur va ishlov berish algoritmlari;
-+ *integratsiya va tasdiqlash* — prototipni yigʻish, kalibrlash, metrologik tavsiflarini va ish sharoitiga chidamliligini sinash.
+Informatsion qurilmalar uçun bosqiçlar mazmuni quyidagiça:
++ *talablar* — ölçanadigan kattalik, diapazon, aniqlik, tezkorlik, iş şaroiti, ölçam, interfeys, narx;
++ *tizim loyihasi* — fizik prinsipni tanlaş, struktura sxemasini tuziş, xatolik «byudjetini» elementlar örtasida taqsimlaş (9-maʼruza);
++ *sohalar böyiça loyihalaş* — sezgir element va korpus konstruksiyasi (CAD, CAE), elektron sxema va plata (EDA), mikrodastur va işlov beriş algoritmlari;
++ *integratsiya va tasdiqlaş* — prototipni yiğiş, kalibrlaş, metrologik tavsiflarini va iş şaroitiga çidamliligini sinaş.
 
 // =====================================================================
-= Avtomatlashgan loyihalash tizimining tuzilishi
+= Avtomatlaşgan loyihalaş tizimining tuzilişi
 // =====================================================================
 
-ALT ni tashkil etuvchi qismlar *taʼminot turlari* boʻyicha tasniflanadi (1-jadval).
+ALT ni taşkil etuvçi qismlar *taʼminot turlari* böyiça tasniflanadi (1-jadval).
 
 #figure(
   btable(
     columns: (auto, 1.6fr),
     header: ([Taʼminot turi], [Mazmuni]),
     [Texnik],
-    [Kompyuterlar, ishchi stansiyalar, serverlar, tarmoq, kiritish-chiqarish qurilmalari (3D skanerlar, printerlar, plotterlar)],
+    [Kompyuterlar, işçi stansiyalar, serverlar, tarmoq, kiritiş-çiqariş qurilmalari (3D skanerlar, printerlar, plotterlar)],
     [Matematik],
-    [Loyihalanayotgan obyekt modellari, hisoblash usullari va algoritmlar (chekli elementlar usuli, optimallash, simulyatsiya)],
+    [Loyihalanayotgan obyekt modellari, hisoblaş usullari va algoritmlar (çekli elementlar usuli, optimallaş, simulyatsiya)],
     [Dasturiy],
     [Operatsion tizimlar va amaliy ALT dasturlari (CAD, CAE, EDA, PDM)],
     [Informatsion],
-    [Maʼlumotlar bazalari: standart detallar, materiallar xossalari, elektron komponentlar, datchik modellari kutubxonalari],
+    [Maʼlumotlar bazalari: standart detallar, materiallar xossalari, elektron komponentlar, datçik modellari kutubxonalari],
     [Lingvistik],
-    [Loyihalovchi va tizim muloqoti tillari, maʼlumot almashish formatlari, skript va dasturlash tillari],
+    [Loyihalovçi va tizim muloqoti tillari, maʼlumot almaşiş formatlari, skript va dasturlaş tillari],
     [Metodik],
-    [Loyihalash metodikalari, standartlar, yoʻriqnomalar],
-    [Tashkiliy],
-    [Loyihalash boʻlinmalarining tuzilishi, vazifalar taqsimoti, hujjat aylanishi qoidalari],
+    [Loyihalaş metodikalari, standartlar, yöriqnomalar],
+    [Taşkiliy],
+    [Loyihalaş bölinmalarining tuzilişi, vazifalar taqsimoti, hujjat aylanişi qoidalari],
   ),
   caption: [ALT taʼminot turlari],
 ) <tab-taminot>
 
-Dasturiy nuqtai nazardan zamonaviy ALT quyidagi asosiy modullardan iborat: foydalanuvchi interfeysi, geometrik yadro (3D modellarni qurish va oʻzgartirish), hisoblash va tahlil modullari (solverlar), vizualizatsiya, komponentlar kutubxonalari va maʼlumotlarni boshqarish moduli. Turli ALT lar yagona maʼlumotlar muhiti (PDM) orqali bogʻlanadi.
+Dasturiy nuqtai nazardan zamonaviy ALT quyidagi asosiy modullardan iborat: foydalanuvçi interfeysi, geometrik yadro (3D modellarni quriş va özgartiriş), hisoblaş va tahlil modullari (solverlar), vizualizatsiya, komponentlar kutubxonalari va maʼlumotlarni boşqariş moduli. Turli ALT lar yagona maʼlumotlar muhiti (PDM) orqali boğlanadi.
 
 // =====================================================================
-= Informatsion qurilmalarni loyihalashda qoʻllanadigan ALT lar
+= Informatsion qurilmalarni loyihalaşda qöllanadigan ALT lar
 // =====================================================================
 
-Informatsion qurilma bir nechta fizik sohani qamrab olgani uchun uni loyihalashda turli ALT lar birgalikda qoʻllanadi (2-jadval).
+Informatsion qurilma bir neçta fizik sohani qamrab olgani uçun uni loyihalaşda turli ALT lar birgalikda qöllanadi (2-jadval).
 
 #figure(
   btable(
     columns: (auto, 1.4fr, 1.2fr),
-    header: ([Soha], [Loyihalash vazifalari], [Dasturiy vositalarga misollar]),
+    header: ([Soha], [Loyihalaş vazifalari], [Dasturiy vositalarga misollar]),
     [Mexanik konstruksiya (CAD)],
-    [Sezgir element, korpus, mahkamlash elementlari, kodli disk 3D modeli va chizmalari],
+    [Sezgir element, korpus, mahkamlaş elementlari, kodli disk 3D modeli va çizmalari],
     [SolidWorks, Siemens NX, CATIA, Autodesk Inventor va Fusion, KOMPAS-3D, FreeCAD],
     [Fizik maydonlar tahlili (CAE)],
-    [Elastik element deformatsiyasi, xususiy chastotalar, issiqlik, elektrostatik va magnit maydonlar, MEMS tuzilmalari],
+    [Elastik element deformatsiyasi, xususiy çastotalar, issiqlik, elektrostatik va magnit maydonlar, MEMS tuzilmalari],
     [ANSYS, COMSOL Multiphysics, Abaqus],
     [Optika],
-    [Obyektiv, yoritish va optik datchiklarning nurlar yoʻli],
-    [Zemax OpticStudio va oʻxshash dasturlar],
+    [Obyektiv, yoritiş va optik datçiklarning nurlar yöli],
+    [Zemax OpticStudio va öxşaş dasturlar],
     [Elektronika (EDA)],
-    [Oʻlchash sxemasi, kuchaytirgich, filtr, ARO ulanishi, bosma plata],
+    [Ölçaş sxemasi, kuçaytirgiç, filtr, ARO ulanişi, bosma plata],
     [Altium Designer, KiCad, Cadence OrCAD; SPICE simulyatorlari (LTspice)],
-    [Tizim darajasida modellashtirish],
-    [Datchik dinamikasi, shovqin, filtrlar, butun oʻlchash kanali va boshqaruv konturi],
+    [Tizim darajasida modellaştiriş],
+    [Datçik dinamikasi, şovqin, filtrlar, butun ölçaş kanali va boşqaruv konturi],
     [MATLAB/Simulink, Simscape, Modelica (OpenModelica), LabVIEW],
     [Dasturiy taʼminot],
-    [Mikrodastur, ishlov berish algoritmlari, avtomatik kod generatsiyasi],
-    [Ishlab chiqish muhitlari (IDE), Embedded Coder, Git],
-    [Maʼlumotlarni boshqarish (PDM/PLM)],
-    [Hujjatlar, versiyalar, konfiguratsiyalar, oʻzgarishlar],
+    [Mikrodastur, işlov beriş algoritmlari, avtomatik kod generatsiyasi],
+    [Işlab çiqiş muhitlari (IDE), Embedded Coder, Git],
+    [Maʼlumotlarni boşqariş (PDM/PLM)],
+    [Hujjatlar, versiyalar, konfiguratsiyalar, özgarişlar],
     [Teamcenter, Windchill, 3DEXPERIENCE],
   ),
-  caption: [Informatsion qurilmalarni loyihalashda qoʻllanadigan ALT lar],
+  caption: [Informatsion qurilmalarni loyihalaşda qöllanadigan ALT lar],
 ) <tab-alt>
 
-Jadvalda keltirilgan dasturlar misol sifatida berilgan; amaliyotda tanlov tashkilotda mavjud litsenziyalar, vazifa murakkabligi va boshqa ALT lar bilan moslikka bogʻliq. Oʻquv maqsadlarida bepul va ochiq dasturlar (FreeCAD, KiCad, LTspice, OpenModelica) ham toʻliq loyihalash siklini oʻtash imkonini beradi.
+Jadvalda keltirilgan dasturlar misol sifatida berilgan; amaliyotda tanlov taşkilotda mavjud litsenziyalar, vazifa murakkabligi va boşqa ALT lar bilan moslikka boğliq. Öquv maqsadlarida bepul va oçiq dasturlar (FreeCAD, KiCad, LTspice, OpenModelica) ham töliq loyihalaş siklini ötaş imkonini beradi.
 
 // =====================================================================
-= Chekli elementlar usuli asoslari
+= Çekli elementlar usuli asoslari
 // =====================================================================
 
-Sezgir elementlar va korpuslarni mustahkamlik, deformatsiya, issiqlik va elektromagnit maydonlarga hisoblashda CAE tizimlarining asosiy matematik usuli — *chekli elementlar usuli* (ChEU). Unda murakkab shakldagi jism koʻplab oddiy kichik elementlarga (tetraedrlar, oltiyoqlilar) — *torga* (_mesh_) — boʻlinadi. Har bir element ichida nomaʼlum kattalik (masalan, koʻchish) oddiy funksiya bilan approksimatsiya qilinadi va butun jism uchun chiziqli algebraik tenglamalar tizimi tuziladi. Statik mexanik masala uchun u quyidagi koʻrinishga ega:
+Sezgir elementlar va korpuslarni mustahkamlik, deformatsiya, issiqlik va elektromagnit maydonlarga hisoblaşda CAE tizimlarining asosiy matematik usuli — *çekli elementlar usuli* (ÇEU). Unda murakkab şakldagi jism köplab oddiy kiçik elementlarga (tetraedrlar, oltiyoqlilar) — *torga* (_mesh_) — bölinadi. Har bir element içida nomaʼlum kattalik (masalan, köçiş) oddiy funksiya bilan approksimatsiya qilinadi va butun jism uçun çiziqli algebraik tenglamalar tizimi tuziladi. Statik mexanik masala uçun u quyidagi körinişga ega:
 
 #eq($ bold(K) dot bold(u) = bold(F), $)
 
-bu yerda $bold(K)$ — tizimning bikrlik matritsasi, $bold(u)$ — tugunlar koʻchishlari vektori, $bold(F)$ — tugunlarga qoʻyilgan kuchlar vektori. Tenglamalar yechilgach, koʻchishlardan deformatsiyalar va kuchlanishlar hisoblanadi.
+bu yerda $bold(K)$ — tizimning bikrlik matritsasi, $bold(u)$ — tugunlar köçişlari vektori, $bold(F)$ — tugunlarga qöyilgan kuçlar vektori. Tenglamalar yeçilgaç, köçişlardan deformatsiyalar va kuçlanişlar hisoblanadi.
 
-ChEU bilan ishlashda quyidagi qoidalarga amal qilinadi:
-- materiallar xossalari, mahkamlash shartlari va yuklamalar real sharoitga mos berilishi kerak — notoʻgʻri chegaraviy shartlar notoʻgʻri natija beradi;
-- tor kuchlanishlar keskin oʻzgaradigan joylarda (teshiklar, burchaklar, tenzorezistor yopishtiriladigan joy) maydalashtiriladi;
-- natijaning tor oʻlchamiga bogʻliq emasligi tekshiriladi (torni maydalashtirganda natija deyarli oʻzgarmasligi kerak);
-- hisoblash natijalari oddiy analitik baho va keyinchalik tajriba bilan solishtiriladi.
+ÇEU bilan işlaşda quyidagi qoidalarga amal qilinadi:
+- materiallar xossalari, mahkamlaş şartlari va yuklamalar real şaroitga mos berilişi kerak — notöğri çegaraviy şartlar notöğri natija beradi;
+- tor kuçlanişlar keskin özgaradigan joylarda (teşiklar, burçaklar, tenzorezistor yopiştiriladigan joy) maydalaştiriladi;
+- natijaning tor ölçamiga boğliq emasligi tekşiriladi (torni maydalaştirganda natija deyarli özgarmasligi kerak);
+- hisoblaş natijalari oddiy analitik baho va keyinçalik tajriba bilan soliştiriladi.
 
 // =====================================================================
-= Loyihalash misoli: tenzometrik kuch datchigi
+= Loyihalaş misoli: tenzometrik kuç datçigi
 // =====================================================================
 
-ALT ning birgalikda qoʻllanishini robot tutqichi uchun tenzometrik kuch datchigini loyihalash misolida koʻramiz.
+ALT ning birgalikda qöllanişini robot tutqiçi uçun tenzometrik kuç datçigini loyihalaş misolida köramiz.
 
-*1. Talablar.* Oʻlchash diapazoni 0…100 N, keltirilgan xatolik 0,5 % dan oshmasin, ish harorati 0…50 °C, raqamli interfeys, oʻlchamlari tutqichga sigʻsin.
+*1. Talablar.* Ölçaş diapazoni 0…100 N, keltirilgan xatolik 0,5 % dan oşmasin, iş harorati 0…50 °C, raqamli interfeys, ölçamlari tutqiçga siğsin.
 
-*2. Konsepsiya va analitik baho.* Sezgir element sifatida bir uchi mahkamlangan alyuminiy balka tanlanadi, uning ustki va pastki sirtlariga toʻrtta tenzorezistor yopishtirilib, toʻliq koʻprik hosil qilinadi. Balka mahkamlangan joyidagi sirt deformatsiyasi:
+*2. Konsepsiya va analitik baho.* Sezgir element sifatida bir uçi mahkamlangan alyuminiy balka tanlanadi, uning ustki va pastki sirtlariga törtta tenzorezistor yopiştirilib, töliq köprik hosil qilinadi. Balka mahkamlangan joyidagi sirt deformatsiyasi:
 
 #eq($ epsilon = (6 F L) / (E b h^2), $)
 
-bu yerda $L$ — kuch qoʻyilgan nuqtagacha masofa, $E$ — elastiklik moduli, $b$ va $h$ — kesim eni va balandligi. $F = 100$ N, $L = 40$ mm, $E = 70$ GPa, $b = 20$ mm, $h = 5$ mm uchun $epsilon = 6 dot 100 dot 0","04 slash (70 dot 10^9 dot 0","02 dot 0","005^2) approx 6","9 dot 10^(-4)$. Toʻrt faol tenzorezistorli koʻprikning chiqish kuchlanishi:
+bu yerda $L$ — kuç qöyilgan nuqtagaça masofa, $E$ — elastiklik moduli, $b$ va $h$ — kesim eni va balandligi. $F = 100$ N, $L = 40$ mm, $E = 70$ GPa, $b = 20$ mm, $h = 5$ mm uçun $epsilon = 6 dot 100 dot 0","04 slash (70 dot 10^9 dot 0","02 dot 0","005^2) approx 6","9 dot 10^(-4)$. Tört faol tenzorezistorli köprikning çiqiş kuçlanişi:
 
-#eq($ U_"chiq" = k dot epsilon dot U_t, $)
+#eq($ U_"çiq" = k dot epsilon dot U_t, $)
 
-$k = 2$ va taʼminot $U_t = 5$ V boʻlganda $U_"chiq" approx 6","9$ mV. Balkadagi eng katta kuchlanish va mustahkamlik zaxirasi:
+$k = 2$ va taʼminot $U_t = 5$ V bölganda $U_"çiq" approx 6","9$ mV. Balkadagi eng katta kuçlaniş va mustahkamlik zaxirasi:
 
 #eq($ sigma = E dot epsilon approx 48 "MPa", quad n = sigma_T / sigma, $)
 
-oquvchanlik chegarasi $sigma_T approx 275$ MPa boʻlgan alyuminiy qotishmasi uchun $n approx 5","7$ — yetarli zaxira.
+oquvçanlik çegarasi $sigma_T approx 275$ MPa bölgan alyuminiy qotişmasi uçun $n approx 5","7$ — yetarli zaxira.
 
-*3. CAD va CAE.* Balka, mahkamlash va korpusning 3D modeli CAD da quriladi va CAE ga uzatiladi. ChEU tahlili analitik bahoni aniqlashtiradi: haqiqiy mahkamlashda deformatsiya taqsimoti, tenzorezistorlar uchun eng qulay joy, kuchlanish konsentratsiyasi, boshqa yoʻnalishdagi kuchlarning taʼsiri va xususiy chastota (datchik tezkorligi uchun) aniqlanadi. Natijaga koʻra balka oʻlchamlari oʻzgartiriladi va hisob takrorlanadi — parametrik modellashtirish buni bir necha daqiqada bajarish imkonini beradi.
+*3. CAD va CAE.* Balka, mahkamlaş va korpusning 3D modeli CAD da quriladi va CAE ga uzatiladi. ÇEU tahlili analitik bahoni aniqlaştiradi: haqiqiy mahkamlaşda deformatsiya taqsimoti, tenzorezistorlar uçun eng qulay joy, kuçlaniş konsentratsiyasi, boşqa yönalişdagi kuçlarning taʼsiri va xususiy çastota (datçik tezkorligi uçun) aniqlanadi. Natijaga köra balka ölçamlari özgartiriladi va hisob takrorlanadi — parametrik modellaştiriş buni bir neça daqiqada bajariş imkonini beradi.
 
-*4. Elektronika (EDA).* Koʻprik, instrumental kuchaytirgich, filtr, ARO va mikrokontrollerdan iborat sxema chiziladi va SPICE da modellashtiriladi: kuchaytirish koeffitsienti (6,9 mV ni ARO diapazoniga moslash), filtrning kesish chastotasi va shovqin tekshiriladi. Soʻngra bosma plata loyihalanadi va uning 3D modeli korpus bilan moslik uchun CAD ga qaytariladi.
+*4. Elektronika (EDA).* Köprik, instrumental kuçaytirgiç, filtr, ARO va mikrokontrollerdan iborat sxema çiziladi va SPICE da modellaştiriladi: kuçaytiriş koeffitsienti (6,9 mV ni ARO diapazoniga moslaş), filtrning kesiş çastotasi va şovqin tekşiriladi. Söngra bosma plata loyihalanadi va uning 3D modeli korpus bilan moslik uçun CAD ga qaytariladi.
 
-*5. Tizim modeli.* Simulink yoki Modelica da butun kanal — balka dinamikasi, koʻprik, kuchaytirgich shovqini, kvantlash va raqamli filtr — modellashtirilib, umumiy xatolik va javob vaqti talablarga mosligi baholanadi (9-maʼruza).
+*5. Tizim modeli.* Simulink yoki Modelica da butun kanal — balka dinamikasi, köprik, kuçaytirgiç şovqini, kvantlaş va raqamli filtr — modellaştirilib, umumiy xatolik va javob vaqti talablarga mosligi baholanadi (9-maʼruza).
 
-*6. Prototip va sinov.* Prototip yasaladi, kalibrlanadi va metrologik tavsiflari (chiziqlilik, gisterezis, harorat drifti) oʻlchanadi. Natijalar modellar bilan solishtiriladi va kerak boʻlsa modellar aniqlashtiriladi — bu V-modelning oʻng tarmogʻi.
+*6. Prototip va sinov.* Prototip yasaladi, kalibrlanadi va metrologik tavsiflari (çiziqlilik, gisterezis, harorat drifti) ölçanadi. Natijalar modellar bilan soliştiriladi va kerak bölsa modellar aniqlaştiriladi — bu V-modelning öng tarmoği.
 
 // =====================================================================
-= ALT lar orasida maʼlumot almashish
+= ALT lar orasida maʼlumot almaşiş
 // =====================================================================
 
-Informatsion qurilmani loyihalashda bir necha ALT qoʻllangani uchun ular orasida maʼlumot almashish muhim masala hisoblanadi. Buning uchun standart formatlar qoʻllanadi (3-jadval).
+Informatsion qurilmani loyihalaşda bir neça ALT qöllangani uçun ular orasida maʼlumot almaşiş muhim masala hisoblanadi. Buning uçun standart formatlar qöllanadi (3-jadval).
 
 #figure(
   btable(
     columns: (auto, 1.5fr),
     header: ([Format yoki standart], [Vazifasi]),
     [STEP (ISO 10303), IGES],
-    [3D geometrik modellarni turli CAD va CAE tizimlari orasida uzatish],
+    [3D geometrik modellarni turli CAD va CAE tizimlari orasida uzatiş],
     [STL, 3MF],
-    [Modelni 3D bosib chiqarishga uzatish (prototiplash)],
+    [Modelni 3D bosib çiqarişga uzatiş (prototiplaş)],
     [IDF, IDX],
-    [Elektron (ECAD) va mexanik (MCAD) loyihalash tizimlari orasida plata va korpus maʼlumotlarini almashish],
+    [Elektron (ECAD) va mexanik (MCAD) loyihalaş tizimlari orasida plata va korpus maʼlumotlarini almaşiş],
     [Gerber, ODB++],
-    [Bosma platani ishlab chiqarishga uzatish],
+    [Bosma platani işlab çiqarişga uzatiş],
     [FMI (FMU)],
-    [Turli modellashtirish dasturlarida yaratilgan dinamik modellarni almashish va birgalikda simulyatsiya qilish (ko-simulyatsiya)],
+    [Turli modellaştiriş dasturlarida yaratilgan dinamik modellarni almaşiş va birgalikda simulyatsiya qiliş (ko-simulyatsiya)],
     [URDF, SDF],
-    [Robot va uning datchiklari modellarini robot simulyatorlari va ROS 2 ga uzatish],
+    [Robot va uning datçiklari modellarini robot simulyatorlari va ROS 2 ga uzatiş],
   ),
-  caption: [ALT lar orasida maʼlumot almashish formatlari],
+  caption: [ALT lar orasida maʼlumot almaşiş formatlari],
 ) <tab-format>
 
-Turli ALT lardagi modellar va hujjatlar yagona PDM tizimida saqlanadi. U har bir hujjatning versiyasini, qaysi qism qaysi modelga bogʻliqligini va kim tomonidan oʻzgartirilganini kuzatadi. Masalan, korpus oʻlchami oʻzgartirilsa, PDM bu oʻzgarish plata, CAE modeli va chizmalarga taʼsir qilishini koʻrsatadi.
+Turli ALT lardagi modellar va hujjatlar yagona PDM tizimida saqlanadi. U har bir hujjatning versiyasini, qaysi qism qaysi modelga boğliqligini va kim tomonidan özgartirilganini kuzatadi. Masalan, korpus ölçami özgartirilsa, PDM bu özgariş plata, CAE modeli va çizmalarga taʼsir qilişini körsatadi.
 
 // =====================================================================
-= ALT larning xususiyatlari va rivojlanish tendensiyalari
+= ALT larning xususiyatlari va rivojlaniş tendensiyalari
 // =====================================================================
 
 Zamonaviy ALT larning asosiy xususiyatlari:
-- *parametrik modellashtirish* — model oʻlchamlari parametrlar va ular orasidagi bogʻliqliklar bilan beriladi; bitta parametr oʻzgarsa, butun model va chizmalar avtomatik yangilanadi;
-- *assotsiativlik* — 3D model, chizma, CAE modeli va spetsifikatsiya oʻzaro bogʻlangan;
-- *koʻp fizikali tahlil* — mexanik, issiqlik, elektr va magnit maydonlarning oʻzaro taʼsirini birgalikda hisoblash (masalan, sigʻim datchigida elektrostatik kuch va deformatsiya);
-- *komponentlar kutubxonalari* — standart detallar, elektron komponentlar va tayyor datchik modellari;
-- *optimallash* — berilgan cheklovlar ostida sezgirlikni maksimal, massani minimal qiladigan oʻlchamlarni avtomatik izlash;
-- *hujjatlarni avtomatik tayyorlash* — chizmalar, spetsifikatsiyalar, ishlab chiqarish fayllari.
+- *parametrik modellaştiriş* — model ölçamlari parametrlar va ular orasidagi boğliqliklar bilan beriladi; bitta parametr özgarsa, butun model va çizmalar avtomatik yangilanadi;
+- *assotsiativlik* — 3D model, çizma, CAE modeli va spetsifikatsiya özaro boğlangan;
+- *köp fizikali tahlil* — mexanik, issiqlik, elektr va magnit maydonlarning özaro taʼsirini birgalikda hisoblaş (masalan, siğim datçigida elektrostatik kuç va deformatsiya);
+- *komponentlar kutubxonalari* — standart detallar, elektron komponentlar va tayyor datçik modellari;
+- *optimallaş* — berilgan çeklovlar ostida sezgirlikni maksimal, massani minimal qiladigan ölçamlarni avtomatik izlaş;
+- *hujjatlarni avtomatik tayyorlaş* — çizmalar, spetsifikatsiyalar, işlab çiqariş fayllari.
 
-Rivojlanish tendensiyalari:
-- *raqamli egizak* — real qurilmaning datchiklardan olingan maʼlumotlar bilan doimiy yangilanib turuvchi virtual modeli; u ekspluatatsiyada holatni kuzatish va keyingi avlod qurilmalarini loyihalashda qoʻllanadi;
-- *generativ dizayn va topologik optimallash* — sunʼiy intellekt va optimallash algoritmlari berilgan talablar asosida konstruksiya variantlarini avtomatik yaratadi; additiv texnologiyalar (3D bosib chiqarish) bunday murakkab shakllarni yasash imkonini beradi;
-- *bulutli ALT* — hisoblash resurslari va loyiha maʼlumotlari bulutda joylashadi, bu jamoaviy ishlashni va katta hisoblarni osonlashtiradi;
-- *modelga asoslangan tizimlar muhandisligi* (MBSE) — talablar, tuzilma va xatti-harakatni yagona tizim modelida (masalan, SysML tilida) tavsiflash.
+Rivojlaniş tendensiyalari:
+- *raqamli egizak* — real qurilmaning datçiklardan olingan maʼlumotlar bilan doimiy yangilanib turuvçi virtual modeli; u ekspluatatsiyada holatni kuzatiş va keyingi avlod qurilmalarini loyihalaşda qöllanadi;
+- *generativ dizayn va topologik optimallaş* — sunʼiy intellekt va optimallaş algoritmlari berilgan talablar asosida konstruksiya variantlarini avtomatik yaratadi; additiv texnologiyalar (3D bosib çiqariş) bunday murakkab şakllarni yasaş imkonini beradi;
+- *bulutli ALT* — hisoblaş resurslari va loyiha maʼlumotlari bulutda joylaşadi, bu jamoaviy işlaşni va katta hisoblarni osonlaştiradi;
+- *modelga asoslangan tizimlar muhandisligi* (MBSE) — talablar, tuzilma va xatti-harakatni yagona tizim modelida (masalan, SysML tilida) tavsiflaş.
 
-ALT larni qoʻllashdagi muammolar ham mavjud: litsenziyalarning yuqori narxi, malakali mutaxassislarga ehtiyoj, turli tizimlar orasida maʼlumot almashishda yoʻqotishlar, eng muhimi — model *adekvatligi*: modellashtirish natijasi faqat model va kiritilgan maʼlumotlar qanchalik toʻgʻri boʻlsa, shunchalik ishonchli. Shuning uchun modellar albatta tajriba natijalari bilan tekshiriladi.
+ALT larni qöllaşdagi muammolar ham mavjud: litsenziyalarning yuqori narxi, malakali mutaxassislarga ehtiyoj, turli tizimlar orasida maʼlumot almaşişda yöqotişlar, eng muhimi — model *adekvatligi*: modellaştiriş natijasi faqat model va kiritilgan maʼlumotlar qançalik töğri bölsa, şunçalik işonçli. Şuning uçun modellar albatta tajriba natijalari bilan tekşiriladi.
 
 // =====================================================================
 = Xulosa
 // =====================================================================
 
-Avtomatlashgan loyihalash tizimlari informatsion qurilmalarni loyihalash muddatini qisqartiradi, xatolarni erta aniqlash va variantlarni tez solishtirish imkonini beradi. Mexatron qurilmalar V-model asosida loyihalanadi: talablardan tizim va sohalar boʻyicha loyihaga, soʻngra integratsiya va tasdiqlashga qarab. ALT texnik, matematik, dasturiy, informatsion, lingvistik, metodik va tashkiliy taʼminotdan iborat.
+Avtomatlaşgan loyihalaş tizimlari informatsion qurilmalarni loyihalaş muddatini qisqartiradi, xatolarni erta aniqlaş va variantlarni tez soliştiriş imkonini beradi. Mexatron qurilmalar V-model asosida loyihalanadi: talablardan tizim va sohalar böyiça loyihaga, söngra integratsiya va tasdiqlaşga qarab. ALT texnik, matematik, dasturiy, informatsion, lingvistik, metodik va taşkiliy taʼminotdan iborat.
 
-Informatsion qurilmani loyihalashda CAD (konstruksiya), CAE (chekli elementlar usuli asosida fizik maydonlar tahlili), EDA (sxema va plata), tizim darajasidagi modellashtirish va PDM birgalikda qoʻllanadi; ular orasida STEP, IDF/IDX, Gerber, FMI, URDF kabi standart formatlar orqali maʼlumot almashiladi. Tenzometrik kuch datchigi misoli analitik baho, ChEU tahlili, sxemani modellashtirish, tizim modeli va prototip sinovining oʻzaro bogʻliqligini koʻrsatadi. Raqamli egizak, generativ dizayn va bulutli ALT lar sohaning asosiy rivojlanish yoʻnalishlaridir.
+Informatsion qurilmani loyihalaşda CAD (konstruksiya), CAE (çekli elementlar usuli asosida fizik maydonlar tahlili), EDA (sxema va plata), tizim darajasidagi modellaştiriş va PDM birgalikda qöllanadi; ular orasida STEP, IDF/IDX, Gerber, FMI, URDF kabi standart formatlar orqali maʼlumot almaşiladi. Tenzometrik kuç datçigi misoli analitik baho, ÇEU tahlili, sxemani modellaştiriş, tizim modeli va prototip sinovining özaro boğliqligini körsatadi. Raqamli egizak, generativ dizayn va bulutli ALT lar sohaning asosiy rivojlaniş yönalişlaridir.
 
 // =====================================================================
 = Nazorat savollari
@@ -320,17 +320,17 @@ Informatsion qurilmani loyihalashda CAD (konstruksiya), CAE (chekli elementlar u
 
 #block[
   #set par(first-line-indent: 0pt)
-  + Avtomatlashgan loyihalash tizimi nima? CAD, CAE, CAM, EDA va PDM qanday farqlanadi?
-  + Mexatron qurilmalarni loyihalashning V-modelini tushuntiring.
+  + Avtomatlaşgan loyihalaş tizimi nima? CAD, CAE, CAM, EDA va PDM qanday farqlanadi?
+  + Mexatron qurilmalarni loyihalaşning V-modelini tuşuntiring.
   + Verifikatsiya va validatsiya qanday farqlanadi?
-  + ALT ning taʼminot turlarini sanab bering va ularning mazmunini tushuntiring.
+  + ALT ning taʼminot turlarini sanab bering va ularning mazmunini tuşuntiring.
   + Informatsion qurilmaning qaysi qismlari qaysi ALT da loyihalanadi?
-  + Chekli elementlar usulining mohiyati nimada?
-  + ChEU natijalarining ishonchliligi qanday tekshiriladi?
-  + Bir uchi mahkamlangan balka uchun $F = 50$ N, $L = 30$ mm, $E = 70$ GPa, $b = 15$ mm, $h = 4$ mm boʻlsa, sirt deformatsiyasini toping.
-  + Toʻliq tenzokoʻprikda $k = 2$, $epsilon = 5 dot 10^(-4)$, $U_t = 10$ V boʻlsa, chiqish kuchlanishi qancha?
-  + ALT lar orasida maʼlumot almashishda qanday standart formatlar qoʻllanadi?
-  + Parametrik modellashtirish va assotsiativlik qanday afzallik beradi?
-  + Raqamli egizak nima va u informatsion qurilmalar bilan qanday bogʻliq?
-  + Model adekvatligi nima va nima uchun u muhim?
+  + Çekli elementlar usulining mohiyati nimada?
+  + ÇEU natijalarining işonçliligi qanday tekşiriladi?
+  + Bir uçi mahkamlangan balka uçun $F = 50$ N, $L = 30$ mm, $E = 70$ GPa, $b = 15$ mm, $h = 4$ mm bölsa, sirt deformatsiyasini toping.
+  + Töliq tenzoköprikda $k = 2$, $epsilon = 5 dot 10^(-4)$, $U_t = 10$ V bölsa, çiqiş kuçlanişi qança?
+  + ALT lar orasida maʼlumot almaşişda qanday standart formatlar qöllanadi?
+  + Parametrik modellaştiriş va assotsiativlik qanday afzallik beradi?
+  + Raqamli egizak nima va u informatsion qurilmalar bilan qanday boğliq?
+  + Model adekvatligi nima va nima uçun u muhim?
 ]

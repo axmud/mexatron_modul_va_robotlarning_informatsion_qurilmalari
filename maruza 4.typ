@@ -11,7 +11,7 @@
 #let lightorange = rgb("#fbe3cf")
 
 #set document(
-  title: "Maʼruza №4. Informatsion qurilmalarning turlari va ularning xususiyatlari. Birlamchi oʻzgartirgichlar (datchiklar, sensorlar). Informatsion qurilmalarning asosiy vazifalari",
+  title: "Maʼruza №4. Informatsion qurilmalarning turlari va ularning xususiyatlari. Birlamçi özgartirgiçlar (datçiklar, sensorlar). Informatsion qurilmalarning asosiy vazifalari",
 )
 #set page(
   paper: "a4",
@@ -32,7 +32,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -72,7 +72,7 @@
   #text(
     size: 14pt,
     weight: "bold",
-  )[Mavzu: Informatsion qurilmalarning turlari va ularning xususiyatlari. Birlamchi oʻzgartirgichlar (datchiklar, sensorlar). Informatsion qurilmalarning asosiy vazifalari]
+  )[Mavzu: Informatsion qurilmalarning turlari va ularning xususiyatlari. Birlamçi özgartirgiçlar (datçiklar, sensorlar). Informatsion qurilmalarning asosiy vazifalari]
 ]
 
 #v(0.8em)
@@ -81,69 +81,69 @@
   #set par(first-line-indent: 0pt)
   *Reja:*
   + Informatsion qurilmalarning turlari.
-  + Birlamchi oʻzgartirgich tushunchasi va uning tuzilishi.
-  + Parametrik birlamchi oʻzgartirgichlar.
-  + Generatorli birlamchi oʻzgartirgichlar.
-  + Birlamchi oʻzgartirgichlarning asosiy xususiyatlari.
+  + Birlamçi özgartirgiç tuşunçasi va uning tuzilişi.
+  + Parametrik birlamçi özgartirgiçlar.
+  + Generatorli birlamçi özgartirgiçlar.
+  + Birlamçi özgartirgiçlarning asosiy xususiyatlari.
   + Informatsion qurilmalarning asosiy vazifalari.
-  + Birlamchi oʻzgartirgichni tanlash: robot boʻgʻini misolida.
+  + Birlamçi özgartirgiçni tanlaş: robot böğini misolida.
 
-  *Tayanch iboralar:* informatsion qurilma, birlamchi oʻzgartirgich, datchik, sensor, sezgir element, oraliq oʻzgartirgich, normallashtiruvchi oʻzgartirgich, oʻzgartirish zanjiri, sezgirlik, rezistiv, sigʻim, induktiv, termoelektrik, piezoelektrik, Xoll va induksion oʻzgartirgichlar, statik va dinamik tavsif, vaqt doimiysi, normallashtirish, signalizatsiya.
+  *Tayanç iboralar:* informatsion qurilma, birlamçi özgartirgiç, datçik, sensor, sezgir element, oraliq özgartirgiç, normallaştiruvçi özgartirgiç, özgartiriş zanjiri, sezgirlik, rezistiv, siğim, induktiv, termoelektrik, piezoelektrik, Xoll va induksion özgartirgiçlar, statik va dinamik tavsif, vaqt doimiysi, normallaştiriş, signalizatsiya.
 ]
 
 // =====================================================================
 = Informatsion qurilmalarning turlari
 // =====================================================================
 
-Oldingi maʼruzada robotning informatsion tizimi informatsion-oʻlchash kanallaridan tashkil topishi koʻrsatilgan edi. Kanalning har bir boʻgʻini alohida *informatsion qurilma* boʻlib, oʻz vazifasini bajaradi. Bajaradigan vazifasi va kanaldagi oʻrniga koʻra informatsion qurilmalar quyidagi turlarga boʻlinadi (1-jadval).
+Oldingi maʼruzada robotning informatsion tizimi informatsion-ölçaş kanallaridan taşkil topişi körsatilgan edi. Kanalning har bir böğini alohida *informatsion qurilma* bölib, öz vazifasini bajaradi. Bajaradigan vazifasi va kanaldagi örniga köra informatsion qurilmalar quyidagi turlarga bölinadi (1-jadval).
 
 #figure(
   btable(
     columns: (1fr, 1.4fr, 1.2fr),
     header: ([Qurilma turi], [Vazifasi], [Misollar]),
-    [Birlamchi oʻzgartirgich (datchik)],
-    [Oʻlchanayotgan kattalikni bevosita qabul qilib, uni oʻlchash uchun qulay signalga aylantiradi],
+    [Birlamçi özgartirgiç (datçik)],
+    [Ölçanayotgan kattalikni bevosita qabul qilib, uni ölçaş uçun qulay signalga aylantiradi],
     [Tenzorezistor, termojuft, enkoder, fotodiod],
 
-    [Oraliq (normallashtiruvchi) oʻzgartirgich],
-    [Signalni kuchaytiradi, filtrlaydi va standart koʻrinishga keltiradi],
-    [Oʻlchash koʻprigi, instrumental kuchaytirgich, 4–20 mA oʻzgartirgichi],
+    [Oraliq (normallaştiruvçi) özgartirgiç],
+    [Signalni kuçaytiradi, filtrlaydi va standart körinişga keltiradi],
+    [Ölçaş köprigi, instrumental kuçaytirgiç, 4–20 mA özgartirgiçi],
 
-    [Analog-raqamli oʻzgartirgich],
+    [Analog-raqamli özgartirgiç],
     [Analog signalni raqamli kodga aylantiradi],
     [Mikrokontrollerning ARO moduli, alohida ARO mikrosxemalari],
 
-    [Axborotni uzatish qurilmasi],
+    [Axborotni uzatiş qurilmasi],
     [Axborotni masofaga uzatadi],
     [CAN, EtherCAT, IO-Link interfeyslari, simsiz modullar],
 
-    [Axborotni qayta ishlash qurilmasi],
+    [Axborotni qayta işlaş qurilmasi],
     [Axborotni filtrlaydi, kalibrlaydi, tahlil qiladi va qaror qabul qiladi],
     [Mikrokontroller, signal protsessori, PLC, robot kontrolleri],
 
-    [Aks ettirish va signalizatsiya qurilmasi],
-    [Axborotni operatorga koʻrsatadi yoki chegaraviy holat haqida ogohlantiradi],
-    [Displey, operator pulti, yorugʻlik va tovush signalizatorlari],
+    [Aks ettiriş va signalizatsiya qurilmasi],
+    [Axborotni operatorga körsatadi yoki çegaraviy holat haqida ogohlantiradi],
+    [Displey, operator pulti, yoruğlik va tovuş signalizatorlari],
   ),
   caption: [Informatsion qurilmalarning turlari],
 ) <tab-turlar>
 
-Bu qurilmalardan *birlamchi oʻzgartirgich* alohida oʻrin tutadi: u oʻlchanayotgan obyekt bilan bevosita aloqada boʻladi va butun kanalning imkoniyatlarini belgilaydi. Birlamchi oʻzgartirgichda yoʻqotilgan yoki buzilgan axborotni keyingi qurilmalarda tiklab boʻlmaydi (2-maʼruza). Shu sababli ushbu maʼruzaning asosiy qismi birlamchi oʻzgartirgichlarga bagʻishlangan.
+Bu qurilmalardan *birlamçi özgartirgiç* alohida örin tutadi: u ölçanayotgan obyekt bilan bevosita aloqada böladi va butun kanalning imkoniyatlarini belgilaydi. Birlamçi özgartirgiçda yöqotilgan yoki buzilgan axborotni keyingi qurilmalarda tiklab bölmaydi (2-maʼruza). Şu sababli uşbu maʼruzaning asosiy qismi birlamçi özgartirgiçlarga bağişlangan.
 
 // =====================================================================
-= Birlamchi oʻzgartirgich tushunchasi va uning tuzilishi
+= Birlamçi özgartirgiç tuşunçasi va uning tuzilişi
 // =====================================================================
 
-*Birlamchi oʻzgartirgich* — oʻlchash kanalining birinchi elementi boʻlib, oʻlchanayotgan fizik kattalik unga bevosita taʼsir qiladi va u bu kattalikni oʻlchash, uzatish va qayta ishlash uchun qulay boshqa kattalikka (odatda elektr signaliga) aylantiradi.
+*Birlamçi özgartirgiç* — ölçaş kanalining birinçi elementi bölib, ölçanayotgan fizik kattalik unga bevosita taʼsir qiladi va u bu kattalikni ölçaş, uzatiş va qayta işlaş uçun qulay boşqa kattalikka (odatda elektr signaliga) aylantiradi.
 
-Amaliyotda «birlamchi oʻzgartirgich», «datchik» va «sensor» atamalari koʻpincha bir xil maʼnoda ishlatiladi, lekin ular orasida nozik farq bor:
-- *birlamchi oʻzgartirgich* — fizik oʻzgartirishni bajaruvchi element (masalan, tenzorezistorning oʻzi);
-- *datchik* — birlamchi oʻzgartirgich, uni oʻrnatish uchun korpus va ulanish elementlari, koʻpincha oraliq oʻzgartirgich bilan birga konstruktiv tugallangan qurilma (masalan, kuch datchigi);
-- *sensor* — xalqaro adabiyotda kirishi noelektrik, chiqishi elektrik boʻlgan oʻzgartirgich; zamonaviy maʼnoda koʻpincha signalga ishlov berish va raqamli interfeysga ega datchik.
+Amaliyotda «birlamçi özgartirgiç», «datçik» va «sensor» atamalari köpinça bir xil maʼnoda işlatiladi, lekin ular orasida nozik farq bor:
+- *birlamçi özgartirgiç* — fizik özgartirişni bajaruvçi element (masalan, tenzorezistorning özi);
+- *datçik* — birlamçi özgartirgiç, uni örnatiş uçun korpus va ulaniş elementlari, köpinça oraliq özgartirgiç bilan birga konstruktiv tugallangan qurilma (masalan, kuç datçigi);
+- *sensor* — xalqaro adabiyotda kirişi noelektrik, çiqişi elektrik bölgan özgartirgiç; zamonaviy maʼnoda köpinça signalga işlov beriş va raqamli interfeysga ega datçik.
 
-== Oʻzgartirish zanjiri
+== Özgartiriş zanjiri
 
-Koʻp hollarda oʻlchanayotgan kattalik elektr signaliga bir bosqichda emas, balki bir nechta oraliq kattaliklar orqali aylantiriladi. Birlamchi oʻzgartirgichning kattalik bevosita taʼsir qiladigan qismi *sezgir element*, keyingi qismlari esa *oʻzgartirish elementlari* deyiladi. Masalan, robot tutqichidagi kuch datchigida kuch avval elastik elementning deformatsiyasiga, deformatsiya tenzorezistor qarshiligining oʻzgarishiga, qarshilik oʻzgarishi esa oʻlchash koʻprigida kuchlanishga aylanadi (1-rasm).
+Köp hollarda ölçanayotgan kattalik elektr signaliga bir bosqiçda emas, balki bir neçta oraliq kattaliklar orqali aylantiriladi. Birlamçi özgartirgiçning kattalik bevosita taʼsir qiladigan qismi *sezgir element*, keyingi qismlari esa *özgartiriş elementlari* deyiladi. Masalan, robot tutqiçidagi kuç datçigida kuç avval elastik elementning deformatsiyasiga, deformatsiya tenzorezistor qarşiligining özgarişiga, qarşilik özgarişi esa ölçaş köprigida kuçlanişga aylanadi (1-rasm).
 
 #figure(
   diagram(
@@ -153,11 +153,11 @@ Koʻp hollarda oʻlchanayotgan kattalik elektr signaliga bir bosqichda emas, bal
     node-corner-radius: 3pt,
     node-shape: rect,
     edge-stroke: 1pt,
-    node((0, 0), [Kuch \ $F$], fill: white, name: <f>),
+    node((0, 0), [Kuç \ $F$], fill: white, name: <f>),
     node((1, 0), [Elastik \ element], name: <el>),
     node((2, 0), [Tenzo- \ rezistor], name: <tr>),
-    node((3, 0), [Oʻlchash \ koʻprigi], name: <kp>),
-    node((4, 0), [Kuchay- \ tirgich], name: <ku>),
+    node((3, 0), [Ölçaş \ köprigi], name: <kp>),
+    node((4, 0), [Kuçay- \ tirgiç], name: <ku>),
     node((5, 0), [ARO], fill: lightorange, name: <aro>),
     edge(<f>, <el>, "->"),
     edge(<el>, <tr>, "->", [$epsilon$], label-side: left),
@@ -165,152 +165,152 @@ Koʻp hollarda oʻlchanayotgan kattalik elektr signaliga bir bosqichda emas, bal
     edge(<kp>, <ku>, "->", [$U$], label-side: left),
     edge(<ku>, <aro>, "->"),
   ),
-  caption: [Kuch datchigidagi oʻzgartirish zanjiri],
+  caption: [Kuç datçigidagi özgartiriş zanjiri],
 ) <fig-zanjir>
 
-Agar zanjirning har bir boʻgʻini chiziqli va sezgirligi $S_i$ boʻlsa, butun zanjirning sezgirligi boʻgʻinlar sezgirliklarining koʻpaytmasiga teng:
+Agar zanjirning har bir böğini çiziqli va sezgirligi $S_i$ bölsa, butun zanjirning sezgirligi böğinlar sezgirliklarining köpaytmasiga teng:
 
 #eq($ S = S_1 dot S_2 dot dots dot S_n. $)
 
-(1) ifodadan muhim xulosa kelib chiqadi: har bir boʻgʻinning nisbiy xatoligi umumiy natijaga qoʻshiladi, shuning uchun zanjir qancha uzun boʻlsa, natija shuncha koʻp omillarga bogʻliq boʻladi. Zamonaviy datchiklarda zanjirdagi oʻzgartirishlar sonini kamaytirishga va har bir boʻgʻinni kalibrlashga intiladilar.
+(1) ifodadan muhim xulosa kelib çiqadi: har bir böğinning nisbiy xatoligi umumiy natijaga qöşiladi, şuning uçun zanjir qança uzun bölsa, natija şunça köp omillarga boğliq böladi. Zamonaviy datçiklarda zanjirdagi özgartirişlar sonini kamaytirişga va har bir böğinni kalibrlaşga intiladilar.
 
-Birlamchi oʻzgartirgichlar chiqish signalining tabiatiga koʻra ikki katta guruhga boʻlinadi (3-maʼruza): *parametrik* oʻzgartirgichlarda kattalik elektr zanjirining parametrini (qarshilik, sigʻim, induktivlik) oʻzgartiradi va ularni oʻlchash uchun tashqi taʼminot manbai kerak; *generatorli* oʻzgartirgichlar esa oʻlchanayotgan kattalik taʼsirida oʻzi elektr yurituvchi kuch, zaryad yoki tok hosil qiladi. Quyida har bir guruhning asosiy turlari koʻriladi.
+Birlamçi özgartirgiçlar çiqiş signalining tabiatiga köra ikki katta guruhga bölinadi (3-maʼruza): *parametrik* özgartirgiçlarda kattalik elektr zanjirining parametrini (qarşilik, siğim, induktivlik) özgartiradi va ularni ölçaş uçun taşqi taʼminot manbai kerak; *generatorli* özgartirgiçlar esa ölçanayotgan kattalik taʼsirida özi elektr yurituvçi kuç, zaryad yoki tok hosil qiladi. Quyida har bir guruhning asosiy turlari köriladi.
 
 // =====================================================================
-= Parametrik birlamchi oʻzgartirgichlar
+= Parametrik birlamçi özgartirgiçlar
 // =====================================================================
 
-== Rezistiv oʻzgartirgichlar
+== Rezistiv özgartirgiçlar
 
-Rezistiv oʻzgartirgichlarda oʻlchanayotgan kattalik oʻtkazgich yoki yarimoʻtkazgichning qarshiligini oʻzgartiradi. Qarshilik $R = rho l slash S$ ifoda bilan aniqlanadi, shuning uchun uni solishtirma qarshilik $rho$, uzunlik $l$ yoki kesim yuzasi $S$ ni oʻzgartirish orqali boshqarish mumkin.
+Rezistiv özgartirgiçlarda ölçanayotgan kattalik ötkazgiç yoki yarimötkazgiçning qarşiligini özgartiradi. Qarşilik $R = rho l slash S$ ifoda bilan aniqlanadi, şuning uçun uni soliştirma qarşilik $rho$, uzunlik $l$ yoki kesim yuzasi $S$ ni özgartiriş orqali boşqariş mumkin.
 
-*Potensiometrik oʻzgartirgich* — sirpanuvchi kontaktli oʻzgaruvchan rezistor. Uning chiqish kuchlanishi surgichning siljishiga proporsional:
+*Potensiometrik özgartirgiç* — sirpanuvçi kontaktli özgaruvçan rezistor. Uning çiqiş kuçlanişi surgiçning siljişiga proporsional:
 
-#eq($ U_"chiq" = U dot x / L, $)
+#eq($ U_"çiq" = U dot x / L, $)
 
-bu yerda $U$ — taʼminot kuchlanishi, $x$ — surgich siljishi, $L$ — rezistiv qatlamning toʻliq uzunligi. Potensiometrlar oddiy va arzon, lekin sirpanuvchi kontakt yeyiladi va shovqin hosil qiladi. Ular oʻquv robotlari va arzon servoyuritmalarda burchak datchigi sifatida qoʻllanadi.
+bu yerda $U$ — taʼminot kuçlanişi, $x$ — surgiç siljişi, $L$ — rezistiv qatlamning töliq uzunligi. Potensiometrlar oddiy va arzon, lekin sirpanuvçi kontakt yeyiladi va şovqin hosil qiladi. Ular öquv robotlari va arzon servoyuritmalarda burçak datçigi sifatida qöllanadi.
 
-*Tenzorezistor* deformatsiyani qarshilik oʻzgarishiga aylantiradi: $Delta R slash R = k dot epsilon$, bu yerda $epsilon$ — nisbiy deformatsiya, $k$ — tenzosezgirlik koeffitsienti (metall tenzorezistorlar uchun $k approx 2$). Qarshilik oʻzgarishi juda kichik boʻlgani uchun tenzorezistor oʻlchash koʻprigiga ulanadi. Bitta faol tenzorezistorli (chorak) koʻprikning chiqish kuchlanishi:
+*Tenzorezistor* deformatsiyani qarşilik özgarişiga aylantiradi: $Delta R slash R = k dot epsilon$, bu yerda $epsilon$ — nisbiy deformatsiya, $k$ — tenzosezgirlik koeffitsienti (metall tenzorezistorlar uçun $k approx 2$). Qarşilik özgarişi juda kiçik bölgani uçun tenzorezistor ölçaş köprigiga ulanadi. Bitta faol tenzorezistorli (çorak) köprikning çiqiş kuçlanişi:
 
-#eq($ U_"chiq" approx U / 4 dot (Delta R) / R = U / 4 dot k dot epsilon. $)
+#eq($ U_"çiq" approx U / 4 dot (Delta R) / R = U / 4 dot k dot epsilon. $)
 
-*Misol.* $U = 5$ V, $k = 2$, $epsilon = 10^(-3)$ boʻlsa, $U_"chiq" approx 5 slash 4 dot 2 dot 10^(-3) = 2","5$ mV. Bunday kichik signal albatta kuchaytirilishi kerak. Tenzorezistorlar robotlarning kuch-moment datchiklari, tutqichlardagi kuch datchiklari va tarozilarning asosini tashkil etadi.
+*Misol.* $U = 5$ V, $k = 2$, $epsilon = 10^(-3)$ bölsa, $U_"çiq" approx 5 slash 4 dot 2 dot 10^(-3) = 2","5$ mV. Bunday kiçik signal albatta kuçaytirilişi kerak. Tenzorezistorlar robotlarning kuç-moment datçiklari, tutqiçlardagi kuç datçiklari va tarozilarning asosini taşkil etadi.
 
-*Termorezistorlar* qarshiligi haroratga bogʻliq boʻlgan elementlar: metall termorezistorlar (Pt100) va yarimoʻtkazgichli termistorlar. Robotlarda ular dvigatellar, drayverlar va akkumulyatorlar haroratini nazorat qilishda qoʻllanadi.
+*Termorezistorlar* qarşiligi haroratga boğliq bölgan elementlar: metall termorezistorlar (Pt100) va yarimötkazgiçli termistorlar. Robotlarda ular dvigatellar, drayverlar va akkumulyatorlar haroratini nazorat qilişda qöllanadi.
 
-== Sigʻim oʻzgartirgichlar
+== Siğim özgartirgiçlar
 
-Sigʻim oʻzgartirgich — elektrodlaridan biri oʻlchanayotgan kattalik taʼsirida siljiydigan kondensator. Yassi kondensatorning sigʻimi:
+Siğim özgartirgiç — elektrodlaridan biri ölçanayotgan kattalik taʼsirida siljiydigan kondensator. Yassi kondensatorning siğimi:
 
 #eq($ C = (epsilon_0 epsilon_r S) / d, $)
 
-bu yerda $epsilon_0 = 8","854 dot 10^(-12)$ F/m — elektr doimiysi, $epsilon_r$ — muhitning nisbiy dielektrik singdiruvchanligi, $S$ — elektrodlar yuzasi, $d$ — ular orasidagi masofa. Sigʻimni $d$, $S$ yoki $epsilon_r$ ni oʻzgartirish orqali boshqarish mumkin.
+bu yerda $epsilon_0 = 8","854 dot 10^(-12)$ F/m — elektr doimiysi, $epsilon_r$ — muhitning nisbiy dielektrik singdiruvçanligi, $S$ — elektrodlar yuzasi, $d$ — ular orasidagi masofa. Siğimni $d$, $S$ yoki $epsilon_r$ ni özgartiriş orqali boşqariş mumkin.
 
-*Misol.* $S = 1$ sm², $d = 0","1$ mm, havo ($epsilon_r approx 1$) uchun $C approx 8","85$ pF. Sigʻim juda kichik boʻlgani uchun sigʻim oʻzgartirgichlarga maxsus oʻlchash sxemalari kerak, lekin ular juda sezgir boʻladi. Sigʻim oʻzgartirgichlar MEMS akselerometr va giroskoplarda, kontaktsiz yaqinlik datchiklarida va robotlarning taktil qoplamalarida keng qoʻllanadi.
+*Misol.* $S = 1$ sm², $d = 0","1$ mm, havo ($epsilon_r approx 1$) uçun $C approx 8","85$ pF. Siğim juda kiçik bölgani uçun siğim özgartirgiçlarga maxsus ölçaş sxemalari kerak, lekin ular juda sezgir böladi. Siğim özgartirgiçlar MEMS akselerometr va giroskoplarda, kontaktsiz yaqinlik datçiklarida va robotlarning taktil qoplamalarida keng qöllanadi.
 
-== Induktiv oʻzgartirgichlar
+== Induktiv özgartirgiçlar
 
-Induktiv oʻzgartirgichlarda oʻlchanayotgan kattalik gʻaltakning induktivligini yoki ikki gʻaltak orasidagi oʻzaro induktivlikni oʻzgartiradi. Havo tirqishli magnit oʻtkazgichli gʻaltakning induktivligi taxminan:
+Induktiv özgartirgiçlarda ölçanayotgan kattalik ğaltakning induktivligini yoki ikki ğaltak orasidagi özaro induktivlikni özgartiradi. Havo tirqişli magnit ötkazgiçli ğaltakning induktivligi taxminan:
 
 #eq($ L approx (w^2 mu_0 S) / delta, $)
 
-bu yerda $w$ — oʻramlar soni, $mu_0$ — magnit doimiysi, $S$ — tirqish kesimi, $delta$ — havo tirqishi uzunligi. Yakor siljishi $delta$ ni oʻzgartiradi va induktivlik oʻzgaradi.
+bu yerda $w$ — öramlar soni, $mu_0$ — magnit doimiysi, $S$ — tirqiş kesimi, $delta$ — havo tirqişi uzunligi. Yakor siljişi $delta$ ni özgartiradi va induktivlik özgaradi.
 
-Robototexnikada induktiv oʻzgartirgichlarning quyidagi turlari keng tarqalgan: *induktiv yaqinlik datchiklari* (metall obyektni kontaktsiz sezish), *chiziqli differensial transformator* (LVDT, aniq chiziqli siljish) va *rezolverlar* (burchak oʻlchash uchun aylanuvchi transformator). Ular kontaktsiz, mexanik yeyilmaydi va ogʻir sharoitlarga chidamli.
+Robototexnikada induktiv özgartirgiçlarning quyidagi turlari keng tarqalgan: *induktiv yaqinlik datçiklari* (metall obyektni kontaktsiz seziş), *çiziqli differensial transformator* (LVDT, aniq çiziqli siljiş) va *rezolverlar* (burçak ölçaş uçun aylanuvçi transformator). Ular kontaktsiz, mexanik yeyilmaydi va oğir şaroitlarga çidamli.
 
 // =====================================================================
-= Generatorli birlamchi oʻzgartirgichlar
+= Generatorli birlamçi özgartirgiçlar
 // =====================================================================
 
-*Termoelektrik oʻzgartirgich (termojuft)* — ikki xil metalldan yasalgan va bir uchi payvandlangan oʻtkazgichlar juftligi. Issiq va sovuq uchlar haroratlari farqi termo-EYuK hosil qiladi (Zeebek effekti):
+*Termoelektrik özgartirgiç (termojuft)* — ikki xil metalldan yasalgan va bir uçi payvandlangan ötkazgiçlar juftligi. Issiq va sovuq uçlar haroratlari farqi termo-EYuK hosil qiladi (Zeebek effekti):
 
 #eq($ E = alpha (T_1 - T_2), $)
 
-bu yerda $alpha$ — termojuft sezgirligi. K tipidagi termojuft uchun $alpha approx 41$ µV/°C, demak 100 °C farq taxminan 4,1 mV beradi. Termojuftlar keng harorat diapazonida ishlaydi va robotlashtirilgan payvandlash, quyish kabi jarayonlarda qoʻllanadi.
+bu yerda $alpha$ — termojuft sezgirligi. K tipidagi termojuft uçun $alpha approx 41$ µV/°C, demak 100 °C farq taxminan 4,1 mV beradi. Termojuftlar keng harorat diapazonida işlaydi va robotlaştirilgan payvandlaş, quyiş kabi jarayonlarda qöllanadi.
 
-*Piezoelektrik oʻzgartirgich* mexanik kuch taʼsirida yuzasida elektr zaryad hosil qiluvchi kristall (kvars) yoki keramikadan iborat:
+*Piezoelektrik özgartirgiç* mexanik kuç taʼsirida yuzasida elektr zaryad hosil qiluvçi kristall (kvars) yoki keramikadan iborat:
 
 #eq($ q = d dot F, $)
 
-bu yerda $d$ — piezomodul. Kvars uchun $d approx 2","3$ pC/N, demak 100 N kuch taxminan 230 pC zaryad hosil qiladi. Zaryad vaqt oʻtishi bilan oqib ketgani uchun piezoelektrik oʻzgartirgichlar asosan oʻzgaruvchan (dinamik) kuch, tebranish, zarba va tezlanishni oʻlchashga yaroqli, statik kuchni esa uzoq vaqt oʻlchay olmaydi. Ular ultratovush lokatorlarida ham nurlantirgich va qabul qilgich sifatida ishlatiladi.
+bu yerda $d$ — piezomodul. Kvars uçun $d approx 2","3$ pC/N, demak 100 N kuç taxminan 230 pC zaryad hosil qiladi. Zaryad vaqt ötişi bilan oqib ketgani uçun piezoelektrik özgartirgiçlar asosan özgaruvçan (dinamik) kuç, tebraniş, zarba va tezlanişni ölçaşga yaroqli, statik kuçni esa uzoq vaqt ölçay olmaydi. Ular ultratovuş lokatorlarida ham nurlantirgiç va qabul qilgiç sifatida işlatiladi.
 
-*Xoll oʻzgartirgichi* — magnit maydonga joylashtirilgan, tok oʻtayotgan yarimoʻtkazgich plastinka. Unda tok va maydonga perpendikulyar yoʻnalishda Xoll kuchlanishi hosil boʻladi:
+*Xoll özgartirgiçi* — magnit maydonga joylaştirilgan, tok ötayotgan yarimötkazgiç plastinka. Unda tok va maydonga perpendikulyar yönalişda Xoll kuçlanişi hosil böladi:
 
 #eq($ U_H = (R_H dot I dot B) / h, $)
 
-bu yerda $R_H$ — Xoll doimiysi, $I$ — plastinkadagi tok, $B$ — magnit induksiyasi, $h$ — plastinka qalinligi. Xoll oʻzgartirgichi taʼminot tokini talab qilgani uchun qatʼiy aytganda generatorli emas, lekin chiqishda bevosita kuchlanish beradi. Robotlarda Xoll datchiklari kollektorsiz dvigatellarda rotor holatini aniqlash, magnit enkoderlar, kontaktsiz chegara datchiklari va tok datchiklarida qoʻllanadi.
+bu yerda $R_H$ — Xoll doimiysi, $I$ — plastinkadagi tok, $B$ — magnit induksiyasi, $h$ — plastinka qalinligi. Xoll özgartirgiçi taʼminot tokini talab qilgani uçun qatʼiy aytganda generatorli emas, lekin çiqişda bevosita kuçlaniş beradi. Robotlarda Xoll datçiklari kollektorsiz dvigatellarda rotor holatini aniqlaş, magnit enkoderlar, kontaktsiz çegara datçiklari va tok datçiklarida qöllanadi.
 
-*Induksion oʻzgartirgich* elektromagnit induksiya qonuniga asoslanadi: gʻaltak bilan bogʻliq magnit oqimi oʻzgarganda unda EYuK hosil boʻladi:
+*Induksion özgartirgiç* elektromagnit induksiya qonuniga asoslanadi: ğaltak bilan boğliq magnit oqimi özgarganda unda EYuK hosil böladi:
 
 #eq($ e = -w (d Phi) / (d t). $)
 
-Hosil boʻlgan EYuK oqimning oʻzgarish tezligiga proporsional boʻlgani uchun induksion oʻzgartirgichlar tezlikni oʻlchashda qoʻllanadi: taxogeneratorlar, gʻildirak aylanish tezligi datchiklari (masalan, avtomobil ABS tizimida).
+Hosil bölgan EYuK oqimning özgariş tezligiga proporsional bölgani uçun induksion özgartirgiçlar tezlikni ölçaşda qöllanadi: taxogeneratorlar, ğildirak aylaniş tezligi datçiklari (masalan, avtomobil ABS tizimida).
 
-*Fotoelektrik oʻzgartirgichlar* (fotodiodlar, fototranzistorlar) yorugʻlik oqimini tokka aylantiradi. Ular optik enkoderlar, yorugʻlik pardalari, optik yaqinlik datchiklari va kameralarning asosidir.
+*Fotoelektrik özgartirgiçlar* (fotodiodlar, fototranzistorlar) yoruğlik oqimini tokka aylantiradi. Ular optik enkoderlar, yoruğlik pardalari, optik yaqinlik datçiklari va kameralarning asosidir.
 
-Koʻrib chiqilgan birlamchi oʻzgartirgichlar 2-jadvalda umumlashtirilgan.
+Körib çiqilgan birlamçi özgartirgiçlar 2-jadvalda umumlaştirilgan.
 
 #figure(
   btable(
     columns: (auto, 1fr, 1.3fr),
-    header: ([Oʻzgartirgich], [Chiqish kattaligi], [Robotdagi qoʻllanilishi]),
+    header: ([Özgartirgiç], [Çiqiş kattaligi], [Robotdagi qöllanilişi]),
     [Potensiometrik],
-    [Qarshilik (kuchlanish boʻlgich)],
-    [Burchak va chiziqli siljish],
+    [Qarşilik (kuçlaniş bölgiç)],
+    [Burçak va çiziqli siljiş],
     [Tenzorezistiv],
-    [Qarshilik oʻzgarishi],
-    [Kuch-moment datchiklari, tutqich kuchi],
+    [Qarşilik özgarişi],
+    [Kuç-moment datçiklari, tutqiç kuçi],
     [Termorezistiv],
-    [Qarshilik],
+    [Qarşilik],
     [Dvigatel va drayver harorati],
-    [Sigʻim],
-    [Sigʻim],
+    [Siğim],
+    [Siğim],
     [MEMS akselerometrlar, yaqinlik, taktil qoplama],
     [Induktiv],
-    [Induktivlik, oʻzaro induktivlik],
-    [LVDT, rezolver, induktiv yaqinlik datchigi],
+    [Induktivlik, özaro induktivlik],
+    [LVDT, rezolver, induktiv yaqinlik datçigi],
     [Termoelektrik],
     [Termo-EYuK],
     [Texnologik jarayon harorati],
     [Piezoelektrik],
     [Elektr zaryad],
-    [Tebranish, zarba, ultratovush lokatori],
+    [Tebraniş, zarba, ultratovuş lokatori],
     [Xoll],
-    [Kuchlanish],
+    [Kuçlaniş],
     [BLDC rotor holati, magnit enkoder, tok],
     [Induksion],
     [EYuK],
-    [Tezlik datchiklari, taxogenerator],
+    [Tezlik datçiklari, taxogenerator],
     [Fotoelektrik],
     [Tok],
-    [Optik enkoder, yorugʻlik pardasi, kamera],
+    [Optik enkoder, yoruğlik pardasi, kamera],
   ),
-  caption: [Asosiy birlamchi oʻzgartirgichlar],
+  caption: [Asosiy birlamçi özgartirgiçlar],
 ) <tab-oz>
 
 // =====================================================================
-= Birlamchi oʻzgartirgichlarning asosiy xususiyatlari
+= Birlamçi özgartirgiçlarning asosiy xususiyatlari
 // =====================================================================
 
-Birlamchi oʻzgartirgichning sifati bir qator xususiyatlar (tavsiflar) bilan baholanadi. Ularni uch guruhga ajratish mumkin.
+Birlamçi özgartirgiçning sifati bir qator xususiyatlar (tavsiflar) bilan baholanadi. Ularni uç guruhga ajratiş mumkin.
 
-*Statik xususiyatlar* kirish kattaligi oʻzgarmas yoki sekin oʻzgarganda chiqish va kirish orasidagi bogʻliqlikni tavsiflaydi: oʻlchash diapazoni, statik tavsif (oʻzgartirish funksiyasi) va uning chiziqliligi, sezgirlik $S = Delta y slash Delta x$, ruxsat qobiliyati, gisterezis, takrorlanuvchanlik, nol siljishi va harorat drifti.
+*Statik xususiyatlar* kiriş kattaligi özgarmas yoki sekin özgarganda çiqiş va kiriş orasidagi boğliqlikni tavsiflaydi: ölçaş diapazoni, statik tavsif (özgartiriş funksiyasi) va uning çiziqliligi, sezgirlik $S = Delta y slash Delta x$, ruxsat qobiliyati, gisterezis, takrorlanuvçanlik, nol siljişi va harorat drifti.
 
-*Dinamik xususiyatlar* kirish kattaligi tez oʻzgarganda oʻzgartirgichning xatti-harakatini tavsiflaydi. Koʻp oʻzgartirgichlar (termojuft, termorezistor, past chastotali filtrli datchiklar) birinchi tartibli differensial tenglama bilan yetarli aniqlikda tavsiflanadi:
+*Dinamik xususiyatlar* kiriş kattaligi tez özgarganda özgartirgiçning xatti-harakatini tavsiflaydi. Köp özgartirgiçlar (termojuft, termorezistor, past çastotali filtrli datçiklar) birinçi tartibli differensial tenglama bilan yetarli aniqlikda tavsiflanadi:
 
 #eq($ tau (d y) / (d t) + y = S dot x, $)
 
-bu yerda $tau$ — vaqt doimiysi. Pogʻonali kirish taʼsirida chiqish $tau$ vaqtda barqaror qiymatning 63 % iga, taxminan $3 tau$ vaqtda esa 95 % iga yetadi. Massa va elastik elementga ega oʻzgartirgichlar (akselerometrlar, kuch datchiklari) esa ikkinchi tartibli tizim sifatida xususiy chastota va soʻnish koeffitsienti bilan tavsiflanadi; ular xususiy chastotadan ancha past chastotalarda ishlatilishi kerak.
+bu yerda $tau$ — vaqt doimiysi. Poğonali kiriş taʼsirida çiqiş $tau$ vaqtda barqaror qiymatning 63 % iga, taxminan $3 tau$ vaqtda esa 95 % iga yetadi. Massa va elastik elementga ega özgartirgiçlar (akselerometrlar, kuç datçiklari) esa ikkinçi tartibli tizim sifatida xususiy çastota va söniş koeffitsienti bilan tavsiflanadi; ular xususiy çastotadan ança past çastotalarda işlatilişi kerak.
 
-*Ekspluatatsion xususiyatlar:* ishonchlilik va xizmat muddati, tashqi taʼsirlarga (harorat, namlik, vibratsiya, elektromagnit maydon) chidamlilik, oʻlchami va massasi, taʼminot talablari, chiqish signalining turi va interfeysi, narxi.
+*Ekspluatatsion xususiyatlar:* işonçlilik va xizmat muddati, taşqi taʼsirlarga (harorat, namlik, vibratsiya, elektromagnit maydon) çidamlilik, ölçami va massasi, taʼminot talablari, çiqiş signalining turi va interfeysi, narxi.
 
-Statik va dinamik xususiyatlarni aniqlash va xatoliklarni hisoblash amaliy mashgʻulotlarda batafsil oʻrganiladi.
+Statik va dinamik xususiyatlarni aniqlaş va xatoliklarni hisoblaş amaliy maşğulotlarda batafsil örganiladi.
 
 // =====================================================================
 = Informatsion qurilmalarning asosiy vazifalari
 // =====================================================================
 
-Informatsion qurilmalar robot informatsion tizimida axborot bilan bogʻliq quyidagi asosiy vazifalarni (funksiyalarni) bajaradi (2-rasm).
+Informatsion qurilmalar robot informatsion tizimida axborot bilan boğliq quyidagi asosiy vazifalarni (funksiyalarni) bajaradi (2-rasm).
 
 #figure(
   diagram(
@@ -320,12 +320,12 @@ Informatsion qurilmalar robot informatsion tizimida axborot bilan bogʻliq quyid
     node-corner-radius: 3pt,
     node-shape: rect,
     edge-stroke: 1pt,
-    node((0, 0), [Qabul qilish \ va oʻzgartirish], name: <a>),
-    node((1, 0), [Normal- \ lashtirish], name: <b>),
-    node((2, 0), [Raqamga \ aylantirish], name: <c>),
-    node((3, 0), [Uzatish], name: <d>),
-    node((3, 1), [Qayta \ ishlash], name: <e>),
-    node((1.5, 1), [Saqlash, \ aks ettirish], fill: lightorange, name: <f>),
+    node((0, 0), [Qabul qiliş \ va özgartiriş], name: <a>),
+    node((1, 0), [Normal- \ laştiriş], name: <b>),
+    node((2, 0), [Raqamga \ aylantiriş], name: <c>),
+    node((3, 0), [Uzatiş], name: <d>),
+    node((3, 1), [Qayta \ işlaş], name: <e>),
+    node((1.5, 1), [Saqlaş, \ aks ettiriş], fill: lightorange, name: <f>),
     node((3, 2), [Nazorat, signalizatsiya, \ diagnostika], fill: lightorange, name: <g>),
     edge(<a>, <b>, "->"),
     edge(<b>, <c>, "->"),
@@ -337,73 +337,73 @@ Informatsion qurilmalar robot informatsion tizimida axborot bilan bogʻliq quyid
   caption: [Informatsion qurilmalarning asosiy vazifalari],
 ) <fig-vazifa>
 
-+ *Axborotni qabul qilish va oʻzgartirish* — fizik kattalikni elektr signaliga aylantirish. Bu vazifani birlamchi oʻzgartirgich bajaradi.
-+ *Normallashtirish* — signalni kuchaytirish, filtrlash, chiziqlashtirish va standart diapazonga (masalan, 0–10 V yoki 4–20 mA) keltirish. Standart signal turli datchiklarni bir xil kirish qurilmalariga ulash imkonini beradi.
-+ *Raqamga aylantirish* — signalni diskretlash va kvantlash (2-maʼruza).
-+ *Uzatish* — axborotni datchikdan boshqaruv tizimiga xalaqitlardan himoyalangan holda yetkazish. Tok signali (4–20 mA) va raqamli shinalar uzun masofada kuchlanish signaliga nisbatan xalaqitga chidamliroq.
-+ *Qayta ishlash* — raqamli filtrlash, kalibrlash tavsifi boʻyicha tuzatish, harorat kompensatsiyasi, bir nechta datchik maʼlumotlarini birlashtirish, belgilarni ajratish.
-+ *Saqlash va aks ettirish* — oʻlchash natijalarini xotirada saqlash (jurnal, diagnostika uchun) va operatorga displey yoki pultda koʻrsatish.
-+ *Nazorat, signalizatsiya va diagnostika* — oʻlchangan qiymatni chegaraviy qiymatlar bilan solishtirish, chegaradan chiqilganda ogohlantirish yoki himoyani ishga tushirish (masalan, dvigatel qizib ketganda toʻxtatish), datchikning oʻzi sozligini tekshirish.
++ *Axborotni qabul qiliş va özgartiriş* — fizik kattalikni elektr signaliga aylantiriş. Bu vazifani birlamçi özgartirgiç bajaradi.
++ *Normallaştiriş* — signalni kuçaytiriş, filtrlaş, çiziqlaştiriş va standart diapazonga (masalan, 0–10 V yoki 4–20 mA) keltiriş. Standart signal turli datçiklarni bir xil kiriş qurilmalariga ulaş imkonini beradi.
++ *Raqamga aylantiriş* — signalni diskretlaş va kvantlaş (2-maʼruza).
++ *Uzatiş* — axborotni datçikdan boşqaruv tizimiga xalaqitlardan himoyalangan holda yetkaziş. Tok signali (4–20 mA) va raqamli şinalar uzun masofada kuçlaniş signaliga nisbatan xalaqitga çidamliroq.
++ *Qayta işlaş* — raqamli filtrlaş, kalibrlaş tavsifi böyiça tuzatiş, harorat kompensatsiyasi, bir neçta datçik maʼlumotlarini birlaştiriş, belgilarni ajratiş.
++ *Saqlaş va aks ettiriş* — ölçaş natijalarini xotirada saqlaş (jurnal, diagnostika uçun) va operatorga displey yoki pultda körsatiş.
++ *Nazorat, signalizatsiya va diagnostika* — ölçangan qiymatni çegaraviy qiymatlar bilan soliştiriş, çegaradan çiqilganda ogohlantiriş yoki himoyani işga tuşiriş (masalan, dvigatel qizib ketganda töxtatiş), datçikning özi sozligini tekşiriş.
 
-Anʼanaviy tizimlarda bu vazifalar alohida qurilmalarda bajarilgan. Intellektual datchiklarda esa ularning koʻpchiligi — oʻzgartirish, normallashtirish, raqamga aylantirish, qayta ishlash, oʻz-oʻzini diagnostika qilish va raqamli uzatish — bitta qurilmada birlashtiriladi.
+Anʼanaviy tizimlarda bu vazifalar alohida qurilmalarda bajarilgan. Intellektual datçiklarda esa ularning köpçiligi — özgartiriş, normallaştiriş, raqamga aylantiriş, qayta işlaş, öz-özini diagnostika qiliş va raqamli uzatiş — bitta qurilmada birlaştiriladi.
 
 // =====================================================================
-= Birlamchi oʻzgartirgichni tanlash: robot boʻgʻini misolida
+= Birlamçi özgartirgiçni tanlaş: robot böğini misolida
 // =====================================================================
 
-Bir xil kattalikni turli birlamchi oʻzgartirgichlar bilan oʻlchash mumkin. Toʻgʻri tanlov robot vazifasi, ish sharoiti, talab qilinadigan aniqlik va narxga bogʻliq. Misol tariqasida robot boʻgʻini burchagini oʻlchash uchun keng qoʻllanadigan toʻrt xil oʻzgartirgichni taqqoslaymiz (3-jadval).
+Bir xil kattalikni turli birlamçi özgartirgiçlar bilan ölçaş mumkin. Töğri tanlov robot vazifasi, iş şaroiti, talab qilinadigan aniqlik va narxga boğliq. Misol tariqasida robot böğini burçagini ölçaş uçun keng qöllanadigan tört xil özgartirgiçni taqqoslaymiz (3-jadval).
 
 #figure(
   btable(
     columns: (auto, 1fr, 1fr, 1fr),
-    header: ([Koʻrsatkich], [Potensiometr], [Rezolver], [Optik enkoder]),
+    header: ([Körsatkiç], [Potensiometr], [Rezolver], [Optik enkoder]),
     [Fizik prinsip],
     [Rezistiv],
     [Induktiv],
     [Fotoelektrik],
     [Kontakt],
-    [Sirpanuvchi kontakt],
+    [Sirpanuvçi kontakt],
     [Kontaktsiz],
     [Kontaktsiz],
-    [Chiqish signali],
-    [Analog kuchlanish],
+    [Çiqiş signali],
+    [Analog kuçlaniş],
     [Analog sin/cos],
     [Raqamli impuls yoki kod],
     [Ruxsat qobiliyati],
-    [Past–oʻrtacha],
-    [Yuqori (oʻzgartirgichga bogʻliq)],
+    [Past–örtaça],
+    [Yuqori (özgartirgiçga boğliq)],
     [Juda yuqori],
-    [Ogʻir sharoitga chidamlilik],
-    [Past (yeyilish)],
+    [Oğir şaroitga çidamlilik],
+    [Past (yeyiliş)],
     [Juda yuqori],
-    [Oʻrtacha (chang, namlik)],
+    [Örtaça (çang, namlik)],
     [Narxi],
     [Past],
     [Yuqori],
-    [Oʻrtacha–yuqori],
-    [Odatiy qoʻllanilishi],
-    [Oʻquv robotlari, oddiy servolar],
-    [Ogʻir sharoitdagi yuritmalar],
+    [Örtaça–yuqori],
+    [Odatiy qöllanilişi],
+    [Öquv robotlari, oddiy servolar],
+    [Oğir şaroitdagi yuritmalar],
     [Sanoat va kollaborativ robotlar],
   ),
-  caption: [Robot boʻgʻini burchak datchiklarini taqqoslash],
+  caption: [Robot böğini burçak datçiklarini taqqoslaş],
 ) <tab-tanlash>
 
-Bulardan tashqari, *magnit enkoderlar* (Xoll yoki magnitorezistiv prinsip asosida) ham keng tarqalgan: ular optik enkoderlarga qaraganda ixchamroq, chang va namlikka chidamliroq, lekin odatda ruxsat qobiliyati pastroq. Tanlovda quyidagi tartibga amal qilish tavsiya etiladi:
-+ oʻlchanadigan kattalik, diapazon va talab qilinadigan aniqlikni aniqlash;
-+ dinamik talablarni (tezlik, oʻtkazish polosasi) aniqlash;
-+ ish sharoitini (harorat, chang, namlik, vibratsiya, elektromagnit maydon) baholash;
-+ oʻrnatish joyi, oʻlcham, massa va taʼminot cheklovlarini hisobga olish;
-+ boshqaruv tizimi interfeysiga mos chiqish signalini tanlash;
-+ narx va ishonchlilikni solishtirib, yakuniy qaror qabul qilish.
+Bulardan taşqari, *magnit enkoderlar* (Xoll yoki magnitorezistiv prinsip asosida) ham keng tarqalgan: ular optik enkoderlarga qaraganda ixçamroq, çang va namlikka çidamliroq, lekin odatda ruxsat qobiliyati pastroq. Tanlovda quyidagi tartibga amal qiliş tavsiya etiladi:
++ ölçanadigan kattalik, diapazon va talab qilinadigan aniqlikni aniqlaş;
++ dinamik talablarni (tezlik, ötkaziş polosasi) aniqlaş;
++ iş şaroitini (harorat, çang, namlik, vibratsiya, elektromagnit maydon) baholaş;
++ örnatiş joyi, ölçam, massa va taʼminot çeklovlarini hisobga oliş;
++ boşqaruv tizimi interfeysiga mos çiqiş signalini tanlaş;
++ narx va işonçlilikni soliştirib, yakuniy qaror qabul qiliş.
 
 // =====================================================================
 = Xulosa
 // =====================================================================
 
-Informatsion qurilmalar oʻlchash kanalidagi oʻrniga koʻra birlamchi oʻzgartirgichlar, oraliq oʻzgartirgichlar, analog-raqamli oʻzgartirgichlar, uzatish, qayta ishlash va aks ettirish qurilmalariga boʻlinadi. Ular orasida birlamchi oʻzgartirgich eng muhim boʻgʻin hisoblanadi, chunki u butun kanalning imkoniyatlarini belgilaydi.
+Informatsion qurilmalar ölçaş kanalidagi örniga köra birlamçi özgartirgiçlar, oraliq özgartirgiçlar, analog-raqamli özgartirgiçlar, uzatiş, qayta işlaş va aks ettiriş qurilmalariga bölinadi. Ular orasida birlamçi özgartirgiç eng muhim böğin hisoblanadi, çunki u butun kanalning imkoniyatlarini belgilaydi.
 
-Birlamchi oʻzgartirgichlar parametrik (rezistiv, sigʻim, induktiv) va generatorli (termoelektrik, piezoelektrik, induksion, fotoelektrik) turlarga boʻlinadi; har bir tur oʻzining fizik qonuniyati, afzalliklari va cheklovlariga ega. Ularning sifati statik, dinamik va ekspluatatsion xususiyatlar bilan baholanadi. Informatsion qurilmalar axborotni qabul qilish, normallashtirish, raqamga aylantirish, uzatish, qayta ishlash, saqlash va aks ettirish hamda nazorat va diagnostika vazifalarini bajaradi. Muayyan robot uchun oʻzgartirgich vazifa, sharoit, aniqlik va narx talablarini birgalikda hisobga olib tanlanadi.
+Birlamçi özgartirgiçlar parametrik (rezistiv, siğim, induktiv) va generatorli (termoelektrik, piezoelektrik, induksion, fotoelektrik) turlarga bölinadi; har bir tur özining fizik qonuniyati, afzalliklari va çeklovlariga ega. Ularning sifati statik, dinamik va ekspluatatsion xususiyatlar bilan baholanadi. Informatsion qurilmalar axborotni qabul qiliş, normallaştiriş, raqamga aylantiriş, uzatiş, qayta işlaş, saqlaş va aks ettiriş hamda nazorat va diagnostika vazifalarini bajaradi. Muayyan robot uçun özgartirgiç vazifa, şaroit, aniqlik va narx talablarini birgalikda hisobga olib tanlanadi.
 
 // =====================================================================
 = Nazorat savollari
@@ -411,17 +411,17 @@ Birlamchi oʻzgartirgichlar parametrik (rezistiv, sigʻim, induktiv) va generato
 
 #block[
   #set par(first-line-indent: 0pt)
-  + Informatsion qurilmalar oʻlchash kanalidagi oʻrniga koʻra qanday turlarga boʻlinadi?
-  + Birlamchi oʻzgartirgich, datchik va sensor tushunchalari qanday farqlanadi?
-  + Oʻzgartirish zanjiri nima? Kuch datchigi misolida tushuntiring.
+  + Informatsion qurilmalar ölçaş kanalidagi örniga köra qanday turlarga bölinadi?
+  + Birlamçi özgartirgiç, datçik va sensor tuşunçalari qanday farqlanadi?
+  + Özgartiriş zanjiri nima? Kuç datçigi misolida tuşuntiring.
   + Zanjirning umumiy sezgirligi qanday aniqlanadi?
-  + Parametrik va generatorli birlamchi oʻzgartirgichlar qanday farqlanadi?
-  + Tenzorezistor nima uchun oʻlchash koʻprigiga ulanadi?
-  + $U = 10$ V, $k = 2$, $epsilon = 5 dot 10^(-4)$ boʻlganda chorak koʻprikning chiqish kuchlanishini toping.
-  + Sigʻim oʻzgartirgichning sigʻimi qanday kattaliklarga bogʻliq? Robotlarda qayerda qoʻllanadi?
-  + Nima uchun piezoelektrik oʻzgartirgich statik kuchni oʻlchashga yaroqsiz?
-  + Xoll oʻzgartirgichi robotlarda qanday maqsadlarda qoʻllanadi?
-  + Birinchi tartibli oʻzgartirgichning vaqt doimiysi nimani anglatadi?
+  + Parametrik va generatorli birlamçi özgartirgiçlar qanday farqlanadi?
+  + Tenzorezistor nima uçun ölçaş köprigiga ulanadi?
+  + $U = 10$ V, $k = 2$, $epsilon = 5 dot 10^(-4)$ bölganda çorak köprikning çiqiş kuçlanişini toping.
+  + Siğim özgartirgiçning siğimi qanday kattaliklarga boğliq? Robotlarda qayerda qöllanadi?
+  + Nima uçun piezoelektrik özgartirgiç statik kuçni ölçaşga yaroqsiz?
+  + Xoll özgartirgiçi robotlarda qanday maqsadlarda qöllanadi?
+  + Birinçi tartibli özgartirgiçning vaqt doimiysi nimani anglatadi?
   + Informatsion qurilmalarning asosiy vazifalarini sanab bering va har biriga robotdan misol keltiring.
-  + Robot boʻgʻini uchun potensiometr, rezolver va optik enkoderni taqqoslang.
+  + Robot böğini uçun potensiometr, rezolver va optik enkoderni taqqoslang.
 ]

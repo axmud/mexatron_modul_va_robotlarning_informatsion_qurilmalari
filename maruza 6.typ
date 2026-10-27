@@ -11,7 +11,7 @@
 #let lightorange = rgb("#fbe3cf")
 
 #set document(
-  title: "Maʼruza №6. Optik datchiklar va enkoderlar. Temperatura, bosim, tezlik va tezlanish kabi kattaliklarni oʻlchovchi informatsion qurilmalar",
+  title: "Maʼruza №6. Optik datçiklar va enkoderlar. Temperatura, bosim, tezlik va tezlaniş kabi kattaliklarni ölçovçi informatsion qurilmalar",
 )
 #set page(
   paper: "a4",
@@ -32,7 +32,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -72,7 +72,7 @@
   #text(
     size: 14pt,
     weight: "bold",
-  )[Mavzu: Optik datchiklar va enkoderlar. Temperatura, bosim, tezlik \ va tezlanish kabi kattaliklarni oʻlchovchi informatsion qurilmalar]
+  )[Mavzu: Optik datçiklar va enkoderlar. Temperatura, bosim, tezlik \ va tezlaniş kabi kattaliklarni ölçovçi informatsion qurilmalar]
 ]
 
 #v(0.8em)
@@ -80,24 +80,24 @@
 #block[
   #set par(first-line-indent: 0pt)
   *Reja:*
-  + Optik datchiklarning tuzilishi va fotoqabul qilgichlar.
-  + Optik datchiklarning ishlash sxemalari. Optik masofa oʻlchash.
-  + Optik enkoderlar: tuzilishi va ruxsat qobiliyatini oshirish.
-  + Temperatura datchiklari.
-  + Bosim datchiklari.
-  + Tezlik datchiklari.
-  + Tezlanish datchiklari va giroskoplar.
+  + Optik datçiklarning tuzilişi va fotoqabul qilgiçlar.
+  + Optik datçiklarning işlaş sxemalari. Optik masofa ölçaş.
+  + Optik enkoderlar: tuzilişi va ruxsat qobiliyatini oşiriş.
+  + Temperatura datçiklari.
+  + Bosim datçiklari.
+  + Tezlik datçiklari.
+  + Tezlaniş datçiklari va giroskoplar.
 
-  *Tayanch iboralar:* nurlantirgich, fotodiod, fototranzistor, optojuft, nur toʻsuvchi, retroreflektiv va diffuz sxemalar, lazer triangulyatsiya, uchish vaqti (ToF), sin/cos enkoder, interpolyatsiya, termorezistor (Pt100), termistor (NTC), termojuft, sovuq uch kompensatsiyasi, absolyut, ortiqcha va differensial bosim, membrana, taxogenerator, seysmik massa, MEMS akselerometr, Koriolis giroskopi, IMU.
+  *Tayanç iboralar:* nurlantirgiç, fotodiod, fototranzistor, optojuft, nur tösuvçi, retroreflektiv va diffuz sxemalar, lazer triangulyatsiya, uçiş vaqti (ToF), sin/cos enkoder, interpolyatsiya, termorezistor (Pt100), termistor (NTC), termojuft, sovuq uç kompensatsiyasi, absolyut, ortiqça va differensial bosim, membrana, taxogenerator, seysmik massa, MEMS akselerometr, Koriolis giroskopi, IMU.
 ]
 
 // =====================================================================
-= Optik datchiklarning tuzilishi va fotoqabul qilgichlar
+= Optik datçiklarning tuzilişi va fotoqabul qilgiçlar
 // =====================================================================
 
-*Optik datchiklar* oʻlchanayotgan kattalik haqidagi axborotni yorugʻlik oqimi orqali oladi. Ular kontaktsiz, tezkor va elektromagnit xalaqitlarga chidamli boʻlgani uchun robototexnikada eng keng tarqalgan datchiklar qatoriga kiradi: optik enkoderlar, yaqinlik datchiklari, nur toʻsiqlari, masofa oʻlchagichlar, LiDAR va kameralar shular jumlasidan.
+*Optik datçiklar* ölçanayotgan kattalik haqidagi axborotni yoruğlik oqimi orqali oladi. Ular kontaktsiz, tezkor va elektromagnit xalaqitlarga çidamli bölgani uçun robototexnikada eng keng tarqalgan datçiklar qatoriga kiradi: optik enkoderlar, yaqinlik datçiklari, nur tösiqlari, masofa ölçagiçlar, LiDAR va kameralar şular jumlasidan.
 
-Har qanday optik datchik uchta asosiy qismdan iborat (1-rasm): *nurlantirgich* (yorugʻlik diodi yoki lazer diodi, odatda infraqizil diapazonda), *optik kanal* (yorugʻlik obyekt bilan oʻzaro taʼsirlashadigan muhit: obyekt nurni toʻsadi, aks ettiradi yoki uning xossalarini oʻzgartiradi) va *fotoqabul qilgich* (yorugʻlik oqimini elektr signaliga aylantiradi). Fotoqabul qilgich signali kuchaytiriladi va diskret datchiklarda komparator orqali ikkilik signalga, analog datchiklarda esa masofa yoki holatga mos signalga aylantiriladi.
+Har qanday optik datçik uçta asosiy qismdan iborat (1-rasm): *nurlantirgiç* (yoruğlik diodi yoki lazer diodi, odatda infraqizil diapazonda), *optik kanal* (yoruğlik obyekt bilan özaro taʼsirlaşadigan muhit: obyekt nurni tösadi, aks ettiradi yoki uning xossalarini özgartiradi) va *fotoqabul qilgiç* (yoruğlik oqimini elektr signaliga aylantiradi). Fotoqabul qilgiç signali kuçaytiriladi va diskret datçiklarda komparator orqali ikkilik signalga, analog datçiklarda esa masofa yoki holatga mos signalga aylantiriladi.
 
 #figure(
   diagram(
@@ -108,58 +108,58 @@ Har qanday optik datchik uchta asosiy qismdan iborat (1-rasm): *nurlantirgich* (
     node-shape: rect,
     edge-stroke: 1pt,
     node((0, 0), [Generator], fill: white, name: <g>),
-    node((1, 0), [Nurlan- \ tirgich], name: <n>),
+    node((1, 0), [Nurlan- \ tirgiç], name: <n>),
     node((2, 0), [Optik kanal \ va obyekt], fill: lightorange, name: <k>),
-    node((3, 0), [Foto- \ qabul qilgich], name: <f>),
-    node((4, 0), [Kuchay- \ tirgich], name: <ku>),
-    node((5, 0), [Chiqish], fill: white, name: <ch>),
+    node((3, 0), [Foto- \ qabul qilgiç], name: <f>),
+    node((4, 0), [Kuçay- \ tirgiç], name: <ku>),
+    node((5, 0), [Çiqiş], fill: white, name: <ch>),
     edge(<g>, <n>, "->"),
     edge(<n>, <k>, "->", [$Phi_0$], label-side: left),
     edge(<k>, <f>, "->", [$Phi$], label-side: left),
     edge(<f>, <ku>, "->", [$I$], label-side: left),
     edge(<ku>, <ch>, "->"),
   ),
-  caption: [Optik datchikning umumlashgan tuzilishi],
+  caption: [Optik datçikning umumlaşgan tuzilişi],
 ) <fig-optik>
 
-Sanoat optik datchiklarida nurlantirgich yorugʻligi maʼlum chastotada *modulyatsiya* qilinadi va qabul qilgich faqat shu chastotadagi signalni ajratadi. Bu tashqi yoritish (quyosh, lampalar) taʼsirini keskin kamaytiradi.
+Sanoat optik datçiklarida nurlantirgiç yoruğligi maʼlum çastotada *modulyatsiya* qilinadi va qabul qilgiç faqat şu çastotadagi signalni ajratadi. Bu taşqi yoritiş (quyoş, lampalar) taʼsirini keskin kamaytiradi.
 
-*Fotoqabul qilgichlar* orasida eng koʻp qoʻllanadiganlari: *fotodiod* (tezkor va chiziqli, enkoderlar va masofa oʻlchagichlarda), *fototranzistor* (ichki kuchaytirishga ega, lekin sekinroq; oddiy diskret datchiklarda), *fotodiod liniyalari va matritsalari* (CCD, CMOS — triangulyatsion datchiklar va kameralarda). Fotodiod toki tushayotgan yorugʻlik oqimiga proporsional:
+*Fotoqabul qilgiçlar* orasida eng köp qöllanadiganlari: *fotodiod* (tezkor va çiziqli, enkoderlar va masofa ölçagiçlarda), *fototranzistor* (içki kuçaytirişga ega, lekin sekinroq; oddiy diskret datçiklarda), *fotodiod liniyalari va matritsalari* (CCD, CMOS — triangulyatsion datçiklar va kameralarda). Fotodiod toki tuşayotgan yoruğlik oqimiga proporsional:
 
 #eq($ I = S_lambda dot Phi, $)
 
-bu yerda $S_lambda$ — fotodiodning spektral sezgirligi (A/W), $Phi$ — yorugʻlik oqimi quvvati (W). Nurlantirgich va fotoqabul qilgich bitta korpusda birlashtirilgan qurilma *optojuft* deyiladi; tirqishli optojuftlar oddiy enkoderlar va chegara datchiklarida ishlatiladi.
+bu yerda $S_lambda$ — fotodiodning spektral sezgirligi (A/W), $Phi$ — yoruğlik oqimi quvvati (W). Nurlantirgiç va fotoqabul qilgiç bitta korpusda birlaştirilgan qurilma *optojuft* deyiladi; tirqişli optojuftlar oddiy enkoderlar va çegara datçiklarida işlatiladi.
 
 // =====================================================================
-= Optik datchiklarning ishlash sxemalari. Optik masofa oʻlchash
+= Optik datçiklarning işlaş sxemalari. Optik masofa ölçaş
 // =====================================================================
 
-== Diskret optik datchiklarning sxemalari
+== Diskret optik datçiklarning sxemalari
 
-Obyektni aniqlash usuliga koʻra diskret optik datchiklar uchta asosiy sxemada ishlaydi (1-jadval).
+Obyektni aniqlaş usuliga köra diskret optik datçiklar uçta asosiy sxemada işlaydi (1-jadval).
 
 #figure(
   btable(
     columns: (auto, 1.4fr, 1fr),
-    header: ([Sxema], [Ishlash prinsipi], [Xususiyati]),
-    [Nur toʻsuvchi \ (through-beam)],
-    [Nurlantirgich va qabul qilgich alohida, bir-biriga qarama-qarshi oʻrnatiladi; obyekt nurni toʻsadi],
-    [Eng katta masofa va ishonchlilik; ikki qurilmani oʻrnatish kerak],
+    header: ([Sxema], [Işlaş prinsipi], [Xususiyati]),
+    [Nur tösuvçi \ (through-beam)],
+    [Nurlantirgiç va qabul qilgiç alohida, bir-biriga qarama-qarşi örnatiladi; obyekt nurni tösadi],
+    [Eng katta masofa va işonçlilik; ikki qurilmani örnatiş kerak],
     [Retroreflektiv],
-    [Nur maxsus aks ettirgichdan qaytadi; obyekt nurni toʻsadi],
-    [Bitta qurilma; yaltiroq obyektlarda xato boʻlishi mumkin],
+    [Nur maxsus aks ettirgiçdan qaytadi; obyekt nurni tösadi],
+    [Bitta qurilma; yaltiroq obyektlarda xato bölişi mumkin],
     [Diffuz],
-    [Nur obyektning oʻzidan sochilib qaytadi],
-    [Oʻrnatish oson; masofa obyekt rangi va sirtiga bogʻliq],
+    [Nur obyektning özidan soçilib qaytadi],
+    [Örnatiş oson; masofa obyekt rangi va sirtiga boğliq],
   ),
-  caption: [Diskret optik datchiklarning ishlash sxemalari],
+  caption: [Diskret optik datçiklarning işlaş sxemalari],
 ) <tab-sxema>
 
-Robototexnikada nur toʻsuvchi sxema robot ishchi zonasini himoyalovchi *yorugʻlik pardalarida* qoʻllanadi: inson parda chizigʻini kesib oʻtsa, robot toʻxtaydi. Diffuz datchiklar konveyerda detal mavjudligini va tutqichda obyekt borligini aniqlashda ishlatiladi.
+Robototexnikada nur tösuvçi sxema robot işçi zonasini himoyalovçi *yoruğlik pardalarida* qöllanadi: inson parda çiziğini kesib ötsa, robot töxtaydi. Diffuz datçiklar konveyerda detal mavjudligini va tutqiçda obyekt borligini aniqlaşda işlatiladi.
 
 == Lazer triangulyatsiya
 
-*Triangulyatsion masofa oʻlchagichda* lazer nuri obyektga yoʻnaltiriladi, obyektdagi yorugʻ dogʻ esa nurlantirgichdan $b$ masofada (baza) joylashgan linza orqali fotodiod liniyasiga tushadi (2-rasm). Obyekt masofasi oʻzgarganda dogʻning liniyadagi oʻrni $x$ siljiydi.
+*Triangulyatsion masofa ölçagiçda* lazer nuri obyektga yönaltiriladi, obyektdagi yoruğ doğ esa nurlantirgiçdan $b$ masofada (baza) joylaşgan linza orqali fotodiod liniyasiga tuşadi (2-rasm). Obyekt masofasi özgarganda doğning liniyadagi örni $x$ siljiydi.
 
 #let triang = {
   let st = 1pt + headingblue
@@ -198,179 +198,179 @@ Robototexnikada nur toʻsuvchi sxema robot ishchi zonasini himoyalovchi *yorugʻ
   placement: auto,
 ) <fig-triang>
 
-Oʻxshash uchburchaklardan masofa quyidagicha topiladi:
+Öxşaş uçburçaklardan masofa quyidagiça topiladi:
 
 #eq($ D = (f dot b) / x, $)
 
-bu yerda $f$ — linzaning fokus masofasi. *Misol.* $f = 20$ mm, $b = 50$ mm va $x = 2$ mm boʻlsa, $D = 20 dot 50 slash 2 = 500$ mm. (2) ifodani differensiallasak, $|d D slash d x| = D^2 slash (f b)$, yaʼni masofa ortgan sari ruxsat qobiliyati kvadratik ravishda yomonlashadi. Shuning uchun triangulyatsion datchiklar qisqa masofalarda (millimetrlardan bir necha metrgacha) yuqori aniqlik beradi va robotlarda detal sirtini oʻlchash, payvand chokini kuzatish, sifat nazoratida qoʻllanadi.
+bu yerda $f$ — linzaning fokus masofasi. *Misol.* $f = 20$ mm, $b = 50$ mm va $x = 2$ mm bölsa, $D = 20 dot 50 slash 2 = 500$ mm. (2) ifodani differensiallasak, $|d D slash d x| = D^2 slash (f b)$, yaʼni masofa ortgan sari ruxsat qobiliyati kvadratik ravişda yomonlaşadi. Şuning uçun triangulyatsion datçiklar qisqa masofalarda (millimetrlardan bir neça metrgaça) yuqori aniqlik beradi va robotlarda detal sirtini ölçaş, payvand çokini kuzatiş, sifat nazoratida qöllanadi.
 
-== Uchish vaqti (ToF) usuli
+== Uçiş vaqti (ToF) usuli
 
-Katta masofalarda *uchish vaqti* (ToF — _Time of Flight_) usuli qoʻllanadi: lazer impulsi obyektgacha borib qaytgan vaqt $t$ oʻlchanadi:
+Katta masofalarda *uçiş vaqti* (ToF — _Time of Flight_) usuli qöllanadi: lazer impulsi obyektgaça borib qaytgan vaqt $t$ ölçanadi:
 
 #eq($ D = (c dot t) / 2, $)
 
-bu yerda $c approx 3 dot 10^8$ m/s — yorugʻlik tezligi. Masalan, 10 m masofa uchun $t approx 66","7$ ns. 1 sm aniqlikka erishish uchun vaqtni taxminan 67 ps aniqlikda oʻlchash kerak, bu esa juda tezkor elektronikani talab qiladi. Shuning uchun koʻp datchiklarda nurlanish amplitudasi $f_m$ chastotada modulyatsiya qilinadi va qaytgan signalning faza siljishi $Delta phi$ oʻlchanadi: $D = c Delta phi slash (4 pi f_m)$. ToF prinsipi LiDAR, ToF kameralari va lazer masofa oʻlchagichlarning asosidir.
+bu yerda $c approx 3 dot 10^8$ m/s — yoruğlik tezligi. Masalan, 10 m masofa uçun $t approx 66","7$ ns. 1 sm aniqlikka erişiş uçun vaqtni taxminan 67 ps aniqlikda ölçaş kerak, bu esa juda tezkor elektronikani talab qiladi. Şuning uçun köp datçiklarda nurlaniş amplitudasi $f_m$ çastotada modulyatsiya qilinadi va qaytgan signalning faza siljişi $Delta phi$ ölçanadi: $D = c Delta phi slash (4 pi f_m)$. ToF prinsipi LiDAR, ToF kameralari va lazer masofa ölçagiçlarning asosidir.
 
 // =====================================================================
-= Optik enkoderlar: tuzilishi va ruxsat qobiliyatini oshirish
+= Optik enkoderlar: tuzilişi va ruxsat qobiliyatini oşiriş
 // =====================================================================
 
-Optik enkoderlarning turlari (inkremental va absolyut) va kvadratur signallari 5-maʼruzada koʻrildi. Bu yerda ularning optik tuzilishiga va ruxsat qobiliyatini oshirish usullariga toʻxtalamiz.
+Optik enkoderlarning turlari (inkremental va absolyut) va kvadratur signallari 5-maʼruzada körildi. Bu yerda ularning optik tuzilişiga va ruxsat qobiliyatini oşiriş usullariga töxtalamiz.
 
-Optik enkoder *kodli disk* (shisha yoki metall, ingichka shtrixlar bilan), *yoritgich* (LED va kollimator linza), *skanerlovchi niqob* (diskdagi shtrixlar bilan bir xil qadamli tirqishlar) va #strong[fotoqabul qilgichlar]dan iborat. Disk aylanganda disk va niqob tirqishlari navbatma-navbat ustma-ust tushib, yorugʻlik oqimini modulyatsiya qiladi. Shtrixlar qadami bir necha mikrometrgacha kamaytirilishi mumkin, lekin buni cheksiz davom ettirib boʻlmaydi: difraksiya va diskni yasash texnologiyasi chegara qoʻyadi.
+Optik enkoder *kodli disk* (şişa yoki metall, ingiçka ştrixlar bilan), *yoritgiç* (LED va kollimator linza), *skanerlovçi niqob* (diskdagi ştrixlar bilan bir xil qadamli tirqişlar) va #strong[fotoqabul qilgiçlar]dan iborat. Disk aylanganda disk va niqob tirqişlari navbatma-navbat ustma-ust tuşib, yoruğlik oqimini modulyatsiya qiladi. Ştrixlar qadami bir neça mikrometrgaça kamaytirilişi mumkin, lekin buni çeksiz davom ettirib bölmaydi: difraksiya va diskni yasaş texnologiyasi çegara qöyadi.
 
-Ruxsat qobiliyatini oshirishning asosiy usuli — *interpolyatsiya*. Yuqori aniqlikdagi enkoderlarda fotoqabul qilgichlardan toʻgʻri burchakli impulslar emas, balki 90° ga siljigan ikkita *sinusoidal signal* (sin va cos) olinadi. Shtrixlar orasidagi holat bu signallar nisbatidan rezolverdagi kabi aniqlanadi: $phi = "arctg"(U_"sin" slash U_"cos")$. Har bir sinus davri $k$ qismga boʻlinsa (interpolyatsiya koeffitsienti), burchak ruxsat qobiliyati:
+Ruxsat qobiliyatini oşirişning asosiy usuli — *interpolyatsiya*. Yuqori aniqlikdagi enkoderlarda fotoqabul qilgiçlardan töğri burçakli impulslar emas, balki 90° ga siljigan ikkita *sinusoidal signal* (sin va cos) olinadi. Ştrixlar orasidagi holat bu signallar nisbatidan rezolverdagi kabi aniqlanadi: $phi = "arctg"(U_"sin" slash U_"cos")$. Har bir sinus davri $k$ qismga bölinsa (interpolyatsiya koeffitsienti), burçak ruxsat qobiliyati:
 
 #eq($ Delta theta = (360 degree) / (N dot k). $)
 
-*Misol.* $N = 2048$ ta shtrixli sin/cos enkoder signali $k = 4096$ marta interpolyatsiya qilinsa, bir aylanishda $2048 dot 4096 = 8 388 608 = 2^23$ ta qadam, yaʼni 23 bitli ruxsat olinadi. Shu tarzda zamonaviy robot boʻgʻinlari va dastgohlarda yuqori ruxsatli enkoderlar quriladi. Biroq interpolyatsiya aniqligi sin va cos signallarining sifatiga (amplitudalar tengligi, ofset, faza siljishi) bogʻliq, shuning uchun ruxsat qobiliyati har doim aniqlikka teng emas.
+*Misol.* $N = 2048$ ta ştrixli sin/cos enkoder signali $k = 4096$ marta interpolyatsiya qilinsa, bir aylanişda $2048 dot 4096 = 8 388 608 = 2^23$ ta qadam, yaʼni 23 bitli ruxsat olinadi. Şu tarzda zamonaviy robot böğinlari va dastgohlarda yuqori ruxsatli enkoderlar quriladi. Biroq interpolyatsiya aniqligi sin va cos signallarining sifatiga (amplitudalar tengligi, ofset, faza siljişi) boğliq, şuning uçun ruxsat qobiliyati har doim aniqlikka teng emas.
 
-Optik enkoderlarning afzalliklari — yuqori ruxsat va aniqlik, kontaktsizlik, tezkorlik; kamchiliklari — chang, yogʻ, namlik va kondensatga sezgirlik, shisha diskning zarbaga chidamsizligi. Ifloslangan muhitda magnit va induktiv enkoderlar afzalroq.
+Optik enkoderlarning afzalliklari — yuqori ruxsat va aniqlik, kontaktsizlik, tezkorlik; kamçiliklari — çang, yoğ, namlik va kondensatga sezgirlik, şişa diskning zarbaga çidamsizligi. Ifloslangan muhitda magnit va induktiv enkoderlar afzalroq.
 
 // =====================================================================
-= Temperatura datchiklari
+= Temperatura datçiklari
 // =====================================================================
 
-Robotlarda temperatura dvigatellar, reduktorlar, quvvat elektronikasi va akkumulyatorlarni haddan tashqari qizishdan himoyalash, shuningdek texnologik jarayonlarni (payvandlash, boʻyash, quyish) nazorat qilish uchun oʻlchanadi.
+Robotlarda temperatura dvigatellar, reduktorlar, quvvat elektronikasi va akkumulyatorlarni haddan taşqari qizişdan himoyalaş, şuningdek texnologik jarayonlarni (payvandlaş, böyaş, quyiş) nazorat qiliş uçun ölçanadi.
 
-*Metall termorezistorlar.* Platina termorezistor (Pt100, Pt1000) qarshiligi 0 °C dan yuqori haroratlarda taxminan chiziqli oʻzgaradi:
+*Metall termorezistorlar.* Platina termorezistor (Pt100, Pt1000) qarşiligi 0 °C dan yuqori haroratlarda taxminan çiziqli özgaradi:
 
 #eq($ R(T) = R_0 (1 + alpha T), $)
 
-bu yerda $R_0$ — 0 °C dagi qarshilik (Pt100 uchun 100 Ω), $alpha approx 0","00385$ 1/°C. *Misol.* 50 °C da $R = 100 dot (1 + 0","00385 dot 50) = 119","25$ Ω. Pt termorezistorlar yuqori aniqlik va barqarorlikka ega. Ulovchi simlar qarshiligi taʼsirini kamaytirish uchun ular uch yoki toʻrt simli sxemada ulanadi.
+bu yerda $R_0$ — 0 °C dagi qarşilik (Pt100 uçun 100 Ω), $alpha approx 0","00385$ 1/°C. *Misol.* 50 °C da $R = 100 dot (1 + 0","00385 dot 50) = 119","25$ Ω. Pt termorezistorlar yuqori aniqlik va barqarorlikka ega. Ulovçi simlar qarşiligi taʼsirini kamaytiriş uçun ular uç yoki tört simli sxemada ulanadi.
 
-*Termistorlar* — yarimoʻtkazgichli termorezistorlar. Keng tarqalgan NTC termistorlarning qarshiligi harorat ortishi bilan nochiziqli kamayadi:
+*Termistorlar* — yarimötkazgiçli termorezistorlar. Keng tarqalgan NTC termistorlarning qarşiligi harorat ortişi bilan noçiziqli kamayadi:
 
 #eq($ R(T) = R_25 dot exp[B (1 / T - 1 / T_25)], $)
 
-bu yerda $R_25$ — 25 °C dagi qarshilik, $B$ — material doimiysi, $T$ va $T_25 = 298","15$ K — absolyut haroratlar. *Misol.* $R_25 = 10$ kΩ, $B = 3950$ K boʻlsa, 50 °C (323,15 K) da $R approx 10 dot e^(-1","025) approx 3","59$ kΩ. Termistorlar juda sezgir va arzon, lekin nochiziqli; ular dvigatel chulgʻamlari va akkumulyatorlarni himoyalashda keng qoʻllanadi.
+bu yerda $R_25$ — 25 °C dagi qarşilik, $B$ — material doimiysi, $T$ va $T_25 = 298","15$ K — absolyut haroratlar. *Misol.* $R_25 = 10$ kΩ, $B = 3950$ K bölsa, 50 °C (323,15 K) da $R approx 10 dot e^(-1","025) approx 3","59$ kΩ. Termistorlar juda sezgir va arzon, lekin noçiziqli; ular dvigatel çulğamlari va akkumulyatorlarni himoyalaşda keng qöllanadi.
 
-*Termojuftlar* (4-maʼruza) termo-EYuK hosil qiladi, u issiq uch harorati $T_i$ va sovuq (erkin) uchlar harorati $T_s$ farqiga bogʻliq. Shuning uchun sovuq uchlar haroratini alohida datchik bilan oʻlchab, *sovuq uch kompensatsiyasi* bajariladi:
+*Termojuftlar* (4-maʼruza) termo-EYuK hosil qiladi, u issiq uç harorati $T_i$ va sovuq (erkin) uçlar harorati $T_s$ farqiga boğliq. Şuning uçun sovuq uçlar haroratini alohida datçik bilan ölçab, *sovuq uç kompensatsiyasi* bajariladi:
 
 #eq($ T_i = T_s + E / alpha. $)
 
-*Misol.* K tipidagi termojuft ($alpha approx 41$ µV/°C) $E = 2","05$ mV bersa va sovuq uchlar harorati 25 °C boʻlsa, $T_i approx 25 + 2050 slash 41 = 75$ °C. Termojuftlar −200 °C dan +1200 °C gacha va undan yuqori haroratlarda ishlay oladi.
+*Misol.* K tipidagi termojuft ($alpha approx 41$ µV/°C) $E = 2","05$ mV bersa va sovuq uçlar harorati 25 °C bölsa, $T_i approx 25 + 2050 slash 41 = 75$ °C. Termojuftlar −200 °C dan +1200 °C gaça va undan yuqori haroratlarda işlay oladi.
 
-*Yarimoʻtkazgichli integral datchiklar* (raqamli chiqishli harorat mikrosxemalari) chiziqli va kalibrlangan natija beradi, lekin diapazoni tor (odatda −55…+150 °C). *Kontaktsiz infraqizil datchiklar (pirometrlar)* esa obyekt nurlanishi boʻyicha haroratni masofadan oʻlchaydi.
+*Yarimötkazgiçli integral datçiklar* (raqamli çiqişli harorat mikrosxemalari) çiziqli va kalibrlangan natija beradi, lekin diapazoni tor (odatda −55…+150 °C). *Kontaktsiz infraqizil datçiklar (pirometrlar)* esa obyekt nurlanişi böyiça haroratni masofadan ölçaydi.
 
 #figure(
   btable(
     columns: (auto, auto, 1fr, 1fr),
-    header: ([Datchik], [Diapazon (taxminan)], [Afzalligi], [Kamchiligi]),
+    header: ([Datçik], [Diapazon (taxminan)], [Afzalligi], [Kamçiligi]),
     [Pt100 / Pt1000],
     [−200…+600 °C],
-    [Yuqori aniqlik va barqarorlik, chiziqli],
+    [Yuqori aniqlik va barqarorlik, çiziqli],
     [Qimmatroq, sekinroq],
     [NTC termistor],
     [−50…+150 °C],
-    [Juda sezgir, arzon, kichik],
-    [Nochiziqli, tor diapazon],
+    [Juda sezgir, arzon, kiçik],
+    [Noçiziqli, tor diapazon],
     [Termojuft],
     [−200…+1200 °C],
-    [Juda keng diapazon, chidamli, tez],
-    [Kichik signal, sovuq uch kompensatsiyasi kerak],
-    [Integral datchik],
+    [Juda keng diapazon, çidamli, tez],
+    [Kiçik signal, sovuq uç kompensatsiyasi kerak],
+    [Integral datçik],
     [−55…+150 °C],
-    [Chiziqli, kalibrlangan, raqamli chiqish],
+    [Çiziqli, kalibrlangan, raqamli çiqiş],
     [Tor diapazon],
     [IQ pirometr],
     [Keng],
-    [Kontaktsiz, harakatlanuvchi obyektlar],
-    [Sirt nurlanish koeffitsientiga bogʻliq],
+    [Kontaktsiz, harakatlanuvçi obyektlar],
+    [Sirt nurlaniş koeffitsientiga boğliq],
   ),
-  caption: [Temperatura datchiklarini taqqoslash],
+  caption: [Temperatura datçiklarini taqqoslaş],
 ) <tab-temp>
 
 // =====================================================================
-= Bosim datchiklari
+= Bosim datçiklari
 // =====================================================================
 
-Robototexnikada bosim pnevmatik va gidravlik yuritmalarda, vakuumli tutqichlarda, shuningdek taktil datchiklarda oʻlchanadi. Oʻlchanadigan bosim turiga koʻra datchiklar uch guruhga boʻlinadi:
-- *absolyut bosim* datchiklari bosimni vakuumga nisbatan oʻlchaydi;
-- *ortiqcha (manometrik) bosim* datchiklari atmosfera bosimiga nisbatan oʻlchaydi: $p_"abs" = p_"ort" + p_"atm"$; atmosferadan past bosim *vakuummetrik* bosim deyiladi;
-- *differensial bosim* datchiklari ikki nuqta orasidagi bosimlar farqini oʻlchaydi (masalan, filtr ifloslanishini nazorat qilish).
+Robototexnikada bosim pnevmatik va gidravlik yuritmalarda, vakuumli tutqiçlarda, şuningdek taktil datçiklarda ölçanadi. Ölçanadigan bosim turiga köra datçiklar uç guruhga bölinadi:
+- *absolyut bosim* datçiklari bosimni vakuumga nisbatan ölçaydi;
+- *ortiqça (manometrik) bosim* datçiklari atmosfera bosimiga nisbatan ölçaydi: $p_"abs" = p_"ort" + p_"atm"$; atmosferadan past bosim *vakuummetrik* bosim deyiladi;
+- *differensial bosim* datçiklari ikki nuqta orasidagi bosimlar farqini ölçaydi (masalan, filtr ifloslanişini nazorat qiliş).
 
-Koʻpchilik bosim datchiklarida sezgir element — *membrana*: bosim taʼsirida u egiladi va bu deformatsiya elektr signaliga aylantiriladi. Aylantirish usuliga koʻra datchiklar *piezorezistiv* (kremniy membranaga tenzorezistorlar diffuziya qilingan; eng keng tarqalgan), *tenzometrik* (metall membranaga yopishtirilgan tenzorezistorlar), *sigʻim* (membrana kondensator elektrodlaridan biri) va *piezoelektrik* (tez oʻzgaruvchi bosim, pulsatsiyalar uchun) turlarga boʻlinadi.
+Köpçilik bosim datçiklarida sezgir element — *membrana*: bosim taʼsirida u egiladi va bu deformatsiya elektr signaliga aylantiriladi. Aylantiriş usuliga köra datçiklar *piezorezistiv* (kremniy membranaga tenzorezistorlar diffuziya qilingan; eng keng tarqalgan), *tenzometrik* (metall membranaga yopiştirilgan tenzorezistorlar), *siğim* (membrana kondensator elektrodlaridan biri) va *piezoelektrik* (tez özgaruvçi bosim, pulsatsiyalar uçun) turlarga bölinadi.
 
-*Misol: vakuumli tutqich.* Diametri 40 mm boʻlgan vakuum soʻrgʻichda bosimlar farqi $Delta p = 0","6$ bar $= 60$ kPa yaratilsa, tutish kuchi:
+*Misol: vakuumli tutqiç.* Diametri 40 mm bölgan vakuum sörğiçda bosimlar farqi $Delta p = 0","6$ bar $= 60$ kPa yaratilsa, tutiş kuçi:
 
 #eq($ F = Delta p dot S = 60 dot 10^3 dot pi dot 0","02^2 approx 75 "N". $)
 
-Vakuum datchigi tutqichda detal borligini va mahkam ushlanganini nazorat qiladi: detal tushib ketsa yoki soʻrgʻich havo soʻrsa, vakuum pasayadi va robot ogohlantirish oladi. Amaliyotda xavfsizlik koeffitsienti va tezlanish kuchlari hisobga olinadi, shuning uchun ruxsat etilgan yuk hisoblangan kuchdan ancha kichik boʻladi.
+Vakuum datçigi tutqiçda detal borligini va mahkam uşlanganini nazorat qiladi: detal tuşib ketsa yoki sörğiç havo sörsa, vakuum pasayadi va robot ogohlantiriş oladi. Amaliyotda xavfsizlik koeffitsienti va tezlaniş kuçlari hisobga olinadi, şuning uçun ruxsat etilgan yuk hisoblangan kuçdan ança kiçik böladi.
 
 // =====================================================================
-= Tezlik datchiklari
+= Tezlik datçiklari
 // =====================================================================
 
-Robot yuritmalarida aylanish tezligi quyidagi datchiklar bilan oʻlchanadi.
+Robot yuritmalarida aylaniş tezligi quyidagi datçiklar bilan ölçanadi.
 
-*Taxogenerator* — kichik oʻzgarmas tok generatori; uning chiqish kuchlanishi aylanish tezligiga proporsional:
+*Taxogenerator* — kiçik özgarmas tok generatori; uning çiqiş kuçlanişi aylaniş tezligiga proporsional:
 
 #eq($ U = k_omega dot omega, $)
 
-bu yerda $k_omega$ — taxogenerator koeffitsienti (V·s/rad). Taxogenerator uzluksiz analog signal beradi va past tezliklarda ham ishlaydi, lekin kollektorli turlari yeyiladi va pulsatsiya hosil qiladi. Hozirgi servoyuritmalarda u deyarli butunlay enkoderlar bilan almashtirilgan.
+bu yerda $k_omega$ — taxogenerator koeffitsienti (V·s/rad). Taxogenerator uzluksiz analog signal beradi va past tezliklarda ham işlaydi, lekin kollektorli turlari yeyiladi va pulsatsiya hosil qiladi. Hozirgi servoyuritmalarda u deyarli butunlay enkoderlar bilan almaştirilgan.
 
-*Enkoderlar* asosida tezlikni hisoblash (M- va T-usullar) 5-maʼruzada koʻrildi. *Xoll datchiklari* kollektorsiz dvigatellarda rotor holatini va tezligini aniqlaydi. *Induksion (magnit) tezlik datchiklari* tishli gʻildirak tishlari oʻtganda impulslar hosil qiladi; ular avtomobillarning gʻildirak tezligi datchiklari va mobil robotlar odometriyasida qoʻllanadi.
+*Enkoderlar* asosida tezlikni hisoblaş (M- va T-usullar) 5-maʼruzada körildi. *Xoll datçiklari* kollektorsiz dvigatellarda rotor holatini va tezligini aniqlaydi. *Induksion (magnit) tezlik datçiklari* tişli ğildirak tişlari ötganda impulslar hosil qiladi; ular avtomobillarning ğildirak tezligi datçiklari va mobil robotlar odometriyasida qöllanadi.
 
-Mobil robotlar va avtonom transport vositalarining chiziqli tezligi gʻildirak tezligi (odometriya), GNSS, optik oqim (kamera) yoki Doppler radar yordamida aniqlanadi. Gʻildirak sirpanganda odometriya xato beradi, shuning uchun tezlik odatda bir nechta datchik maʼlumotlarini birlashtirib baholanadi.
+Mobil robotlar va avtonom transport vositalarining çiziqli tezligi ğildirak tezligi (odometriya), GNSS, optik oqim (kamera) yoki Doppler radar yordamida aniqlanadi. Ğildirak sirpanganda odometriya xato beradi, şuning uçun tezlik odatda bir neçta datçik maʼlumotlarini birlaştirib baholanadi.
 
 // =====================================================================
-= Tezlanish datchiklari va giroskoplar
+= Tezlaniş datçiklari va giroskoplar
 // =====================================================================
 
 == Akselerometrlar
 
-*Akselerometr* chiziqli tezlanishni oʻlchaydi. Uning asosiy qismi — prujinaga osilgan *seysmik (inert) massa* $m$. Korpus $a$ tezlanish bilan harakatlanganda massa inersiya tufayli korpusga nisbatan siljiydi. Xususiy chastotadan ancha past chastotalarda siljish tezlanishga proporsional:
+*Akselerometr* çiziqli tezlanişni ölçaydi. Uning asosiy qismi — prujinaga osilgan *seysmik (inert) massa* $m$. Korpus $a$ tezlaniş bilan harakatlanganda massa inersiya tufayli korpusga nisbatan siljiydi. Xususiy çastotadan ança past çastotalarda siljiş tezlanişga proporsional:
 
 #eq($ x = (m dot a) / k = a / omega_n^2, quad omega_n = sqrt(k / m), $)
 
-bu yerda $k$ — prujina bikrligi, $omega_n$ — xususiy burchak chastotasi. *Misol.* Xususiy chastotasi 5 kHz boʻlgan akselerometrda 1 g ($9","81$ m/s²) tezlanish $x = 9","81 slash (2 pi dot 5000)^2 approx 10$ nm siljish hosil qiladi. Bunday kichik siljishni oʻlchash uchun juda sezgir oʻzgartirgich kerak. (10) ifoda muhim murosani koʻrsatadi: xususiy chastota yuqori boʻlsa, akselerometr tez oʻzgaruvchi tezlanishni oʻlchay oladi, lekin sezgirligi kamayadi.
+bu yerda $k$ — prujina bikrligi, $omega_n$ — xususiy burçak çastotasi. *Misol.* Xususiy çastotasi 5 kHz bölgan akselerometrda 1 g ($9","81$ m/s²) tezlaniş $x = 9","81 slash (2 pi dot 5000)^2 approx 10$ nm siljiş hosil qiladi. Bunday kiçik siljişni ölçaş uçun juda sezgir özgartirgiç kerak. (10) ifoda muhim murosani körsatadi: xususiy çastota yuqori bölsa, akselerometr tez özgaruvçi tezlanişni ölçay oladi, lekin sezgirligi kamayadi.
 
-Siljishni oʻlchash usuliga koʻra akselerometrlar *sigʻim* (MEMS akselerometrlarda: kremniy massa ikki qoʻzgʻalmas elektrod orasida joylashgan differensial kondensator hosil qiladi), *piezoelektrik* (tebranish va zarbalarni oʻlchash; statik tezlanishni oʻlchamaydi) va *piezorezistiv* turlarga boʻlinadi. MEMS akselerometrlar gravitatsiya tezlanishini ham sezgani uchun ular qiyalik burchagini aniqlashda ham ishlatiladi.
+Siljişni ölçaş usuliga köra akselerometrlar *siğim* (MEMS akselerometrlarda: kremniy massa ikki qözğalmas elektrod orasida joylaşgan differensial kondensator hosil qiladi), *piezoelektrik* (tebraniş va zarbalarni ölçaş; statik tezlanişni ölçamaydi) va *piezorezistiv* turlarga bölinadi. MEMS akselerometrlar gravitatsiya tezlanişini ham sezgani uçun ular qiyalik burçagini aniqlaşda ham işlatiladi.
 
 == Giroskoplar va IMU
 
-*Giroskop* burchak tezligini oʻlchaydi. Zamonaviy robotlarda asosan *MEMS (tebranuvchi) giroskoplar* qoʻllanadi. Ularda massa doimiy tebranma harakatda boʻladi; korpus $Omega$ burchak tezligi bilan aylanganda massaga tebranish yoʻnalishiga perpendikulyar Koriolis kuchi taʼsir qiladi:
+*Giroskop* burçak tezligini ölçaydi. Zamonaviy robotlarda asosan *MEMS (tebranuvçi) giroskoplar* qöllanadi. Ularda massa doimiy tebranma harakatda böladi; korpus $Omega$ burçak tezligi bilan aylanganda massaga tebraniş yönalişiga perpendikulyar Koriolis kuçi taʼsir qiladi:
 
 #eq($ F_K = 2 m v Omega, $)
 
-bu yerda $v$ — massaning tebranish tezligi. Koriolis kuchi hosil qilgan siljish sigʻim usulida oʻlchanadi va u burchak tezligiga proporsional boʻladi. Yuqori aniqlik talab qilinadigan navigatsiya tizimlarida optik tolali va lazer giroskoplar ham ishlatiladi.
+bu yerda $v$ — massaning tebraniş tezligi. Koriolis kuçi hosil qilgan siljiş siğim usulida ölçanadi va u burçak tezligiga proporsional böladi. Yuqori aniqlik talab qilinadigan navigatsiya tizimlarida optik tolali va lazer giroskoplar ham işlatiladi.
 
-Uch oʻqli akselerometr va uch oʻqli giroskop (koʻpincha uch oʻqli magnitometr ham) bitta korpusda birlashtirilgan qurilma *inersial oʻlchash bloki* (IMU) deyiladi. IMU mobil robotlar, dronlar, yuruvchi robotlar va avtonom transport vositalarining navigatsiya va muvozanat tizimlarining asosidir. MEMS giroskoplarning nol siljishi vaqt oʻtishi bilan oʻzgaradi (drift), shuning uchun burchak tezligini integrallab olingan yoʻnalish xatoligi asta-sekin ortadi. Bu xatolik akselerometr, magnitometr, GNSS yoki kamera maʼlumotlari bilan birlashtirish (masalan, Kalman filtri) orqali tuzatiladi.
+Uç öqli akselerometr va uç öqli giroskop (köpinça uç öqli magnitometr ham) bitta korpusda birlaştirilgan qurilma *inersial ölçaş bloki* (IMU) deyiladi. IMU mobil robotlar, dronlar, yuruvçi robotlar va avtonom transport vositalarining navigatsiya va muvozanat tizimlarining asosidir. MEMS giroskoplarning nol siljişi vaqt ötişi bilan özgaradi (drift), şuning uçun burçak tezligini integrallab olingan yönaliş xatoligi asta-sekin ortadi. Bu xatolik akselerometr, magnitometr, GNSS yoki kamera maʼlumotlari bilan birlaştiriş (masalan, Kalman filtri) orqali tuzatiladi.
 
-Koʻrib chiqilgan datchiklar 3-jadvalda umumlashtirilgan.
+Körib çiqilgan datçiklar 3-jadvalda umumlaştirilgan.
 
 #figure(
   btable(
     columns: (auto, 1fr, 1.2fr),
-    header: ([Kattalik], [Asosiy datchiklar], [Robotdagi qoʻllanilishi]),
+    header: ([Kattalik], [Asosiy datçiklar], [Robotdagi qöllanilişi]),
     [Temperatura],
-    [Pt100, NTC termistor, termojuft, integral datchik, pirometr],
+    [Pt100, NTC termistor, termojuft, integral datçik, pirometr],
     [Dvigatel, drayver, akkumulyator himoyasi; texnologik jarayonlar],
     [Bosim],
-    [Piezorezistiv, tenzometrik, sigʻim, piezoelektrik],
-    [Pnevmo- va gidroyuritmalar, vakuumli tutqichlar],
+    [Piezorezistiv, tenzometrik, siğim, piezoelektrik],
+    [Pnevmo- va gidroyuritmalar, vakuumli tutqiçlar],
     [Tezlik],
-    [Enkoder, taxogenerator, Xoll va induksion datchiklar],
+    [Enkoder, taxogenerator, Xoll va induksion datçiklar],
     [Yuritma tezlik konturi, odometriya],
-    [Tezlanish],
+    [Tezlaniş],
     [MEMS, piezoelektrik akselerometrlar],
-    [Tebranish nazorati, qiyalik, navigatsiya],
-    [Burchak tezligi],
+    [Tebraniş nazorati, qiyalik, navigatsiya],
+    [Burçak tezligi],
     [MEMS, optik tolali giroskoplar],
-    [Dron, mobil va yuruvchi robot muvozanati va navigatsiyasi],
+    [Dron, mobil va yuruvçi robot muvozanati va navigatsiyasi],
   ),
-  caption: [Turli kattaliklarni oʻlchovchi datchiklar],
+  caption: [Turli kattaliklarni ölçovçi datçiklar],
 ) <tab-umumiy>
 
 // =====================================================================
 = Xulosa
 // =====================================================================
 
-Optik datchiklar nurlantirgich, optik kanal va fotoqabul qilgichdan iborat boʻlib, nur toʻsuvchi, retroreflektiv va diffuz sxemalarda ishlaydi. Optik masofa oʻlchashda yaqin masofalar uchun triangulyatsiya, katta masofalar uchun uchish vaqti usuli qoʻllanadi. Optik enkoderlarning ruxsat qobiliyati sin/cos signallarni interpolyatsiya qilish orqali keskin oshiriladi.
+Optik datçiklar nurlantirgiç, optik kanal va fotoqabul qilgiçdan iborat bölib, nur tösuvçi, retroreflektiv va diffuz sxemalarda işlaydi. Optik masofa ölçaşda yaqin masofalar uçun triangulyatsiya, katta masofalar uçun uçiş vaqti usuli qöllanadi. Optik enkoderlarning ruxsat qobiliyati sin/cos signallarni interpolyatsiya qiliş orqali keskin oşiriladi.
 
-Temperatura termorezistorlar, termistorlar, termojuftlar va integral datchiklar bilan; bosim membranali piezorezistiv, sigʻim va piezoelektrik datchiklar bilan oʻlchanadi. Tezlik enkoderlar, taxogeneratorlar, Xoll va induksion datchiklar orqali aniqlanadi. Tezlanish seysmik massali akselerometrlar, burchak tezligi esa Koriolis effektiga asoslangan giroskoplar bilan oʻlchanadi; ular birgalikda IMU ni tashkil etadi. Har bir datchik turi oʻz diapazoni, aniqligi va cheklovlariga ega, shuning uchun robot vazifasi va ish sharoitiga mos tanlanadi.
+Temperatura termorezistorlar, termistorlar, termojuftlar va integral datçiklar bilan; bosim membranali piezorezistiv, siğim va piezoelektrik datçiklar bilan ölçanadi. Tezlik enkoderlar, taxogeneratorlar, Xoll va induksion datçiklar orqali aniqlanadi. Tezlaniş seysmik massali akselerometrlar, burçak tezligi esa Koriolis effektiga asoslangan giroskoplar bilan ölçanadi; ular birgalikda IMU ni taşkil etadi. Har bir datçik turi öz diapazoni, aniqligi va çeklovlariga ega, şuning uçun robot vazifasi va iş şaroitiga mos tanlanadi.
 
 // =====================================================================
 = Nazorat savollari
@@ -378,17 +378,17 @@ Temperatura termorezistorlar, termistorlar, termojuftlar va integral datchiklar 
 
 #block[
   #set par(first-line-indent: 0pt)
-  + Optik datchik qanday qismlardan iborat? Nurlanish nima uchun modulyatsiya qilinadi?
-  + Nur toʻsuvchi, retroreflektiv va diffuz sxemalar qanday farqlanadi?
-  + Lazer triangulyatsiya prinsipini tushuntiring. Nima uchun masofa ortishi bilan aniqlik pasayadi?
-  + $f = 25$ mm, $b = 40$ mm, $x = 2","5$ mm boʻlsa, obyektgacha masofa qancha?
-  + ToF usulida 30 m masofa uchun yorugʻlik qancha vaqtda borib qaytadi?
-  + Sin/cos enkoderlarda interpolyatsiya qanday amalga oshiriladi?
-  + Pt100 termorezistor 100 °C da qanday qarshilikka ega boʻladi?
-  + Termojuftda sovuq uch kompensatsiyasi nima uchun kerak?
-  + Absolyut, ortiqcha va differensial bosim qanday farqlanadi?
-  + Diametri 30 mm soʻrgʻichda 0,5 bar bosimlar farqi qanday tutish kuchi beradi?
-  + Taxogenerator va enkoder bilan tezlikni oʻlchash qanday farqlanadi?
-  + Akselerometrning xususiy chastotasi va sezgirligi oʻrtasida qanday bogʻliqlik bor?
-  + MEMS giroskop qanday prinsipda ishlaydi va IMU nima?
+  + Optik datçik qanday qismlardan iborat? Nurlaniş nima uçun modulyatsiya qilinadi?
+  + Nur tösuvçi, retroreflektiv va diffuz sxemalar qanday farqlanadi?
+  + Lazer triangulyatsiya prinsipini tuşuntiring. Nima uçun masofa ortişi bilan aniqlik pasayadi?
+  + $f = 25$ mm, $b = 40$ mm, $x = 2","5$ mm bölsa, obyektgaça masofa qança?
+  + ToF usulida 30 m masofa uçun yoruğlik qança vaqtda borib qaytadi?
+  + Sin/cos enkoderlarda interpolyatsiya qanday amalga oşiriladi?
+  + Pt100 termorezistor 100 °C da qanday qarşilikka ega böladi?
+  + Termojuftda sovuq uç kompensatsiyasi nima uçun kerak?
+  + Absolyut, ortiqça va differensial bosim qanday farqlanadi?
+  + Diametri 30 mm sörğiçda 0,5 bar bosimlar farqi qanday tutiş kuçi beradi?
+  + Taxogenerator va enkoder bilan tezlikni ölçaş qanday farqlanadi?
+  + Akselerometrning xususiy çastotasi va sezgirligi örtasida qanday boğliqlik bor?
+  + MEMS giroskop qanday prinsipda işlaydi va IMU nima?
 ]

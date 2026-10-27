@@ -8,7 +8,7 @@
 
 #let headingblue = rgb(20, 50, 120)
 
-#set document(title: "Robotlarning asosiy turlari bilan tanishish")
+#set document(title: "Robotlarning asosiy turlari bilan tanişiş")
 #set page(
   paper: "a4",
   margin: (top: 2.5cm, bottom: 2.5cm, left: 3cm, right: 2cm),
@@ -28,7 +28,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.65em)
 #set heading(numbering: "1.1")
 #set math.equation(numbering: "(1)", supplement: none)
@@ -44,53 +44,53 @@
 
 // ---------------- Sarlavha ----------------
 #align(center)[
-  #text(size: 20pt, weight: "bold", fill: headingblue)[AMALIYOT MASHGʻULOTI №2]
+  #text(size: 20pt, weight: "bold", fill: headingblue)[AMALIYOT MAŞĞULOTI №2]
   #v(0.4cm)
-  #text(size: 14pt, weight: "bold")[Mavzu: Robotlarning asosiy turlari bilan tanishish]
+  #text(size: 14pt, weight: "bold")[Mavzu: Robotlarning asosiy turlari bilan tanişiş]
   #v(0.6cm)
   #line(length: 100%, stroke: 1pt)
 ]
 
 #v(0.3cm)
 
-= Ishning maqsadi
+= Işning maqsadi
 
-*Mashgʻulotning maqsadi:* zamonaviy robototexnika tizimlarida qoʻllaniladigan robotlarning kinematik va konstruktiv strukturasi, harakatlanish prinsiplari, qoʻllanilish sohalari hamda klassifikatsiya belgilarini oʻrganish; sanoat va mobil robotlarning asosiy turlarini amaliy tahlil qilish hamda ularning kinematik koʻrsatkichlarini hisoblash koʻnikmalarini shakllantirish.
+*Maşğulotning maqsadi:* zamonaviy robototexnika tizimlarida qöllaniladigan robotlarning kinematik va konstruktiv strukturasi, harakatlaniş prinsiplari, qöllaniliş sohalari hamda klassifikatsiya belgilarini örganiş; sanoat va mobil robotlarning asosiy turlarini amaliy tahlil qiliş hamda ularning kinematik körsatkiçlarini hisoblaş könikmalarini şakllantiriş.
 
-*Oʻquv vazifalari:*
+*Öquv vazifalari:*
 
-+ Sanoat va xizmat koʻrsatuvchi robotlarning tasniflanishi hamda xalqaro ISO 8373 standartiga muvofiq taʼriflarini oʻrganish.
-+ Sanoat manipulyatorlarining 6 ta asosiy kinematik turini (Dekart, silindrik, sferik, boʻgʻinli/Articulated, SCARA va parallel/Delta) oʻrganish hamda ularning ishchi zonasi (_workspace_) shakllarini tahlil qilish.
-+ Mobil robotlarning gʻildirakli (_wheeled_), gusenitsali (_tracked_), oyoqli (_legged_) va uchuvchisiz (UAV) turlari konstruksiyasini oʻrganish.
-+ Robotlarning erkinlik darajalari (DoF --- _Degrees of Freedom_), lokal va global koordinatalar tizimlari hamda gomogen oʻzgartirish matritsalarining mantiqiy asoslarini tahlil qilish.
-+ Manipulyatorlarning toʻgʻri kinematikasi (_Forward Kinematics_) va mobil robotlarning differensial kinematikasi (_Differential Drive Kinematics_) boʻyicha muhandislik hisoblashlarini bajarish.
++ Sanoat va xizmat körsatuvçi robotlarning tasniflanişi hamda xalqaro ISO 8373 standartiga muvofiq taʼriflarini örganiş.
++ Sanoat manipulyatorlarining 6 ta asosiy kinematik turini (Dekart, silindrik, sferik, böğinli/Articulated, SCARA va parallel/Delta) örganiş hamda ularning işçi zonasi (_workspace_) şakllarini tahlil qiliş.
++ Mobil robotlarning ğildirakli (_wheeled_), gusenitsali (_tracked_), oyoqli (_legged_) va uçuvçisiz (UAV) turlari konstruksiyasini örganiş.
++ Robotlarning erkinlik darajalari (DoF --- _Degrees of Freedom_), lokal va global koordinatalar tizimlari hamda gomogen özgartiriş matritsalarining mantiqiy asoslarini tahlil qiliş.
++ Manipulyatorlarning töğri kinematikasi (_Forward Kinematics_) va mobil robotlarning differensial kinematikasi (_Differential Drive Kinematics_) böyiça muhandislik hisoblaşlarini bajariş.
 
 = Kerakli asbob-uskunalar va dasturiy taʼminot
 
-- *Oʻquv-laboratoriya stendlari:* 6-DoF sanoat roboti oʻquv maketi (Articulated Arm), SCARA laboratoriya manipulyatori, differensial gʻildirakli mobil robot platformasi (AGV/AMR).
-- *Modellashtirish va dasturiy taʼminot:* MATLAB / Simulink (Robotics System Toolbox), ROS / ROS 2 (_Robot Operating System_), Gazebo simulyatsiya muhiti, CoppeliaSim (V-REP).
-- *Koʻrgazmali va oʻlchov vositalari:* robotlarning kinematik sxemalari plakatlari, burchak oʻlchagichlar (inklinometrlar), optik enkoderli stendlar.
+- *Öquv-laboratoriya stendlari:* 6-DoF sanoat roboti öquv maketi (Articulated Arm), SCARA laboratoriya manipulyatori, differensial ğildirakli mobil robot platformasi (AGV/AMR).
+- *Modellaştiriş va dasturiy taʼminot:* MATLAB / Simulink (Robotics System Toolbox), ROS / ROS 2 (_Robot Operating System_), Gazebo simulyatsiya muhiti, CoppeliaSim (V-REP).
+- *Körgazmali va ölçov vositalari:* robotlarning kinematik sxemalari plakatlari, burçak ölçagiçlar (inklinometrlar), optik enkoderli stendlar.
 
 = Nazariy maʼlumotlar va robotlar klassifikatsiyasi
 
-== Robototexnika fani va robot tushunchasi
+== Robototexnika fani va robot tuşunçasi
 
-ISO 8373 xalqaro standartiga koʻra, *sanoat roboti* deb avtomatik boshqariladigan, qayta dasturlanadigan, uch yoki undan ortiq oʻq boʻyicha dasturlanuvchi, bir necha maqsadda qoʻllanila oladigan, bir joyga oʻrnatilgan yoki mobil koʻrinishdagi koʻp funksiyali manipulyatsion tizimga aytiladi.
+ISO 8373 xalqaro standartiga köra, *sanoat roboti* deb avtomatik boşqariladigan, qayta dasturlanadigan, uç yoki undan ortiq öq böyiça dasturlanuvçi, bir neça maqsadda qöllanila oladigan, bir joyga örnatilgan yoki mobil körinişdagi köp funksiyali manipulyatsion tizimga aytiladi.
 
-Robototexnika uchta asosiy fundamental ilmiy sohaning chorrahasida shakllangan:
+Robototexnika uçta asosiy fundamental ilmiy sohaning çorrahasida şakllangan:
 
-+ *Mexanika va materialshunoslik:* robot manipulyatori va shassisining kinematik hamda dinamik strukturasini loyihalash.
-+ *Boshqaruv nazariyasi va elektronika:* sensorlar maʼlumotlarini toʻplash, motor va aktuatorlarni yopiq zanjirda PID/Fuzzy usullari bilan boshqarish.
-+ *Kompyuter ilmlari va sunʼiy intellekt:* trayektoriyani rejalashtirish (_motion planning_), kompyuter koʻrishi (_computer vision_), SLAM (_Simultaneous Localization and Mapping_) hamda mashinali oʻqitish (_machine learning_).
++ *Mexanika va materialşunoslik:* robot manipulyatori va şassisining kinematik hamda dinamik strukturasini loyihalaş.
++ *Boşqaruv nazariyasi va elektronika:* sensorlar maʼlumotlarini töplaş, motor va aktuatorlarni yopiq zanjirda PID/Fuzzy usullari bilan boşqariş.
++ *Kompyuter ilmlari va sunʼiy intellekt:* trayektoriyani rejalaştiriş (_motion planning_), kompyuter körişi (_computer vision_), SLAM (_Simultaneous Localization and Mapping_) hamda maşinali öqitiş (_machine learning_).
 
-== Sanoat robotlarining kinematik konstruksiyasi boʻyicha turlari
+== Sanoat robotlarining kinematik konstruksiyasi böyiça turlari
 
-Sanoat robotlari manipulyatorining boʻgʻinlari (_joints_) asosan ikkita turga boʻlinadi:
+Sanoat robotlari manipulyatorining böğinlari (_joints_) asosan ikkita turga bölinadi:
 
-- *Aylanma boʻgʻin ($R$ --- Revolute Joint):* boʻgʻinning burchakli burilishini taʼminlaydi.
-- *Ilgarilanma boʻgʻin ($P$ --- Prismatic Joint):* chiziqli boʻylama siljishni taʼminlaydi.
+- *Aylanma böğin ($R$ --- Revolute Joint):* böğinning burçakli burilişini taʼminlaydi.
+- *Ilgarilanma böğin ($P$ --- Prismatic Joint):* çiziqli böylama siljişni taʼminlaydi.
 
-Manipulyatorning dastlabki uchta boʻgʻinining joylashuv kombinatsiyasiga qarab sanoat robotlari 6 ta asosiy kinematik oilaga ajratiladi (@tab-types).
+Manipulyatorning dastlabki uçta böğinining joylaşuv kombinatsiyasiga qarab sanoat robotlari 6 ta asosiy kinematik oilaga ajratiladi (@tab-types).
 
 #figure(
   {
@@ -102,22 +102,20 @@ Manipulyatorning dastlabki uchta boʻgʻinining joylashuv kombinatsiyasiga qarab
       stroke: none,
       inset: (x: 4pt, y: 5pt),
       table.hline(stroke: 1pt),
-      table.header(
-        [*№*], [*Kinematik turi*], [*Boʻgʻinlar*], [*Ishchi zonasi (workspace)*], [*Asosiy qoʻllanilish sohasi*]
-      ),
+      table.header([*№*], [*Kinematik turi*], [*Böğinlar*], [*Işçi zonasi (workspace)*], [*Asosiy qöllaniliş sohasi*]),
       table.hline(stroke: 0.5pt),
-      [1], [*Dekart* (Cartesian / Gantry)], [$P P P$], [Toʻgʻri burchakli parallelepiped],
-      [3D printerlar, CNC plazma kesgichlar, omborxona saralash.],
-      [2], [*Silindrik* (Cylindrical)], [$R P P$], [Silindr (yoki ichi boʻsh silindr)],
-      [Presslash sexlari, metall quyish, detal yuklash-boʻshatish.],
-      [3], [*Sferik* (Spherical / Polar)], [$R R P$], [Sferik sektor / shar],
-      [Payvandlash, metallni mexanik qayta ishlash, quyish.],
-      [4], [*Shtangali-boʻgʻinli* (Articulated)], [$R R R$], [Murakkab sferik koʻrinish],
-      [Avtomobil payvandlash, boʻyoq sepish, yigʻuv liniyalari.],
+      [1], [*Dekart* (Cartesian / Gantry)], [$P P P$], [Töğri burçakli parallelepiped],
+      [3D printerlar, CNC plazma kesgiçlar, omborxona saralaş.],
+      [2], [*Silindrik* (Cylindrical)], [$R P P$], [Silindr (yoki içi böş silindr)],
+      [Presslaş sexlari, metall quyiş, detal yuklaş-böşatiş.],
+      [3], [*Sferik* (Spherical / Polar)], [$R R P$], [Sferik sektor / şar],
+      [Payvandlaş, metallni mexanik qayta işlaş, quyiş.],
+      [4], [*Ştangali-böğinli* (Articulated)], [$R R R$], [Murakkab sferik köriniş],
+      [Avtomobil payvandlaş, böyoq sepiş, yiğuv liniyalari.],
       [5], [*SCARA*], [$R R P$], [Silindrik tekis qatlamli],
-      [Elektron plataga komponent terish (Pick-and-Place).],
+      [Elektron plataga komponent teriş (Pick-and-Place).],
       [6], [*Parallel* (Delta)], [Parallel \ $R$ / $P$], [Gumbazsimon / konussimon],
-      [Oziq-ovqat va farmatsevtikada tezkor saralash.],
+      [Oziq-ovqat va farmatsevtikada tezkor saralaş.],
       table.hline(stroke: 1pt),
     )
   },
@@ -126,7 +124,7 @@ Manipulyatorning dastlabki uchta boʻgʻinining joylashuv kombinatsiyasiga qarab
 
 == Sanoat robotlarining kinematik struktura sxemalari
 
-Quyida eng keng tarqalgan uchta sanoat roboti tipining (Dekart, SCARA va shtangali-boʻgʻinli) kinematik sxemasi va boʻgʻinlar ketma-ketligi keltirilgan (@fig-schemes).
+Quyida eng keng tarqalgan uçta sanoat roboti tipining (Dekart, SCARA va ştangali-böğinli) kinematik sxemasi va böğinlar ketma-ketligi keltirilgan (@fig-schemes).
 
 #figure(
   cetz.canvas(length: 0.85cm, {
@@ -156,7 +154,7 @@ Quyida eng keng tarqalgan uchta sanoat roboti tipining (Dekart, SCARA va shtanga
       line((1.55, 2.5), (1.55, 0.8), stroke: 2.5pt + orng)
       circle((1.55, 0.8), radius: 0.12, fill: blue-c, stroke: none)
       content((1.7, 1.3), anchor: "west", small[Z ($P_3$)])
-      tag((1.3, -0.7))[a) Dekart (PPP) \ toʻgʻri burchakli]
+      tag((1.3, -0.7))[a) Dekart (PPP) \ töğri burçakli]
     })
 
     // ---- b) SCARA robot (RRP) ----
@@ -184,7 +182,7 @@ Quyida eng keng tarqalgan uchta sanoat roboti tipining (Dekart, SCARA va shtanga
       joint((0.8, 2.2), 0.25, $R_2$)
       joint((2.2, 2.0), 0.2, $R_3$)
       circle((2.8, 1.2), radius: 0.1, fill: orng, stroke: none)
-      tag((1.2, -0.7))[c) Boʻgʻinli (RRR) \ antropomorf qoʻl]
+      tag((1.2, -0.7))[c) Böğinli (RRR) \ antropomorf qöl]
     })
   }),
   caption: [Sanoat robotlarining asosiy kinematik konstruksiya sxemalari],
@@ -192,25 +190,25 @@ Quyida eng keng tarqalgan uchta sanoat roboti tipining (Dekart, SCARA va shtanga
 
 == Mobil robotlarning klassifikatsiyasi va strukturasi
 
-Mobil robotlar harakatlanish muhiti va mexanizmiga qarab quyidagi turlarga boʻlinadi.
+Mobil robotlar harakatlaniş muhiti va mexanizmiga qarab quyidagi turlarga bölinadi.
 
-=== Gʻildirakli mobil robotlar (WMR --- Wheeled Mobile Robots)
+=== Ğildirakli mobil robotlar (WMR --- Wheeled Mobile Robots)
 
-- *Differensial yuritmali (Differential Drive):* ikkita mustaqil yetakchi gʻildirak va bitta/ikkita erkin tayanch (_caster_) gʻildirakka ega.
-- *Akkerman boshqaruvli (Ackermann Steering):* avtomobil tipidagi old gʻildiraklar bilan buriluvchi mobil robot.
-- *Omni-gʻildirakli va Mecanum (Omnidirectional):* maxsus $45 degree$ yoki $90 degree$ rolikli gʻildiraklar yordamida tekislikda xohlagan yoʻnalishda korpusini burmasdan harakatlanuvchi robotlar.
+- *Differensial yuritmali (Differential Drive):* ikkita mustaqil yetakçi ğildirak va bitta/ikkita erkin tayanç (_caster_) ğildirakka ega.
+- *Akkerman boşqaruvli (Ackermann Steering):* avtomobil tipidagi old ğildiraklar bilan buriluvçi mobil robot.
+- *Omni-ğildirakli va Mecanum (Omnidirectional):* maxsus $45 degree$ yoki $90 degree$ rolikli ğildiraklar yordamida tekislikda xohlagan yönalişda korpusini burmasdan harakatlanuvçi robotlar.
 
 === Oyoqli mobil robotlar (Legged / Bipedal / Quadrupedal)
 
-Inson yoki hayvonlar harakatini imitatsiya qiluvchi robotlar:
+Inson yoki hayvonlar harakatini imitatsiya qiluvçi robotlar:
 
 - *Ikki oyoqli (Bipedal / Anthropomorphic):* Boston Dynamics Atlas, Honda ASIMO.
-- *Toʻrt oyoqli (Quadrupedal):* Boston Dynamics Spot, Unitree Go1. Qiya va notekis relyeflarda yuqori oʻtuvchanlikka ega.
+- *Tört oyoqli (Quadrupedal):* Boston Dynamics Spot, Unitree Go1. Qiya va notekis relyeflarda yuqori ötuvçanlikka ega.
 
-=== Uchuvchisiz va maxsus robotlar
+=== Uçuvçisiz va maxsus robotlar
 
-- *Uchuvchisiz uchish apparatlari (UAV / dronlar):* kvadrokopter, geksakopter va qoʻzgʻalmas qanotli dronlar.
-- *Suv osti robotlari (ROV / AUV):* masofadan boshqariladigan va avtonom gʻavvoslik robotlari.
+- *Uçuvçisiz uçiş apparatlari (UAV / dronlar):* kvadrokopter, geksakopter va qözğalmas qanotli dronlar.
+- *Suv osti robotlari (ROV / AUV):* masofadan boşqariladigan va avtonom ğavvoslik robotlari.
 
 #figure(
   cetz.canvas(length: 0.95cm, {
@@ -221,17 +219,17 @@ Inson yoki hayvonlar harakatini imitatsiya qiluvchi robotlar:
 
     // Shassi
     rect((-2, -1.2), (2, 1.2), radius: 0.2, fill: blue.lighten(93%), stroke: 1pt + headingblue)
-    content((0, 0.55), text(size: 9pt, weight: "bold", fill: headingblue)[Differensial mobil robot])
+    content((0, 0.55), text(size: 8pt, weight: "bold", fill: headingblue)[Differensial mobil robot])
 
     // Gʻildiraklar
     rect((-1.5, 1.2), (-0.5, 1.5), fill: dark, stroke: none)
-    content((-1.0, 1.6), anchor: "south", small[Chap gʻildirak ($v_L$)])
+    content((-1.0, 1.6), anchor: "south", small[Çap ğildirak ($v_L$)])
     rect((-1.5, -1.5), (-0.5, -1.2), fill: dark, stroke: none)
-    content((-1.0, -1.6), anchor: "north", small[Oʻng gʻildirak ($v_R$)])
+    content((-1.0, -1.6), anchor: "north", small[Öng ğildirak ($v_R$)])
 
     // Tayanch (caster) gʻildirak
     circle((1.3, 0), radius: 0.25, fill: dark, stroke: none)
-    content((1.6, -0.35), anchor: "north-west", small[Caster tayanch])
+    content((1.6, -0.35), anchor: "north-west", small[Caster tayanç])
 
     // Tezlik vektorlari
     line((0, 0), (1.5, 0), stroke: 2.5pt + orange.darken(15%), mark: (end: "stealth", fill: orange.darken(15%)))
@@ -249,14 +247,14 @@ Inson yoki hayvonlar harakatini imitatsiya qiluvchi robotlar:
     )
     content((-1.1, -0.35), anchor: "east", small[$L$ (baza)])
   }),
-  caption: [Differensial gʻildirakli mobil robotning geometrik va kinematik parametrlari],
+  caption: [Differensial ğildirakli mobil robotning geometrik va kinematik parametrlari],
 ) <fig-diff>
 
-= Amaliy topshiriqlar va tizimli tahlil
+= Amaliy topşiriqlar va tizimli tahlil
 
-== Topshiriq 1: sanoat robotlarining kinematik turlarini qiyosiy tahlil qilish
+== Topşiriq 1: sanoat robotlarining kinematik turlarini qiyosiy tahlil qiliş
 
-Har bir robot turining geometrik, dinamik va ekspluatatsion xususiyatlarini tahlil qiling va @tab-compare ni toʻldiring.
+Har bir robot turining geometrik, dinamik va ekspluatatsion xususiyatlarini tahlil qiling va @tab-compare ni töldiring.
 
 #figure(
   {
@@ -269,42 +267,42 @@ Har bir robot turining geometrik, dinamik va ekspluatatsion xususiyatlarini tahl
       inset: (x: 5pt, y: 5pt),
       table.hline(stroke: 1pt),
       table.header(
-        [*Robot turi*], [*Boshqarish murakkabligi*], [*Bikrlik (mustahkamlik)*], [*Asosiy ustunligi va kamchiligi*]
+        [*Robot turi*], [*Boşqariş murakkabligi*], [*Bikrlik (mustahkamlik)*], [*Asosiy ustunligi va kamçiligi*]
       ),
       table.hline(stroke: 0.5pt),
-      [*Dekart* (Cartesian)], [Juda past (chiziqli tenglamalar)], [Yuqori],
-      [*Ustunligi:* yuqori aniqlik. \ *Kamchiligi:* katta gabarit va koʻp joy egallashi.],
-      [*Shtangali-boʻgʻinli* (Articulated)], [Yuqori (nochiziqli trigonometriya)], [Oʻrtacha / moslashuvchan],
-      [*Ustunligi:* maksimal harakatchanlik. \ *Kamchiligi:* yuqori narx va murakkab kalibrlash.],
-      [*SCARA*], [Oʻrtacha], [Vertikal yoʻnalishda juda yuqori],
-      [*Ustunligi:* Z-oʻqi boʻylab yuqori tezlik va qatʼiylik. \ *Kamchiligi:* cheklangan ishchi maydoni.],
-      [*Parallel* (Delta)], [Yuqori (koʻp zanjirli dinamika)], [Juda yuqori],
-      [*Ustunligi:* ekstremal yuqori tezlik ($> 3 "m/s"$). \ *Kamchiligi:* kichik yuk koʻtarish qobiliyati.],
+      [*Dekart* (Cartesian)], [Juda past (çiziqli tenglamalar)], [Yuqori],
+      [*Ustunligi:* yuqori aniqlik. \ *Kamçiligi:* katta gabarit va köp joy egallaşi.],
+      [*Ştangali-böğinli* (Articulated)], [Yuqori (noçiziqli trigonometriya)], [Örtaça / moslaşuvçan],
+      [*Ustunligi:* maksimal harakatçanlik. \ *Kamçiligi:* yuqori narx va murakkab kalibrlaş.],
+      [*SCARA*], [Örtaça], [Vertikal yönalişda juda yuqori],
+      [*Ustunligi:* Z-öqi böylab yuqori tezlik va qatʼiylik. \ *Kamçiligi:* çeklangan işçi maydoni.],
+      [*Parallel* (Delta)], [Yuqori (köp zanjirli dinamika)], [Juda yuqori],
+      [*Ustunligi:* ekstremal yuqori tezlik ($> 3 "m/s"$). \ *Kamçiligi:* kiçik yuk kötariş qobiliyati.],
       table.hline(stroke: 1pt),
     )
   },
   caption: [Sanoat robotlarining kinematik va ekspluatatsion qiyosiy tahlili],
 ) <tab-compare>
 
-== Topshiriq 2: ishlab chiqarish texnologik jarayoni uchun robot turini tanlash
+== Topşiriq 2: işlab çiqariş texnologik jarayoni uçun robot turini tanlaş
 
-Quyidagi uchta sanoat moduli uchun mos robot tipini va kerakli sensorlar majmuasini tanlang:
+Quyidagi uçta sanoat moduli uçun mos robot tipini va kerakli sensorlar majmuasini tanlang:
 
-+ *1-stansiya:* avtomobil kuzovini nuqtaviy kontaktli payvandlash (yuk $> 100 "kg"$).
-+ *2-stansiya:* dorixona ampulalarini karton qutilarga oʻta tezkor saralab joylash (tezlik $> 120 "dona/min"$).
-+ *3-stansiya:* konveyerdan mikrosxemalarni olib, $plus.minus 0.01 "mm"$ aniqlik bilan plataga oʻrnatish.
++ *1-stansiya:* avtomobil kuzovini nuqtaviy kontaktli payvandlaş (yuk $> 100 "kg"$).
++ *2-stansiya:* dorixona ampulalarini karton qutilarga öta tezkor saralab joylaş (tezlik $> 120 "dona/min"$).
++ *3-stansiya:* konveyerdan mikrosxemalarni olib, $plus.minus 0.01 "mm"$ aniqlik bilan plataga örnatiş.
 
-*Tahlil va yechim:*
+*Tahlil va yeçim:*
 
-- *1-stansiya uchun:* _6-DoF Articulated (shtangali-boʻgʻinli) robot_. Sababi: yuqori yuk koʻtarish va murakkab fazoviy burilish burchaklarini talab etadi. Sensorlar: moment datchigi, optik payvand chokini kuzatuvchi.
-- *2-stansiya uchun:* _Delta (parallel) robot_. Sababi: kam yuk va ekstremal yuqori siklik tezlik. Sensorlar: konveyer tezligi enkoderi, mashina koʻrishi (_machine vision_) kamerasi.
-- *3-stansiya uchun:* _SCARA roboti_. Sababi: gorizontal tekislikda oʻta yuqori takrorlanuvchanlik va aniqlik ($X Y$ aniqligi). Sensorlar: taktil mikrosensor va optik joylashuv datchigi.
+- *1-stansiya uçun:* _6-DoF Articulated (ştangali-böğinli) robot_. Sababi: yuqori yuk kötariş va murakkab fazoviy buriliş burçaklarini talab etadi. Sensorlar: moment datçigi, optik payvand çokini kuzatuvçi.
+- *2-stansiya uçun:* _Delta (parallel) robot_. Sababi: kam yuk va ekstremal yuqori siklik tezlik. Sensorlar: konveyer tezligi enkoderi, maşina körişi (_machine vision_) kamerasi.
+- *3-stansiya uçun:* _SCARA roboti_. Sababi: gorizontal tekislikda öta yuqori takrorlanuvçanlik va aniqlik ($X Y$ aniqligi). Sensorlar: taktil mikrosensor va optik joylaşuv datçigi.
 
-= Hisoblash va modellashtirish masalalari
+= Hisoblaş va modellaştiriş masalalari
 
-== Masala 1: 2-DoF tekislikdagi manipulyatorning toʻgʻri kinematikasi
+== Masala 1: 2-DoF tekislikdagi manipulyatorning töğri kinematikasi
 
-Ikkita aylanma boʻgʻinga ($R_1, R_2$) ega boʻlgan planar manipulyator berilgan (@fig-2dof). Boʻgʻin elkalari uzunliklari $l_1 = 0.4 "m"$ va $l_2 = 0.3 "m"$. Joriy boʻgʻin burchaklari $theta_1 = 30 degree$ va $theta_2 = 45 degree$. Robot tutqichining (_end-effector_) Dekart koordinatalar tizimidagi $(X, Y)$ oʻrnini va yoʻnalish burchagi $phi$ ni aniqlang.
+Ikkita aylanma böğinga ($R_1, R_2$) ega bölgan planar manipulyator berilgan (@fig-2dof). Böğin elkalari uzunliklari $l_1 = 0.4 "m"$ va $l_2 = 0.3 "m"$. Joriy böğin burçaklari $theta_1 = 30 degree$ va $theta_2 = 45 degree$. Robot tutqiçining (_end-effector_) Dekart koordinatalar tizimidagi $(X, Y)$ örnini va yönaliş burçagi $phi$ ni aniqlang.
 
 #figure(
   cetz.canvas(length: 1.1cm, {
@@ -360,38 +358,38 @@ Ikkita aylanma boʻgʻinga ($R_1, R_2$) ega boʻlgan planar manipulyator berilga
   caption: [2-DoF tekislikdagi aylanma manipulyatorning kinematik modeli],
 ) <fig-2dof>
 
-*Yechish va formulalar:*
+*Yeçiş va formulalar:*
 
 #eq($ X = l_1 cos(theta_1) + l_2 cos(theta_1 + theta_2) $)
 #eq($ Y = l_1 sin(theta_1) + l_2 sin(theta_1 + theta_2) $)
 #eq($ phi = theta_1 + theta_2 $)
 
-*Hisoblash bosqichlari:*
+*Hisoblaş bosqiçlari:*
 
-- Trigonometrik qiymatlarni hisoblash:
+- Trigonometrik qiymatlarni hisoblaş:
   #eq($ theta_1 = 30 degree, quad theta_1 + theta_2 = 30 degree + 45 degree = 75 degree $)
   #eq(
     $
-      cos(30 degree) approx 0.8660, quad sin(30 degree) = 0.5000, quad
+      cos(30 degree) approx 0.8660, quad sin(30 degree) = 0.5000, quad \
       cos(75 degree) approx 0.2588, quad sin(75 degree) approx 0.9659
     $,
   )
-- $X$ va $Y$ koordinatalarini hisoblash:
-  #eq($ X = 0.4 times 0.8660 + 0.3 times 0.2588 = 0.3464 + 0.0776 = 0.4240 "m" = 42.4 "cm" $)
-  #eq($ Y = 0.4 times 0.5000 + 0.3 times 0.9659 = 0.2000 + 0.2898 = 0.4898 "m" = 48.98 "cm" $)
-- Orientatsiya burchagi:
+- $X$ va $Y$ koordinatalarini hisoblaş:
+  #eq($ X = 0.4 times 0.8660 + 0.3 times 0.2588 = 0.3464 + 0.0776 = \ 0.4240 "m" = 42.4 "cm" $)
+  #eq($ Y = 0.4 times 0.5000 + 0.3 times 0.9659 = 0.2000 + 0.2898 =\ 0.4898 "m" = 48.98 "cm" $)
+- Orientatsiya burçagi:
   #eq($ phi = 30 degree + 45 degree = 75 degree $)
 
-== Masala 2: differensial gʻildirakli mobil robot kinematikasi
+== Masala 2: differensial ğildirakli mobil robot kinematikasi
 
-Differensial mobil robotning gʻildirak radiusi $r = 0.08 "m"$, gʻildiraklar orasidagi masofa (baza) $L = 0.4 "m"$. Oʻng gʻildirak burchak tezligi $omega_R = 15 "rad/s"$, chap gʻildirak burchak tezligi $omega_L = 10 "rad/s"$.
+Differensial mobil robotning ğildirak radiusi $r = 0.08 "m"$, ğildiraklar orasidagi masofa (baza) $L = 0.4 "m"$. Öng ğildirak burçak tezligi $omega_R = 15 "rad/s"$, çap ğildirak burçak tezligi $omega_L = 10 "rad/s"$.
 
 #set enum(numbering: "a)")
-+ Robotning ilgarilanma chiziqli tezligi $v_"robot"$ va burchak aylanish tezligi $omega_"robot"$ ni toping.
-+ Robotning burilish radiusi $R_"turn"$ nimaga teng?
++ Robotning ilgarilanma çiziqli tezligi $v_"robot"$ va burçak aylaniş tezligi $omega_"robot"$ ni toping.
++ Robotning buriliş radiusi $R_"turn"$ nimaga teng?
 #set enum(numbering: "1.")
 
-*Yechish va formulalar:*
+*Yeçiş va formulalar:*
 
 #eq($ v_R = r dot omega_R, quad v_L = r dot omega_L $)
 #eq(
@@ -402,61 +400,61 @@ Differensial mobil robotning gʻildirak radiusi $r = 0.08 "m"$, gʻildiraklar or
 )
 #eq($ R_"turn" = v_"robot" / omega_"robot" $)
 
-*Hisoblash bosqichlari:*
+*Hisoblaş bosqiçlari:*
 
-- Chiziqli gʻildirak tezliklari:
+- Çiziqli ğildirak tezliklari:
   #eq($ v_R = 0.08 times 15 = 1.2 "m/s", quad v_L = 0.08 times 10 = 0.8 "m/s" $)
 - Robotning ilgarilanma tezligi ($v_"robot"$):
   #eq($ v_"robot" = (1.2 + 0.8) / 2 = 1.0 "m/s" $)
-- Robotning burchak tezligi ($omega_"robot"$):
+- Robotning burçak tezligi ($omega_"robot"$):
   #eq($ omega_"robot" = (1.2 - 0.8) / 0.4 = 0.4 / 0.4 = 1.0 "rad/s" $)
-- Burilish trayektoriyasi radiusi ($R_"turn"$):
+- Buriliş trayektoriyasi radiusi ($R_"turn"$):
   #eq($ R_"turn" = (1.0 "m/s") / (1.0 "rad/s") = 1.0 "m" $)
 
-== Masala 3: SCARA roboti Z-oʻqi va boʻgʻin yuklamalari hisobi
+== Masala 3: SCARA roboti Z-öqi va böğin yuklamalari hisobi
 
-SCARA robotining 1-boʻgʻin uzunligi $l_1 = 0.35 "m"$, 2-boʻgʻin uzunligi $l_2 = 0.25 "m"$. Robot tutqichiga $m = 5.0 "kg"$ yuk ilingan ($g = 9.81 "m/s"^2$). Manipulyator toʻliq choʻzilgan holatda ($theta_1 = 0 degree, theta_2 = 0 degree$):
+SCARA robotining 1-böğin uzunligi $l_1 = 0.35 "m"$, 2-böğin uzunligi $l_2 = 0.25 "m"$. Robot tutqiçiga $m = 5.0 "kg"$ yuk ilingan ($g = 9.81 "m/s"^2$). Manipulyator töliq çözilgan holatda ($theta_1 = 0 degree, theta_2 = 0 degree$):
 
 #set enum(numbering: "a)")
-+ 1-boʻgʻin podshipnigi va qoʻl konstruksiyasiga taʼsir etuvchi statik egilish momenti $M_1$ ni hisoblang (boʻgʻin massalari hisobga olinmaydi).
-+ $Z$-oʻq pnevmosilindri yukni $a = 2.0 "m/s"^2$ tezlanish bilan yuqoriga koʻtarganda pnevmosilindr hosil qilishi kerak boʻlgan $F_z$ kuchini toping.
++ 1-böğin podşipnigi va qöl konstruksiyasiga taʼsir etuvçi statik egiliş momenti $M_1$ ni hisoblang (böğin massalari hisobga olinmaydi).
++ $Z$-öq pnevmosilindri yukni $a = 2.0 "m/s"^2$ tezlaniş bilan yuqoriga kötarganda pnevmosilindr hosil qilişi kerak bölgan $F_z$ kuçini toping.
 #set enum(numbering: "1.")
 
-*Yechish va formulalar:*
+*Yeçiş va formulalar:*
 
 #eq($ L_"total" = l_1 + l_2, quad quad M_1 = m dot g dot L_"total", quad quad F_z = m (g + a) $)
 
-*Hisoblash bosqichlari:*
+*Hisoblaş bosqiçlari:*
 
 - Umumiy elka: $L_"total" = 0.35 + 0.25 = 0.60 "m"$.
-- Statik egilish momenti ($M_1$):
+- Statik egiliş momenti ($M_1$):
   #eq($ M_1 = 5.0 times 9.81 times 0.60 = 29.43 "N" dot "m" $)
-- Dinamik koʻtarish kuchi ($F_z$):
+- Dinamik kötariş kuçi ($F_z$):
   #eq($ F_z = 5.0 times (9.81 + 2.0) = 5.0 times 11.81 = 59.05 "N" $)
 
-_Izoh:_ SCARA robotining $R_1$ va $R_2$ aylanish oʻqlari vertikal boʻlgani uchun ogʻirlik kuchi bu oʻqlar atrofida buruvchi moment hosil qilmaydi. $M_1$ yuritma motoriga emas, balki boʻgʻin podshipnigi va qoʻl konstruksiyasiga egilish yuklamasi sifatida taʼsir qiladi. Aynan shu xususiyat SCARA'ning vertikal yoʻnalishdagi yuqori bikrligini taʼminlaydi.
+_Izoh:_ SCARA robotining $R_1$ va $R_2$ aylaniş öqlari vertikal bölgani uçun oğirlik kuçi bu öqlar atrofida buruvçi moment hosil qilmaydi. $M_1$ yuritma motoriga emas, balki böğin podşipnigi va qöl konstruksiyasiga egiliş yuklamasi sifatida taʼsir qiladi. Aynan şu xususiyat SCARA'ning vertikal yönalişdagi yuqori bikrligini taʼminlaydi.
 
-= Ishni bajarish tartibi va metodik tavsiyalar
+= Işni bajariş tartibi va metodik tavsiyalar
 
-Amaliy mashgʻulotni bajarishda talabalar quyidagi bosqichlarni ketma-ket amalga oshirishlari shart:
+Amaliy maşğulotni bajarişda talabalar quyidagi bosqiçlarni ketma-ket amalga oşirişlari şart:
 
-+ *1-bosqich: robotlar kinematik maketlarini va turlarini vizual oʻrganish.* Laboratoriyadagi Articulated, SCARA va mobil robot stendlarini koʻzdan kechiring. Har bir robotning boʻgʻinlar soni (DoF) va turlarini ($R$ va $P$) aniqlang.
-+ *2-bosqich: ishchi zonani (workspace) tajribaviy oʻlchash.* Manipulyatorni qoʻlda boshqarish pulti (_Teach Pendant_) orqali chekka koordinatalarga harakatlantirib, uning erishish mumkin boʻlgan chegaralarini ($X_"max", Y_"max", Z_"max"$) aniqlang.
-+ *3-bosqich: differensial mobil robot trayektoriyasini simulyatsiya qilish.* MATLAB / Simulink yoki Gazebo muhitida differensial mobil robotning chap va oʻng gʻildirak tezliklarini oʻzgartirib, toʻgʻri chiziqli va aylanma harakat trayektoriyalarini kuzating.
-+ *4-bosqich: toʻgʻri kinematika tenglamalarini dasturlash.* 5-boʻlimdagi 1-masala tenglamalarini C++ yoki Python muhitida yozib, berilgan $theta_1, theta_2$ burchaklarda tutqich $(X, Y)$ koordinatasini hisoblovchi dastur tuzing.
-+ *5-bosqich: hisoblash natijalarini tahlil qilish va hisobot tayyorlash.* Nazariy hisoblangan va simulyatsiyada olingan qiymatlarni solishtiring.
++ *1-bosqiç: robotlar kinematik maketlarini va turlarini vizual örganiş.* Laboratoriyadagi Articulated, SCARA va mobil robot stendlarini közdan keçiring. Har bir robotning böğinlar soni (DoF) va turlarini ($R$ va $P$) aniqlang.
++ *2-bosqiç: işçi zonani (workspace) tajribaviy ölçaş.* Manipulyatorni qölda boşqariş pulti (_Teach Pendant_) orqali çekka koordinatalarga harakatlantirib, uning erişiş mumkin bölgan çegaralarini ($X_"max", Y_"max", Z_"max"$) aniqlang.
++ *3-bosqiç: differensial mobil robot trayektoriyasini simulyatsiya qiliş.* MATLAB / Simulink yoki Gazebo muhitida differensial mobil robotning çap va öng ğildirak tezliklarini özgartirib, töğri çiziqli va aylanma harakat trayektoriyalarini kuzating.
++ *4-bosqiç: töğri kinematika tenglamalarini dasturlaş.* 5-bölimdagi 1-masala tenglamalarini C++ yoki Python muhitida yozib, berilgan $theta_1, theta_2$ burçaklarda tutqiç $(X, Y)$ koordinatasini hisoblovçi dastur tuzing.
++ *5-bosqiç: hisoblaş natijalarini tahlil qiliş va hisobot tayyorlaş.* Nazariy hisoblangan va simulyatsiyada olingan qiymatlarni soliştiring.
 
 = Nazorat va muhokama savollari
 
-+ ISO 8373 standartiga koʻra sanoat roboti va avtomatlashtirilgan dasturlanuvchi dastgoh oʻrtasidagi asosiy farq nimada?
-+ Sanoat robotlarining 6 ta asosiy kinematik turini sanab bering va ularning ishchi zonasi shakllarini izohlang.
-+ SCARA roboti qaysi yoʻnalishdagi harakatlarda yuqori aniqlik va qatʼiylikka ega hamda u qaysi sohada keng qoʻllaniladi?
-+ Parallel (Delta) robotlarning ketma-ket (Articulated) robotlarga nisbatan asosiy afzalliklari va kamchiliklari nimalardan iborat?
-+ Robotning erkinlik darajasi (DoF) nimani anglatadi va fazoda ixtiyoriy holatni egallash uchun kamida nechta DoF talab qilinadi?
-+ Aylanma ($R$) va ilgarilanma ($P$) boʻgʻinlarning mexatronik va sensorik jihatdan farqlarini tushuntiring.
-+ Differensial gʻildirakli mobil robot qanday qilib oʻz oʻqi atrofida buriladi ($R_"turn" = 0$)?
-+ Omni-gʻildiraklar va Mecanum gʻildiraklarning oddiy pnevmatik gʻildiraklardan farqli xususiyati nimada?
-+ Toʻgʻri kinematika (_Forward Kinematics_) va teskari kinematika (_Inverse Kinematics_) masalalarining mohiyatini tushuntiring.
-+ Mobil robotlarda SLAM (_Simultaneous Localization and Mapping_) texnologiyasi va uning uchun kerakli sensorlarni sanang.
-+ Antropomorf (insonsimon) va toʻrt oyoqli robotlarning harakatlanish barqarorligini taʼminlashda qanday sensorlar ishlatiladi?
-+ Sanoat robotlarida xavfsizlik zonalari (_safety zones_) va kollaborativ robotlar (_cobot_) tushunchasini izohlang.
++ ISO 8373 standartiga köra sanoat roboti va avtomatlaştirilgan dasturlanuvçi dastgoh örtasidagi asosiy farq nimada?
++ Sanoat robotlarining 6 ta asosiy kinematik turini sanab bering va ularning işçi zonasi şakllarini izohlang.
++ SCARA roboti qaysi yönalişdagi harakatlarda yuqori aniqlik va qatʼiylikka ega hamda u qaysi sohada keng qöllaniladi?
++ Parallel (Delta) robotlarning ketma-ket (Articulated) robotlarga nisbatan asosiy afzalliklari va kamçiliklari nimalardan iborat?
++ Robotning erkinlik darajasi (DoF) nimani anglatadi va fazoda ixtiyoriy holatni egallaş uçun kamida neçta DoF talab qilinadi?
++ Aylanma ($R$) va ilgarilanma ($P$) böğinlarning mexatronik va sensorik jihatdan farqlarini tuşuntiring.
++ Differensial ğildirakli mobil robot qanday qilib öz öqi atrofida buriladi ($R_"turn" = 0$)?
++ Omni-ğildiraklar va Mecanum ğildiraklarning oddiy pnevmatik ğildiraklardan farqli xususiyati nimada?
++ Töğri kinematika (_Forward Kinematics_) va teskari kinematika (_Inverse Kinematics_) masalalarining mohiyatini tuşuntiring.
++ Mobil robotlarda SLAM (_Simultaneous Localization and Mapping_) texnologiyasi va uning uçun kerakli sensorlarni sanang.
++ Antropomorf (insonsimon) va tört oyoqli robotlarning harakatlaniş barqarorligini taʼminlaşda qanday sensorlar işlatiladi?
++ Sanoat robotlarida xavfsizlik zonalari (_safety zones_) va kollaborativ robotlar (_cobot_) tuşunçasini izohlang.

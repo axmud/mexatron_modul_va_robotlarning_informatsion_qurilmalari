@@ -8,7 +8,7 @@
 #let headingblue = rgb("#1f4e79")
 #let lightblue = rgb("#e8f0f8")
 
-#set document(title: "Maʼruza №1. Fanning tarixi, rivojlanishi, dolzarb muammolari")
+#set document(title: "Maʼruza №1. Fanning tarixi, rivojlanişi, dolzarb muammolari")
 #set page(
   paper: "a4",
   margin: (top: 2.5cm, bottom: 2.5cm, left: 3cm, right: 2cm),
@@ -28,7 +28,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -65,9 +65,9 @@
 #align(center)[
   #text(size: 16pt, weight: "bold", fill: headingblue)[MAʼRUZA №1]
   #v(0.3em)
-  #text(size: 14pt, weight: "bold")[Mavzu: Fanning tarixi, rivojlanishi, dolzarb muammolari]
+  #text(size: 14pt, weight: "bold")[Mavzu: Fanning tarixi, rivojlanişi, dolzarb muammolari]
   #v(0.2em)
-  #text(size: 12pt, style: "italic")[(kirish maʼruzasi)]
+  #text(size: 12pt, style: "italic")[(kiriş maʼruzasi)]
 ]
 
 #v(0.8em)
@@ -75,81 +75,81 @@
 #block(inset: (left: 0pt))[
   #set par(first-line-indent: 0pt)
   *Reja:*
-  + Fanning maqsadi, vazifalari va tuzilishi.
-  + Asosiy tushunchalar: robot, mexatronika, mexatron modul, informatsion qurilma.
-  + Avtomatika, robototexnika va mexatronikaning tarixiy rivojlanishi.
-  + Datchiklar texnikasining rivojlanish bosqichlari va robotlar avlodlari.
+  + Fanning maqsadi, vazifalari va tuzilişi.
+  + Asosiy tuşunçalar: robot, mexatronika, mexatron modul, informatsion qurilma.
+  + Avtomatika, robototexnika va mexatronikaning tarixiy rivojlanişi.
+  + Datçiklar texnikasining rivojlaniş bosqiçlari va robotlar avlodlari.
   + Informatsion tizimlarning bionik jihatlari.
   + Informatsion qurilmalarning tasnifi.
-  + Zamonaviy rivojlanish tendensiyalari va dolzarb muammolar.
+  + Zamonaviy rivojlaniş tendensiyalari va dolzarb muammolar.
 
-  *Tayanch iboralar:* robot, robototexnik tizim, mexatronika, mexatron modul, informatsion qurilma, datchik, oʻlchash oʻzgartkichi, sensor, qayta aloqa, robotlar avlodlari, bionika, proprioseptiv va eksteroseptiv datchiklar, MEMS, intellektual datchik, sensorlar kompleksirovaniyasi.
+  *Tayanç iboralar:* robot, robototexnik tizim, mexatronika, mexatron modul, informatsion qurilma, datçik, ölçaş özgartkiçi, sensor, qayta aloqa, robotlar avlodlari, bionika, proprioseptiv va eksteroseptiv datçiklar, MEMS, intellektual datçik, sensorlar kompleksirovaniyasi.
 ]
 
 // =====================================================================
-= Fanning maqsadi, vazifalari va tuzilishi
+= Fanning maqsadi, vazifalari va tuzilişi
 // =====================================================================
 
-Zamonaviy robot yoki har qanday mexatron tizim faqat harakatni bajaruvchi mexanizmdan iborat emas. U oʻzining ichki holatini va atrof-muhitni «sezishi», olingan maʼlumotni qayta ishlashi va shu asosda harakatini oʻzgartirishi kerak. Bu vazifani robotning *informatsion qurilmalari* — datchiklar, oʻlchash oʻzgartkichlari, signalga ishlov berish sxemalari va axborotni qayta ishlash vositalari bajaradi. Informatsion qurilmalarning sifati robotning aniqligi, tezkorligi, xavfsizligi va «aqlliligi»ni bevosita belgilaydi.
+Zamonaviy robot yoki har qanday mexatron tizim faqat harakatni bajaruvçi mexanizmdan iborat emas. U özining içki holatini va atrof-muhitni «sezişi», olingan maʼlumotni qayta işlaşi va şu asosda harakatini özgartirişi kerak. Bu vazifani robotning *informatsion qurilmalari* — datçiklar, ölçaş özgartkiçlari, signalga işlov beriş sxemalari va axborotni qayta işlaş vositalari bajaradi. Informatsion qurilmalarning sifati robotning aniqligi, tezkorligi, xavfsizligi va «aqlliligi»ni bevosita belgilaydi.
 
-*Fanning maqsadi* — talabalarda zamonaviy robototexnik va mexatron tizimlarning informatsion-oʻlchash qurilmalari haqida asosiy bilimlarni shakllantirish, ularning qurilish va ishlash prinsiplarini, axborotni olish, saqlash va qayta ishlash usullarini hamda samarali algoritmlarini oʻrgatishdir.
+*Fanning maqsadi* — talabalarda zamonaviy robototexnik va mexatron tizimlarning informatsion-ölçaş qurilmalari haqida asosiy bilimlarni şakllantiriş, ularning quriliş va işlaş prinsiplarini, axborotni oliş, saqlaş va qayta işlaş usullarini hamda samarali algoritmlarini örgatişdir.
 
 *Fanning asosiy vazifalari:*
-- datchiklarning fizik ishlash prinsiplari, tavsiflari va xatoliklarini oʻrganish;
-- robotning kinestetik (ichki holat), lokatsion, taktil va koʻrish tizimlarini qurish usullarini oʻzlashtirish;
-- oʻlchash sxemalari va signalga dastlabki ishlov berish usullarini oʻrganish;
-- bir nechta datchik maʼlumotlarini birlashtirish (kompleksirovaniya) tamoyillari bilan tanishish;
-- sunʼiy intellekt usullarining robot informatsion tizimlarida qoʻllanilishini oʻrganish;
-- inson va robot oʻrtasidagi interfeysni loyihalash asoslarini oʻzlashtirish.
+- datçiklarning fizik işlaş prinsiplari, tavsiflari va xatoliklarini örganiş;
+- robotning kinestetik (içki holat), lokatsion, taktil va köriş tizimlarini quriş usullarini özlaştiriş;
+- ölçaş sxemalari va signalga dastlabki işlov beriş usullarini örganiş;
+- bir neçta datçik maʼlumotlarini birlaştiriş (kompleksirovaniya) tamoyillari bilan tanişiş;
+- sunʼiy intellekt usullarining robot informatsion tizimlarida qöllanilişini örganiş;
+- inson va robot örtasidagi interfeysni loyihalaş asoslarini özlaştiriş.
 
-Fan mazmuni 1-jadvalda keltirilgan yettita boʻlimga ajratiladi. Fan «Oʻlchash va metrologiya asoslari», «Elektronika va sxemotexnika», «Avtomatik boshqarish nazariyasi», «Robototexnika asoslari» kabi fanlarga tayanadi va mexatron tizimlarni loyihalash, bitiruv malakaviy ishi uchun asos boʻlib xizmat qiladi.
+Fan mazmuni 1-jadvalda keltirilgan yettita bölimga ajratiladi. Fan «Ölçaş va metrologiya asoslari», «Elektronika va sxemotexnika», «Avtomatik boşqariş nazariyasi», «Robototexnika asoslari» kabi fanlarga tayanadi va mexatron tizimlarni loyihalaş, bitiruv malakaviy işi uçun asos bölib xizmat qiladi.
 
 #figure(
   btable(
     columns: (auto, 1fr, 1.6fr),
-    header: ([№], [Boʻlim nomi], [Asosiy mavzular]),
+    header: ([№], [Bölim nomi], [Asosiy mavzular]),
     [1],
-    [Robototexnika rivojlanishining asosiy bosqichlari va tendensiyalari],
-    [Asosiy tushunchalar, intellektual robotlar, bionik jihatlar],
+    [Robototexnika rivojlanişining asosiy bosqiçlari va tendensiyalari],
+    [Asosiy tuşunçalar, intellektual robotlar, bionik jihatlar],
     [2],
     [Sunʼiy intellekt usullari],
     [Ekspert tizimlar, neyron tarmoqlar, assotsiativ xotira, noaniq mantiq],
     [3],
     [Informatsion tizimlar elementlari],
-    [Datchiklar va ularning tavsiflari, sezgir elementlar, oʻlchash sxemalari, kinestetik, lokatsion, taktil va texnik koʻrish tizimlari, kompleksirovaniya],
+    [Datçiklar va ularning tavsiflari, sezgir elementlar, ölçaş sxemalari, kinestetik, lokatsion, taktil va texnik köriş tizimlari, kompleksirovaniya],
     [4],
     [Intellektual yuritmalar],
-    [Adaptiv yuritmalar, noaniq mantiqli rostlagichlar],
+    [Adaptiv yuritmalar, noaniq mantiqli rostlagiçlar],
     [5],
-    [Robotlar harakatini intellektual boshqarish],
-    [Ekspert tizimlar, assotsiativ xotira va neyron tarmoqlar asosida boshqarish],
+    [Robotlar harakatini intellektual boşqariş],
+    [Ekspert tizimlar, assotsiativ xotira va neyron tarmoqlar asosida boşqariş],
     [6],
-    [Intellektual robotlar xatti-harakatini rejalashtirish],
-    [Harakatlarni rejalashtirish masalasi, graf usullari, oʻz-oʻzini oʻqitish],
+    [Intellektual robotlar xatti-harakatini rejalaştiriş],
+    [Harakatlarni rejalaştiriş masalasi, graf usullari, öz-özini öqitiş],
     [7],
     [«Operator — robot» interfeysi],
-    [Inson-mashina muloqoti usullari, intellektual interfeys],
+    [Inson-maşina muloqoti usullari, intellektual interfeys],
   ),
-  caption: [Fanning tuzilishi],
+  caption: [Fanning tuzilişi],
 ) <tab-fan>
 
 // =====================================================================
-= Asosiy tushunchalar
+= Asosiy tuşunçalar
 // =====================================================================
 
-*Robot* — atrof-muhitdan keladigan signallarga javob bergan holda, inson bevosita aralashuvisiz, avtomatik ravishda harakatlarni bajaradigan qayta dasturlanadigan mashina. Bolton taʼrificha, operator boshqaradigan oddiy qoʻl qurilmasidan farqli ravishda, robot kompyuter tomonidan boshqariladi va keyingi harakat haqidagi qarorni muhitdan olingan signallar asosida oʻzi qabul qiladi.
+*Robot* — atrof-muhitdan keladigan signallarga javob bergan holda, inson bevosita aralaşuvisiz, avtomatik ravişda harakatlarni bajaradigan qayta dasturlanadigan maşina. Bolton taʼrifiça, operator boşqaradigan oddiy qöl qurilmasidan farqli ravişda, robot kompyuter tomonidan boşqariladi va keyingi harakat haqidagi qarorni muhitdan olingan signallar asosida özi qabul qiladi.
 
-*Robototexnika* — robotlarni loyihalash, yaratish, boshqarish va qoʻllash bilan shugʻullanadigan fan va texnika sohasi.
+*Robototexnika* — robotlarni loyihalaş, yaratiş, boşqariş va qöllaş bilan şuğullanadigan fan va texnika sohasi.
 
-*Mexatronika* — mexanika, elektronika, boshqarish nazariyasi va hisoblash texnikasining sinergetik birlashuvi asosida mashina va tizimlarni yaratuvchi fan sohasi. Mexatron tizimni oʻrganish odatda beshta yoʻnalishga ajratiladi: fizik tizimlarni modellashtirish, datchiklar va ijro qurilmalari, signallar va tizimlar, kompyuter va mantiqiy tizimlar, dasturiy taʼminot va maʼlumotlarni yigʻish.
+*Mexatronika* — mexanika, elektronika, boşqariş nazariyasi va hisoblaş texnikasining sinergetik birlaşuvi asosida maşina va tizimlarni yaratuvçi fan sohasi. Mexatron tizimni örganiş odatda beşta yönalişga ajratiladi: fizik tizimlarni modellaştiriş, datçiklar va ijro qurilmalari, signallar va tizimlar, kompyuter va mantiqiy tizimlar, dasturiy taʼminot va maʼlumotlarni yiğiş.
 
-*Mexatron modul* — harakatlantiruvchi qism (dvigatel, uzatma), informatsion qism (datchiklar) va boshqaruv qismi (kontroller, quvvat elektronikasi) yagona konstruksiyada birlashtirilgan, funksional va konstruktiv jihatdan tugallangan qurilma. Masalan, robot boʻgʻinining servoyuritmasi dvigatel, reduktor, enkoder, tormoz va drayverdan iborat yagona modul boʻlishi mumkin.
+*Mexatron modul* — harakatlantiruvçi qism (dvigatel, uzatma), informatsion qism (datçiklar) va boşqaruv qismi (kontroller, quvvat elektronikasi) yagona konstruksiyada birlaştirilgan, funksional va konstruktiv jihatdan tugallangan qurilma. Masalan, robot böğinining servoyuritmasi dvigatel, reduktor, enkoder, tormoz va drayverdan iborat yagona modul bölişi mumkin.
 
-*Informatsion qurilma* — robotning ichki holati va tashqi muhit haqidagi maʼlumotni olish, oʻzgartirish, uzatish va dastlabki qayta ishlashni taʼminlovchi qurilma. Uning asosiy elementi — datchik.
+*Informatsion qurilma* — robotning içki holati va taşqi muhit haqidagi maʼlumotni oliş, özgartiriş, uzatiş va dastlabki qayta işlaşni taʼminlovçi qurilma. Uning asosiy elementi — datçik.
 
-Terminologiyada maʼlum farqlar mavjud. Regtien va Dertien taʼrifiga koʻra, *oʻzgartkich* (transducer) — oʻlchanayotgan kattalik haqidagi axborotni bir fizik sohadan (mexanik, issiqlik, optik, magnit) boshqasiga, ideal holda axborotni yoʻqotmasdan oʻtkazuvchi qurilma. Kirishi noelektrik, chiqishi elektrik boʻlgan oʻzgartkich *sensor (datchik)*, aksincha, elektrik signalni noelektrik kattalikka aylantiruvchi oʻzgartkich esa *aktuator (ijro qurilmasi)* deb ataladi. Xalqaro metrologik lugʻat (VIM) boʻyicha sensor — oʻlchash tizimining oʻlchanayotgan kattalik bevosita taʼsir qiladigan elementi. Zamonaviy datchiklar sezgir elementdan tashqari kuchaytirish, filtrlash, analog-raqamli oʻzgartirish va raqamli interfeysni ham oʻz ichiga oladi, shuning uchun amaliyotda «datchik» va «oʻzgartkich» chegarasi tobora yoʻqolib bormoqda.
+Terminologiyada maʼlum farqlar mavjud. Regtien va Dertien taʼrifiga köra, *özgartkiç* (transducer) — ölçanayotgan kattalik haqidagi axborotni bir fizik sohadan (mexanik, issiqlik, optik, magnit) boşqasiga, ideal holda axborotni yöqotmasdan ötkazuvçi qurilma. Kirişi noelektrik, çiqişi elektrik bölgan özgartkiç *sensor (datçik)*, aksinça, elektrik signalni noelektrik kattalikka aylantiruvçi özgartkiç esa *aktuator (ijro qurilmasi)* deb ataladi. Xalqaro metrologik luğat (VIM) böyiça sensor — ölçaş tizimining ölçanayotgan kattalik bevosita taʼsir qiladigan elementi. Zamonaviy datçiklar sezgir elementdan taşqari kuçaytiriş, filtrlaş, analog-raqamli özgartiriş va raqamli interfeysni ham öz içiga oladi, şuning uçun amaliyotda «datçik» va «özgartkiç» çegarasi tobora yöqolib bormoqda.
 
-Robototexnik tizimdagi informatsion qurilmalarning oʻrni 1-rasmda koʻrsatilgan. Informatsion qurilmalar ikki xil axborot oqimini shakllantiradi: mexanizmning ichki holati (boʻgʻinlar burchaklari, tezliklari, dvigatel toklari) va tashqi muhit (obyektlar, toʻsiqlar, kontakt kuchlari) haqidagi axborot.
+Robototexnik tizimdagi informatsion qurilmalarning örni 1-rasmda körsatilgan. Informatsion qurilmalar ikki xil axborot oqimini şakllantiradi: mexanizmning içki holati (böğinlar burçaklari, tezliklari, dvigatel toklari) va taşqi muhit (obyektlar, tösiqlar, kontakt kuçlari) haqidagi axborot.
 
 #figure(
   diagram(
@@ -159,232 +159,232 @@ Robototexnik tizimdagi informatsion qurilmalarning oʻrni 1-rasmda koʻrsatilgan
     node-corner-radius: 3pt,
     edge-stroke: 1pt,
     node((0, 0), [Operator], name: <op>),
-    node((1, 0), [Boshqaruv \ tizimi], name: <bt>),
+    node((1, 0), [Boşqaruv \ tizimi], name: <bt>),
     node((2, 0), [Yuritmalar], name: <yu>),
     node((3, 0), [Mexanizm \ (manipulyator)], name: <mx>),
-    node((3, 1), [Ishchi muhit \ va obyekt], name: <mu>),
-    node((1, 1), [Axborotga \ ishlov berish], name: <ai>),
+    node((3, 1), [Işçi muhit \ va obyekt], name: <mu>),
+    node((1, 1), [Axborotga \ işlov beriş], name: <ai>),
     node((2, 1), [Informatsion \ qurilmalar], name: <iq>, fill: rgb("#fbe3cf")),
     edge(<op>, <bt>, "<->"),
     edge(<bt>, <yu>, "->"),
     edge(<yu>, <mx>, "->"),
     edge(<mx>, <mu>, "<->", [taʼsir], label-side: left),
-    edge(<mx>, <iq>, "->", [ichki holat], label-side: right, label-pos: 0.4),
-    edge(<mu>, <iq>, "->", [tashqi muhit], label-side: right),
+    edge(<mx>, <iq>, "->", [içki holat], label-side: right, label-pos: 0.4),
+    edge(<mu>, <iq>, "->", [taşqi muhit], label-side: right),
     edge(<iq>, <ai>, "->"),
     edge(<ai>, <bt>, "->"),
   ),
-  caption: [Robototexnik tizimning umumlashgan tuzilishi va informatsion qurilmalarning oʻrni],
+  caption: [Robototexnik tizimning umumlaşgan tuzilişi va informatsion qurilmalarning örni],
 ) <fig-tuzilish>
 
-Har qanday datchikning chiqish signali faqat oʻlchanayotgan kattalikka emas, balki taʼsir etuvchi boshqa omillarga (harorat, taʼminot kuchlanishi, vibratsiya) ham bogʻliq boʻladi:
+Har qanday datçikning çiqiş signali faqat ölçanayotgan kattalikka emas, balki taʼsir etuvçi boşqa omillarga (harorat, taʼminot kuçlanişi, vibratsiya) ham boğliq böladi:
 
 #eq($ y = F(x, z_1, z_2, dots, z_m) + xi, $)
 
-bu yerda $x$ — oʻlchanayotgan kattalik, $z_1, dots, z_m$ — taʼsir etuvchi omillar, $xi$ — tasodifiy shovqin. Ideal datchik uchun $y$ faqat $x$ ga bogʻliq. Amaliyotda koʻpincha chiziqli model qoʻllaniladi:
+bu yerda $x$ — ölçanayotgan kattalik, $z_1, dots, z_m$ — taʼsir etuvçi omillar, $xi$ — tasodifiy şovqin. Ideal datçik uçun $y$ faqat $x$ ga boğliq. Amaliyotda köpinça çiziqli model qöllaniladi:
 
 #eq($ y = S x + y_0 + xi, $)
 
-bu yerda $S$ — sezgirlik, $y_0$ — nol siljishi. Datchiklar texnikasining asosiy muammolaridan biri — taʼsir etuvchi omillar va shovqinning ulushini kamaytirish, yaʼni (2) modelga imkon qadar yaqinlashishdir. Bu masalalar keyingi maʼruzalarda batafsil koʻriladi.
+bu yerda $S$ — sezgirlik, $y_0$ — nol siljişi. Datçiklar texnikasining asosiy muammolaridan biri — taʼsir etuvçi omillar va şovqinning uluşini kamaytiriş, yaʼni (2) modelga imkon qadar yaqinlaşişdir. Bu masalalar keyingi maʼruzalarda batafsil köriladi.
 
 // =====================================================================
-= Avtomatika, robototexnika va mexatronikaning tarixiy rivojlanishi
+= Avtomatika, robototexnika va mexatronikaning tarixiy rivojlanişi
 // =====================================================================
 
 == Qayta aloqali qurilmalarning ilk namunalari
 
-Avtomatik qurilmalar yaratishga urinishlar uzoq tarixga ega. Miloddan avvalgi III–I asrlarda Qadimgi Yunonistonda qalqovichli rostlagichlar paydo boʻlgan: Ktesibiosning suv soati va Filonning moy chirogʻi suyuqlik sathini qalqovich yordamida barqaror ushlab turgan. Milodiy I asrda Iskandariyalik Geron «Pnevmatika» asarida qalqovichli sath rostlagichlarining turli xillarini tasvirlagan.
+Avtomatik qurilmalar yaratişga urinişlar uzoq tarixga ega. Miloddan avvalgi III–I asrlarda Qadimgi Yunonistonda qalqoviçli rostlagiçlar paydo bölgan: Ktesibiosning suv soati va Filonning moy çiroği suyuqlik sathini qalqoviç yordamida barqaror uşlab turgan. Milodiy I asrda Iskandariyalik Geron «Pnevmatika» asarida qalqoviçli sath rostlagiçlarining turli xillarini tasvirlagan.
 
-XVII–XIX asrlarda Yevropa va Rossiyada mexatronikaning kelajakdagi asoslari boʻlgan muhim qurilmalar ixtiro qilingan. Gollandiyalik Kornelis Drebbel (1572–1633) birinchi qayta aloqali tizimlardan biri — harorat rostlagichini yaratgan. Deni Papen 1681-yilda bugʻ qozonlari uchun bosim saqlagich klapanini ixtiro qilgan. 1765-yilda I. I. Polzunov bugʻ qozoni uchun suv sathining qalqovichli rostlagichini ishlab chiqqan. Jeyms Uattning markazdan qochma (sharli) rostlagichi bugʻ mashinasi valining tezligini oʻlchab, unga beriladigan bugʻ miqdorini avtomatik oʻzgartirgan.
+XVII–XIX asrlarda Yevropa va Rossiyada mexatronikaning kelajakdagi asoslari bölgan muhim qurilmalar ixtiro qilingan. Gollandiyalik Kornelis Drebbel (1572–1633) birinçi qayta aloqali tizimlardan biri — harorat rostlagiçini yaratgan. Deni Papen 1681-yilda buğ qozonlari uçun bosim saqlagiç klapanini ixtiro qilgan. 1765-yilda I. I. Polzunov buğ qozoni uçun suv sathining qalqoviçli rostlagiçini işlab çiqqan. Jeyms Uattning markazdan qoçma (şarli) rostlagiçi buğ maşinasi valining tezligini ölçab, unga beriladigan buğ miqdorini avtomatik özgartirgan.
 
-Bu misollarning barchasida bitta umumiy gʻoya bor: tizim *oʻzining holatini oʻlchaydi* va natijaga qarab taʼsirni oʻzgartiradi. Demak, informatsion qurilma (qalqovich, sharli mexanizm) qayta aloqali boshqaruvning ajralmas qismi sifatida eng boshidanoq mavjud boʻlgan.
+Bu misollarning barçasida bitta umumiy ğoya bor: tizim *özining holatini ölçaydi* va natijaga qarab taʼsirni özgartiradi. Demak, informatsion qurilma (qalqoviç, şarli mexanizm) qayta aloqali boşqaruvning ajralmas qismi sifatida eng boşidanoq mavjud bölgan.
 
-== «Robot» tushunchasining paydo boʻlishi
+== «Robot» tuşunçasining paydo bölişi
 
-«Robot» soʻzi chex yozuvchisi Karel Chapekning 1920-yilda yozilgan va 1921-yilda sahnalashtirilgan «R.U.R.» («Rossumning universal robotlari») pyesasi orqali keng tarqalgan. Pyesada sunʼiy odamlar ishlab chiqaradigan zavod tasvirlangan, soʻz esa slavyan tillaridagi «robota» — «mehnat», «ogʻir ish» soʻzidan olingan. «Robototexnika» (robotics) atamasini fantast yozuvchi Ayzek Azimov 1940-yillar boshida oʻz hikoyalarida qoʻllagan va robototexnikaning mashhur uch qonunini taklif etgan:
+«Robot» sözi çex yozuvçisi Karel Çapekning 1920-yilda yozilgan va 1921-yilda sahnalaştirilgan «R.U.R.» («Rossumning universal robotlari») pyesasi orqali keng tarqalgan. Pyesada sunʼiy odamlar işlab çiqaradigan zavod tasvirlangan, söz esa slavyan tillaridagi «robota» — «mehnat», «oğir iş» sözidan olingan. «Robototexnika» (robotics) atamasini fantast yozuvçi Ayzek Azimov 1940-yillar boşida öz hikoyalarida qöllagan va robototexnikaning maşhur uç qonunini taklif etgan:
 
-+ Robot insonga zarar yetkazmasligi yoki harakatsizligi bilan insonga zarar yetishiga yoʻl qoʻymasligi kerak.
-+ Robot birinchi qonunga zid boʻlmagan holda inson buyruqlariga boʻysunishi kerak.
-+ Robot birinchi va ikkinchi qonunlarga zid boʻlmagan holda oʻzini himoya qilishi kerak.
++ Robot insonga zarar yetkazmasligi yoki harakatsizligi bilan insonga zarar yetişiga yöl qöymasligi kerak.
++ Robot birinçi qonunga zid bölmagan holda inson buyruqlariga böysunişi kerak.
++ Robot birinçi va ikkinçi qonunlarga zid bölmagan holda özini himoya qilişi kerak.
 
-Bu qonunlar badiiy gʻoya boʻlsa-da, bugungi kunda robot xavfsizligi masalasi — himoya toʻsiqlari, yaqinlik va kuch datchiklari, xavfsizlik standartlari — aynan informatsion qurilmalar orqali hal qilinadi.
+Bu qonunlar badiiy ğoya bölsa-da, bugungi kunda robot xavfsizligi masalasi — himoya tösiqlari, yaqinlik va kuç datçiklari, xavfsizlik standartlari — aynan informatsion qurilmalar orqali hal qilinadi.
 
-== Sanoat robotlarining paydo boʻlishi
+== Sanoat robotlarining paydo bölişi
 
-Sanoat robototexnikasining asosiy bosqichlari 2-jadvalda keltirilgan.
+Sanoat robototexnikasining asosiy bosqiçlari 2-jadvalda keltirilgan.
 
 #figure(
   btable(
     columns: (auto, 1fr),
     header: ([Yil], [Voqea]),
     [1956],
-    [J. Devol va J. Engelberger Unimation kompaniyasini tashkil etib, birinchi sanoat manipulyatori Unimate ustida ish boshlaydi],
+    [J. Devol va J. Engelberger Unimation kompaniyasini taşkil etib, birinçi sanoat manipulyatori Unimate ustida iş boşlaydi],
     [1961],
-    [Devolga «Programmed Article Transfer» patenti beriladi; General Motors zavodida birinchi Unimate roboti quyma detallarni taxlash uchun oʻrnatiladi],
+    [Devolga «Programmed Article Transfer» patenti beriladi; General Motors zavodida birinçi Unimate roboti quyma detallarni taxlaş uçun örnatiladi],
     [1966–1972],
-    [Stenford tadqiqot institutida (SRI) Shakey — kamera va masofa oʻlchagich yordamida muhitni idrok etib, harakatini rejalashtiradigan birinchi mobil robot yaratiladi],
+    [Stenford tadqiqot institutida (SRI) Shakey — kamera va masofa ölçagiç yordamida muhitni idrok etib, harakatini rejalaştiradigan birinçi mobil robot yaratiladi],
     [1967],
-    [General Motors kuzovni nuqtali payvandlovchi robotlarni joriy qiladi],
+    [General Motors kuzovni nuqtali payvandlovçi robotlarni joriy qiladi],
     [1973],
-    [KUKA kompaniyasi oltita elektromexanik yuritmali birinchi sanoat roboti Famulus ni yaratadi],
+    [KUKA kompaniyasi oltita elektromexanik yuritmali birinçi sanoat roboti Famulus ni yaratadi],
     [1974],
-    [ASEA (Shvetsiya) uchun 8 bitli Intel mikroprotsessori bilan boshqariladigan birinchi sanoat roboti ishlab chiqiladi],
+    [ASEA (Şvetsiya) uçun 8 bitli Intel mikroprotsessori bilan boşqariladigan birinçi sanoat roboti işlab çiqiladi],
     [1978],
-    [Unimation General Motors uchun PUMA (Programmable Universal Machine for Assembly) robotini yaratadi],
+    [Unimation General Motors uçun PUMA (Programmable Universal Machine for Assembly) robotini yaratadi],
     [1979],
-    [Yaponiyada Nachi kompaniyasi gidravlik yuritmalar oʻrniga elektr dvigatelli payvandlash robotlarini ishlab chiqadi],
+    [Yaponiyada Nachi kompaniyasi gidravlik yuritmalar örniga elektr dvigatelli payvandlaş robotlarini işlab çiqadi],
     [1986],
-    [Honda oʻzining birinchi gumanoid robotini taqdim etadi],
+    [Honda özining birinçi gumanoid robotini taqdim etadi],
     [1987],
-    [Xalqaro robototexnika federatsiyasi (IFR) tashkil etiladi],
+    [Xalqaro robototexnika federatsiyasi (IFR) taşkil etiladi],
   ),
-  caption: [Sanoat robototexnikasi rivojlanishining asosiy bosqichlari~[1]],
+  caption: [Sanoat robototexnikasi rivojlanişining asosiy bosqiçlari~[1]],
 ) <tab-robot-tarix>
 
-Jadvaldan muhim bir qonuniyatni koʻrish mumkin: dastlabki robotlar gidravlik yuritmali boʻlib, oldindan yozilgan dasturni «koʻr-koʻrona» bajargan. Mikroprotsessorlar (1970-yillar) va elektr yuritmalarning keng tarqalishi bilan robotga koʻproq datchik oʻrnatish va ularning signallarini real vaqtda qayta ishlash imkoniyati paydo boʻldi.
+Jadvaldan muhim bir qonuniyatni köriş mumkin: dastlabki robotlar gidravlik yuritmali bölib, oldindan yozilgan dasturni «kör-körona» bajargan. Mikroprotsessorlar (1970-yillar) va elektr yuritmalarning keng tarqalişi bilan robotga köproq datçik örnatiş va ularning signallarini real vaqtda qayta işlaş imkoniyati paydo böldi.
 
-== Mexatronikaning shakllanishi
+== Mexatronikaning şakllanişi
 
-«Mexatronika» atamasini 1969-yilda yapon kompaniyasi Yaskawa Electric muhandisi mexanika va elektronikani birlashtirgan tizimlarni ifodalash uchun taklif etgan. Kompaniya 1972-yilda bu atamaga savdo belgisi huquqini olgan, ammo atama keng tarqalgach, 1982-yilda bu huquqdan voz kechgan. Dastlab mexatronika hisoblash qismisiz elektromexanik tizimlarni (avtomatik eshiklar, savdo avtomatlari) anglatgan.
+«Mexatronika» atamasini 1969-yilda yapon kompaniyasi Yaskawa Electric muhandisi mexanika va elektronikani birlaştirgan tizimlarni ifodalaş uçun taklif etgan. Kompaniya 1972-yilda bu atamaga savdo belgisi huquqini olgan, ammo atama keng tarqalgaç, 1982-yilda bu huquqdan voz keçgan. Dastlab mexatronika hisoblaş qismisiz elektromexanik tizimlarni (avtomatik eşiklar, savdo avtomatlari) anglatgan.
 
-1970-yillar oxirida Yaponiya mashinasozlik sanoatini rivojlantirish jamiyati (JSPMI) mexatron mahsulotlarni toʻrt sinfga ajratgan (3-jadval).
+1970-yillar oxirida Yaponiya maşinasozlik sanoatini rivojlantiriş jamiyati (JSPMI) mexatron mahsulotlarni tört sinfga ajratgan (3-jadval).
 
 #figure(
   btable(
     columns: (auto, 1.5fr, 1fr),
     header: ([Sinf], [Tavsifi], [Misollar]),
     [I],
-    [Funksionalligini oshirish uchun elektronika qoʻshilgan asosan mexanik mahsulotlar],
-    [Raqamli dasturiy boshqariladigan dastgohlar, rostlanuvchi tezlikli yuritmalar],
+    [Funksionalligini oşiriş uçun elektronika qöşilgan asosan mexanik mahsulotlar],
+    [Raqamli dasturiy boşqariladigan dastgohlar, rostlanuvçi tezlikli yuritmalar],
     [II],
-    [Tashqi interfeysi oʻzgarmagan, ichki qurilmalari elektronika bilan yangilangan anʼanaviy mexanik tizimlar],
-    [Zamonaviy tikuv mashinasi],
+    [Taşqi interfeysi özgarmagan, içki qurilmalari elektronika bilan yangilangan anʼanaviy mexanik tizimlar],
+    [Zamonaviy tikuv maşinasi],
     [III],
-    [Funksiyasi saqlangan, ammo ichki mexanizmlari elektronika bilan almashtirilgan tizimlar],
+    [Funksiyasi saqlangan, ammo içki mexanizmlari elektronika bilan almaştirilgan tizimlar],
     [Raqamli soat],
     [IV],
     [Mexanika va elektronikaning sinergetik integratsiyasi asosida loyihalangan mahsulotlar],
-    [Nusxa koʻchirish apparati, aqlli kir yuvish mashinasi],
+    [Nusxa köçiriş apparati, aqlli kir yuviş maşinasi],
   ),
   caption: [Mexatron mahsulotlarning JSPMI tasnifi~[3]],
 ) <tab-jspmi>
 
-Haqiqiy mexatron tizimlar mikroprotsessor (Intel, 1970-yillar) paydo boʻlgandan keyingina amaliy jihatdan mumkin boʻldi. Avtomobil buning yaqqol misoli: 1960-yillargacha avtomobildagi yagona jiddiy elektron qurilma radio boʻlgan. 1970-yillar oxirida tirsakli val va taqsimlash vali holati datchiklari (dastlab Xoll datchigi), havo sarfi va drossel holati datchiklari hamda mikrokontrollerdan iborat elektron oʻt oldirish tizimi, shuningdek gʻildiraklar aylanish tezligi datchiklariga asoslangan bloklanishga qarshi tormoz tizimi (ABS) joriy etilgan. Bugungi avtomobilda yuzlab datchiklar mavjud, avtonom avtomobil esa koʻp jihatdan gʻildirakli robotdir.
+Haqiqiy mexatron tizimlar mikroprotsessor (Intel, 1970-yillar) paydo bölgandan keyingina amaliy jihatdan mumkin böldi. Avtomobil buning yaqqol misoli: 1960-yillargaça avtomobildagi yagona jiddiy elektron qurilma radio bölgan. 1970-yillar oxirida tirsakli val va taqsimlaş vali holati datçiklari (dastlab Xoll datçigi), havo sarfi va drossel holati datçiklari hamda mikrokontrollerdan iborat elektron öt oldiriş tizimi, şuningdek ğildiraklar aylaniş tezligi datçiklariga asoslangan bloklanişga qarşi tormoz tizimi (ABS) joriy etilgan. Bugungi avtomobilda yuzlab datçiklar mavjud, avtonom avtomobil esa köp jihatdan ğildirakli robotdir.
 
 // =====================================================================
-= Datchiklar texnikasining rivojlanishi va robotlar avlodlari
+= Datçiklar texnikasining rivojlanişi va robotlar avlodlari
 // =====================================================================
 
-== Datchiklar texnikasining asosiy bosqichlari
+== Datçiklar texnikasining asosiy bosqiçlari
 
-Robotlarning informatsion qurilmalari fizikaning turli sohalaridagi kashfiyotlarga tayanadi. Bugun robotlarda qoʻllanadigan koʻplab datchiklarning ishlash prinsiplari XIX asrda kashf etilgan, ammo ularning keng qoʻllanilishi yarimoʻtkazgichlar texnologiyasi va mikroelektronika rivoji bilan bogʻliq (4-jadval).
+Robotlarning informatsion qurilmalari fizikaning turli sohalaridagi kaşfiyotlarga tayanadi. Bugun robotlarda qöllanadigan köplab datçiklarning işlaş prinsiplari XIX asrda kaşf etilgan, ammo ularning keng qöllanilişi yarimötkazgiçlar texnologiyasi va mikroelektronika rivoji bilan boğliq (4-jadval).
 
 #figure(
   btable(
     columns: (auto, 1fr),
-    header: ([Yil], [Kashfiyot yoki texnologiya va uning robototexnikadagi ahamiyati]),
+    header: ([Yil], [Kaşfiyot yoki texnologiya va uning robototexnikadagi ahamiyati]),
     [1856],
-    [U. Tomson (lord Kelvin) metall simning qarshiligi deformatsiyaga bogʻliqligini aniqlaydi — tenzorezistiv datchiklar asosi],
+    [U. Tomson (lord Kelvin) metall simning qarşiligi deformatsiyaga boğliqligini aniqlaydi — tenzorezistiv datçiklar asosi],
     [1879],
-    [E. Xoll magnit maydonda oʻtkazgichda koʻndalang kuchlanish hosil boʻlishini kashf etadi — Xoll datchiklari (pozitsiya, tok, tezlik)],
+    [E. Xoll magnit maydonda ötkazgiçda köndalang kuçlaniş hosil bölişini kaşf etadi — Xoll datçiklari (pozitsiya, tok, tezlik)],
     [1880],
-    [P. va J. Kyuri aka-ukalar piezoelektrik effektni kashf etadi — kuch, bosim va tezlanish datchiklari],
+    [P. va J. Kyuri aka-ukalar piezoelektrik effektni kaşf etadi — kuç, bosim va tezlaniş datçiklari],
     [1938],
-    [E. Simmons va A. Ruge yopishtiriladigan simli tenzorezistorni yaratadi — kuch va moment datchiklarining asosi],
+    [E. Simmons va A. Ruge yopiştiriladigan simli tenzorezistorni yaratadi — kuç va moment datçiklarining asosi],
     [1954],
-    [Ch. Smit kremniy va germaniyda kuchli piezorezistiv effektni aniqlaydi — yarimoʻtkazgichli bosim va tezlanish datchiklari],
+    [Ç. Smit kremniy va germaniyda kuçli piezorezistiv effektni aniqlaydi — yarimötkazgiçli bosim va tezlaniş datçiklari],
     [1960],
-    [Birinchi lazer yaratiladi; R. Kalman filtri taklif etiladi — lazerli masofa oʻlchagichlar va datchik maʼlumotlarini birlashtirish],
-    [1960-yillar boshi],
-    [Kremniy asosidagi birinchi bosim datchiklari — mikroelektromexanik tizimlar (MEMS) yoʻnalishining boshlanishi~[2]],
+    [Birinçi lazer yaratiladi; R. Kalman filtri taklif etiladi — lazerli masofa ölçagiçlar va datçik maʼlumotlarini birlaştiriş],
+    [1960-yillar boşi],
+    [Kremniy asosidagi birinçi bosim datçiklari — mikroelektromexanik tizimlar (MEMS) yönalişining boşlanişi~[2]],
     [1969],
-    [U. Boyl va J. Smit zaryad bogʻlangan qurilmani (PZS, CCD) ixtiro qiladi — raqamli kameralar va texnik koʻrish tizimlari],
+    [U. Boyl va J. Smit zaryad boğlangan qurilmani (PZS, CCD) ixtiro qiladi — raqamli kameralar va texnik köriş tizimlari],
     [1990-yillar],
-    [MEMS akselerometrlar va giroskoplarning ommaviy ishlab chiqarilishi (avtomobil xavfsizlik yostiqlari); GPS tizimining toʻliq ishga tushishi],
+    [MEMS akselerometrlar va giroskoplarning ommaviy işlab çiqarilişi (avtomobil xavfsizlik yostiqlari); GPS tizimining töliq işga tuşişi],
     [2005],
-    [DARPA Grand Challenge musobaqasida avtonom avtomobil lazer skanerlari (LiDAR), kamera, GPS va inersial datchiklar majmuasi yordamida choʻl yoʻlini toʻliq bosib oʻtadi],
+    [DARPA Grand Challenge musobaqasida avtonom avtomobil lazer skanerlari (LiDAR), kamera, GPS va inersial datçiklar majmuasi yordamida çöl yölini töliq bosib ötadi],
     [2010],
-    [Arzon RGB-D (rang va chuqurlik) kameralarning paydo boʻlishi — mobil robotlar uchun uch oʻlchamli koʻrish ommalashadi],
+    [Arzon RGB-D (rang va çuqurlik) kameralarning paydo bölişi — mobil robotlar uçun uç ölçamli köriş ommalaşadi],
   ),
-  caption: [Datchiklar texnikasi rivojlanishining asosiy bosqichlari],
+  caption: [Datçiklar texnikasi rivojlanişining asosiy bosqiçlari],
 ) <tab-datchik-tarix>
 
 == Robotlar avlodlari
 
-Robotlarning rivojlanishini ularning informatsion imkoniyatlariga qarab uch avlodga ajratish qabul qilingan (5-jadval). Bu tasnif aynan informatsion qurilmalarning roli ortib borishini aks ettiradi.
+Robotlarning rivojlanişini ularning informatsion imkoniyatlariga qarab uç avlodga ajratiş qabul qilingan (5-jadval). Bu tasnif aynan informatsion qurilmalarning roli ortib borişini aks ettiradi.
 
 #figure(
   btable(
     columns: (1fr, 1.3fr, 1.3fr),
     header: ([Avlod], [Informatsion taʼminoti], [Imkoniyatlari]),
     [I avlod — \ dasturiy robotlar],
-    [Faqat ichki datchiklar (boʻgʻin holati); tashqi muhit haqida axborot yoʻq],
-    [Qatʼiy dasturni takrorlaydi; obyekt joyi aniq belgilangan, muhit oʻzgarmas boʻlishi shart],
+    [Faqat içki datçiklar (böğin holati); taşqi muhit haqida axborot yöq],
+    [Qatʼiy dasturni takrorlaydi; obyekt joyi aniq belgilangan, muhit özgarmas bölişi şart],
     [II avlod — \ adaptiv (sezgir) robotlar],
-    [Tashqi datchiklar: taktil, kuch-moment, lokatsion, oddiy texnik koʻrish],
-    [Muhitning cheklangan oʻzgarishlariga moslashadi: obyekt joyini aniqlaydi, kontakt kuchini rostlaydi],
+    [Taşqi datçiklar: taktil, kuç-moment, lokatsion, oddiy texnik köriş],
+    [Muhitning çeklangan özgarişlariga moslaşadi: obyekt joyini aniqlaydi, kontakt kuçini rostlaydi],
     [III avlod — \ intellektual robotlar],
-    [Koʻp sonli turli datchiklar, ularning maʼlumotlarini birlashtirish, sunʼiy intellekt],
-    [Muhitni tanib oladi, maqsadga erishish yoʻlini oʻzi rejalashtiradi, tajribadan oʻrganadi, inson bilan muloqot qiladi],
+    [Köp sonli turli datçiklar, ularning maʼlumotlarini birlaştiriş, sunʼiy intellekt],
+    [Muhitni tanib oladi, maqsadga erişiş yölini özi rejalaştiradi, tajribadan örganadi, inson bilan muloqot qiladi],
   ),
   caption: [Robotlar avlodlari va ularning informatsion taʼminoti],
 ) <tab-avlod>
 
-Hozirgi sanoat robotlarining katta qismi hali ham I avlodga yaqin, ammo kollaborativ robotlar, avtonom mobil robotlar va avtonom transport vositalari II va III avlod xususiyatlariga ega. Bunday tizimlarda informatsion qurilmalar qiymati va murakkabligi koʻpincha mexanik qismdan ustun keladi.
+Hozirgi sanoat robotlarining katta qismi hali ham I avlodga yaqin, ammo kollaborativ robotlar, avtonom mobil robotlar va avtonom transport vositalari II va III avlod xususiyatlariga ega. Bunday tizimlarda informatsion qurilmalar qiymati va murakkabligi köpinça mexanik qismdan ustun keladi.
 
 // =====================================================================
 = Informatsion tizimlarning bionik jihatlari
 // =====================================================================
 
-Robotlarning informatsion tizimlarini yaratishda koʻpincha tirik organizmlar, birinchi navbatda inson sezgi organlari namuna sifatida olinadi. Bu yondashuv *bionika* deb ataladi. Inson tashqi dunyo haqidagi axborotni bir nechta sezgi kanali orqali oladi, markaziy asab tizimida ularni birlashtiradi va harakatni boshqaradi. Robotning informatsion tizimi ham xuddi shunday tuzilgan: datchiklar sezgi organlari, kontroller esa «miya» vazifasini bajaradi (6-jadval).
+Robotlarning informatsion tizimlarini yaratişda köpinça tirik organizmlar, birinçi navbatda inson sezgi organlari namuna sifatida olinadi. Bu yondaşuv *bionika* deb ataladi. Inson taşqi dunyo haqidagi axborotni bir neçta sezgi kanali orqali oladi, markaziy asab tizimida ularni birlaştiradi va harakatni boşqaradi. Robotning informatsion tizimi ham xuddi şunday tuzilgan: datçiklar sezgi organlari, kontroller esa «miya» vazifasini bajaradi (6-jadval).
 
 #figure(
   btable(
     columns: (1fr, 1.2fr, 1.4fr),
     header: ([Inson sezgisi], [Vazifasi], [Robotdagi texnik analogi]),
-    [Kinestetik (mushak-boʻgʻin) sezgi],
-    [Tana qismlarining holati va harakatini sezish],
-    [Enkoderlar, rezolverlar, potensiometrlar, tezlik va tok datchiklari],
+    [Kinestetik (muşak-böğin) sezgi],
+    [Tana qismlarining holati va harakatini seziş],
+    [Enkoderlar, rezolverlar, potensiometrlar, tezlik va tok datçiklari],
     [Vestibulyar apparat],
-    [Muvozanat, burilish va tezlanishni sezish],
-    [Akselerometrlar, giroskoplar, inersial oʻlchash bloklari (IMU)],
+    [Muvozanat, buriliş va tezlanişni seziş],
+    [Akselerometrlar, giroskoplar, inersial ölçaş bloklari (IMU)],
     [Taktil (teri) sezgi],
-    [Tegish, bosim, sirpanish, harorat],
-    [Taktil matritsalar, kuch-moment datchiklari, sirpanish datchiklari],
-    [Eshitish],
-    [Tovush manbai va masofani aniqlash],
-    [Mikrofonlar, ultratovush lokatorlari],
-    [Koʻrish],
-    [Obyektlarni tanish, masofa va harakatni baholash],
-    [Kameralar, stereokameralar, chuqurlik kameralari, lazer skanerlari],
-    [Hid bilish],
-    [Kimyoviy moddalarni aniqlash],
-    [Gaz datchiklari («elektron burun»)],
+    [Tegiş, bosim, sirpaniş, harorat],
+    [Taktil matritsalar, kuç-moment datçiklari, sirpaniş datçiklari],
+    [Eşitiş],
+    [Tovuş manbai va masofani aniqlaş],
+    [Mikrofonlar, ultratovuş lokatorlari],
+    [Köriş],
+    [Obyektlarni taniş, masofa va harakatni baholaş],
+    [Kameralar, stereokameralar, çuqurlik kameralari, lazer skanerlari],
+    [Hid biliş],
+    [Kimyoviy moddalarni aniqlaş],
+    [Gaz datçiklari («elektron burun»)],
   ),
   caption: [Inson sezgi organlari va ularning texnik analoglari],
 ) <tab-bionika>
 
-Inson axborotning katta qismini koʻrish orqali oladi, shuning uchun texnik koʻrish tizimlari robototexnikada eng murakkab va jadal rivojlanayotgan yoʻnalish hisoblanadi. Shu bilan birga, bionik yondashuv bevosita nusxa koʻchirishni anglatmaydi: texnik datchiklar inson sezgi organlariga ega boʻlmagan imkoniyatlarga ham ega boʻlishi mumkin. Masalan, lazerli masofa oʻlchagich millimetr aniqlikda masofani bevosita oʻlchaydi, radar tuman va zulmatda ishlaydi, infraqizil kamera issiqlik nurlanishini «koʻradi». Aksincha, inson terisining taktil sezgirligi va moslashuvchanligi hozircha texnik taktil datchiklardan ancha yuqori.
+Inson axborotning katta qismini köriş orqali oladi, şuning uçun texnik köriş tizimlari robototexnikada eng murakkab va jadal rivojlanayotgan yönaliş hisoblanadi. Şu bilan birga, bionik yondaşuv bevosita nusxa köçirişni anglatmaydi: texnik datçiklar inson sezgi organlariga ega bölmagan imkoniyatlarga ham ega bölişi mumkin. Masalan, lazerli masofa ölçagiç millimetr aniqlikda masofani bevosita ölçaydi, radar tuman va zulmatda işlaydi, infraqizil kamera issiqlik nurlanişini «köradi». Aksinça, inson terisining taktil sezgirligi va moslaşuvçanligi hozirça texnik taktil datçiklardan ança yuqori.
 
-*Informatsion yondashuv* nuqtai nazaridan robot harakatining sifati u olayotgan axborotning hajmi, aniqligi va oʻz vaqtida kelishi bilan belgilanadi. Robot qanchalik toʻliq va ishonchli axborotga ega boʻlsa, u shunchalik murakkab va oʻzgaruvchan muhitda ishlay oladi.
+*Informatsion yondaşuv* nuqtai nazaridan robot harakatining sifati u olayotgan axborotning hajmi, aniqligi va öz vaqtida kelişi bilan belgilanadi. Robot qançalik töliq va işonçli axborotga ega bölsa, u şunçalik murakkab va özgaruvçan muhitda işlay oladi.
 
 // =====================================================================
 = Informatsion qurilmalarning tasnifi
 // =====================================================================
 
-Robotlarning informatsion qurilmalarini bir nechta belgi boʻyicha tasniflash mumkin.
+Robotlarning informatsion qurilmalarini bir neçta belgi böyiça tasniflaş mumkin.
 
-*Axborot manbai boʻyicha:*
-- *ichki holat datchiklari (proprioseptiv)* — robotning oʻz holatini oʻlchaydi: boʻgʻinlarning burchak va chiziqli siljishi, tezligi, tezlanishi, dvigatel toki va momenti, harorat;
-- *tashqi muhit datchiklari (eksteroseptiv)* — robot atrofidagi muhit va obyektlar haqida axborot beradi: masofa, obyekt shakli va joylashuvi, kontakt kuchi, yoritilganlik.
+*Axborot manbai böyiça:*
+- *içki holat datçiklari (proprioseptiv)* — robotning öz holatini ölçaydi: böğinlarning burçak va çiziqli siljişi, tezligi, tezlanişi, dvigatel toki va momenti, harorat;
+- *taşqi muhit datçiklari (eksteroseptiv)* — robot atrofidagi muhit va obyektlar haqida axborot beradi: masofa, obyekt şakli va joylaşuvi, kontakt kuçi, yoritilganlik.
 
-*Tashqi muhit bilan oʻzaro taʼsir usuli boʻyicha:* kontaktli (taktil datchiklar, kuch-moment datchiklari, chegara uzgichlari) va kontaktsiz (lokatsion tizimlar, yaqinlik datchiklari, texnik koʻrish).
+*Taşqi muhit bilan özaro taʼsir usuli böyiça:* kontaktli (taktil datçiklar, kuç-moment datçiklari, çegara uzgiçlari) va kontaktsiz (lokatsion tizimlar, yaqinlik datçiklari, texnik köriş).
 
-*Energiya manbai boʻyicha:* passiv datchiklar oʻlchanayotgan obyekt energiyasidan foydalanadi (masalan, termojuft, piezoelektrik datchik, oddiy kamera); aktiv datchiklar muhitga oʻzi signal yuboradi va qaytgan signalni tahlil qiladi (ultratovush lokatori, lazer skaneri, radar).
+*Energiya manbai böyiça:* passiv datçiklar ölçanayotgan obyekt energiyasidan foydalanadi (masalan, termojuft, piezoelektrik datçik, oddiy kamera); aktiv datçiklar muhitga özi signal yuboradi va qaytgan signalni tahlil qiladi (ultratovuş lokatori, lazer skaneri, radar).
 
-*Fizik ishlash prinsipi boʻyicha:* rezistiv, sigʻim, induktiv va magnit, optik, piezoelektrik, akustik datchiklar. Regtien va Dertien datchiklarni aynan shu belgi boʻyicha tasniflashni tavsiya etadi, chunki datchikning tavsiflari asosan uning fizik prinsipi bilan belgilanadi: masalan, pozitsiya datchigini rezistiv, sigʻim, induktiv, akustik yoki optik usulda qurish mumkin va ularning har biri turli imkoniyat va cheklovlarga ega.
+*Fizik işlaş prinsipi böyiça:* rezistiv, siğim, induktiv va magnit, optik, piezoelektrik, akustik datçiklar. Regtien va Dertien datçiklarni aynan şu belgi böyiça tasniflaşni tavsiya etadi, çunki datçikning tavsiflari asosan uning fizik prinsipi bilan belgilanadi: masalan, pozitsiya datçigini rezistiv, siğim, induktiv, akustik yoki optik usulda quriş mumkin va ularning har biri turli imkoniyat va çeklovlarga ega.
 
-Asosiy tasnif belgilari 2-rasmda umumlashtirilgan.
+Asosiy tasnif belgilari 2-rasmda umumlaştirilgan.
 
 #figure(
   diagram(
@@ -393,17 +393,17 @@ Asosiy tasnif belgilari 2-rasmda umumlashtirilgan.
     node-corner-radius: 3pt,
     edge-stroke: 1pt,
     node((0.75, 0), [*Robotning informatsion qurilmalari*], fill: rgb("#fbe3cf"), name: <root>),
-    node((0, 1), [Ichki holat datchiklari \ (proprioseptiv)], fill: lightblue, name: <ich>),
-    node((1.5, 1), [Tashqi muhit datchiklari \ (eksteroseptiv)], fill: lightblue, name: <tash>),
+    node((0, 1), [Içki holat datçiklari \ (proprioseptiv)], fill: lightblue, name: <ich>),
+    node((1.5, 1), [Taşqi muhit datçiklari \ (eksteroseptiv)], fill: lightblue, name: <tash>),
     node(
       (0, 2),
-      align(left)[• pozitsiya va burchak \ • tezlik va tezlanish \ • tok va moment \ • harorat],
+      align(left)[• pozitsiya va burçak \ • tezlik va tezlaniş \ • tok va moment \ • harorat],
       name: <ich2>,
     ),
-    node((1, 2), align(left)[*Kontaktli:* \ • taktil \ • kuch-moment \ • chegara uzgichlari], name: <kon>),
+    node((1, 2), align(left)[*Kontaktli:* \ • taktil \ • kuç-moment \ • çegara uzgiçlari], name: <kon>),
     node(
       (2, 2),
-      align(left)[*Kontaktsiz:* \ • yaqinlik datchiklari \ • lokatsion tizimlar \ • texnik koʻrish],
+      align(left)[*Kontaktsiz:* \ • yaqinlik datçiklari \ • lokatsion tizimlar \ • texnik köriş],
       name: <kons>,
     ),
     edge(<root>, <ich>, "->"),
@@ -416,14 +416,14 @@ Asosiy tasnif belgilari 2-rasmda umumlashtirilgan.
 ) <fig-tasnif>
 
 // =====================================================================
-= Zamonaviy rivojlanish tendensiyalari
+= Zamonaviy rivojlaniş tendensiyalari
 // =====================================================================
 
-*Miniatyurizatsiya va MEMS texnologiyasi.* Integral sxemalar texnologiyasi va mikroishlov berish yutuqlari tufayli koʻplab anʼanaviy mexanik datchiklar oʻrnini kremniy asosidagi mikroelektromexanik tizimlar (MEMS) egallamoqda. Eng ommaviy MEMS datchiklar — akselerometrlar va giroskoplar. Ommaviy ishlab chiqarish tufayli datchik narxi yakka nusxalar uchun bir necha oʻn ming yevrodan yuz millionlab partiyalar uchun bir necha yevrosentgacha tushadi. Bu robototexnikada koʻp sonli datchiklardan foydalanish imkonini beradi.
+*Miniatyurizatsiya va MEMS texnologiyasi.* Integral sxemalar texnologiyasi va mikroişlov beriş yutuqlari tufayli köplab anʼanaviy mexanik datçiklar örnini kremniy asosidagi mikroelektromexanik tizimlar (MEMS) egallamoqda. Eng ommaviy MEMS datçiklar — akselerometrlar va giroskoplar. Ommaviy işlab çiqariş tufayli datçik narxi yakka nusxalar uçun bir neça ön ming yevrodan yuz millionlab partiyalar uçun bir neça yevrosentgaça tuşadi. Bu robototexnikada köp sonli datçiklardan foydalaniş imkonini beradi.
 
-*Intellektual (smart) datchiklar.* Bitta kristallda sezgir element bilan birga kuchaytirgich, filtr, analog-raqamli oʻzgartkich va mikroprotsessor joylashtiriladi. Bunday datchik raqamli interfeys (I²C, SPI, CAN, EtherCAT, IO-Link) orqali tayyor, kalibrlangan va haroratga kompensatsiya qilingan natijani beradi, oʻzini oʻzi diagnostika qila oladi.
+*Intellektual (smart) datçiklar.* Bitta kristallda sezgir element bilan birga kuçaytirgiç, filtr, analog-raqamli özgartkiç va mikroprotsessor joylaştiriladi. Bunday datçik raqamli interfeys (I²C, SPI, CAN, EtherCAT, IO-Link) orqali tayyor, kalibrlangan va haroratga kompensatsiya qilingan natijani beradi, özini özi diagnostika qila oladi.
 
-*Sensorlar kompleksirovaniyasi (sensor fusion).* Bitta datchik har doim cheklangan va shovqinli axborot beradi. Turli datchiklar maʼlumotlarini birlashtirish natijaning aniqligi va ishonchliligini oshiradi. Eng oddiy holatda, bir kattalikni dispersiyalari $sigma_1^2$ va $sigma_2^2$ boʻlgan ikki mustaqil datchik bilan oʻlchab, natijalarni optimal tortish mumkin:
+*Sensorlar kompleksirovaniyasi (sensor fusion).* Bitta datçik har doim çeklangan va şovqinli axborot beradi. Turli datçiklar maʼlumotlarini birlaştiriş natijaning aniqligi va işonçliligini oşiradi. Eng oddiy holatda, bir kattalikni dispersiyalari $sigma_1^2$ va $sigma_2^2$ bölgan ikki mustaqil datçik bilan ölçab, natijalarni optimal tortiş mumkin:
 
 #eq(
   $
@@ -431,51 +431,51 @@ Asosiy tasnif belgilari 2-rasmda umumlashtirilgan.
   $,
 )
 
-(3) ifodadan koʻrinadiki, birlashtirilgan natija dispersiyasi $sigma^2$ har ikkala datchik dispersiyasidan kichik boʻladi. Bu gʻoya Kalman filtrining asosida yotadi va IMU bilan GPS, kamera bilan LiDAR, enkoder bilan giroskop maʼlumotlarini birlashtirishda keng qoʻllanadi.
+(3) ifodadan körinadiki, birlaştirilgan natija dispersiyasi $sigma^2$ har ikkala datçik dispersiyasidan kiçik böladi. Bu ğoya Kalman filtrining asosida yotadi va IMU bilan GPS, kamera bilan LiDAR, enkoder bilan giroskop maʼlumotlarini birlaştirişda keng qöllanadi.
 
-*Texnik koʻrish va sunʼiy intellekt.* Chuqur neyron tarmoqlar obyektlarni tanib olish, tasvirni segmentatsiyalash va sahnani tushunish masalalarida klassik algoritmlardan sezilarli ustunlikka erishdi. Natijada kamera eng universal va arzon datchikka aylanib bormoqda. Shu bilan birga, neyron tarmoqqa asoslangan tizimlar katta hajmdagi oʻqitish maʼlumotlarini va kuchli hisoblash resurslarini talab qiladi.
+*Texnik köriş va sunʼiy intellekt.* Çuqur neyron tarmoqlar obyektlarni tanib oliş, tasvirni segmentatsiyalaş va sahnani tuşuniş masalalarida klassik algoritmlardan sezilarli ustunlikka erişdi. Natijada kamera eng universal va arzon datçikka aylanib bormoqda. Şu bilan birga, neyron tarmoqqa asoslangan tizimlar katta hajmdagi öqitiş maʼlumotlarini va kuçli hisoblaş resurslarini talab qiladi.
 
-*Kollaborativ robotlar.* Inson bilan bir ish joyida xavfsiz ishlaydigan robotlar (kobotlar) boʻgʻinlardagi moment datchiklari, dvigatel toki orqali kontaktni aniqlash, yaqinlik datchiklari va kameralar bilan jihozlanadi. Bunday robotlarda informatsion qurilmalar xavfsizlikning asosiy vositasi hisoblanadi.
+*Kollaborativ robotlar.* Inson bilan bir iş joyida xavfsiz işlaydigan robotlar (kobotlar) böğinlardagi moment datçiklari, dvigatel toki orqali kontaktni aniqlaş, yaqinlik datçiklari va kameralar bilan jihozlanadi. Bunday robotlarda informatsion qurilmalar xavfsizlikning asosiy vositasi hisoblanadi.
 
-*Avtonom transport vositalari va mobil robotlar.* Avtonom avtomobil, dron va omborxona robotlari muhitni kameralar, radarlar, LiDAR, ultratovush datchiklari, GNSS va inersial tizimlar majmuasi orqali idrok etadi. Bu yoʻnalish hozirgi kunda datchiklar texnikasi rivojining asosiy harakatlantiruvchi kuchlaridan biridir.
+*Avtonom transport vositalari va mobil robotlar.* Avtonom avtomobil, dron va omborxona robotlari muhitni kameralar, radarlar, LiDAR, ultratovuş datçiklari, GNSS va inersial tizimlar majmuasi orqali idrok etadi. Bu yönaliş hozirgi kunda datçiklar texnikasi rivojining asosiy harakatlantiruvçi kuçlaridan biridir.
 
-*Sanoat 4.0 va raqamli egizaklar.* Datchiklar tarmoqqa ulanib, uskunalar holatini uzluksiz kuzatish, nosozliklarni oldindan bashorat qilish va jismoniy tizimning raqamli modelini (raqamli egizagini) real vaqtda yangilash imkonini beradi.
+*Sanoat 4.0 va raqamli egizaklar.* Datçiklar tarmoqqa ulanib, uskunalar holatini uzluksiz kuzatiş, nosozliklarni oldindan başorat qiliş va jismoniy tizimning raqamli modelini (raqamli egizagini) real vaqtda yangilaş imkonini beradi.
 
 // =====================================================================
 = Dolzarb muammolar
 // =====================================================================
 
-Datchiklar texnikasi va robototexnikaning jadal rivojlanishiga qaramay, robotlarning informatsion qurilmalari sohasida hali hal qilinmagan koʻplab muammolar mavjud.
+Datçiklar texnikasi va robototexnikaning jadal rivojlanişiga qaramay, robotlarning informatsion qurilmalari sohasida hali hal qilinmagan köplab muammolar mavjud.
 
-+ *Noaniqlik va shovqin.* Har qanday oʻlchash xatolikka ega. Robot noaniq, toʻliq boʻlmagan va ziddiyatli axborot asosida ishonchli qaror qabul qilishi kerak. Bu ehtimollik usullari, filtrlash va sensorlar kompleksirovaniyasini talab qiladi.
++ *Noaniqlik va şovqin.* Har qanday ölçaş xatolikka ega. Robot noaniq, töliq bölmagan va ziddiyatli axborot asosida işonçli qaror qabul qilişi kerak. Bu ehtimollik usullari, filtrlaş va sensorlar kompleksirovaniyasini talab qiladi.
 
-+ *Strukturalanmagan va dinamik muhit.* Zavoddagi tartibli ish joyidan farqli ravishda, uy, koʻcha yoki qishloq xoʻjaligi muhiti oldindan maʼlum emas va doimo oʻzgaradi. Bunday muhitda obyektlarni ishonchli tanib olish va harakatlanayotgan toʻsiqlarni kuzatish hali ham murakkab masala.
++ *Strukturalanmagan va dinamik muhit.* Zavoddagi tartibli iş joyidan farqli ravişda, uy, köça yoki qişloq xöjaligi muhiti oldindan maʼlum emas va doimo özgaradi. Bunday muhitda obyektlarni işonçli tanib oliş va harakatlanayotgan tösiqlarni kuzatiş hali ham murakkab masala.
 
-+ *Tashqi sharoitlarning taʼsiri.* Yomgʻir, tuman, qor, chang va kuchli yorugʻlik kamera hamda LiDAR ishini sezilarli yomonlashtiradi. Harorat oʻzgarishi datchiklarda nol siljishi va sezgirlik oʻzgarishini keltirib chiqaradi. Har xil fizik prinsipdagi datchiklarni birgalikda qoʻllash bu muammoni qisman hal qiladi.
++ *Taşqi şaroitlarning taʼsiri.* Yomğir, tuman, qor, çang va kuçli yoruğlik kamera hamda LiDAR işini sezilarli yomonlaştiradi. Harorat özgarişi datçiklarda nol siljişi va sezgirlik özgarişini keltirib çiqaradi. Har xil fizik prinsipdagi datçiklarni birgalikda qöllaş bu muammoni qisman hal qiladi.
 
-+ *Kalibrlash va sinxronlash.* Koʻp datchikli tizimda har bir datchikning ichki parametrlari, ularning bir-biriga nisbatan joylashuvi va vaqt boʻyicha sinxronligi aniq maʼlum boʻlishi kerak. Ekspluatatsiya davomida bu parametrlar oʻzgaradi, shuning uchun avtomatik kalibrlash usullari dolzarbdir.
++ *Kalibrlaş va sinxronlaş.* Köp datçikli tizimda har bir datçikning içki parametrlari, ularning bir-biriga nisbatan joylaşuvi va vaqt böyiça sinxronligi aniq maʼlum bölişi kerak. Ekspluatatsiya davomida bu parametrlar özgaradi, şuning uçun avtomatik kalibrlaş usullari dolzarbdir.
 
-+ *Maʼlumotlarni real vaqtda qayta ishlash.* Zamonaviy kameralar va lazer skanerlari soniyasiga juda katta hajmdagi maʼlumot beradi. Ularni boshqaruv konturi talab qiladigan kechikish bilan qayta ishlash uchun kuchli, lekin kam energiya sarflaydigan hisoblash vositalari kerak.
++ *Maʼlumotlarni real vaqtda qayta işlaş.* Zamonaviy kameralar va lazer skanerlari soniyasiga juda katta hajmdagi maʼlumot beradi. Ularni boşqaruv konturi talab qiladigan keçikiş bilan qayta işlaş uçun kuçli, lekin kam energiya sarflaydigan hisoblaş vositalari kerak.
 
-+ *Ishonchlilik va funksional xavfsizlik.* Datchikning nosozligi robot yoki avtonom avtomobilning xavfli harakatiga olib kelishi mumkin. Shuning uchun datchiklarni zaxiralash, nosozliklarni aniqlash va funksional xavfsizlik standartlari (IEC 61508, ISO 13849, avtomobillar uchun ISO 26262) talablarini bajarish zarur.
++ *Işonçlilik va funksional xavfsizlik.* Datçikning nosozligi robot yoki avtonom avtomobilning xavfli harakatiga olib kelişi mumkin. Şuning uçun datçiklarni zaxiralaş, nosozliklarni aniqlaş va funksional xavfsizlik standartlari (IEC 61508, ISO 13849, avtomobillar uçun ISO 26262) talablarini bajariş zarur.
 
-+ *Inson bilan xavfsiz hamkorlik.* Kollaborativ robot insonga tegish ehtimolini oldindan sezishi va kontakt kuchini cheklashi kerak (ISO 10218, ISO/TS 15066). Buning uchun tez va ishonchli yaqinlik, kuch-moment va koʻrish datchiklari talab qilinadi.
++ *Inson bilan xavfsiz hamkorlik.* Kollaborativ robot insonga tegiş ehtimolini oldindan sezişi va kontakt kuçini çeklaşi kerak (ISO 10218, ISO/TS 15066). Buning uçun tez va işonçli yaqinlik, kuç-moment va köriş datçiklari talab qilinadi.
 
-+ *Taktil sezgining cheklanganligi.* Inson qoʻlining sezgirligi va moslashuvchanligiga yaqin taktil «teri» yaratish hali ham ilmiy muammo boʻlib qolmoqda. Bu robotlarning nozik va notanish obyektlar bilan ishlash qobiliyatini cheklaydi.
++ *Taktil sezgining çeklanganligi.* Inson qölining sezgirligi va moslaşuvçanligiga yaqin taktil «teri» yaratiş hali ham ilmiy muammo bölib qolmoqda. Bu robotlarning nozik va notaniş obyektlar bilan işlaş qobiliyatini çeklaydi.
 
-+ *Sunʼiy intellekt tizimlarining ishonchliligi.* Neyron tarmoqlar oʻqitish maʼlumotlarida uchramagan vaziyatlarda kutilmagan xatoga yoʻl qoʻyishi mumkin, ularning qarorlarini tushuntirish va sertifikatlash qiyin.
++ *Sunʼiy intellekt tizimlarining işonçliligi.* Neyron tarmoqlar öqitiş maʼlumotlarida uçramagan vaziyatlarda kutilmagan xatoga yöl qöyişi mumkin, ularning qarorlarini tuşuntiriş va sertifikatlaş qiyin.
 
-+ *Kiberxavfsizlik.* Tarmoqqa ulangan datchiklar va sunʼiy signallar yordamida datchiklarni aldash (masalan, GNSS signalini soxtalashtirish) robot tizimlari uchun yangi xavf manbai hisoblanadi.
++ *Kiberxavfsizlik.* Tarmoqqa ulangan datçiklar va sunʼiy signallar yordamida datçiklarni aldaş (masalan, GNSS signalini soxtalaştiriş) robot tizimlari uçun yangi xavf manbai hisoblanadi.
 
-+ *Narx va energiya isteʼmoli.* Yuqori aniqlikdagi datchiklar (LiDAR, kuch-moment datchiklari, aniq enkoderlar) robot narxining katta qismini tashkil qiladi. Mobil robotlar uchun esa datchiklar va hisoblash vositalarining energiya isteʼmoli ish vaqtini cheklaydi.
++ *Narx va energiya isteʼmoli.* Yuqori aniqlikdagi datçiklar (LiDAR, kuç-moment datçiklari, aniq enkoderlar) robot narxining katta qismini taşkil qiladi. Mobil robotlar uçun esa datçiklar va hisoblaş vositalarining energiya isteʼmoli iş vaqtini çeklaydi.
 
-Bu muammolarning har biri fanning keyingi boʻlimlarida koʻriladigan mavzular bilan bevosita bogʻliq: datchiklar tavsiflari va xatoliklari, oʻlchash sxemalari, lokatsion va koʻrish tizimlari, kompleksirovaniya, sunʼiy intellekt usullari va inson-robot interfeysi.
+Bu muammolarning har biri fanning keyingi bölimlarida köriladigan mavzular bilan bevosita boğliq: datçiklar tavsiflari va xatoliklari, ölçaş sxemalari, lokatsion va köriş tizimlari, kompleksirovaniya, sunʼiy intellekt usullari va inson-robot interfeysi.
 
 // =====================================================================
 = Xulosa
 // =====================================================================
 
-Robotlarning informatsion qurilmalari qadimgi qalqovichli rostlagichlardan zamonaviy intellektual datchiklar va texnik koʻrish tizimlarigacha boʻlgan uzoq rivojlanish yoʻlini bosib oʻtdi. Robotlar avlodlarining almashinuvi asosan informatsion imkoniyatlarning kengayishi bilan bogʻliq: dasturiy robotlar faqat oʻz holatini «bilgan» boʻlsa, adaptiv robotlar muhitni sezishni, intellektual robotlar esa uni tushunishni va oʻz harakatini rejalashtirishni oʻrganmoqda. Bugungi kunda robot imkoniyatlarini cheklayotgan omil koʻpincha mexanika emas, balki uning muhitni qanchalik toʻliq, aniq va ishonchli idrok eta olishidir. Shu sababli informatsion qurilmalarni chuqur bilish mexatronika va robototexnika mutaxassisi uchun zarur hisoblanadi.
+Robotlarning informatsion qurilmalari qadimgi qalqoviçli rostlagiçlardan zamonaviy intellektual datçiklar va texnik köriş tizimlarigaça bölgan uzoq rivojlaniş yölini bosib ötdi. Robotlar avlodlarining almaşinuvi asosan informatsion imkoniyatlarning kengayişi bilan boğliq: dasturiy robotlar faqat öz holatini «bilgan» bölsa, adaptiv robotlar muhitni sezişni, intellektual robotlar esa uni tuşunişni va öz harakatini rejalaştirişni örganmoqda. Bugungi kunda robot imkoniyatlarini çeklayotgan omil köpinça mexanika emas, balki uning muhitni qançalik töliq, aniq va işonçli idrok eta olişidir. Şu sababli informatsion qurilmalarni çuqur biliş mexatronika va robototexnika mutaxassisi uçun zarur hisoblanadi.
 
 // =====================================================================
 = Nazorat savollari
@@ -484,15 +484,15 @@ Robotlarning informatsion qurilmalari qadimgi qalqovichli rostlagichlardan zamon
 #block[
   #set par(first-line-indent: 0pt)
   + Robotning informatsion qurilmalari qanday vazifalarni bajaradi?
-  + Robot, robototexnika, mexatronika va mexatron modul tushunchalarini taʼriflang.
-  + Oʻzgartkich, sensor va aktuator oʻrtasidagi farq nimada?
+  + Robot, robototexnika, mexatronika va mexatron modul tuşunçalarini taʼriflang.
+  + Özgartkiç, sensor va aktuator örtasidagi farq nimada?
   + Qayta aloqali avtomatik qurilmalarning ilk tarixiy namunalariga misollar keltiring.
-  + «Robot» va «mexatronika» atamalari qachon va kim tomonidan kiritilgan?
-  + Birinchi sanoat robotlari qanday vazifalarni bajargan va ularning informatsion imkoniyatlari qanday boʻlgan?
-  + JSPMI boʻyicha mexatron mahsulotlarning toʻrt sinfini tavsiflang.
-  + Robotlarning uch avlodi informatsion taʼminoti boʻyicha qanday farqlanadi?
-  + Inson sezgi organlari va robot datchiklari oʻrtasidagi oʻxshashlik va farqlarni tushuntiring.
-  + Proprioseptiv va eksteroseptiv datchiklarga misollar keltiring.
-  + Sensorlar kompleksirovaniyasi oʻlchash aniqligini qanday oshiradi?
-  + Robotlarning informatsion qurilmalari sohasidagi uchta asosiy dolzarb muammoni izohlang.
+  + «Robot» va «mexatronika» atamalari qaçon va kim tomonidan kiritilgan?
+  + Birinçi sanoat robotlari qanday vazifalarni bajargan va ularning informatsion imkoniyatlari qanday bölgan?
+  + JSPMI böyiça mexatron mahsulotlarning tört sinfini tavsiflang.
+  + Robotlarning uç avlodi informatsion taʼminoti böyiça qanday farqlanadi?
+  + Inson sezgi organlari va robot datçiklari örtasidagi öxşaşlik va farqlarni tuşuntiring.
+  + Proprioseptiv va eksteroseptiv datçiklarga misollar keltiring.
+  + Sensorlar kompleksirovaniyasi ölçaş aniqligini qanday oşiradi?
+  + Robotlarning informatsion qurilmalari sohasidagi uçta asosiy dolzarb muammoni izohlang.
 ]

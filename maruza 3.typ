@@ -11,7 +11,7 @@
 #let lightorange = rgb("#fbe3cf")
 
 #set document(
-  title: "Maʼruza №3. Mexatron modullar va robotlarda qoʻllaniladigan informatsion tizimlar va ularning sinflanishi",
+  title: "Maʼruza №3. Mexatron modullar va robotlarda qöllaniladigan informatsion tizimlar va ularning sinflanişi",
 )
 #set page(
   paper: "a4",
@@ -32,7 +32,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -72,7 +72,7 @@
   #text(
     size: 14pt,
     weight: "bold",
-  )[Mavzu: Mexatron modullar va robotlarda qoʻllaniladigan \ informatsion tizimlar va ularning sinflanishi]
+  )[Mavzu: Mexatron modullar va robotlarda qöllaniladigan \ informatsion tizimlar va ularning sinflanişi]
 ]
 
 #v(0.8em)
@@ -80,40 +80,40 @@
 #block[
   #set par(first-line-indent: 0pt)
   *Reja:*
-  + Informatsion tizim tushunchasi va uning robotdagi vazifalari.
-  + Informatsion-oʻlchash kanalining umumlashgan tuzilishi.
-  + Oʻlchash jarayoni va datchikning informatsion modeli.
-  + Informatsion tizimlarning vazifasi boʻyicha sinflanishi.
-  + Datchiklarning fizik va energetik belgilar boʻyicha sinflanishi.
-  + Robot informatsion tizimining ierarxik tuzilishi.
-  + Informatsion tizimlarga qoʻyiladigan talablar.
+  + Informatsion tizim tuşunçasi va uning robotdagi vazifalari.
+  + Informatsion-ölçaş kanalining umumlaşgan tuzilişi.
+  + Ölçaş jarayoni va datçikning informatsion modeli.
+  + Informatsion tizimlarning vazifasi böyiça sinflanişi.
+  + Datçiklarning fizik va energetik belgilar böyiça sinflanişi.
+  + Robot informatsion tizimining ierarxik tuzilişi.
+  + Informatsion tizimlarga qöyiladigan talablar.
 
-  *Tayanch iboralar:* informatsion tizim, informatsion-oʻlchash kanali, sezgir element, oʻlchash oʻzgartkichi, informatsion model, kinestetik tizim, lokatsion tizim, texnik koʻrish tizimi, taktil tizim, kuch-moment sezish, navigatsiya tizimi, generatorli va parametrik datchiklar, energetik sohalar, intellektual datchik, axborotga ishlov berish ierarxiyasi.
+  *Tayanç iboralar:* informatsion tizim, informatsion-ölçaş kanali, sezgir element, ölçaş özgartkiçi, informatsion model, kinestetik tizim, lokatsion tizim, texnik köriş tizimi, taktil tizim, kuç-moment seziş, navigatsiya tizimi, generatorli va parametrik datçiklar, energetik sohalar, intellektual datçik, axborotga işlov beriş ierarxiyasi.
 ]
 
 // =====================================================================
-= Informatsion tizim tushunchasi va uning robotdagi vazifalari
+= Informatsion tizim tuşunçasi va uning robotdagi vazifalari
 // =====================================================================
 
-Oldingi maʼruzalarda robotning informatsion qurilmalari, axborot miqdori va signallar haqida umumiy tushunchalar berildi. Amaliyotda robot alohida datchiklar bilan emas, balki ularning tizimi bilan ishlaydi: bir nechta datchik, ularning signallariga ishlov beruvchi sxemalar, aloqa kanallari va algoritmlar birgalikda robotga kerakli axborotni yetkazadi.
+Oldingi maʼruzalarda robotning informatsion qurilmalari, axborot miqdori va signallar haqida umumiy tuşunçalar berildi. Amaliyotda robot alohida datçiklar bilan emas, balki ularning tizimi bilan işlaydi: bir neçta datçik, ularning signallariga işlov beruvçi sxemalar, aloqa kanallari va algoritmlar birgalikda robotga kerakli axborotni yetkazadi.
 
-*Robotning informatsion tizimi* — robotning ichki holati, ishchi muhit va bajarilayotgan texnologik jarayon haqidagi axborotni olish, oʻzgartirish, uzatish, qayta ishlash va boshqaruv tizimiga berishni taʼminlovchi texnik va dasturiy vositalar majmuasi. Uning tarkibiga datchiklar (sezgir elementlar va oʻlchash oʻzgartkichlari), signalga ishlov berish qurilmalari, analog-raqamli oʻzgartkichlar, aloqa interfeyslari hamda axborotni qayta ishlash algoritmlari kiradi.
+*Robotning informatsion tizimi* — robotning içki holati, işçi muhit va bajarilayotgan texnologik jarayon haqidagi axborotni oliş, özgartiriş, uzatiş, qayta işlaş va boşqaruv tizimiga berişni taʼminlovçi texnik va dasturiy vositalar majmuasi. Uning tarkibiga datçiklar (sezgir elementlar va ölçaş özgartkiçlari), signalga işlov beriş qurilmalari, analog-raqamli özgartkiçlar, aloqa interfeyslari hamda axborotni qayta işlaş algoritmlari kiradi.
 
 Informatsion tizim robotda quyidagi asosiy vazifalarni bajaradi:
-- *qayta aloqani taʼminlash* — yuritmalar va boʻgʻinlarning holati, tezligi, momenti haqidagi axborotni boshqaruv konturlariga berish;
-- *ishchi muhitni idrok etish* — obyektlar, toʻsiqlar va ularning joylashuvini aniqlash, muhit modelini qurish;
-- *muhit bilan oʻzaro taʼsirni nazorat qilish* — kontakt kuchlarini oʻlchash va cheklash;
-- *navigatsiya* — mobil robotning fazodagi oʻrnini va yoʻnalishini aniqlash;
-- *diagnostika va xavfsizlik* — robot qismlarining holatini kuzatish, nosozliklarni aniqlash, inson yaqinlashganini sezish;
-- *inson bilan muloqot* — operator buyruqlarini qabul qilish va unga robot holati haqida axborot berish.
+- *qayta aloqani taʼminlaş* — yuritmalar va böğinlarning holati, tezligi, momenti haqidagi axborotni boşqaruv konturlariga beriş;
+- *işçi muhitni idrok etiş* — obyektlar, tösiqlar va ularning joylaşuvini aniqlaş, muhit modelini quriş;
+- *muhit bilan özaro taʼsirni nazorat qiliş* — kontakt kuçlarini ölçaş va çeklaş;
+- *navigatsiya* — mobil robotning fazodagi örnini va yönalişini aniqlaş;
+- *diagnostika va xavfsizlik* — robot qismlarining holatini kuzatiş, nosozliklarni aniqlaş, inson yaqinlaşganini seziş;
+- *inson bilan muloqot* — operator buyruqlarini qabul qiliş va unga robot holati haqida axborot beriş.
 
-Birinchi vazifa har qanday robotda mavjud. Qolganlari robot qanchalik murakkab va avtonom boʻlsa, shunchalik katta ahamiyat kasb etadi.
+Birinçi vazifa har qanday robotda mavjud. Qolganlari robot qançalik murakkab va avtonom bölsa, şunçalik katta ahamiyat kasb etadi.
 
 // =====================================================================
-= Informatsion-oʻlchash kanalining umumlashgan tuzilishi
+= Informatsion-ölçaş kanalining umumlaşgan tuzilişi
 // =====================================================================
 
-Informatsion tizim bir nechta *informatsion-oʻlchash kanallaridan* tashkil topadi. Har bir kanal bitta fizik kattalik haqidagi axborotni oʻlchanayotgan obyektdan boshqaruv tizimigacha yetkazadi. Kanalning umumlashgan tuzilishi 1-rasmda keltirilgan.
+Informatsion tizim bir neçta *informatsion-ölçaş kanallaridan* taşkil topadi. Har bir kanal bitta fizik kattalik haqidagi axborotni ölçanayotgan obyektdan boşqaruv tizimigaça yetkazadi. Kanalning umumlaşgan tuzilişi 1-rasmda keltirilgan.
 
 #figure(
   diagram(
@@ -125,12 +125,12 @@ Informatsion tizim bir nechta *informatsion-oʻlchash kanallaridan* tashkil topa
     edge-stroke: 1pt,
     node((0, 0), [Obyekt], fill: white, name: <ob>),
     node((1, 0), [Sezgir \ element], name: <se>),
-    node((2, 0), [Oʻlchash \ oʻzgartkichi], name: <oz>),
-    node((3, 0), [Signalga \ ishlov berish], name: <ib>),
+    node((2, 0), [Ölçaş \ özgartkiçi], name: <oz>),
+    node((3, 0), [Signalga \ işlov beriş], name: <ib>),
     node((4, 0), [ARO], name: <aro>),
     node((5, 0), [Interfeys], name: <if>),
-    node((5, 1), [Boshqaruv \ tizimi], fill: lightorange, name: <bt>),
-    node((2, 1), [Yordamchi energiya \ manbai (taʼminot)], fill: white, name: <en>),
+    node((5, 1), [Boşqaruv \ tizimi], fill: lightorange, name: <bt>),
+    node((2, 1), [Yordamçi energiya \ manbai (taʼminot)], fill: white, name: <en>),
     edge(<ob>, <se>, "->", [$x$], label-side: left),
     edge(<se>, <oz>, "->"),
     edge(<oz>, <ib>, "->"),
@@ -139,160 +139,160 @@ Informatsion tizim bir nechta *informatsion-oʻlchash kanallaridan* tashkil topa
     edge(<if>, <bt>, "->", [$y$], label-side: left),
     edge(<en>, <oz>, "->", stroke: (dash: "dashed", thickness: 1pt)),
   ),
-  caption: [Informatsion-oʻlchash kanalining umumlashgan tuzilishi],
+  caption: [Informatsion-ölçaş kanalining umumlaşgan tuzilişi],
 ) <fig-kanal>
 
 Kanal elementlarining vazifalari:
-- *sezgir element* oʻlchanayotgan kattalik $x$ bevosita taʼsir qiladigan element; unda kattalik qandaydir fizik parametr oʻzgarishiga aylanadi (masalan, deformatsiya — qarshilik oʻzgarishiga, siljish — sigʻim yoki induktivlik oʻzgarishiga);
-- *oʻlchash oʻzgartkichi* bu oʻzgarishni elektr signaliga (kuchlanish, tok, chastota) aylantiradi; parametrik datchiklarda buning uchun tashqi taʼminot manbai kerak;
-- *signalga ishlov berish* qurilmasi signalni kuchaytiradi, filtrlaydi, chiziqlashtiradi va ARO diapazoniga moslaydi;
+- *sezgir element* ölçanayotgan kattalik $x$ bevosita taʼsir qiladigan element; unda kattalik qandaydir fizik parametr özgarişiga aylanadi (masalan, deformatsiya — qarşilik özgarişiga, siljiş — siğim yoki induktivlik özgarişiga);
+- *ölçaş özgartkiçi* bu özgarişni elektr signaliga (kuçlaniş, tok, çastota) aylantiradi; parametrik datçiklarda buning uçun taşqi taʼminot manbai kerak;
+- *signalga işlov beriş* qurilmasi signalni kuçaytiradi, filtrlaydi, çiziqlaştiradi va ARO diapazoniga moslaydi;
 - *ARO* signalni diskretlaydi va kvantlaydi (2-maʼruza);
-- *interfeys* raqamli natijani boshqaruv tizimiga uzatadi: analog chiqishlar (0–10 V, 4–20 mA), impulsli chiqishlar (enkoder A/B/Z signallari) yoki raqamli shinalar (I²C, SPI, CAN, EtherCAT, IO-Link).
+- *interfeys* raqamli natijani boşqaruv tizimiga uzatadi: analog çiqişlar (0–10 V, 4–20 mA), impulsli çiqişlar (enkoder A/B/Z signallari) yoki raqamli şinalar (I²C, SPI, CAN, EtherCAT, IO-Link).
 
-Anʼanaviy datchiklarda bu elementlar alohida bloklar boʻlgan. Zamonaviy *integrallashgan* va *intellektual* datchiklarda ularning hammasi bitta korpusda, koʻpincha bitta kristallda joylashadi va datchik tayyor, kalibrlangan raqamli natijani beradi.
+Anʼanaviy datçiklarda bu elementlar alohida bloklar bölgan. Zamonaviy *integrallaşgan* va *intellektual* datçiklarda ularning hammasi bitta korpusda, köpinça bitta kristallda joylaşadi va datçik tayyor, kalibrlangan raqamli natijani beradi.
 
 // =====================================================================
-= Oʻlchash jarayoni va datchikning informatsion modeli
+= Ölçaş jarayoni va datçikning informatsion modeli
 // =====================================================================
 
-Oʻlchash jarayonini axborotni oʻzgartirishlar zanjiri sifatida koʻrish mumkin. 1-maʼruzada keltirilgan datchik modeliga koʻra, kanal chiqishi $y$ oʻlchanayotgan kattalik $x$ dan tashqari taʼsir etuvchi omillar $z_1, dots, z_m$ va shovqin $xi$ ga ham bogʻliq:
+Ölçaş jarayonini axborotni özgartirişlar zanjiri sifatida köriş mumkin. 1-maʼruzada keltirilgan datçik modeliga köra, kanal çiqişi $y$ ölçanayotgan kattalik $x$ dan taşqari taʼsir etuvçi omillar $z_1, dots, z_m$ va şovqin $xi$ ga ham boğliq:
 
 #eq($ y = F(x, z_1, z_2, dots, z_m) + xi. $)
 
-(1) ifoda datchikning *toʻgʻri informatsion modelidir*: u maʼlum $x$ uchun qanday $y$ olinishini tavsiflaydi. Boshqaruv tizimiga esa teskari masala kerak: oʻlchangan $y$ boʻyicha kattalikning bahosi $hat(x)$ ni topish. Buning uchun datchikning *teskari modeli* (kalibrlash tavsifi) qoʻllaniladi:
+(1) ifoda datçikning *töğri informatsion modelidir*: u maʼlum $x$ uçun qanday $y$ olinişini tavsiflaydi. Boşqaruv tizimiga esa teskari masala kerak: ölçangan $y$ böyiça kattalikning bahosi $hat(x)$ ni topiş. Buning uçun datçikning *teskari modeli* (kalibrlaş tavsifi) qöllaniladi:
 
 #eq($ hat(x) = F^(-1)(y, hat(z)_1, dots, hat(z)_m), $)
 
-bu yerda $hat(z)_1, dots, hat(z)_m$ — taʼsir etuvchi omillarning oʻlchangan yoki baholangan qiymatlari. Masalan, harorat datchigi koʻrsatkichidan foydalanib, tenzodatchik sezgirligining haroratga bogʻliqligi hisobga olinadi.
+bu yerda $hat(z)_1, dots, hat(z)_m$ — taʼsir etuvçi omillarning ölçangan yoki baholangan qiymatlari. Masalan, harorat datçigi körsatkiçidan foydalanib, tenzodatçik sezgirligining haroratga boğliqligi hisobga olinadi.
 
-(2) ifodadan oʻlchash xatoliklarini kamaytirishning uch asosiy yoʻli kelib chiqadi:
-+ *konstruktiv usul* — datchikni taʼsir etuvchi omillarga kam sezgir qilib yasash (termostatlash, ekranlash, differensial sxemalar);
-+ *strukturaviy usul* — taʼsir etuvchi omillarni qoʻshimcha datchiklar bilan oʻlchab, (2) model orqali kompensatsiya qilish;
-+ *algoritmik usul* — bir nechta oʻlchashni oʻrtachalash, filtrlash va turli datchiklar maʼlumotlarini birlashtirish orqali shovqin $xi$ taʼsirini kamaytirish.
+(2) ifodadan ölçaş xatoliklarini kamaytirişning uç asosiy yöli kelib çiqadi:
++ *konstruktiv usul* — datçikni taʼsir etuvçi omillarga kam sezgir qilib yasaş (termostatlaş, ekranlaş, differensial sxemalar);
++ *strukturaviy usul* — taʼsir etuvçi omillarni qöşimça datçiklar bilan ölçab, (2) model orqali kompensatsiya qiliş;
++ *algoritmik usul* — bir neçta ölçaşni örtaçalaş, filtrlaş va turli datçiklar maʼlumotlarini birlaştiriş orqali şovqin $xi$ taʼsirini kamaytiriş.
 
-Bu usullar keyingi maʼruzalarda — datchiklar tavsiflari va xatoliklarini kompensatsiya qilish mavzusida batafsil oʻrganiladi.
+Bu usullar keyingi maʼruzalarda — datçiklar tavsiflari va xatoliklarini kompensatsiya qiliş mavzusida batafsil örganiladi.
 
 // =====================================================================
-= Informatsion tizimlarning vazifasi boʻyicha sinflanishi
+= Informatsion tizimlarning vazifasi böyiça sinflanişi
 // =====================================================================
 
-Robototexnikada informatsion tizimlarni ular bajaradigan vazifaga koʻra sinflash qabul qilingan. Bu sinflanish inson sezgi organlari bilan oʻxshashlikka ham asoslanadi (1-maʼruza) va fanning keyingi mavzulari aynan shu tartibda oʻrganiladi (1-jadval).
+Robototexnikada informatsion tizimlarni ular bajaradigan vazifaga köra sinflaş qabul qilingan. Bu sinflaniş inson sezgi organlari bilan öxşaşlikka ham asoslanadi (1-maʼruza) va fanning keyingi mavzulari aynan şu tartibda örganiladi (1-jadval).
 
 #figure(
   btable(
     columns: (1fr, 1.2fr, 1.3fr),
-    header: ([Informatsion tizim], [Oʻlchanadigan kattaliklar], [Asosiy datchiklar]),
-    [Kinestetik (ichki holat) tizimlari],
-    [Boʻgʻinlarning burchak va chiziqli siljishi, tezligi, tezlanishi, dvigatel toki],
-    [Enkoderlar, rezolverlar, potensiometrlar, taxogeneratorlar, tok datchiklari],
+    header: ([Informatsion tizim], [Ölçanadigan kattaliklar], [Asosiy datçiklar]),
+    [Kinestetik (içki holat) tizimlari],
+    [Böğinlarning burçak va çiziqli siljişi, tezligi, tezlanişi, dvigatel toki],
+    [Enkoderlar, rezolverlar, potensiometrlar, taxogeneratorlar, tok datçiklari],
 
     [Lokatsion tizimlar],
-    [Obyektgacha masofa, obyektlarning joylashuvi va harakati],
-    [Ultratovush lokatorlari, lazer masofa oʻlchagichlari, LiDAR, radarlar],
+    [Obyektgaça masofa, obyektlarning joylaşuvi va harakati],
+    [Ultratovuş lokatorlari, lazer masofa ölçagiçlari, LiDAR, radarlar],
 
-    [Texnik koʻrish tizimlari],
-    [Obyektlar shakli, rangi, joylashuvi; sahna tasviri va chuqurligi],
-    [Kameralar, stereokameralar, chuqurlik (RGB-D) kameralari],
+    [Texnik köriş tizimlari],
+    [Obyektlar şakli, rangi, joylaşuvi; sahna tasviri va çuqurligi],
+    [Kameralar, stereokameralar, çuqurlik (RGB-D) kameralari],
 
-    [Taktil va kuch-moment sezish tizimlari],
-    [Kontakt bor-yoʻqligi, kontakt kuchi va momenti, sirpanish],
-    [Taktil matritsalar, kuch-moment datchiklari, sirpanish datchiklari],
+    [Taktil va kuç-moment seziş tizimlari],
+    [Kontakt bor-yöqligi, kontakt kuçi va momenti, sirpaniş],
+    [Taktil matritsalar, kuç-moment datçiklari, sirpaniş datçiklari],
 
     [Navigatsiya tizimlari],
-    [Mobil robotning fazodagi oʻrni, tezligi va yoʻnalishi],
+    [Mobil robotning fazodagi örni, tezligi va yönalişi],
     [IMU (akselerometr, giroskop), magnitometr, GNSS, odometriya],
 
     [Diagnostika va xavfsizlik tizimlari],
     [Harorat, vibratsiya, inson yaqinligi, nosozlik belgilari],
-    [Harorat va vibratsiya datchiklari, yaqinlik datchiklari, xavfsizlik skanerlari],
+    [Harorat va vibratsiya datçiklari, yaqinlik datçiklari, xavfsizlik skanerlari],
 
     [Inson-robot muloqot tizimlari],
-    [Operator ovozi, imo-ishoralari, boshqaruv qurilmalari holati],
+    [Operator ovozi, imo-işoralari, boşqaruv qurilmalari holati],
     [Mikrofonlar, kameralar, joystiklar, sensorli ekranlar],
   ),
-  caption: [Robot informatsion tizimlarining vazifasi boʻyicha sinflanishi],
+  caption: [Robot informatsion tizimlarining vazifasi böyiça sinflanişi],
 ) <tab-vazifa>
 
-*Kinestetik tizimlar* robotning «mushak-boʻgʻin sezgisi» boʻlib, yuritmalarning qayta aloqa konturlarini taʼminlaydi. Ularsiz robot boshqariluvchi harakatni bajara olmaydi, shuning uchun ular I avlod robotlarida ham mavjud.
+*Kinestetik tizimlar* robotning «muşak-böğin sezgisi» bölib, yuritmalarning qayta aloqa konturlarini taʼminlaydi. Ularsiz robot boşqariluvçi harakatni bajara olmaydi, şuning uçun ular I avlod robotlarida ham mavjud.
 
-*Lokatsion tizimlar* muhitga signal (tovush, yorugʻlik, radiotoʻlqin) yuborib, qaytgan signal boʻyicha masofa va obyekt joylashuvini aniqlaydi. Ular mobil robotlarda toʻsiqlardan qochish va xarita tuzishning asosiy vositasi hisoblanadi.
+*Lokatsion tizimlar* muhitga signal (tovuş, yoruğlik, radiotölqin) yuborib, qaytgan signal böyiça masofa va obyekt joylaşuvini aniqlaydi. Ular mobil robotlarda tösiqlardan qoçiş va xarita tuzişning asosiy vositasi hisoblanadi.
 
-*Texnik koʻrish tizimlari* eng katta hajmdagi axborotni beradi va obyektlarni tanib olish imkonini beradi, lekin eng murakkab ishlov berish algoritmlarini talab qiladi.
+*Texnik köriş tizimlari* eng katta hajmdagi axborotni beradi va obyektlarni tanib oliş imkonini beradi, lekin eng murakkab işlov beriş algoritmlarini talab qiladi.
 
-*Taktil va kuch-moment sezish tizimlari* robot obyekt bilan kontaktga kirganda ishlaydi: ular yigʻish, silliqlash, nozik obyektlarni ushlash va inson bilan xavfsiz hamkorlik uchun zarur.
+*Taktil va kuç-moment seziş tizimlari* robot obyekt bilan kontaktga kirganda işlaydi: ular yiğiş, silliqlaş, nozik obyektlarni uşlaş va inson bilan xavfsiz hamkorlik uçun zarur.
 
-*Navigatsiya tizimlari* mobil robotlar, dronlar va avtonom transport vositalarida robotning global va lokal koordinatalarini aniqlaydi. Odatda ular bir nechta turli datchik maʼlumotlarini birlashtirish asosida quriladi.
+*Navigatsiya tizimlari* mobil robotlar, dronlar va avtonom transport vositalarida robotning global va lokal koordinatalarini aniqlaydi. Odatda ular bir neçta turli datçik maʼlumotlarini birlaştiriş asosida quriladi.
 
-Bu sinflanish shartli: bitta datchik bir nechta tizimga xizmat qilishi mumkin. Masalan, kamera ham texnik koʻrish, ham navigatsiya (vizual odometriya), ham inson bilan muloqot (imo-ishoralarni tanish) uchun ishlatiladi.
+Bu sinflaniş şartli: bitta datçik bir neçta tizimga xizmat qilişi mumkin. Masalan, kamera ham texnik köriş, ham navigatsiya (vizual odometriya), ham inson bilan muloqot (imo-işoralarni taniş) uçun işlatiladi.
 
 // =====================================================================
-= Datchiklarning fizik va energetik belgilar boʻyicha sinflanishi
+= Datçiklarning fizik va energetik belgilar böyiça sinflanişi
 // =====================================================================
 
-Informatsion tizim elementlari — datchiklar — vazifasidan tashqari bir qator boshqa belgilar boʻyicha ham sinflanadi. Regtien va Dertien datchiklarni sinflashning bir nechta sxemasini koʻrib chiqadi: oʻlchanadigan kattalik va qoʻllanish sohasi boʻyicha, energiya oqimi (port modellari) boʻyicha, oʻzgartirish prinsipi boʻyicha va energetik sohalar boʻyicha.
+Informatsion tizim elementlari — datçiklar — vazifasidan taşqari bir qator boşqa belgilar böyiça ham sinflanadi. Regtien va Dertien datçiklarni sinflaşning bir neçta sxemasini körib çiqadi: ölçanadigan kattalik va qöllaniş sohasi böyiça, energiya oqimi (port modellari) böyiça, özgartiriş prinsipi böyiça va energetik sohalar böyiça.
 
-== Energiya oqimi boʻyicha: generatorli va parametrik datchiklar
+== Energiya oqimi böyiça: generatorli va parametrik datçiklar
 
-*Generatorli* (oʻzi energiya hosil qiluvchi, inglizcha _self-generating, direct_) datchiklar yordamchi energiya manbaisiz ishlaydi: chiqish signali energiyasini bevosita oʻlchanayotgan obyektdan oladi. Ularning muhim afzalligi — nol siljishi yoʻqligi: kirish nolga teng boʻlsa, chiqish ham amalda nolga teng. Kamchiligi — obyektdan energiya olinishi tufayli uning holati biroz oʻzgarishi mumkin. Misollar: termojuft, piezoelektrik akselerometr, induksion tezlik datchigi, fotodiod (fotovoltaik rejimda).
+*Generatorli* (özi energiya hosil qiluvçi, inglizça _self-generating, direct_) datçiklar yordamçi energiya manbaisiz işlaydi: çiqiş signali energiyasini bevosita ölçanayotgan obyektdan oladi. Ularning muhim afzalligi — nol siljişi yöqligi: kiriş nolga teng bölsa, çiqiş ham amalda nolga teng. Kamçiligi — obyektdan energiya olinişi tufayli uning holati biroz özgarişi mumkin. Misollar: termojuft, piezoelektrik akselerometr, induksion tezlik datçigi, fotodiod (fotovoltaik rejimda).
 
-*Parametrik* (modulyatsiyalovchi, inglizcha _modulating_) datchiklarda oʻlchanayotgan kattalik materialning biror xossasini yoki geometrik parametrni oʻzgartiradi, bu oʻzgarish esa tashqi yordamchi manba signali orqali «soʻrab olinadi». Chiqish energiyasi asosan yordamchi manbadan olinadi. Datchiklarning aksariyati shu guruhga kiradi: barcha rezistiv, sigʻim va induktiv datchiklar, shuningdek optik va akustik siljish datchiklarining koʻpchiligi.
+*Parametrik* (modulyatsiyalovçi, inglizça _modulating_) datçiklarda ölçanayotgan kattalik materialning biror xossasini yoki geometrik parametrni özgartiradi, bu özgariş esa taşqi yordamçi manba signali orqali «sörab olinadi». Çiqiş energiyasi asosan yordamçi manbadan olinadi. Datçiklarning aksariyati şu guruhga kiradi: barça rezistiv, siğim va induktiv datçiklar, şuningdek optik va akustik siljiş datçiklarining köpçiligi.
 
-Bu farq oʻlchash sxemasini tanlashni belgilaydi: generatorli datchiklar uchun *generatorli oʻlchash sxemalari* (kuchaytirgichlar, zaryad kuchaytirgichlari), parametrik datchiklar uchun esa taʼminot manbaiga ega *parametrik sxemalar* (koʻprik sxemalari, kuchlanish boʻlgichlari) qoʻllaniladi.
+Bu farq ölçaş sxemasini tanlaşni belgilaydi: generatorli datçiklar uçun *generatorli ölçaş sxemalari* (kuçaytirgiçlar, zaryad kuçaytirgiçlari), parametrik datçiklar uçun esa taʼminot manbaiga ega *parametrik sxemalar* (köprik sxemalari, kuçlaniş bölgiçlari) qöllaniladi.
 
-== Energetik sohalar boʻyicha
+== Energetik sohalar böyiça
 
-Datchikning kirish va chiqish signallari turli energetik sohalarga tegishli boʻlishi mumkin. Datchiklar nazariyasida koʻpincha oltita signal sohasi ajratiladi: nurlanish (optik), mexanik, issiqlik, elektr, magnit va kimyoviy sohalar. Datchik kirish signalini biror sohadan elektr sohasiga oʻtkazadi; parametrik datchikda esa yordamchi signal sohasi ham hisobga olinadi. Bunday yondashuv bir xil vazifani turli fizik yoʻllar bilan hal qilish imkoniyatlarini tizimli koʻrishga yordam beradi.
+Datçikning kiriş va çiqiş signallari turli energetik sohalarga tegişli bölişi mumkin. Datçiklar nazariyasida köpinça oltita signal sohasi ajratiladi: nurlaniş (optik), mexanik, issiqlik, elektr, magnit va kimyoviy sohalar. Datçik kiriş signalini biror sohadan elektr sohasiga ötkazadi; parametrik datçikda esa yordamçi signal sohasi ham hisobga olinadi. Bunday yondaşuv bir xil vazifani turli fizik yöllar bilan hal qiliş imkoniyatlarini tizimli körişga yordam beradi.
 
-== Oʻzgartirish prinsipi boʻyicha
+== Özgartiriş prinsipi böyiça
 
-Regtien va Dertien bu sinflanishni amaliyot uchun eng foydali deb hisoblaydi, chunki datchik tavsiflari asosan uning fizik ishlash prinsipi bilan belgilanadi. Bunda datchikning elektr chiqishi materialning xossasiga, geometriyaga yoki harakatga bogʻliq boʻlishi mumkin. Robototexnikada qoʻllaniladigan asosiy prinsiplar 2-jadvalda keltirilgan.
+Regtien va Dertien bu sinflanişni amaliyot uçun eng foydali deb hisoblaydi, çunki datçik tavsiflari asosan uning fizik işlaş prinsipi bilan belgilanadi. Bunda datçikning elektr çiqişi materialning xossasiga, geometriyaga yoki harakatga boğliq bölişi mumkin. Robototexnikada qöllaniladigan asosiy prinsiplar 2-jadvalda keltirilgan.
 
 #figure(
   btable(
     columns: (auto, 1.3fr, 1.2fr),
-    header: ([Prinsip], [Fizik effekt], [Robotdagi qoʻllanilishi]),
+    header: ([Prinsip], [Fizik effekt], [Robotdagi qöllanilişi]),
     [Rezistiv],
-    [Qarshilikning siljish, deformatsiya yoki haroratga bogʻliqligi],
-    [Potensiometrlar, tenzodatchiklar, termorezistorlar],
+    [Qarşilikning siljiş, deformatsiya yoki haroratga boğliqligi],
+    [Potensiometrlar, tenzodatçiklar, termorezistorlar],
 
-    [Sigʻim],
-    [Elektrodlar orasidagi masofa, yuza yoki dielektrik oʻzgarishi],
-    [Yaqinlik datchiklari, taktil qoplamalar, MEMS akselerometrlar],
+    [Siğim],
+    [Elektrodlar orasidagi masofa, yuza yoki dielektrik özgarişi],
+    [Yaqinlik datçiklari, taktil qoplamalar, MEMS akselerometrlar],
 
     [Induktiv va magnit],
-    [Induktivlik, oʻzaro induktivlik oʻzgarishi; Xoll effekti],
-    [Rezolverlar, LVDT, induktiv yaqinlik datchiklari, Xoll datchiklari],
+    [Induktivlik, özaro induktivlik özgarişi; Xoll effekti],
+    [Rezolverlar, LVDT, induktiv yaqinlik datçiklari, Xoll datçiklari],
 
     [Optik],
-    [Yorugʻlik oqimining toʻsilishi, aks etishi, tarqalish vaqti],
-    [Optik enkoderlar, lazer masofa oʻlchagichlari, kameralar],
+    [Yoruğlik oqimining tösilişi, aks etişi, tarqaliş vaqti],
+    [Optik enkoderlar, lazer masofa ölçagiçlari, kameralar],
 
     [Piezoelektrik],
-    [Mexanik kuchlanishda zaryad hosil boʻlishi],
-    [Dinamik kuch datchiklari, akselerometrlar, ultratovush oʻzgartkichlari],
+    [Mexanik kuçlanişda zaryad hosil bölişi],
+    [Dinamik kuç datçiklari, akselerometrlar, ultratovuş özgartkiçlari],
 
     [Akustik],
-    [Tovush toʻlqinining tarqalish vaqti va aks etishi],
-    [Ultratovush lokatorlari va masofa oʻlchagichlari],
+    [Tovuş tölqinining tarqaliş vaqti va aks etişi],
+    [Ultratovuş lokatorlari va masofa ölçagiçlari],
   ),
-  caption: [Datchiklarning oʻzgartirish prinsipi boʻyicha sinflanishi],
+  caption: [Datçiklarning özgartiriş prinsipi böyiça sinflanişi],
 ) <tab-prinsip>
 
-Bitta kattalikni turli prinsiplar bilan oʻlchash mumkin, aksincha, bitta prinsip turli kattaliklarni oʻlchashda qoʻllanadi. Masalan, magnit datchik siljish, tezlik yoki taktil datchik sifatida ishlatilishi mumkin, lekin barcha holatlarda uning imkoniyatlari magnit prinsipning fizikasi bilan cheklanadi.
+Bitta kattalikni turli prinsiplar bilan ölçaş mumkin, aksinça, bitta prinsip turli kattaliklarni ölçaşda qöllanadi. Masalan, magnit datçik siljiş, tezlik yoki taktil datçik sifatida işlatilişi mumkin, lekin barça holatlarda uning imkoniyatlari magnit prinsipning fizikasi bilan çeklanadi.
 
-== Boshqa belgilar boʻyicha
+== Boşqa belgilar böyiça
 
-*Chiqish signali turi boʻyicha:* analog (kuchlanish, tok), chastotali va impulsli (inkremental enkoder, chastota chiqishli datchiklar) hamda raqamli (absolyut enkoder, raqamli interfeysli datchiklar).
+*Çiqiş signali turi böyiça:* analog (kuçlaniş, tok), çastotali va impulsli (inkremental enkoder, çastota çiqişli datçiklar) hamda raqamli (absolyut enkoder, raqamli interfeysli datçiklar).
 
-*Muhit bilan taʼsir masofasi boʻyicha:* kontaktli (taktil, kuch-moment), yaqin masofali (yaqinlik datchiklari, millimetrdan bir necha santimetrgacha) va uzoq masofali (lokatsion va koʻrish tizimlari, metrlardan yuzlab metrlargacha).
+*Muhit bilan taʼsir masofasi böyiça:* kontaktli (taktil, kuç-moment), yaqin masofali (yaqinlik datçiklari, millimetrdan bir neça santimetrgaça) va uzoq masofali (lokatsion va köriş tizimlari, metrlardan yuzlab metrlargaça).
 
-*Axborotga ishlov berish darajasi boʻyicha:* oddiy datchiklar (faqat sezgir element va oʻzgartkich), integrallashgan datchiklar (oʻlchash sxemasi va ARO bilan) va intellektual datchiklar (mikroprotsessor, kalibrlash, oʻz-oʻzini diagnostika qilish va raqamli tarmoq interfeysi bilan).
+*Axborotga işlov beriş darajasi böyiça:* oddiy datçiklar (faqat sezgir element va özgartkiç), integrallaşgan datçiklar (ölçaş sxemasi va ARO bilan) va intellektual datçiklar (mikroprotsessor, kalibrlaş, öz-özini diagnostika qiliş va raqamli tarmoq interfeysi bilan).
 
 // =====================================================================
-= Robot informatsion tizimining ierarxik tuzilishi
+= Robot informatsion tizimining ierarxik tuzilişi
 // =====================================================================
 
-Murakkab robotda datchiklardan kelgan axborot bir necha bosqichda qayta ishlanadi. Har bir yuqori bosqichda axborot hajmi kamayadi, lekin uning mazmuni boyiydi: millionlab piksellardan «oldinda 3 m masofada odam bor» degan bitta xulosa olinadi. Bu tamoyil robotlarni intellektual boshqarishning ierarxik prinsipiga mos keladi. Informatsion tizimning ierarxik tuzilishi 2-rasmda koʻrsatilgan.
+Murakkab robotda datçiklardan kelgan axborot bir neça bosqiçda qayta işlanadi. Har bir yuqori bosqiçda axborot hajmi kamayadi, lekin uning mazmuni boyiydi: millionlab piksellardan «oldinda 3 m masofada odam bor» degan bitta xulosa olinadi. Bu tamoyil robotlarni intellektual boşqarişning ierarxik prinsipiga mos keladi. Informatsion tizimning ierarxik tuzilişi 2-rasmda körsatilgan.
 
 #figure(
   diagram(
@@ -301,68 +301,68 @@ Murakkab robotda datchiklardan kelgan axborot bir necha bosqichda qayta ishlanad
     node-corner-radius: 3pt,
     node-shape: rect,
     edge-stroke: 1pt,
-    node((0, 0), [*5. Qaror qabul qilish va rejalashtirish*], width: 7.5cm, fill: lightorange, name: <l5>),
-    node((0, 1), [*4. Muhit modeli va vaziyatni tanib olish*], width: 7.5cm, fill: lightblue, name: <l4>),
-    node((0, 2), [*3. Belgilarni ajratish*], width: 7.5cm, fill: lightblue, name: <l3>),
-    node((0, 3), [*2. Birlamchi ishlov berish*], width: 7.5cm, fill: lightblue, name: <l2>),
-    node((0, 4), [*1. Datchiklar sathi*], width: 7.5cm, fill: white, name: <l1>),
-    node((1, 0), align(left)[harakat rejasi, boshqaruv buyruqlari], stroke: none),
+    node((0, 0), [*5. Qaror qabul qiliş va rejalaştiriş*], width: 7.5cm, fill: lightorange, name: <l5>),
+    node((0, 1), [*4. Muhit modeli va vaziyatni tanib oliş*], width: 7.5cm, fill: lightblue, name: <l4>),
+    node((0, 2), [*3. Belgilarni ajratiş*], width: 7.5cm, fill: lightblue, name: <l3>),
+    node((0, 3), [*2. Birlamçi işlov beriş*], width: 7.5cm, fill: lightblue, name: <l2>),
+    node((0, 4), [*1. Datçiklar sathi*], width: 7.5cm, fill: white, name: <l1>),
+    node((1, 0), align(left)[harakat rejasi, boşqaruv buyruqlari], stroke: none),
     node((1, 1), align(left)[xarita, obyektlar va ularning holati], stroke: none),
-    node((1, 2), align(left)[chegaralar, nuqtalar, masofalar, kuch vektori], stroke: none),
-    node((1, 3), align(left)[filtrlash, kalibrlash, sinxronlash], stroke: none),
+    node((1, 2), align(left)[çegaralar, nuqtalar, masofalar, kuç vektori], stroke: none),
+    node((1, 3), align(left)[filtrlaş, kalibrlaş, sinxronlaş], stroke: none),
     node((1, 4), align(left)[elektr signallari, raqamli kodlar], stroke: none),
     edge(<l1>, <l2>, "->"),
     edge(<l2>, <l3>, "->"),
     edge(<l3>, <l4>, "->"),
     edge(<l4>, <l5>, "->"),
   ),
-  caption: [Robot informatsion tizimida axborotga ishlov berish ierarxiyasi],
+  caption: [Robot informatsion tizimida axborotga işlov beriş ierarxiyasi],
 ) <fig-ierarxiya>
 
-Quyi sathlarda (1–2) ishlov berish qatʼiy real vaqtda, koʻpincha datchikning oʻzida yoki yuritma drayverida bajariladi. Masalan, enkoder signali yuritmaning tezlik va pozitsiya konturida mikrosekundlar ichida ishlatiladi. Yuqori sathlarda (4–5) ishlov berish murakkab algoritmlar — tasvirlarni tanib olish, xarita qurish, sunʼiy intellekt usullarini talab qiladi va robotning markaziy kompyuterida bajariladi.
+Quyi sathlarda (1–2) işlov beriş qatʼiy real vaqtda, köpinça datçikning özida yoki yuritma drayverida bajariladi. Masalan, enkoder signali yuritmaning tezlik va pozitsiya konturida mikrosekundlar içida işlatiladi. Yuqori sathlarda (4–5) işlov beriş murakkab algoritmlar — tasvirlarni tanib oliş, xarita quriş, sunʼiy intellekt usullarini talab qiladi va robotning markaziy kompyuterida bajariladi.
 
-Sathlar boʻyicha axborot oqimi juda notekis. Raqamli kameraning axborot oqimi quyidagicha baholanadi:
+Sathlar böyiça axborot oqimi juda notekis. Raqamli kameraning axborot oqimi quyidagiça baholanadi:
 
 #eq($ R = N_x dot N_y dot b dot f, $)
 
-bu yerda $N_x, N_y$ — tasvirning gorizontal va vertikal piksellar soni, $b$ — bitta piksel uchun bitlar soni, $f$ — kadrlar chastotasi. $1920 times 1080$ piksel, 24 bit va 30 kadr/s uchun $R approx 1","49$ Gbit/s. Taqqoslash uchun, 17 bitli enkoderlar bilan jihozlangan olti boʻgʻinli manipulyator 1 kHz chastotada atigi $6 dot 17 dot 1000 approx 0","1$ Mbit/s axborot hosil qiladi. Shu sababli koʻrish tizimlarida axborotni datchikning oʻzida yoki unga yaqin joyda dastlabki qayta ishlash (siqish, belgilarni ajratish) muhim masala hisoblanadi.
+bu yerda $N_x, N_y$ — tasvirning gorizontal va vertikal piksellar soni, $b$ — bitta piksel uçun bitlar soni, $f$ — kadrlar çastotasi. $1920 times 1080$ piksel, 24 bit va 30 kadr/s uçun $R approx 1","49$ Gbit/s. Taqqoslaş uçun, 17 bitli enkoderlar bilan jihozlangan olti böğinli manipulyator 1 kHz çastotada atigi $6 dot 17 dot 1000 approx 0","1$ Mbit/s axborot hosil qiladi. Şu sababli köriş tizimlarida axborotni datçikning özida yoki unga yaqin joyda dastlabki qayta işlaş (siqiş, belgilarni ajratiş) muhim masala hisoblanadi.
 
 // =====================================================================
-= Informatsion tizimlarga qoʻyiladigan talablar
+= Informatsion tizimlarga qöyiladigan talablar
 // =====================================================================
 
-Robot informatsion tizimi va uning elementlariga quyidagi asosiy talablar qoʻyiladi:
-- *aniqlik va ruxsat qobiliyati* — robotning bajaradigan vazifasiga mos boʻlishi;
-- *tezkorlik* — oʻtkazish polosasi yetarli, kechikish esa boshqaruv konturi uchun ruxsat etilgan qiymatdan kichik boʻlishi;
-- *ishonchlilik* — nosozliklar orasidagi vaqt katta, muhim kanallar esa zaxiralangan boʻlishi (5-amaliyot);
-- *shovqinbardoshlik* — elektromagnit xalaqitlar, vibratsiya, harorat oʻzgarishi sharoitida ishlay olishi;
-- *kichik oʻlcham, massa va energiya isteʼmoli* — ayniqsa manipulyator zvenolari va mobil robotlarda;
-- *integratsiyalash qulayligi* — standart interfeyslar, kalibrlash va almashtirish osonligi;
-- *narx* — robotning umumiy narxiga mos boʻlishi.
+Robot informatsion tizimi va uning elementlariga quyidagi asosiy talablar qöyiladi:
+- *aniqlik va ruxsat qobiliyati* — robotning bajaradigan vazifasiga mos bölişi;
+- *tezkorlik* — ötkaziş polosasi yetarli, keçikiş esa boşqaruv konturi uçun ruxsat etilgan qiymatdan kiçik bölişi;
+- *işonçlilik* — nosozliklar orasidagi vaqt katta, muhim kanallar esa zaxiralangan bölişi (5-amaliyot);
+- *şovqinbardoşlik* — elektromagnit xalaqitlar, vibratsiya, harorat özgarişi şaroitida işlay olişi;
+- *kiçik ölçam, massa va energiya isteʼmoli* — ayniqsa manipulyator zvenolari va mobil robotlarda;
+- *integratsiyalaş qulayligi* — standart interfeyslar, kalibrlaş va almaştiriş osonligi;
+- *narx* — robotning umumiy narxiga mos bölişi.
 
-Bu talablar koʻpincha bir-biriga zid: aniqlikni oshirish narx, oʻlcham yoki tezkorlik hisobiga erishiladi. Ikki misolda talablarning miqdoriy tomonini koʻramiz.
+Bu talablar köpinça bir-biriga zid: aniqlikni oşiriş narx, ölçam yoki tezkorlik hisobiga erişiladi. Ikki misolda talablarning miqdoriy tomonini köramiz.
 
-*Kechikishning taʼsiri.* Informatsion kanal $tau$ kechikish bilan axborot bersa, $v$ tezlik bilan harakatlanayotgan robot uchun bu kechikish quyidagi pozitsiya xatoligiga olib keladi:
+*Keçikişning taʼsiri.* Informatsion kanal $tau$ keçikiş bilan axborot bersa, $v$ tezlik bilan harakatlanayotgan robot uçun bu keçikiş quyidagi pozitsiya xatoligiga olib keladi:
 
 #eq($ Delta s = v dot tau. $)
 
-Masalan, 2 m/s tezlikda harakatlanayotgan mobil robotda 50 ms kechikish $Delta s = 2 dot 0","05 = 0","1$ m, yaʼni 10 sm xatolik beradi. Toʻsiqdan qochish masofasi aynan shu xatolikni hisobga olib tanlanishi kerak.
+Masalan, 2 m/s tezlikda harakatlanayotgan mobil robotda 50 ms keçikiş $Delta s = 2 dot 0","05 = 0","1$ m, yaʼni 10 sm xatolik beradi. Tösiqdan qoçiş masofasi aynan şu xatolikni hisobga olib tanlanişi kerak.
 
-*Burchak ruxsat qobiliyati va masofa.* Skanerlovchi lokator yoki kamera kichik burchak qadami $Delta theta$ bilan oʻlchasa, $R$ masofadagi koʻndalang ruxsat qobiliyati:
+*Burçak ruxsat qobiliyati va masofa.* Skanerlovçi lokator yoki kamera kiçik burçak qadami $Delta theta$ bilan ölçasa, $R$ masofadagi köndalang ruxsat qobiliyati:
 
 #eq($ Delta x = R dot Delta theta. $)
 
-Burchak qadami $0","2 degree$ ($3","49 dot 10^(-3)$ rad) boʻlgan LiDAR uchun 20 m masofada $Delta x approx 0","07$ m. Demak, bunday lokator 20 m masofada 7 sm dan kichik obyektlarni ishonchli ajrata olmasligi mumkin.
+Burçak qadami $0","2 degree$ ($3","49 dot 10^(-3)$ rad) bölgan LiDAR uçun 20 m masofada $Delta x approx 0","07$ m. Demak, bunday lokator 20 m masofada 7 sm dan kiçik obyektlarni işonçli ajrata olmasligi mumkin.
 
-Bu misollar informatsion tizimni loyihalashda datchikni robot vazifasi, tezligi va ish masofasidan kelib chiqib tanlash kerakligini koʻrsatadi.
+Bu misollar informatsion tizimni loyihalaşda datçikni robot vazifasi, tezligi va iş masofasidan kelib çiqib tanlaş kerakligini körsatadi.
 
 // =====================================================================
 = Xulosa
 // =====================================================================
 
-Robotning informatsion tizimi informatsion-oʻlchash kanallaridan iborat boʻlib, har bir kanal sezgir element, oʻlchash oʻzgartkichi, signalga ishlov berish, ARO va interfeysni oʻz ichiga oladi. Datchikning toʻgʻri va teskari informatsion modellari oʻlchash xatoliklarini konstruktiv, strukturaviy va algoritmik usullar bilan kamaytirish asosini tashkil etadi.
+Robotning informatsion tizimi informatsion-ölçaş kanallaridan iborat bölib, har bir kanal sezgir element, ölçaş özgartkiçi, signalga işlov beriş, ARO va interfeysni öz içiga oladi. Datçikning töğri va teskari informatsion modellari ölçaş xatoliklarini konstruktiv, strukturaviy va algoritmik usullar bilan kamaytiriş asosini taşkil etadi.
 
-Informatsion tizimlar vazifasi boʻyicha kinestetik, lokatsion, texnik koʻrish, taktil va kuch-moment, navigatsiya, diagnostika va muloqot tizimlariga boʻlinadi. Datchiklar esa energiya oqimi (generatorli va parametrik), energetik soha, oʻzgartirish prinsipi, chiqish signali, taʼsir masofasi va ishlov berish darajasi boʻyicha sinflanadi. Murakkab robotda axborot ierarxik ravishda — datchik signallaridan muhit modeli va qarorlargacha — qayta ishlanadi. Informatsion tizimga qoʻyiladigan talablar oʻzaro zid boʻlgani uchun uni loyihalash murosali yechim topishni talab qiladi.
+Informatsion tizimlar vazifasi böyiça kinestetik, lokatsion, texnik köriş, taktil va kuç-moment, navigatsiya, diagnostika va muloqot tizimlariga bölinadi. Datçiklar esa energiya oqimi (generatorli va parametrik), energetik soha, özgartiriş prinsipi, çiqiş signali, taʼsir masofasi va işlov beriş darajasi böyiça sinflanadi. Murakkab robotda axborot ierarxik ravişda — datçik signallaridan muhit modeli va qarorlargaça — qayta işlanadi. Informatsion tizimga qöyiladigan talablar özaro zid bölgani uçun uni loyihalaş murosali yeçim topişni talab qiladi.
 
 // =====================================================================
 = Nazorat savollari
@@ -370,16 +370,16 @@ Informatsion tizimlar vazifasi boʻyicha kinestetik, lokatsion, texnik koʻrish,
 
 #block[
   #set par(first-line-indent: 0pt)
-  + Robotning informatsion tizimi deganda nima tushuniladi va u qanday vazifalarni bajaradi?
-  + Informatsion-oʻlchash kanali qanday elementlardan iborat? Har birining vazifasini tushuntiring.
-  + Datchikning toʻgʻri va teskari informatsion modellari qanday farqlanadi?
-  + Oʻlchash xatoliklarini kamaytirishning konstruktiv, strukturaviy va algoritmik usullariga misol keltiring.
-  + Robot informatsion tizimlari vazifasi boʻyicha qanday sinflanadi?
-  + Kinestetik va lokatsion tizimlar oʻrtasidagi farq nimada?
-  + Generatorli va parametrik datchiklar qanday farqlanadi? Har biriga misol keltiring.
-  + Datchiklarni oʻzgartirish prinsipi boʻyicha sinflashning afzalligi nimada?
-  + Oddiy, integrallashgan va intellektual datchiklar qanday farqlanadi?
-  + Robot informatsion tizimidagi axborotga ishlov berish ierarxiyasini tushuntiring.
-  + Nima uchun texnik koʻrish tizimlarida axborotni dastlabki qayta ishlash muhim?
-  + 1,5 m/s tezlikdagi robotda 80 ms kechikish qanday pozitsiya xatoligiga olib keladi?
+  + Robotning informatsion tizimi deganda nima tuşuniladi va u qanday vazifalarni bajaradi?
+  + Informatsion-ölçaş kanali qanday elementlardan iborat? Har birining vazifasini tuşuntiring.
+  + Datçikning töğri va teskari informatsion modellari qanday farqlanadi?
+  + Ölçaş xatoliklarini kamaytirişning konstruktiv, strukturaviy va algoritmik usullariga misol keltiring.
+  + Robot informatsion tizimlari vazifasi böyiça qanday sinflanadi?
+  + Kinestetik va lokatsion tizimlar örtasidagi farq nimada?
+  + Generatorli va parametrik datçiklar qanday farqlanadi? Har biriga misol keltiring.
+  + Datçiklarni özgartiriş prinsipi böyiça sinflaşning afzalligi nimada?
+  + Oddiy, integrallaşgan va intellektual datçiklar qanday farqlanadi?
+  + Robot informatsion tizimidagi axborotga işlov beriş ierarxiyasini tuşuntiring.
+  + Nima uçun texnik köriş tizimlarida axborotni dastlabki qayta işlaş muhim?
+  + 1,5 m/s tezlikdagi robotda 80 ms keçikiş qanday pozitsiya xatoligiga olib keladi?
 ]

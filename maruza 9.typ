@@ -31,7 +31,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -79,34 +79,34 @@
 #block[
   #set par(first-line-indent: 0pt)
   *Reja:*
-  + Metrologiyaning asosiy tushunchalari. Kalibrlash va metrologik kuzatuvchanlik.
+  + Metrologiyaning asosiy tuşunçalari. Kalibrlaş va metrologik kuzatuvçanlik.
   + Metrologik tavsiflarning tasnifi.
   + Statik metrologik tavsiflar.
-  + Oʻlchash xatoliklari, ularni normalash va yigʻish. Oʻlchash noaniqligi.
+  + Ölçaş xatoliklari, ularni normalaş va yiğiş. Ölçaş noaniqligi.
   + Dinamik metrologik tavsiflar.
   + Mexatron modullarning metrologik tavsiflari.
   + Robotlarning metrologik tavsiflari (ISO 9283).
 
-  *Tayanch iboralar:* oʻlchash vositasi, metrologik tavsif, kalibrlash, qiyoslash, etalon, metrologik kuzatuvchanlik, oʻzgartirish funksiyasi, sezgirlik, chiziqlilik xatosi, gisterezis, takrorlanuvchanlik, harorat drifti, asosiy va qoʻshimcha xatolik, aniqlik klassi, xatoliklarni geometrik yigʻish, standart va kengaytirilgan noaniqlik, amplituda-chastota tavsifi, dinamik xatolik, lyuft, burilish bikrligi, pozitsiyalash aniqligi va takrorlanuvchanligi.
+  *Tayanç iboralar:* ölçaş vositasi, metrologik tavsif, kalibrlaş, qiyoslaş, etalon, metrologik kuzatuvçanlik, özgartiriş funksiyasi, sezgirlik, çiziqlilik xatosi, gisterezis, takrorlanuvçanlik, harorat drifti, asosiy va qöşimça xatolik, aniqlik klassi, xatoliklarni geometrik yiğiş, standart va kengaytirilgan noaniqlik, amplituda-çastota tavsifi, dinamik xatolik, lyuft, buriliş bikrligi, pozitsiyalaş aniqligi va takrorlanuvçanligi.
 ]
 
 // =====================================================================
-= Metrologiyaning asosiy tushunchalari
+= Metrologiyaning asosiy tuşunçalari
 // =====================================================================
 
-Oldingi maʼruzalarda robotlarda qoʻllanadigan turli datchiklar koʻrib chiqildi. Ularning har biri oʻlchash vositasi boʻlib, uning natijasiga qanchalik ishonish mumkinligini bilish kerak. Bu masalalar bilan *metrologiya* — oʻlchashlar, ularning birligini taʼminlash usullari va vositalari hamda talab qilinadigan aniqlikka erishish usullari haqidagi fan shugʻullanadi.
+Oldingi maʼruzalarda robotlarda qöllanadigan turli datçiklar körib çiqildi. Ularning har biri ölçaş vositasi bölib, uning natijasiga qançalik işoniş mumkinligini biliş kerak. Bu masalalar bilan *metrologiya* — ölçaşlar, ularning birligini taʼminlaş usullari va vositalari hamda talab qilinadigan aniqlikka erişiş usullari haqidagi fan şuğullanadi.
 
-Asosiy tushunchalar:
-- *oʻlchash* — fizik kattalik qiymatini tajriba yoʻli bilan maxsus texnik vositalar yordamida aniqlash;
-- *oʻlchash vositasi* — oʻlchash uchun moʻljallangan va normalangan metrologik tavsiflarga ega texnik vosita (datchik, oʻlchash asbobi, oʻlchash tizimi);
-- *metrologik tavsif* — oʻlchash vositasining oʻlchash natijasi va uning xatoligiga taʼsir qiluvchi xossasini miqdoriy ifodalovchi koʻrsatkich;
-- *normalangan metrologik tavsiflar* — ishlab chiqaruvchi tomonidan kafolatlangan va oʻlchash vositasi hujjatlarida (pasportida) koʻrsatilgan tavsiflar.
+Asosiy tuşunçalar:
+- *ölçaş* — fizik kattalik qiymatini tajriba yöli bilan maxsus texnik vositalar yordamida aniqlaş;
+- *ölçaş vositasi* — ölçaş uçun möljallangan va normalangan metrologik tavsiflarga ega texnik vosita (datçik, ölçaş asbobi, ölçaş tizimi);
+- *metrologik tavsif* — ölçaş vositasining ölçaş natijasi va uning xatoligiga taʼsir qiluvçi xossasini miqdoriy ifodalovçi körsatkiç;
+- *normalangan metrologik tavsiflar* — işlab çiqaruvçi tomonidan kafolatlangan va ölçaş vositasi hujjatlarida (pasportida) körsatilgan tavsiflar.
 
-== Kalibrlash va metrologik kuzatuvchanlik
+== Kalibrlaş va metrologik kuzatuvçanlik
 
-*Kalibrlash* — oʻlchash vositasi koʻrsatkichlari bilan aniqroq oʻlchash vositasi (etalon) tomonidan aniqlangan qiymatlar orasidagi bogʻliqlikni belgilash amallari majmuasi. Kalibrlash natijasida oʻlchash vositasining haqiqiy oʻzgartirish funksiyasi va xatoligi aniqlanadi. Qonun bilan tartibga solinadigan sohalarda (savdo, xavfsizlik, sogʻliqni saqlash) qoʻllanadigan oʻlchash vositalari esa vakolatli metrologiya xizmati tomonidan davriy *qiyoslanadi* — ularning belgilangan talablarga mosligi tasdiqlanadi.
+*Kalibrlaş* — ölçaş vositasi körsatkiçlari bilan aniqroq ölçaş vositasi (etalon) tomonidan aniqlangan qiymatlar orasidagi boğliqlikni belgilaş amallari majmuasi. Kalibrlaş natijasida ölçaş vositasining haqiqiy özgartiriş funksiyasi va xatoligi aniqlanadi. Qonun bilan tartibga solinadigan sohalarda (savdo, xavfsizlik, soğliqni saqlaş) qöllanadigan ölçaş vositalari esa vakolatli metrologiya xizmati tomonidan davriy *qiyoslanadi* — ularning belgilangan talablarga mosligi tasdiqlanadi.
 
-Har bir oʻlchash natijasi uzluksiz kalibrlashlar zanjiri orqali xalqaro birliklar tizimi (SI) birliklarini qayta hosil qiluvchi davlat etalonlari bilan bogʻlangan boʻlishi kerak. Bu xossa *metrologik kuzatuvchanlik* deyiladi (1-rasm). Zanjirning har bir pogʻonasida aniqlik biroz kamayadi, shuning uchun etalon kalibrlanayotgan vositadan odatda bir necha marta aniqroq boʻlishi talab qilinadi.
+Har bir ölçaş natijasi uzluksiz kalibrlaşlar zanjiri orqali xalqaro birliklar tizimi (SI) birliklarini qayta hosil qiluvçi davlat etalonlari bilan boğlangan bölişi kerak. Bu xossa *metrologik kuzatuvçanlik* deyiladi (1-rasm). Zanjirning har bir poğonasida aniqlik biroz kamayadi, şuning uçun etalon kalibrlanayotgan vositadan odatda bir neça marta aniqroq bölişi talab qilinadi.
 
 #figure(
   diagram(
@@ -117,176 +117,176 @@ Har bir oʻlchash natijasi uzluksiz kalibrlashlar zanjiri orqali xalqaro birlikl
     node-shape: rect,
     edge-stroke: 1pt,
     node((0, 0), [SI birligi, \ davlat etaloni], fill: lightorange, name: <a>),
-    node((1, 0), [Ishchi \ etalonlar], name: <b>),
-    node((2, 0), [Kalibrlash \ laboratoriyasi], name: <c>),
-    node((3, 0), [Kalibrlash \ stendi], name: <d>),
-    node((4, 0), [Datchik, \ robot], fill: white, name: <e>),
+    node((1, 0), [Işçi \ etalonlar], name: <b>),
+    node((2, 0), [Kalibrlaş \ laboratoriyasi], name: <c>),
+    node((3, 0), [Kalibrlaş \ stendi], name: <d>),
+    node((4, 0), [Datçik, \ robot], fill: white, name: <e>),
     edge(<a>, <b>, "->"),
     edge(<b>, <c>, "->"),
     edge(<c>, <d>, "->"),
     edge(<d>, <e>, "->"),
   ),
-  caption: [Metrologik kuzatuvchanlik zanjiri (chapdan oʻngga aniqlik kamayadi)],
+  caption: [Metrologik kuzatuvçanlik zanjiri (çapdan öngga aniqlik kamayadi)],
 ) <fig-kuzat>
 
 // =====================================================================
 = Metrologik tavsiflarning tasnifi
 // =====================================================================
 
-Datchik va oʻlchash vositalarining metrologik tavsiflari quyidagi guruhlarga boʻlinadi (1-jadval).
+Datçik va ölçaş vositalarining metrologik tavsiflari quyidagi guruhlarga bölinadi (1-jadval).
 
 #figure(
   btable(
     columns: (1fr, 1.6fr),
     header: ([Guruh], [Tavsiflar]),
-    [Oʻlchash natijasini aniqlash uchun tavsiflar],
-    [Oʻzgartirish funksiyasi (statik tavsif), oʻlchash diapazoni, sezgirlik, ruxsat qobiliyati, raqamli kod qiymati],
+    [Ölçaş natijasini aniqlaş uçun tavsiflar],
+    [Özgartiriş funksiyasi (statik tavsif), ölçaş diapazoni, sezgirlik, ruxsat qobiliyati, raqamli kod qiymati],
     [Xatolik tavsiflari],
-    [Asosiy xatolik, uning sistematik va tasodifiy tashkil etuvchilari, chiziqlilik xatosi, gisterezis, takrorlanuvchanlik, aniqlik klassi],
-    [Taʼsir etuvchi kattaliklarga sezgirlik],
-    [Harorat, taʼminot kuchlanishi, namlik, vibratsiya taʼsiridagi qoʻshimcha xatoliklar va driftlar],
+    [Asosiy xatolik, uning sistematik va tasodifiy taşkil etuvçilari, çiziqlilik xatosi, gisterezis, takrorlanuvçanlik, aniqlik klassi],
+    [Taʼsir etuvçi kattaliklarga sezgirlik],
+    [Harorat, taʼminot kuçlanişi, namlik, vibratsiya taʼsiridagi qöşimça xatoliklar va driftlar],
     [Dinamik tavsiflar],
-    [Vaqt doimiysi, javob vaqti, amplituda-chastota va faza-chastota tavsiflari, oʻtkazish polosasi, xususiy chastota],
-    [Oʻzaro taʼsir tavsiflari],
-    [Kirish va chiqish qarshiliklari (impedanslari), obyektga va keyingi qurilmaga taʼsiri],
+    [Vaqt doimiysi, javob vaqti, amplituda-çastota va faza-çastota tavsiflari, ötkaziş polosasi, xususiy çastota],
+    [Özaro taʼsir tavsiflari],
+    [Kiriş va çiqiş qarşiliklari (impedanslari), obyektga va keyingi qurilmaga taʼsiri],
   ),
   caption: [Metrologik tavsiflarning tasnifi],
 ) <tab-tasnif>
 
-Oxirgi guruh koʻpincha eʼtibordan chetda qoladi, lekin muhim: masalan, potensiometr chiqishiga kichik qarshilikli yuklama ulansa, tavsif buziladi (5-maʼruza), termojuftni ulovchi uzun simlar esa oʻlchash natijasiga taʼsir qiladi.
+Oxirgi guruh köpinça eʼtibordan çetda qoladi, lekin muhim: masalan, potensiometr çiqişiga kiçik qarşilikli yuklama ulansa, tavsif buziladi (5-maʼruza), termojuftni ulovçi uzun simlar esa ölçaş natijasiga taʼsir qiladi.
 
 // =====================================================================
 = Statik metrologik tavsiflar
 // =====================================================================
 
-Kirish kattaligi oʻzgarmas yoki juda sekin oʻzgarganda datchik chiqishi $y$ ning kirishi $x$ ga bogʻliqligi *oʻzgartirish funksiyasi* (statik tavsif) $y = f(x)$ bilan ifodalanadi. Uning asosiy koʻrsatkichlari:
+Kiriş kattaligi özgarmas yoki juda sekin özgarganda datçik çiqişi $y$ ning kirişi $x$ ga boğliqligi *özgartiriş funksiyasi* (statik tavsif) $y = f(x)$ bilan ifodalanadi. Uning asosiy körsatkiçlari:
 
-- *oʻlchash diapazoni* — kattalikning normalangan xatolik bilan oʻlchanadigan qiymatlar oraligʻi $[x_min, x_max]$; chiqish diapazoni (toʻliq shkala, FS) $Y_"FS" = y(x_max) - y(x_min)$;
-- *sezgirlik* — $S = d y slash d x$; chiziqli datchikda oʻzgarmas;
-- *ruxsat qobiliyati* — chiqishda sezilarli oʻzgarish beradigan kirishning eng kichik oʻzgarishi; *sezgirlik boʻsagʻasi* esa nol atrofidagi shunday eng kichik qiymat;
-- *chiziqlilik xatosi* — real tavsifning tanlangan toʻgʻri chiziqdan eng katta chetlanishi $Delta_max$ ning toʻliq shkalaga nisbati:
+- *ölçaş diapazoni* — kattalikning normalangan xatolik bilan ölçanadigan qiymatlar oraliği $[x_min, x_max]$; çiqiş diapazoni (töliq şkala, FS) $Y_"FS" = y(x_max) - y(x_min)$;
+- *sezgirlik* — $S = d y slash d x$; çiziqli datçikda özgarmas;
+- *ruxsat qobiliyati* — çiqişda sezilarli özgariş beradigan kirişning eng kiçik özgarişi; *sezgirlik bösağasi* esa nol atrofidagi şunday eng kiçik qiymat;
+- *çiziqlilik xatosi* — real tavsifning tanlangan töğri çiziqdan eng katta çetlanişi $Delta_max$ ning töliq şkalaga nisbati:
 
 #eq($ delta_L = (Delta_max) / Y_"FS" dot 100 %. $)
 
-Toʻgʻri chiziq turlicha tanlanishi mumkin: diapazon chekka nuqtalaridan oʻtuvchi chiziq yoki eng kichik kvadratlar usulida topilgan chiziq. Ikkinchi usulda xatolik kichikroq chiqadi, shuning uchun datchik pasportida qaysi usul qoʻllangani koʻrsatilishi kerak.
+Töğri çiziq turliça tanlanişi mumkin: diapazon çekka nuqtalaridan ötuvçi çiziq yoki eng kiçik kvadratlar usulida topilgan çiziq. Ikkinçi usulda xatolik kiçikroq çiqadi, şuning uçun datçik pasportida qaysi usul qöllangani körsatilişi kerak.
 
-- *gisterezis* — kirish ortib va kamayib borganda bir xil $x$ ga mos chiqishlarning eng katta farqi (toʻliq shkalaga nisbatan, %);
-- *takrorlanuvchanlik* — bir xil sharoitda, bir yoʻnalishdan bir xil kirishga takroriy yondashganda natijalarning tarqoqligi;
-- *nol siljishi va sezgirlik drifti* — taʼsir etuvchi kattaliklar, ayniqsa harorat oʻzgarganda tavsifning siljishi.
+- *gisterezis* — kiriş ortib va kamayib borganda bir xil $x$ ga mos çiqişlarning eng katta farqi (töliq şkalaga nisbatan, %);
+- *takrorlanuvçanlik* — bir xil şaroitda, bir yönalişdan bir xil kirişga takroriy yondaşganda natijalarning tarqoqligi;
+- *nol siljişi va sezgirlik drifti* — taʼsir etuvçi kattaliklar, ayniqsa harorat özgarganda tavsifning siljişi.
 
-Haroratning taʼsirini quyidagi model bilan ifodalash mumkin:
+Haroratning taʼsirini quyidagi model bilan ifodalaş mumkin:
 
 #eq($ y = S (1 + beta Delta T) dot x + y_0 + gamma Delta T, $)
 
-bu yerda $Delta T$ — normal haroratdan chetlanish, $beta$ — sezgirlikning harorat koeffitsienti, $gamma$ — nol siljishining harorat koeffitsienti. *Misol.* Bosim datchigi uchun $gamma = 0","02 %$ FS/°C boʻlsa, normal 20 °C dan 50 °C gacha qizish nolni 0,6 % FS ga siljitadi — bu koʻp datchiklarning asosiy xatoligidan katta. Shuning uchun datchik pasportida *asosiy xatolik* (normal sharoitda) bilan bir qatorda har bir taʼsir etuvchi kattalik uchun *qoʻshimcha xatolik* ham normalanadi.
+bu yerda $Delta T$ — normal haroratdan çetlaniş, $beta$ — sezgirlikning harorat koeffitsienti, $gamma$ — nol siljişining harorat koeffitsienti. *Misol.* Bosim datçigi uçun $gamma = 0","02 %$ FS/°C bölsa, normal 20 °C dan 50 °C gaça qiziş nolni 0,6 % FS ga siljitadi — bu köp datçiklarning asosiy xatoligidan katta. Şuning uçun datçik pasportida *asosiy xatolik* (normal şaroitda) bilan bir qatorda har bir taʼsir etuvçi kattalik uçun *qöşimça xatolik* ham normalanadi.
 
 // =====================================================================
-= Oʻlchash xatoliklari, ularni normalash va yigʻish
+= Ölçaş xatoliklari, ularni normalaş va yiğiş
 // =====================================================================
 
-== Xatoliklarning ifodalanishi va aniqlik klassi
+== Xatoliklarning ifodalanişi va aniqlik klassi
 
-Oʻlchash xatoligi absolyut ($Delta = x_"oʻl" - x_"h"$), nisbiy ($delta = Delta slash x_"h" dot 100 %$) va keltirilgan koʻrinishda ifodalanadi. Datchik va asboblar uchun koʻpincha *keltirilgan xatolik* normalanadi:
+Ölçaş xatoligi absolyut ($Delta = x_"öl" - x_"h"$), nisbiy ($delta = Delta slash x_"h" dot 100 %$) va keltirilgan körinişda ifodalanadi. Datçik va asboblar uçun köpinça *keltirilgan xatolik* normalanadi:
 
 #eq($ gamma = Delta / X_N dot 100 %, $)
 
-bu yerda $X_N$ — normalovchi qiymat (odatda oʻlchash diapazoni). Ruxsat etilgan eng katta keltirilgan xatolik oʻlchash vositasining *aniqlik klassini* belgilaydi: masalan, 0,5 klass $|gamma| <= 0","5 %$ ni anglatadi. Keltirilgan xatolik butun diapazonda bir xil boʻlgani uchun nisbiy xatolik kichik qiymatlarni oʻlchashda keskin ortadi; shu sababli datchik diapazoni oʻlchanadigan qiymat diapazonning yuqori qismida boʻladigan qilib tanlanadi.
+bu yerda $X_N$ — normalovçi qiymat (odatda ölçaş diapazoni). Ruxsat etilgan eng katta keltirilgan xatolik ölçaş vositasining *aniqlik klassini* belgilaydi: masalan, 0,5 klass $|gamma| <= 0","5 %$ ni anglatadi. Keltirilgan xatolik butun diapazonda bir xil bölgani uçun nisbiy xatolik kiçik qiymatlarni ölçaşda keskin ortadi; şu sababli datçik diapazoni ölçanadigan qiymat diapazonning yuqori qismida böladigan qilib tanlanadi.
 
-Kelib chiqishiga koʻra xatoliklar *sistematik* (oʻzgarmas yoki qonuniy oʻzgaradi, kalibrlash va tuzatish orqali kamaytiriladi), *tasodifiy* (statistik usullar bilan baholanadi, koʻp marta oʻlchab oʻrtachalash orqali kamaytiriladi) va *qoʻpol* (natijalardan chiqarib tashlanadi) turlarga boʻlinadi. Tasodifiy xatoliklarni statistik qayta ishlash usullari amaliy mashgʻulotlarda batafsil oʻrganiladi.
+Kelib çiqişiga köra xatoliklar *sistematik* (özgarmas yoki qonuniy özgaradi, kalibrlaş va tuzatiş orqali kamaytiriladi), *tasodifiy* (statistik usullar bilan baholanadi, köp marta ölçab örtaçalaş orqali kamaytiriladi) va *qöpol* (natijalardan çiqarib taşlanadi) turlarga bölinadi. Tasodifiy xatoliklarni statistik qayta işlaş usullari amaliy maşğulotlarda batafsil örganiladi.
 
-== Xatoliklarni yigʻish
+== Xatoliklarni yiğiş
 
-Oʻlchash kanali bir nechta elementdan (datchik, kuchaytirgich, ARO) iborat boʻlib, har biri oʻz xatoligini qoʻshadi. Agar elementlar xatoliklari bir-biriga bogʻliq boʻlmagan tasodifiy kattaliklar boʻlsa, umumiy xatolik *geometrik* (kvadratik) yigʻindi bilan baholanadi:
+Ölçaş kanali bir neçta elementdan (datçik, kuçaytirgiç, ARO) iborat bölib, har biri öz xatoligini qöşadi. Agar elementlar xatoliklari bir-biriga boğliq bölmagan tasodifiy kattaliklar bölsa, umumiy xatolik *geometrik* (kvadratik) yiğindi bilan baholanadi:
 
 #eq($ Delta_Sigma = sqrt(Delta_1^2 + Delta_2^2 + dots + Delta_n^2). $)
 
-*Misol.* Datchik xatoligi 0,1 %, kuchaytirgichniki 0,05 %, ARO niki 0,02 % boʻlsa, $Delta_Sigma = sqrt(0","1^2 + 0","05^2 + 0","02^2) approx 0","114 %$. Arifmetik yigʻindi esa 0,17 % ni beradi — bu eng yomon holat, barcha xatoliklar bir vaqtda eng katta qiymatga va bir yoʻnalishga ega boʻlgandagi baho. (4) ifodadan muhim amaliy xulosa: umumiy xatolikni asosan eng katta tashkil etuvchi belgilaydi. Bu misolda ARO aniqligini oshirish deyarli foyda bermaydi, datchikni yaxshilash esa sezilarli natija beradi.
+*Misol.* Datçik xatoligi 0,1 %, kuçaytirgiçniki 0,05 %, ARO niki 0,02 % bölsa, $Delta_Sigma = sqrt(0","1^2 + 0","05^2 + 0","02^2) approx 0","114 %$. Arifmetik yiğindi esa 0,17 % ni beradi — bu eng yomon holat, barça xatoliklar bir vaqtda eng katta qiymatga va bir yönalişga ega bölgandagi baho. (4) ifodadan muhim amaliy xulosa: umumiy xatolikni asosan eng katta taşkil etuvçi belgilaydi. Bu misolda ARO aniqligini oşiriş deyarli foyda bermaydi, datçikni yaxşilaş esa sezilarli natija beradi.
 
-== Oʻlchash noaniqligi
+== Ölçaş noaniqligi
 
-Zamonaviy xalqaro amaliyotda oʻlchash natijasining sifati *noaniqlik* tushunchasi bilan ifodalanadi. Noaniqlik — oʻlchanayotgan kattalikka asosli ravishda mos keladigan qiymatlarning tarqoqligini tavsiflovchi parametr. Har bir noaniqlik manbai *standart noaniqlik* $u_i$ (standart ogʻish koʻrinishida) bilan baholanadi va ular (4) ga oʻxshash tarzda birlashtirilib, *jamlangan standart noaniqlik* $u_c$ olinadi. Natija *kengaytirilgan noaniqlik* bilan beriladi:
+Zamonaviy xalqaro amaliyotda ölçaş natijasining sifati *noaniqlik* tuşunçasi bilan ifodalanadi. Noaniqlik — ölçanayotgan kattalikka asosli ravişda mos keladigan qiymatlarning tarqoqligini tavsiflovçi parametr. Har bir noaniqlik manbai *standart noaniqlik* $u_i$ (standart oğiş körinişida) bilan baholanadi va ular (4) ga öxşaş tarzda birlaştirilib, *jamlangan standart noaniqlik* $u_c$ olinadi. Natija *kengaytirilgan noaniqlik* bilan beriladi:
 
 #eq($ U = k dot u_c, $)
 
-bu yerda $k$ — qamrov koeffitsienti; $k = 2$ normal taqsimotda taxminan 95 % ishonch ehtimoliga mos keladi. Natija $x = hat(x) plus.minus U$ koʻrinishida yoziladi, masalan, «$25","40 plus.minus 0","04$ mm, $k = 2$».
+bu yerda $k$ — qamrov koeffitsienti; $k = 2$ normal taqsimotda taxminan 95 % işonç ehtimoliga mos keladi. Natija $x = hat(x) plus.minus U$ körinişida yoziladi, masalan, «$25","40 plus.minus 0","04$ mm, $k = 2$».
 
 // =====================================================================
 = Dinamik metrologik tavsiflar
 // =====================================================================
 
-Kirish kattaligi tez oʻzgarganda datchik chiqishi undan kechikadi va amplitudasi buziladi. Bu holat *dinamik tavsiflar* bilan baholanadi. Birinchi tartibli datchikning (termojuft, termorezistor, filtrli datchiklar) uzatish funksiyasi $W(s) = S slash (tau s + 1)$ boʻlib, sinusoidal kirish uchun uning *amplituda-chastota tavsifi*:
+Kiriş kattaligi tez özgarganda datçik çiqişi undan keçikadi va amplitudasi buziladi. Bu holat *dinamik tavsiflar* bilan baholanadi. Birinçi tartibli datçikning (termojuft, termorezistor, filtrli datçiklar) uzatiş funksiyasi $W(s) = S slash (tau s + 1)$ bölib, sinusoidal kiriş uçun uning *amplituda-çastota tavsifi*:
 
 #eq($ A(omega) = S / sqrt(1 + (omega tau)^2). $)
 
-Chastota ortishi bilan chiqish amplitudasi kamayadi. Amplitudaning statik qiymatdan $1 slash sqrt(2)$ gacha (−3 dB) kamayish chastotasi $f_c = 1 slash (2 pi tau)$ datchikning *oʻtkazish polosasini* belgilaydi. *Misol.* $tau = 0","1$ s boʻlgan datchik bilan 1 Hz chastotada oʻzgaruvchi kattalik oʻlchansa, $omega tau = 0","628$ va $A slash S = 1 slash sqrt(1 + 0","628^2) approx 0","85$: amplituda 15 % ga kam oʻlchanadi. Bu *dinamik xatolik* statik xatolikka qoʻshiladi.
+Çastota ortişi bilan çiqiş amplitudasi kamayadi. Amplitudaning statik qiymatdan $1 slash sqrt(2)$ gaça (−3 dB) kamayiş çastotasi $f_c = 1 slash (2 pi tau)$ datçikning *ötkaziş polosasini* belgilaydi. *Misol.* $tau = 0","1$ s bölgan datçik bilan 1 Hz çastotada özgaruvçi kattalik ölçansa, $omega tau = 0","628$ va $A slash S = 1 slash sqrt(1 + 0","628^2) approx 0","85$: amplituda 15 % ga kam ölçanadi. Bu *dinamik xatolik* statik xatolikka qöşiladi.
 
-Massa va elastik elementga ega datchiklar (akselerometrlar, kuch-moment datchiklari) ikkinchi tartibli tizim sifatida tavsiflanadi:
+Massa va elastik elementga ega datçiklar (akselerometrlar, kuç-moment datçiklari) ikkinçi tartibli tizim sifatida tavsiflanadi:
 
 #eq($ W(s) = (S omega_n^2) / (s^2 + 2 zeta omega_n s + omega_n^2), $)
 
-bu yerda $omega_n$ — xususiy chastota, $zeta$ — soʻnish koeffitsienti. Soʻnish kichik boʻlsa, xususiy chastota atrofida rezonans yuzaga keladi va amplituda keskin oshib ketadi. Shuning uchun bunday datchiklar xususiy chastotadan ancha past chastotalarda ishlatiladi, soʻnish koeffitsienti esa $zeta approx 0","6 dots 0","7$ atrofida tanlanganda amplituda-chastota tavsifi eng keng diapazonda tekis boʻladi.
+bu yerda $omega_n$ — xususiy çastota, $zeta$ — söniş koeffitsienti. Söniş kiçik bölsa, xususiy çastota atrofida rezonans yuzaga keladi va amplituda keskin oşib ketadi. Şuning uçun bunday datçiklar xususiy çastotadan ança past çastotalarda işlatiladi, söniş koeffitsienti esa $zeta approx 0","6 dots 0","7$ atrofida tanlanganda amplituda-çastota tavsifi eng keng diapazonda tekis böladi.
 
-Dinamik tavsiflar boshqaruv konturi uchun ayniqsa muhim: datchikning kechikishi va faza siljishi qayta aloqali tizimning barqarorligini yomonlashtiradi. Shuning uchun datchik oʻtkazish polosasi boshqaruv konturining oʻtkazish polosasidan bir necha marta keng boʻlishi kerak.
+Dinamik tavsiflar boşqaruv konturi uçun ayniqsa muhim: datçikning keçikişi va faza siljişi qayta aloqali tizimning barqarorligini yomonlaştiradi. Şuning uçun datçik ötkaziş polosasi boşqaruv konturining ötkaziş polosasidan bir neça marta keng bölişi kerak.
 
 // =====================================================================
 = Mexatron modullarning metrologik tavsiflari
 // =====================================================================
 
-Mexatron modul (masalan, robot boʻgʻini yuritmasi) uchun alohida datchik tavsiflaridan tashqari butun modulning harakat aniqligi muhim. Uning asosiy metrologik tavsiflari: *pozitsiyalash aniqligi* (buyruq berilgan va haqiqiy holat farqi), *pozitsiyalash takrorlanuvchanligi*, *ruxsat qobiliyati* (eng kichik bajariladigan siljish) va *tezlikni ushlab turish aniqligi*. Ular modul zanjirining barcha elementlari xatoliklari bilan belgilanadi (2-jadval).
+Mexatron modul (masalan, robot böğini yuritmasi) uçun alohida datçik tavsiflaridan taşqari butun modulning harakat aniqligi muhim. Uning asosiy metrologik tavsiflari: *pozitsiyalaş aniqligi* (buyruq berilgan va haqiqiy holat farqi), *pozitsiyalaş takrorlanuvçanligi*, *ruxsat qobiliyati* (eng kiçik bajariladigan siljiş) va *tezlikni uşlab turiş aniqligi*. Ular modul zanjirining barça elementlari xatoliklari bilan belgilanadi (2-jadval).
 
 #figure(
   btable(
     columns: (auto, 1.3fr, 1fr),
     header: ([Element], [Xatolik manbai], [Xatolik turi]),
     [Enkoder],
-    [Kvantlash, interpolyatsiya xatoligi, oʻrnatish ekssentrisiteti],
+    [Kvantlaş, interpolyatsiya xatoligi, örnatiş ekssentrisiteti],
     [Sistematik va tasodifiy],
     [Reduktor],
-    [Lyuft, kinematik (tishlar qadami) xatoligi, burilishdagi elastiklik],
-    [Asosan sistematik, yuklamaga bogʻliq],
-    [Zveno va podshipniklar],
-    [Egilish, issiqlik kengayishi, geometrik oʻlcham xatoliklari],
-    [Sistematik, sharoitga bogʻliq],
-    [Boshqaruv tizimi],
-    [Rostlagich xatoligi, ishqalanish, tebranishlar],
+    [Lyuft, kinematik (tişlar qadami) xatoligi, burilişdagi elastiklik],
+    [Asosan sistematik, yuklamaga boğliq],
+    [Zveno va podşipniklar],
+    [Egiliş, issiqlik kengayişi, geometrik ölçam xatoliklari],
+    [Sistematik, şaroitga boğliq],
+    [Boşqaruv tizimi],
+    [Rostlagiç xatoligi, işqalaniş, tebranişlar],
     [Dinamik],
   ),
   caption: [Mexatron modulning harakat xatoligi manbalari],
 ) <tab-modul>
 
-Reduktor chiqish validagi enkoder ruxsat qobiliyati juda yuqori boʻlsa ham, modulning haqiqiy aniqligini koʻpincha mexanik xatoliklar cheklaydi. Masalan, burilish bikrligi $k_theta$ boʻlgan reduktorga $M$ moment taʼsir qilsa, u quyidagi burchakka buraladi va zveno uchida chiziqli xatolik hosil boʻladi:
+Reduktor çiqiş validagi enkoder ruxsat qobiliyati juda yuqori bölsa ham, modulning haqiqiy aniqligini köpinça mexanik xatoliklar çeklaydi. Masalan, buriliş bikrligi $k_theta$ bölgan reduktorga $M$ moment taʼsir qilsa, u quyidagi burçakka buraladi va zveno uçida çiziqli xatolik hosil böladi:
 
 #eq($ Delta phi = M / k_theta, quad Delta s = L dot Delta phi. $)
 
-*Misol.* $k_theta = 10^4$ N·m/rad, $M = 50$ N·m va zveno uzunligi $L = 0","5$ m boʻlsa, $Delta phi = 0","005$ rad, $Delta s = 2","5$ mm. Bu qiymat yuklama bilan oʻzgaradi va dvigatel validagi enkoder uni umuman sezmaydi. Shuning uchun yuqori aniqlik talab qilinadigan modullarda chiqish validagi ikkinchi enkoder yoki moment datchigi orqali kompensatsiya qoʻllanadi.
+*Misol.* $k_theta = 10^4$ N·m/rad, $M = 50$ N·m va zveno uzunligi $L = 0","5$ m bölsa, $Delta phi = 0","005$ rad, $Delta s = 2","5$ mm. Bu qiymat yuklama bilan özgaradi va dvigatel validagi enkoder uni umuman sezmaydi. Şuning uçun yuqori aniqlik talab qilinadigan modullarda çiqiş validagi ikkinçi enkoder yoki moment datçigi orqali kompensatsiya qöllanadi.
 
 // =====================================================================
 = Robotlarning metrologik tavsiflari
 // =====================================================================
 
-Sanoat robotlarining ishlash tavsiflari va ularni sinash usullari ISO 9283 standartida belgilangan. Asosiy koʻrsatkichlar: pozitsiyalash aniqligi (AP) va takrorlanuvchanligi (RP), trayektoriya aniqligi (AT) va takrorlanuvchanligi (RT), barqarorlashish vaqti va pozitsiyadan oʻtib ketish.
+Sanoat robotlarining işlaş tavsiflari va ularni sinaş usullari ISO 9283 standartida belgilangan. Asosiy körsatkiçlar: pozitsiyalaş aniqligi (AP) va takrorlanuvçanligi (RP), trayektoriya aniqligi (AT) va takrorlanuvçanligi (RT), barqarorlaşiş vaqti va pozitsiyadan ötib ketiş.
 
-Robot buyruq berilgan $P_0 (x_0, y_0, z_0)$ nuqtaga $n$ marta yondashadi va har gal erishilgan holat $(x_i, y_i, z_i)$ oʻlchanadi. Erishilgan nuqtalar oʻrtachasi — baritsentr $(macron(x), macron(y), macron(z))$ boʻyicha *pozitsiyalash aniqligi*:
+Robot buyruq berilgan $P_0 (x_0, y_0, z_0)$ nuqtaga $n$ marta yondaşadi va har gal erişilgan holat $(x_i, y_i, z_i)$ ölçanadi. Erişilgan nuqtalar örtaçasi — baritsentr $(macron(x), macron(y), macron(z))$ böyiça *pozitsiyalaş aniqligi*:
 
 #eq($ "AP" = sqrt((macron(x) - x_0)^2 + (macron(y) - y_0)^2 + (macron(z) - z_0)^2). $)
 
-Har bir nuqtadan baritsentrgacha masofa $l_i$, ularning oʻrtachasi $macron(l)$ va standart ogʻishi $S_l$ boʻyicha *pozitsiyalash takrorlanuvchanligi*:
+Har bir nuqtadan baritsentrgaça masofa $l_i$, ularning örtaçasi $macron(l)$ va standart oğişi $S_l$ böyiça *pozitsiyalaş takrorlanuvçanligi*:
 
 #eq($ "RP" = macron(l) + 3 S_l. $)
 
-AP sistematik xatolikni (nuqtalar markazining buyruq nuqtasidan siljishini), RP esa tasodifiy xatolikni (nuqtalar tarqoqligini) tavsiflaydi. ISO 9283 boʻyicha sinovda robotning ishchi zonasida joylashtirilgan sinov kubining diagonal tekisligidagi beshta nuqtaga har biriga bir yoʻnalishdan 30 martadan yondashiladi, oʻlchash esa lazer treker yoki koordinata-oʻlchash mashinasi kabi aniq tashqi vosita bilan bajariladi. Robot pultidagi koordinatalar bu maqsadga yaramaydi, chunki ular robotning oʻz enkoderlari asosida hisoblanadi.
+AP sistematik xatolikni (nuqtalar markazining buyruq nuqtasidan siljişini), RP esa tasodifiy xatolikni (nuqtalar tarqoqligini) tavsiflaydi. ISO 9283 böyiça sinovda robotning işçi zonasida joylaştirilgan sinov kubining diagonal tekisligidagi beşta nuqtaga har biriga bir yönalişdan 30 martadan yondaşiladi, ölçaş esa lazer treker yoki koordinata-ölçaş maşinasi kabi aniq taşqi vosita bilan bajariladi. Robot pultidagi koordinatalar bu maqsadga yaramaydi, çunki ular robotning öz enkoderlari asosida hisoblanadi.
 
-Sanoat robotlarida takrorlanuvchanlik odatda aniqlikdan ancha yaxshi boʻladi, shuning uchun ishlab chiqaruvchilar pasportda asosan RP ni koʻrsatadi. Aniqlik esa robotning kinematik modeli (zvenolar uzunliklari, boʻgʻinlarning nol holatlari) va real konstruksiya orasidagi farqlarga bogʻliq; u *kinematik kalibrlash* orqali — model parametrlarini oʻlchash natijalariga moslash yoʻli bilan — sezilarli yaxshilanadi. Robot oflayn dasturlansa (dastur kompyuterdagi model asosida tuzilsa), aniqlik ayniqsa muhim, chunki robot nuqtalarga «oʻrgatilmay», hisoblangan koordinatalar boʻyicha boradi.
+Sanoat robotlarida takrorlanuvçanlik odatda aniqlikdan ança yaxşi böladi, şuning uçun işlab çiqaruvçilar pasportda asosan RP ni körsatadi. Aniqlik esa robotning kinematik modeli (zvenolar uzunliklari, böğinlarning nol holatlari) va real konstruksiya orasidagi farqlarga boğliq; u *kinematik kalibrlaş* orqali — model parametrlarini ölçaş natijalariga moslaş yöli bilan — sezilarli yaxşilanadi. Robot oflayn dasturlansa (dastur kompyuterdagi model asosida tuzilsa), aniqlik ayniqsa muhim, çunki robot nuqtalarga «örgatilmay», hisoblangan koordinatalar böyiça boradi.
 
-Mexatron modul va robotlarning metrologik tavsiflarini hisoblash boʻyicha amaliy misollar (AP va RP hisobi, enkoder ruxsati va lyuft taʼsirini taqqoslash) amaliy mashgʻulotlarda koʻriladi.
+Mexatron modul va robotlarning metrologik tavsiflarini hisoblaş böyiça amaliy misollar (AP va RP hisobi, enkoder ruxsati va lyuft taʼsirini taqqoslaş) amaliy maşğulotlarda köriladi.
 
 // =====================================================================
 = Xulosa
 // =====================================================================
 
-Metrologik tavsiflar oʻlchash vositasi natijasiga qanchalik ishonish mumkinligini miqdoriy ifodalaydi. Ular oʻlchash natijasini aniqlash, xatolik, taʼsir etuvchi kattaliklarga sezgirlik, dinamik va oʻzaro taʼsir tavsiflariga boʻlinadi. Oʻlchash vositalarining aniqligi kalibrlash orqali tasdiqlanadi, natijalarning ishonchliligi esa davlat etalonlarigacha boʻlgan metrologik kuzatuvchanlik zanjiri bilan taʼminlanadi.
+Metrologik tavsiflar ölçaş vositasi natijasiga qançalik işoniş mumkinligini miqdoriy ifodalaydi. Ular ölçaş natijasini aniqlaş, xatolik, taʼsir etuvçi kattaliklarga sezgirlik, dinamik va özaro taʼsir tavsiflariga bölinadi. Ölçaş vositalarining aniqligi kalibrlaş orqali tasdiqlanadi, natijalarning işonçliligi esa davlat etalonlarigaça bölgan metrologik kuzatuvçanlik zanjiri bilan taʼminlanadi.
 
-Statik tavsiflar (sezgirlik, chiziqlilik, gisterezis, takrorlanuvchanlik, drift) va dinamik tavsiflar (vaqt doimiysi, amplituda-chastota tavsifi, xususiy chastota) birgalikda datchik xatoligini belgilaydi. Kanal elementlari xatoliklari geometrik yigʻiladi va umumiy xatolikni asosan eng katta tashkil etuvchi belgilaydi. Mexatron modulning aniqligini koʻpincha mexanik elementlar — lyuft va elastiklik cheklaydi; robotlarning aniqligi va takrorlanuvchanligi esa ISO 9283 boʻyicha AP va RP koʻrsatkichlari bilan baholanadi va kinematik kalibrlash orqali yaxshilanadi.
+Statik tavsiflar (sezgirlik, çiziqlilik, gisterezis, takrorlanuvçanlik, drift) va dinamik tavsiflar (vaqt doimiysi, amplituda-çastota tavsifi, xususiy çastota) birgalikda datçik xatoligini belgilaydi. Kanal elementlari xatoliklari geometrik yiğiladi va umumiy xatolikni asosan eng katta taşkil etuvçi belgilaydi. Mexatron modulning aniqligini köpinça mexanik elementlar — lyuft va elastiklik çeklaydi; robotlarning aniqligi va takrorlanuvçanligi esa ISO 9283 böyiça AP va RP körsatkiçlari bilan baholanadi va kinematik kalibrlaş orqali yaxşilanadi.
 
 // =====================================================================
 = Nazorat savollari
@@ -294,17 +294,17 @@ Statik tavsiflar (sezgirlik, chiziqlilik, gisterezis, takrorlanuvchanlik, drift)
 
 #block[
   #set par(first-line-indent: 0pt)
-  + Metrologik tavsif va normalangan metrologik tavsif deganda nima tushuniladi?
-  + Kalibrlash va qiyoslash qanday farqlanadi? Metrologik kuzatuvchanlik nima?
-  + Metrologik tavsiflar qanday guruhlarga boʻlinadi?
-  + Chiziqlilik xatosi qanday aniqlanadi? Toʻgʻri chiziqni tanlash usuli natijaga qanday taʼsir qiladi?
-  + Asosiy va qoʻshimcha xatoliklar qanday farqlanadi?
-  + 0…10 bar diapazonli 0,5 klassdagi datchik bilan 2 bar oʻlchanganda nisbiy xatolik qancha boʻlishi mumkin?
-  + Xatoliklar qachon geometrik, qachon arifmetik yigʻiladi?
-  + Xatoliklari 0,2 %, 0,1 % va 0,05 % boʻlgan uch elementli kanalning umumiy xatoligini toping.
+  + Metrologik tavsif va normalangan metrologik tavsif deganda nima tuşuniladi?
+  + Kalibrlaş va qiyoslaş qanday farqlanadi? Metrologik kuzatuvçanlik nima?
+  + Metrologik tavsiflar qanday guruhlarga bölinadi?
+  + Çiziqlilik xatosi qanday aniqlanadi? Töğri çiziqni tanlaş usuli natijaga qanday taʼsir qiladi?
+  + Asosiy va qöşimça xatoliklar qanday farqlanadi?
+  + 0…10 bar diapazonli 0,5 klassdagi datçik bilan 2 bar ölçanganda nisbiy xatolik qança bölişi mumkin?
+  + Xatoliklar qaçon geometrik, qaçon arifmetik yiğiladi?
+  + Xatoliklari 0,2 %, 0,1 % va 0,05 % bölgan uç elementli kanalning umumiy xatoligini toping.
   + Standart va kengaytirilgan noaniqlik qanday farqlanadi?
-  + $tau = 0","2$ s boʻlgan datchik 0,5 Hz chastotali signal amplitudasini necha foiz kam oʻlchaydi?
-  + Ikkinchi tartibli datchik uchun soʻnish koeffitsienti qanday tanlanadi va nima uchun?
-  + Mexatron modulning pozitsiyalash xatoligiga qanday omillar taʼsir qiladi?
-  + Robotlarning AP va RP koʻrsatkichlari qanday aniqlanadi va nima uchun takrorlanuvchanlik odatda aniqlikdan yaxshiroq?
+  + $tau = 0","2$ s bölgan datçik 0,5 Hz çastotali signal amplitudasini neça foiz kam ölçaydi?
+  + Ikkinçi tartibli datçik uçun söniş koeffitsienti qanday tanlanadi va nima uçun?
+  + Mexatron modulning pozitsiyalaş xatoligiga qanday omillar taʼsir qiladi?
+  + Robotlarning AP va RP körsatkiçlari qanday aniqlanadi va nima uçun takrorlanuvçanlik odatda aniqlikdan yaxşiroq?
 ]

@@ -11,7 +11,7 @@
 #let lightorange = rgb("#fbe3cf")
 
 #set document(
-  title: "Maʼruza №8. Mexatron modullar va robotlarning texnik koʻrish tizimlari. Texnik koʻrish tizimining umumlashgan struktura sxemasi. Texnik koʻrish tizimining ishlash tamoyili. Videodatchiklar va videokameralar",
+  title: "Maʼruza №8. Mexatron modullar va robotlarning texnik köriş tizimlari. Texnik köriş tizimining umumlaşgan struktura sxemasi. Texnik köriş tizimining işlaş tamoyili. Videodatçiklar va videokameralar",
 )
 #set page(
   paper: "a4",
@@ -32,7 +32,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -72,7 +72,7 @@
   #text(
     size: 14pt,
     weight: "bold",
-  )[Mavzu: Mexatron modullar va robotlarning texnik koʻrish tizimlari. Texnik koʻrish tizimining umumlashgan struktura sxemasi va ishlash tamoyili. Videodatchiklar va videokameralar]
+  )[Mavzu: Mexatron modullar va robotlarning texnik köriş tizimlari. Texnik köriş tizimining umumlaşgan struktura sxemasi va işlaş tamoyili. Videodatçiklar va videokameralar]
 ]
 
 #v(0.8em)
@@ -80,38 +80,38 @@
 #block[
   #set par(first-line-indent: 0pt)
   *Reja:*
-  + Texnik koʻrish tizimi tushunchasi va robototexnikadagi vazifalari.
-  + Texnik koʻrish tizimining umumlashgan struktura sxemasi.
-  + Tasvir hosil boʻlishi: kamera modeli va koʻrish maydoni.
-  + Texnik koʻrish tizimining ishlash tamoyili: tasvirga ishlov berish bosqichlari.
-  + Videodatchiklar: CCD va CMOS matritsalar, ularning parametrlari.
-  + Videokameralar: tuzilishi, turlari va interfeyslari. 3D kameralar.
-  + Robotda kamerani joylashtirish va kalibrlash.
+  + Texnik köriş tizimi tuşunçasi va robototexnikadagi vazifalari.
+  + Texnik köriş tizimining umumlaşgan struktura sxemasi.
+  + Tasvir hosil bölişi: kamera modeli va köriş maydoni.
+  + Texnik köriş tizimining işlaş tamoyili: tasvirga işlov beriş bosqiçlari.
+  + Videodatçiklar: CCD va CMOS matritsalar, ularning parametrlari.
+  + Videokameralar: tuzilişi, turlari va interfeyslari. 3D kameralar.
+  + Robotda kamerani joylaştiriş va kalibrlaş.
 
-  *Tayanch iboralar:* texnik koʻrish tizimi, sahna, yoritish, obyektiv, fokus masofasi, koʻrish maydoni, videodatchik, piksel, CCD, CMOS, global va qatorli zatvor, Bayer filtri, dinamik diapazon, kadrlar chastotasi, segmentatsiya, belgilarni ajratish, tanib olish, aqlli kamera, stereokamera, dispersiya (disparity), strukturalangan yorugʻlik, ToF kamera, eye-in-hand, kalibrlash.
+  *Tayanç iboralar:* texnik köriş tizimi, sahna, yoritiş, obyektiv, fokus masofasi, köriş maydoni, videodatçik, piksel, CCD, CMOS, global va qatorli zatvor, Bayer filtri, dinamik diapazon, kadrlar çastotasi, segmentatsiya, belgilarni ajratiş, tanib oliş, aqlli kamera, stereokamera, dispersiya (disparity), strukturalangan yoruğlik, ToF kamera, eye-in-hand, kalibrlaş.
 ]
 
 // =====================================================================
-= Texnik koʻrish tizimi tushunchasi va robototexnikadagi vazifalari
+= Texnik köriş tizimi tuşunçasi va robototexnikadagi vazifalari
 // =====================================================================
 
-*Texnik koʻrish tizimi* (TKT) — sahna tasvirini olish, uni qayta ishlash va tahlil qilish orqali obyektlar haqida axborot oluvchi hamda shu axborot asosida boshqaruv tizimiga maʼlumot yoki buyruq beruvchi apparat-dasturiy kompleks. Inson tashqi dunyo haqidagi axborotning katta qismini koʻrish orqali olganidek (1-maʼruza), robot uchun ham TKT eng boy axborot manbai hisoblanadi.
+*Texnik köriş tizimi* (TKT) — sahna tasvirini oliş, uni qayta işlaş va tahlil qiliş orqali obyektlar haqida axborot oluvçi hamda şu axborot asosida boşqaruv tizimiga maʼlumot yoki buyruq beruvçi apparat-dasturiy kompleks. Inson taşqi dunyo haqidagi axborotning katta qismini köriş orqali olganidek (1-maʼruza), robot uçun ham TKT eng boy axborot manbai hisoblanadi.
 
 Robototexnikada TKT quyidagi asosiy vazifalarni bajaradi:
-- *obyektlarni aniqlash va tanib olish* — sahnada qanday obyektlar borligini va ularning turini aniqlash;
-- *obyektlarning holati va yoʻnalishini aniqlash* — robot obyektni ushlashi uchun uning koordinatalari va burilish burchagini topish (masalan, konveyerdan tartibsiz joylashgan detallarni olish);
-- *sifat nazorati va oʻlchash* — detal oʻlchamlari, nuqsonlari, yorliqlar va shtrix-kodlarni tekshirish;
-- *navigatsiya* — mobil robotning harakat yoʻlini, toʻsiqlarni va oʻz oʻrnini aniqlash;
-- *vizual qayta aloqa (visual servoing)* — robot harakatini kamera tasviri asosida real vaqtda boshqarish;
-- *inson bilan muloqot* — odamlarni, imo-ishoralar va yuz ifodalarini tanib olish.
+- *obyektlarni aniqlaş va tanib oliş* — sahnada qanday obyektlar borligini va ularning turini aniqlaş;
+- *obyektlarning holati va yönalişini aniqlaş* — robot obyektni uşlaşi uçun uning koordinatalari va buriliş burçagini topiş (masalan, konveyerdan tartibsiz joylaşgan detallarni oliş);
+- *sifat nazorati va ölçaş* — detal ölçamlari, nuqsonlari, yorliqlar va ştrix-kodlarni tekşiriş;
+- *navigatsiya* — mobil robotning harakat yölini, tösiqlarni va öz örnini aniqlaş;
+- *vizual qayta aloqa (visual servoing)* — robot harakatini kamera tasviri asosida real vaqtda boşqariş;
+- *inson bilan muloqot* — odamlarni, imo-işoralar va yuz ifodalarini tanib oliş.
 
-TKT kontaktsiz ishlaydi, juda katta hajmdagi axborot beradi va bitta datchik bilan koʻplab turli vazifalarni hal qilish imkonini beradi. Shu bilan birga, u boshqa datchiklarga qaraganda murakkab ishlov berish algoritmlari va kuchli hisoblash resurslarini talab qiladi, natijasi esa yoritish sharoitiga kuchli bogʻliq.
+TKT kontaktsiz işlaydi, juda katta hajmdagi axborot beradi va bitta datçik bilan köplab turli vazifalarni hal qiliş imkonini beradi. Şu bilan birga, u boşqa datçiklarga qaraganda murakkab işlov beriş algoritmlari va kuçli hisoblaş resurslarini talab qiladi, natijasi esa yoritiş şaroitiga kuçli boğliq.
 
 // =====================================================================
-= Texnik koʻrish tizimining umumlashgan struktura sxemasi
+= Texnik köriş tizimining umumlaşgan struktura sxemasi
 // =====================================================================
 
-TKT ning umumlashgan struktura sxemasi 1-rasmda keltirilgan.
+TKT ning umumlaşgan struktura sxemasi 1-rasmda keltirilgan.
 
 #figure(
   diagram(
@@ -121,14 +121,14 @@ TKT ning umumlashgan struktura sxemasi 1-rasmda keltirilgan.
     node-corner-radius: 3pt,
     node-shape: rect,
     edge-stroke: 1pt,
-    node((0, 0), [Yoritish \ tizimi], fill: white, name: <yo>),
+    node((0, 0), [Yoritiş \ tizimi], fill: white, name: <yo>),
     node((1, 0), [Sahna, \ obyekt], fill: lightorange, name: <sa>),
     node((2, 0), [Optik \ tizim], name: <op>),
-    node((3, 0), [Video- \ datchik], name: <vd>),
+    node((3, 0), [Video- \ datçik], name: <vd>),
     node((4, 0), [ARO va \ interfeys], name: <if>),
-    node((4, 1), [Tasvirga \ ishlov berish], name: <ib>),
-    node((3, 1), [Tahlil va \ tanib olish], name: <ta>),
-    node((2, 1), [Robot boshqaruv \ tizimi], fill: lightorange, name: <bt>),
+    node((4, 1), [Tasvirga \ işlov beriş], name: <ib>),
+    node((3, 1), [Tahlil va \ tanib oliş], name: <ta>),
+    node((2, 1), [Robot boşqaruv \ tizimi], fill: lightorange, name: <bt>),
     node((0, 1), [Manipu- \ lyator], fill: white, name: <ij>),
     edge(<yo>, <sa>, "->"),
     edge(<sa>, <op>, "->"),
@@ -140,27 +140,27 @@ TKT ning umumlashgan struktura sxemasi 1-rasmda keltirilgan.
     edge(<bt>, <ij>, "->"),
     edge(<ij>, <sa>, "->", stroke: (dash: "dashed", thickness: 1pt)),
   ),
-  caption: [Texnik koʻrish tizimining umumlashgan struktura sxemasi],
+  caption: [Texnik köriş tizimining umumlaşgan struktura sxemasi],
 ) <fig-tkt>
 
 Sxema elementlarining vazifalari:
-- *yoritish tizimi* obyektni kerakli tarzda yoritib, uning muhim belgilarini (chegaralar, sirt nuqsonlari, konturlar) yaqqol koʻrsatadi. Sanoat TKT larida yoritish toʻgʻri tanlansa, keyingi ishlov berish ancha soddalashadi;
-- *optik tizim* (obyektiv, filtrlar) sahna tasvirini videodatchik sirtiga tushiradi;
-- *videodatchik* (fotomatritsa) optik tasvirni elektr signallari majmuasiga aylantiradi;
-- *ARO va interfeys* signallarni raqamli tasvirga aylantiradi va uni hisoblash qurilmasiga uzatadi;
-- *tasvirga ishlov berish bloki* shovqinni kamaytiradi, tasvir sifatini yaxshilaydi va obyektlarni fondan ajratadi;
-- *tahlil va tanib olish bloki* obyekt belgilarini hisoblaydi, ularni maʼlum obyektlar bilan solishtiradi va obyekt turi, holati, oʻlchamlari haqida xulosa chiqaradi;
-- *robot boshqaruv tizimi* bu xulosa asosida ijro mexanizmining harakatini rejalashtiradi.
+- *yoritiş tizimi* obyektni kerakli tarzda yoritib, uning muhim belgilarini (çegaralar, sirt nuqsonlari, konturlar) yaqqol körsatadi. Sanoat TKT larida yoritiş töğri tanlansa, keyingi işlov beriş ança soddalaşadi;
+- *optik tizim* (obyektiv, filtrlar) sahna tasvirini videodatçik sirtiga tuşiradi;
+- *videodatçik* (fotomatritsa) optik tasvirni elektr signallari majmuasiga aylantiradi;
+- *ARO va interfeys* signallarni raqamli tasvirga aylantiradi va uni hisoblaş qurilmasiga uzatadi;
+- *tasvirga işlov beriş bloki* şovqinni kamaytiradi, tasvir sifatini yaxşilaydi va obyektlarni fondan ajratadi;
+- *tahlil va tanib oliş bloki* obyekt belgilarini hisoblaydi, ularni maʼlum obyektlar bilan soliştiradi va obyekt turi, holati, ölçamlari haqida xulosa çiqaradi;
+- *robot boşqaruv tizimi* bu xulosa asosida ijro mexanizmining harakatini rejalaştiradi.
 
-Ijro mexanizmi sahnani oʻzgartirgani (obyektni koʻchirgani) sababli tizim yopiq kontur hosil qiladi: TKT harakat natijasini ham nazorat qiladi.
+Ijro mexanizmi sahnani özgartirgani (obyektni köçirgani) sababli tizim yopiq kontur hosil qiladi: TKT harakat natijasini ham nazorat qiladi.
 
 // =====================================================================
-= Tasvir hosil boʻlishi: kamera modeli va koʻrish maydoni
+= Tasvir hosil bölişi: kamera modeli va köriş maydoni
 // =====================================================================
 
-== Teshikli kamera modeli
+== Teşikli kamera modeli
 
-Kamera tasvir hosil qilishini tavsiflash uchun eng sodda va keng qoʻllanadigan model — *teshikli kamera* (_pinhole_) modeli (2-rasm). Unda sahnadagi har bir nuqtadan kelgan nur bitta nuqta — optik markaz orqali oʻtib, undan fokus masofasi $f$ uzoqlikdagi tasvir tekisligiga tushadi.
+Kamera tasvir hosil qilişini tavsiflaş uçun eng sodda va keng qöllanadigan model — *teşikli kamera* (_pinhole_) modeli (2-rasm). Unda sahnadagi har bir nuqtadan kelgan nur bitta nuqta — optik markaz orqali ötib, undan fokus masofasi $f$ uzoqlikdagi tasvir tekisligiga tuşadi.
 
 #let pinhole = {
   let st = 1pt + headingblue
@@ -193,206 +193,206 @@ Kamera tasvir hosil qilishini tavsiflash uchun eng sodda va keng qoʻllanadigan 
 
 #figure(
   pinhole,
-  caption: [Teshikli kamera modeli],
+  caption: [Teşikli kamera modeli],
 ) <fig-pinhole>
 
-Oʻxshash uchburchaklardan kamera koordinatalar tizimidagi $P(X, Y, Z)$ nuqtaning tasvirdagi koordinatalari (piksellarda) quyidagicha topiladi:
+Öxşaş uçburçaklardan kamera koordinatalar tizimidagi $P(X, Y, Z)$ nuqtaning tasvirdagi koordinatalari (piksellarda) quyidagiça topiladi:
 
 #eq($ u = f_x dot X / Z + c_x, quad v = f_y dot Y / Z + c_y, $)
 
-bu yerda $f_x, f_y$ — piksellarda ifodalangan fokus masofalari, $c_x, c_y$ — optik markazning tasvirdagi proyeksiyasi (bosh nuqta). Bu parametrlar kameraning *ichki parametrlari* deyiladi va kalibrlash orqali aniqlanadi. (1) ifodadan muhim xulosa kelib chiqadi: bitta kamera tasviridan $X slash Z$ va $Y slash Z$ nisbatlarini topish mumkin, lekin masofa $Z$ ning oʻzini — yoʻq. Chuqurlikni aniqlash uchun qoʻshimcha axborot (ikkinchi kamera, strukturalangan yorugʻlik, obyektning maʼlum oʻlchami) kerak. Real obyektivlar shuningdek tasvirni biroz egadi (distorsiya); bu ham kalibrlash orqali tuzatiladi.
+bu yerda $f_x, f_y$ — piksellarda ifodalangan fokus masofalari, $c_x, c_y$ — optik markazning tasvirdagi proyeksiyasi (boş nuqta). Bu parametrlar kameraning *içki parametrlari* deyiladi va kalibrlaş orqali aniqlanadi. (1) ifodadan muhim xulosa kelib çiqadi: bitta kamera tasviridan $X slash Z$ va $Y slash Z$ nisbatlarini topiş mumkin, lekin masofa $Z$ ning özini — yöq. Çuqurlikni aniqlaş uçun qöşimça axborot (ikkinçi kamera, strukturalangan yoruğlik, obyektning maʼlum ölçami) kerak. Real obyektivlar şuningdek tasvirni biroz egadi (distorsiya); bu ham kalibrlaş orqali tuzatiladi.
 
-== Koʻrish maydoni va fazoviy ruxsat
+== Köriş maydoni va fazoviy ruxsat
 
-Videodatchik kengligi $w$ va obyektiv fokus masofasi $f$ boʻlsa, gorizontal *koʻrish maydoni* burchagi:
+Videodatçik kengligi $w$ va obyektiv fokus masofasi $f$ bölsa, gorizontal *köriş maydoni* burçagi:
 
 #eq($ "FOV" = 2 dot "arctg" w / (2 f). $)
 
-$Z$ masofada kamera koʻradigan sahna kengligi va bitta pikselga toʻgʻri keladigan obyekt oʻlchami (fazoviy ruxsat):
+$Z$ masofada kamera köradigan sahna kengligi va bitta pikselga töğri keladigan obyekt ölçami (fazoviy ruxsat):
 
 #eq($ W = Z dot w / f, quad Delta = W / N_x, $)
 
 bu yerda $N_x$ — gorizontal piksellar soni.
 
-*Misol.* Kengligi $w = 6","4$ mm boʻlgan matritsa va $f = 8$ mm obyektiv uchun $"FOV" = 2 "arctg"(3","2 slash 8) approx 43","6 degree$. $Z = 1$ m masofada sahna kengligi $W = 1000 dot 6","4 slash 8 = 800$ mm. Matritsa gorizontal boʻyicha 1280 piksel boʻlsa, $Delta = 800 slash 1280 approx 0","63$ mm/piksel. Demak, bu kamera bilan 1 m masofada taxminan 1 mm dan kichik nuqsonni ishonchli aniqlab boʻlmaydi. Kichikroq detallarni koʻrish uchun fokus masofasi kattaroq obyektiv, koʻproq pikselli matritsa yoki kameraning obyektga yaqinroq joylashuvi kerak — lekin bunda koʻrish maydoni torayadi.
+*Misol.* Kengligi $w = 6","4$ mm bölgan matritsa va $f = 8$ mm obyektiv uçun $"FOV" = 2 "arctg"(3","2 slash 8) approx 43","6 degree$. $Z = 1$ m masofada sahna kengligi $W = 1000 dot 6","4 slash 8 = 800$ mm. Matritsa gorizontal böyiça 1280 piksel bölsa, $Delta = 800 slash 1280 approx 0","63$ mm/piksel. Demak, bu kamera bilan 1 m masofada taxminan 1 mm dan kiçik nuqsonni işonçli aniqlab bölmaydi. Kiçikroq detallarni köriş uçun fokus masofasi kattaroq obyektiv, köproq pikselli matritsa yoki kameraning obyektga yaqinroq joylaşuvi kerak — lekin bunda köriş maydoni torayadi.
 
-*Obyektivning* boshqa muhim parametrlari: diafragma soni $N = f slash D$ ($D$ — kirish teshigi diametri) — u matritsaga tushadigan yorugʻlik miqdorini va keskinlik chuqurligini belgilaydi: diafragma kichraytirilsa ($N$ katta), keskinlik chuqurligi ortadi, lekin tasvir qorongʻiroq boʻladi.
+*Obyektivning* boşqa muhim parametrlari: diafragma soni $N = f slash D$ ($D$ — kiriş teşigi diametri) — u matritsaga tuşadigan yoruğlik miqdorini va keskinlik çuqurligini belgilaydi: diafragma kiçraytirilsa ($N$ katta), keskinlik çuqurligi ortadi, lekin tasvir qoronğiroq böladi.
 
 // =====================================================================
-= Texnik koʻrish tizimining ishlash tamoyili
+= Texnik köriş tizimining işlaş tamoyili
 // =====================================================================
 
 == Raqamli tasvir
 
-Raqamli tasvir — piksellar matritsasi. Kulrang tasvirda har bir piksel $I(x, y)$ yorugʻlik intensivligini ifodalaydi va odatda 8 bit bilan kodlanadi (0 — qora, 255 — oq). Rangli tasvirda har bir piksel uchta komponentdan (qizil, yashil, koʻk — RGB) iborat va odatda 24 bit egallaydi. Chuqurlik kamerasida esa har bir piksel qiymati obyektgacha masofani bildiradi. 3-maʼruzada koʻrsatilganidek, rangli Full HD tasvirlar oqimi sekundiga gigabitlar tartibidagi maʼlumot hosil qiladi, shuning uchun ishlov berish algoritmlarining samaradorligi muhim.
+Raqamli tasvir — piksellar matritsasi. Kulrang tasvirda har bir piksel $I(x, y)$ yoruğlik intensivligini ifodalaydi va odatda 8 bit bilan kodlanadi (0 — qora, 255 — oq). Rangli tasvirda har bir piksel uçta komponentdan (qizil, yaşil, kök — RGB) iborat va odatda 24 bit egallaydi. Çuqurlik kamerasida esa har bir piksel qiymati obyektgaça masofani bildiradi. 3-maʼruzada körsatilganidek, rangli Full HD tasvirlar oqimi sekundiga gigabitlar tartibidagi maʼlumot hosil qiladi, şuning uçun işlov beriş algoritmlarining samaradorligi muhim.
 
-== Tasvirga ishlov berish bosqichlari
+== Tasvirga işlov beriş bosqiçlari
 
-TKT da axborot pastki (piksellar) sathdan yuqori (obyektlar va sahna) sathga qarab bosqichma-bosqich qayta ishlanadi (1-jadval). Har bir bosqichda maʼlumot hajmi kamayadi, uning mazmuni esa boyiydi.
+TKT da axborot pastki (piksellar) sathdan yuqori (obyektlar va sahna) sathga qarab bosqiçma-bosqiç qayta işlanadi (1-jadval). Har bir bosqiçda maʼlumot hajmi kamayadi, uning mazmuni esa boyiydi.
 
 #figure(
   btable(
     columns: (auto, 1.3fr, 1.1fr),
-    header: ([Bosqich], [Mazmuni], [Natija]),
-    [1. Tasvirni olish],
-    [Yoritish, ekspozitsiya, kadrni kiritish],
+    header: ([Bosqiç], [Mazmuni], [Natija]),
+    [1. Tasvirni oliş],
+    [Yoritiş, ekspozitsiya, kadrni kiritiş],
     [Raqamli tasvir],
-    [2. Oldindan ishlov berish],
-    [Shovqinni filtrlash, kontrast va yorqinlikni tuzatish, distorsiyani tuzatish],
-    [Sifati yaxshilangan tasvir],
+    [2. Oldindan işlov beriş],
+    [Şovqinni filtrlaş, kontrast va yorqinlikni tuzatiş, distorsiyani tuzatiş],
+    [Sifati yaxşilangan tasvir],
     [3. Segmentatsiya],
-    [Tasvirni sohalarga ajratish: obyektni fondan ajratish (chegaraviy qiymat, chegaralarni aniqlash)],
+    [Tasvirni sohalarga ajratiş: obyektni fondan ajratiş (çegaraviy qiymat, çegaralarni aniqlaş)],
     [Obyektlar sohalari, konturlar],
-    [4. Belgilarni ajratish],
-    [Obyekt yuzasi, perimetri, markazi, yoʻnalishi, shakl va rang belgilari, xarakterli nuqtalar],
+    [4. Belgilarni ajratiş],
+    [Obyekt yuzasi, perimetri, markazi, yönalişi, şakl va rang belgilari, xarakterli nuqtalar],
     [Belgilar vektori],
-    [5. Tanib olish],
-    [Belgilarni namunalar bilan solishtirish, tasniflash (shu jumladan neyron tarmoqlar yordamida)],
+    [5. Tanib oliş],
+    [Belgilarni namunalar bilan soliştiriş, tasniflaş (şu jumladan neyron tarmoqlar yordamida)],
     [Obyekt turi va holati],
-    [6. Sahnani talqin qilish],
-    [Obyektlar orasidagi munosabatlar, harakat, robot uchun qaror],
-    [Boshqaruv uchun axborot],
+    [6. Sahnani talqin qiliş],
+    [Obyektlar orasidagi munosabatlar, harakat, robot uçun qaror],
+    [Boşqaruv uçun axborot],
   ),
-  caption: [Texnik koʻrish tizimida tasvirga ishlov berish bosqichlari],
+  caption: [Texnik köriş tizimida tasvirga işlov beriş bosqiçlari],
 ) <tab-bosqich>
 
-Masalan, konveyerdagi detalni olishda TKT tasvirni oladi, uni chegaraviy qiymat boʻyicha ikkilik (qora-oq) tasvirga aylantiradi, detal sohasini ajratadi, uning markazi koordinatalari va asosiy oʻqining burilish burchagini hisoblaydi, detal turini shakl belgilari boʻyicha aniqlaydi va bu maʼlumotlarni kalibrlash orqali robot koordinatalariga oʻtkazib, boshqaruv tizimiga beradi. Klassik algoritmlar bilan bir qatorda hozirgi kunda 3–6 bosqichlarni chuqur neyron tarmoqlar birgalikda bajarishi tobora keng tarqalmoqda. Tasvirga ishlov berish va tanib olish algoritmlari keyingi maʼruzalarda batafsil koʻriladi.
+Masalan, konveyerdagi detalni olişda TKT tasvirni oladi, uni çegaraviy qiymat böyiça ikkilik (qora-oq) tasvirga aylantiradi, detal sohasini ajratadi, uning markazi koordinatalari va asosiy öqining buriliş burçagini hisoblaydi, detal turini şakl belgilari böyiça aniqlaydi va bu maʼlumotlarni kalibrlaş orqali robot koordinatalariga ötkazib, boşqaruv tizimiga beradi. Klassik algoritmlar bilan bir qatorda hozirgi kunda 3–6 bosqiçlarni çuqur neyron tarmoqlar birgalikda bajarişi tobora keng tarqalmoqda. Tasvirga işlov beriş va tanib oliş algoritmlari keyingi maʼruzalarda batafsil köriladi.
 
 // =====================================================================
-= Videodatchiklar
+= Videodatçiklar
 // =====================================================================
 
-== Ishlash prinsipi
+== Işlaş prinsipi
 
-*Videodatchik* (fotomatritsa) — tekislikda qator va ustunlar boʻyicha joylashgan koʻplab fotosezgir elementlar (piksellar) majmuasi. Har bir pikselga tushgan yorugʻlik fotoeffekt hisobiga zaryad hosil qiladi; zaryad *ekspozitsiya vaqti* davomida toʻplanadi va unga tushgan yorugʻlik miqdoriga proporsional boʻladi. Soʻngra zaryadlar oʻqiladi, kuchlanishga aylantiriladi va raqamlanadi. Zaryadni oʻqish usuliga koʻra ikki asosiy turdagi matritsa mavjud.
+*Videodatçik* (fotomatritsa) — tekislikda qator va ustunlar böyiça joylaşgan köplab fotosezgir elementlar (piksellar) majmuasi. Har bir pikselga tuşgan yoruğlik fotoeffekt hisobiga zaryad hosil qiladi; zaryad *ekspozitsiya vaqti* davomida töplanadi va unga tuşgan yoruğlik miqdoriga proporsional böladi. Söngra zaryadlar öqiladi, kuçlanişga aylantiriladi va raqamlanadi. Zaryadni öqiş usuliga köra ikki asosiy turdagi matritsa mavjud.
 
-*CCD matritsa* (zaryad bogʻlangan qurilma) — toʻplangan zaryadlar matritsa boʻylab qatorma-qator bitta yoki bir nechta chiqish kuchaytirgichiga ketma-ket koʻchiriladi. *CMOS matritsa* — har bir pikselda oʻzining kuchaytirgichi bor, piksellar esa xotira kabi qator va ustun manzili boʻyicha oʻqiladi; ARO va boshqarish sxemalari bitta kristallda joylashadi.
+*CCD matritsa* (zaryad boğlangan qurilma) — töplangan zaryadlar matritsa böylab qatorma-qator bitta yoki bir neçta çiqiş kuçaytirgiçiga ketma-ket köçiriladi. *CMOS matritsa* — har bir pikselda özining kuçaytirgiçi bor, piksellar esa xotira kabi qator va ustun manzili böyiça öqiladi; ARO va boşqariş sxemalari bitta kristallda joylaşadi.
 
 #figure(
   btable(
     columns: (auto, 1fr, 1fr),
-    header: ([Koʻrsatkich], [CCD], [CMOS]),
-    [Zaryadni oʻqish],
-    [Ketma-ket koʻchirish, umumiy kuchaytirgich],
-    [Har bir pikselda kuchaytirgich, manzil boʻyicha],
+    header: ([Körsatkiç], [CCD], [CMOS]),
+    [Zaryadni öqiş],
+    [Ketma-ket köçiriş, umumiy kuçaytirgiç],
+    [Har bir pikselda kuçaytirgiç, manzil böyiça],
     [Integratsiya],
-    [Tashqi elektronika kerak],
-    [ARO va boshqarish kristallda],
+    [Taşqi elektronika kerak],
+    [ARO va boşqariş kristallda],
     [Energiya isteʼmoli],
     [Yuqori],
     [Past],
     [Tezlik],
-    [Oʻrtacha],
-    [Yuqori; tasvirning bir qismini (ROI) oʻqish mumkin],
+    [Örtaça],
+    [Yuqori; tasvirning bir qismini (ROI) öqiş mumkin],
     [Narxi],
     [Yuqoriroq],
     [Past (ommaviy texnologiya)],
     [Bugungi holati],
-    [Maxsus ilmiy va tibbiy qoʻllanish],
+    [Maxsus ilmiy va tibbiy qöllaniş],
     [Robototexnika va sanoatda asosiy tur],
   ),
-  caption: [CCD va CMOS videodatchiklarini taqqoslash],
+  caption: [CCD va CMOS videodatçiklarini taqqoslaş],
 ) <tab-ccd>
 
 == Zatvor turi
 
-Harakatlanuvchi robotlar va obyektlar uchun matritsaning *zatvor turi* muhim:
-- *global zatvor* — barcha piksellar bir vaqtda ekspozitsiya qilinadi; tez harakatlanayotgan obyektlar buzilmasdan tasvirlanadi;
-- *qatorli zatvor* (_rolling shutter_) — qatorlar navbatma-navbat ekspozitsiya qilinadi; arzonroq va sezgirroq, lekin tez harakatda tasvir qiyshayadi (masalan, vertikal ustun egik koʻrinadi).
+Harakatlanuvçi robotlar va obyektlar uçun matritsaning *zatvor turi* muhim:
+- *global zatvor* — barça piksellar bir vaqtda ekspozitsiya qilinadi; tez harakatlanayotgan obyektlar buzilmasdan tasvirlanadi;
+- *qatorli zatvor* (_rolling shutter_) — qatorlar navbatma-navbat ekspozitsiya qilinadi; arzonroq va sezgirroq, lekin tez harakatda tasvir qiyşayadi (masalan, vertikal ustun egik körinadi).
 
-Konveyer, tez harakatlanuvchi manipulyator yoki dronga oʻrnatilgan kameralarda global zatvorli matritsalar afzal.
+Konveyer, tez harakatlanuvçi manipulyator yoki dronga örnatilgan kameralarda global zatvorli matritsalar afzal.
 
-== Rangli tasvir olish
+== Rangli tasvir oliş
 
-Fotosezgir element yorugʻlik rangini farqlamaydi. Rangli tasvir olish uchun koʻpincha matritsa ustiga *Bayer filtri* — qizil, yashil va koʻk mikrofiltrlar mozaikasi qoʻyiladi: piksellarning 50 % i yashil, 25 % i qizil va 25 % i koʻk filtr ostida boʻladi (inson koʻzi yashil rangga eng sezgir). Har bir pikselning yetishmayotgan rang komponentlari qoʻshni piksellar boʻyicha interpolyatsiya qilinadi. Shu sababli rangli kameraning haqiqiy fazoviy ruxsati monoxrom kameranikidan biroz past; oʻlchash vazifalarida koʻpincha monoxrom kameralar ishlatiladi.
+Fotosezgir element yoruğlik rangini farqlamaydi. Rangli tasvir oliş uçun köpinça matritsa ustiga *Bayer filtri* — qizil, yaşil va kök mikrofiltrlar mozaikasi qöyiladi: piksellarning 50 % i yaşil, 25 % i qizil va 25 % i kök filtr ostida böladi (inson közi yaşil rangga eng sezgir). Har bir pikselning yetişmayotgan rang komponentlari qöşni piksellar böyiça interpolyatsiya qilinadi. Şu sababli rangli kameraning haqiqiy fazoviy ruxsati monoxrom kameranikidan biroz past; ölçaş vazifalarida köpinça monoxrom kameralar işlatiladi.
 
-== Videodatchiklarning asosiy parametrlari
+== Videodatçiklarning asosiy parametrlari
 
 - *Ruxsat (piksellar soni)* — masalan, 1280 × 1024 yoki 5 Mpiksel; fazoviy ruxsatni belgilaydi.
-- *Piksel oʻlchami* — odatda bir necha mikrometr; katta piksel koʻproq yorugʻlik yigʻadi va shovqini kamroq.
-- *Matritsa formati* — fizik oʻlchami; koʻrish maydonini va obyektiv tanlovini belgilaydi.
-- *Kadrlar chastotasi* — sekundiga kadrlar soni; tez jarayonlarni kuzatish imkoniyati.
-- *Kvant samaradorligi va sezgirlik* — tushgan fotonlarning qancha qismi elektronga aylanishi.
-- *Spektral diapazon* — koʻrinadigan, yaqin infraqizil yoki issiqlik (uzoq infraqizil) diapazoni.
-- *Dinamik diapazon* — matritsa bir kadrda farqlay oladigan eng yorugʻ va eng xira signallar nisbati:
+- *Piksel ölçami* — odatda bir neça mikrometr; katta piksel köproq yoruğlik yiğadi va şovqini kamroq.
+- *Matritsa formati* — fizik ölçami; köriş maydonini va obyektiv tanlovini belgilaydi.
+- *Kadrlar çastotasi* — sekundiga kadrlar soni; tez jarayonlarni kuzatiş imkoniyati.
+- *Kvant samaradorligi va sezgirlik* — tuşgan fotonlarning qança qismi elektronga aylanişi.
+- *Spektral diapazon* — körinadigan, yaqin infraqizil yoki issiqlik (uzoq infraqizil) diapazoni.
+- *Dinamik diapazon* — matritsa bir kadrda farqlay oladigan eng yoruğ va eng xira signallar nisbati:
 
-#eq($ "DR" = 20 lg N_max / N_"sh" quad ["dB"], $)
+#eq($ "DR" = 20 lg N_max / N_"ş" quad ["dB"], $)
 
-bu yerda $N_max$ — piksel toʻplay oladigan eng katta zaryad (elektronlarda), $N_"sh"$ — shovqin darajasi. *Misol.* $N_max = 10 000$ e⁻ va $N_"sh" = 5$ e⁻ boʻlsa, $"DR" = 20 lg 2000 approx 66$ dB. Kichik dinamik diapazonli kamera bir vaqtda yorqin deraza va qorongʻi burchakni yaxshi koʻrsata olmaydi; bunday sharoitlar uchun keng dinamik diapazonli (HDR) kameralar ishlatiladi.
+bu yerda $N_max$ — piksel töplay oladigan eng katta zaryad (elektronlarda), $N_"ş"$ — şovqin darajasi. *Misol.* $N_max = 10 000$ e⁻ va $N_"ş" = 5$ e⁻ bölsa, $"DR" = 20 lg 2000 approx 66$ dB. Kiçik dinamik diapazonli kamera bir vaqtda yorqin deraza va qoronği burçakni yaxşi körsata olmaydi; bunday şaroitlar uçun keng dinamik diapazonli (HDR) kameralar işlatiladi.
 
 // =====================================================================
 = Videokameralar
 // =====================================================================
 
-== Tuzilishi va turlari
+== Tuzilişi va turlari
 
-*Videokamera* obyektiv, optik filtrlar, videodatchik, uni boshqaruvchi va signalga ishlov beruvchi elektronika hamda maʼlumot uzatish interfeysidan iborat. TKT larda qoʻllanadigan kameralar quyidagi turlarga boʻlinadi:
-- *sanoat (mashinaviy koʻrish) kameralari* — tasvirni kompyuterga uzatadi, ishlov esa kompyuterda bajariladi; parametrlari (ekspozitsiya, kuchaytirish, trigger) dasturiy boshqariladi;
-- *aqlli (smart) kameralar* — protsessor va tasvirga ishlov berish dasturi kamera ichida joylashgan; kontrollerga faqat natija (masalan, «detal yaroqli», detal koordinatalari) uzatiladi. Ular intellektual datchiklarning (7-maʼruza) texnik koʻrish sohasidagi namunasidir;
-- *3D (chuqurlik) kameralari* — har bir piksel uchun masofani beradi;
-- *issiqlik (termal) kameralari* — uzoq infraqizil nurlanish boʻyicha harorat taqsimotini koʻrsatadi; qorongʻilikda odamlarni aniqlash va qizigan qismlarni nazorat qilish uchun.
+*Videokamera* obyektiv, optik filtrlar, videodatçik, uni boşqaruvçi va signalga işlov beruvçi elektronika hamda maʼlumot uzatiş interfeysidan iborat. TKT larda qöllanadigan kameralar quyidagi turlarga bölinadi:
+- *sanoat (maşinaviy köriş) kameralari* — tasvirni kompyuterga uzatadi, işlov esa kompyuterda bajariladi; parametrlari (ekspozitsiya, kuçaytiriş, trigger) dasturiy boşqariladi;
+- *aqlli (smart) kameralar* — protsessor va tasvirga işlov beriş dasturi kamera içida joylaşgan; kontrollerga faqat natija (masalan, «detal yaroqli», detal koordinatalari) uzatiladi. Ular intellektual datçiklarning (7-maʼruza) texnik köriş sohasidagi namunasidir;
+- *3D (çuqurlik) kameralari* — har bir piksel uçun masofani beradi;
+- *issiqlik (termal) kameralari* — uzoq infraqizil nurlaniş böyiça harorat taqsimotini körsatadi; qoronğilikda odamlarni aniqlaş va qizigan qismlarni nazorat qiliş uçun.
 
-Raqamli kameralar kompyuterga standart interfeyslar orqali ulanadi: *GigE Vision* (Ethernet, uzun kabellar), *USB3 Vision* (oddiy ulanish), *Camera Link* va *CoaXPress* (juda yuqori tezlik), shuningdek oʻrnatilgan tizimlar uchun *MIPI CSI-2*.
+Raqamli kameralar kompyuterga standart interfeyslar orqali ulanadi: *GigE Vision* (Ethernet, uzun kabellar), *USB3 Vision* (oddiy ulaniş), *Camera Link* va *CoaXPress* (juda yuqori tezlik), şuningdek örnatilgan tizimlar uçun *MIPI CSI-2*.
 
 == 3D kameralar
 
-Teshikli kamera modelidan koʻrinadiki, bitta oddiy kamera masofani bevosita oʻlchamaydi. Chuqurlik axborotini olish uchun quyidagi usullar qoʻllanadi.
+Teşikli kamera modelidan körinadiki, bitta oddiy kamera masofani bevosita ölçamaydi. Çuqurlik axborotini oliş uçun quyidagi usullar qöllanadi.
 
-*Stereokamera* — bir-biridan $B$ masofada (baza) joylashgan ikkita kamera. Bir nuqta chap va oʻng tasvirlarda turli joylarda koʻrinadi; bu farq *dispersiya* (_disparity_) $d$ deyiladi. Nuqtagacha masofa:
+*Stereokamera* — bir-biridan $B$ masofada (baza) joylaşgan ikkita kamera. Bir nuqta çap va öng tasvirlarda turli joylarda körinadi; bu farq *dispersiya* (_disparity_) $d$ deyiladi. Nuqtagaça masofa:
 
 #eq($ Z = (f dot B) / d, $)
 
-bu yerda $f$ — piksellarda ifodalangan fokus masofasi, $d$ — piksellardagi dispersiya. Dispersiyani $Delta d$ xatolik bilan aniqlash masofa xatoligiga olib keladi:
+bu yerda $f$ — piksellarda ifodalangan fokus masofasi, $d$ — piksellardagi dispersiya. Dispersiyani $Delta d$ xatolik bilan aniqlaş masofa xatoligiga olib keladi:
 
 #eq($ Delta Z approx Z^2 / (f dot B) dot Delta d. $)
 
-*Misol.* $f = 700$ piksel, $B = 0","12$ m va $d = 42$ piksel boʻlsa, $Z = 700 dot 0","12 slash 42 = 2$ m. Dispersiya 0,25 piksel aniqlikda topilsa, $Delta Z approx 4 slash 84 dot 0","25 approx 1","2$ sm. Xuddi triangulyatsiyadagi kabi (6-maʼruza), masofa ortishi bilan xatolik kvadratik ortadi; uni kamaytirish uchun bazani yoki fokus masofasini kattalashtirish kerak. Stereokamera passiv ishlaydi, lekin teksturasiz (bir xil rangli) sirtlarda mos nuqtalarni topish qiyin.
+*Misol.* $f = 700$ piksel, $B = 0","12$ m va $d = 42$ piksel bölsa, $Z = 700 dot 0","12 slash 42 = 2$ m. Dispersiya 0,25 piksel aniqlikda topilsa, $Delta Z approx 4 slash 84 dot 0","25 approx 1","2$ sm. Xuddi triangulyatsiyadagi kabi (6-maʼruza), masofa ortişi bilan xatolik kvadratik ortadi; uni kamaytiriş uçun bazani yoki fokus masofasini kattalaştiriş kerak. Stereokamera passiv işlaydi, lekin teksturasiz (bir xil rangli) sirtlarda mos nuqtalarni topiş qiyin.
 
-*Strukturalangan yorugʻlik kamerasi* obyektga maʼlum naqsh (chiziqlar, nuqtalar) proyeksiyalaydi va naqshning buzilishi boʻyicha triangulyatsiya orqali chuqurlikni hisoblaydi. U teksturasiz sirtlarda ham ishlaydi va yaqin masofada yuqori aniqlik beradi, lekin kuchli quyosh nurida yomonlashadi.
+*Strukturalangan yoruğlik kamerasi* obyektga maʼlum naqş (çiziqlar, nuqtalar) proyeksiyalaydi va naqşning buzilişi böyiça triangulyatsiya orqali çuqurlikni hisoblaydi. U teksturasiz sirtlarda ham işlaydi va yaqin masofada yuqori aniqlik beradi, lekin kuçli quyoş nurida yomonlaşadi.
 
-*ToF kamera* har bir pikselda modulyatsiyalangan yorugʻlikning borib-qaytish vaqtini (faza siljishini) oʻlchaydi (6-maʼruza). U ixcham va tezkor, chuqurlik xaritasini bevosita beradi, lekin ruxsat qobiliyati odatda past.
+*ToF kamera* har bir pikselda modulyatsiyalangan yoruğlikning borib-qaytiş vaqtini (faza siljişini) ölçaydi (6-maʼruza). U ixçam va tezkor, çuqurlik xaritasini bevosita beradi, lekin ruxsat qobiliyati odatda past.
 
 #figure(
   btable(
     columns: (auto, 1fr, 1fr, 1fr),
-    header: ([Usul], [Prinsip], [Afzalligi], [Cheklovi]),
+    header: ([Usul], [Prinsip], [Afzalligi], [Çeklovi]),
     [Stereokamera],
     [Ikki tasvirdagi dispersiya],
-    [Passiv, tashqarida ishlaydi],
-    [Teksturasiz sirt, hisoblash murakkab],
-    [Strukturalangan yorugʻlik],
-    [Proyeksiyalangan naqsh triangulyatsiyasi],
+    [Passiv, taşqarida işlaydi],
+    [Teksturasiz sirt, hisoblaş murakkab],
+    [Strukturalangan yoruğlik],
+    [Proyeksiyalangan naqş triangulyatsiyasi],
     [Yaqin masofada yuqori aniqlik],
-    [Quyosh nuriga sezgir],
+    [Quyoş nuriga sezgir],
     [ToF kamera],
-    [Yorugʻlikning borib-qaytish vaqti],
-    [Ixcham, tez, bevosita chuqurlik],
-    [Past ruxsat, koʻp marta aks etish xatoligi],
+    [Yoruğlikning borib-qaytiş vaqti],
+    [Ixçam, tez, bevosita çuqurlik],
+    [Past ruxsat, köp marta aks etiş xatoligi],
   ),
   caption: [3D kameralarning turlari],
 ) <tab-3d>
 
 // =====================================================================
-= Robotda kamerani joylashtirish va kalibrlash
+= Robotda kamerani joylaştiriş va kalibrlaş
 // =====================================================================
 
-Robotga nisbatan kamera ikki xil joylashtiriladi:
-- *qoʻzgʻalmas kamera* (_eye-to-hand_) — robot ishchi zonasi tepasida yoki yonida oʻrnatiladi; butun zonani va robotning oʻzini koʻradi, lekin robot qoʻli obyektni toʻsib qolishi mumkin;
-- *robot qoʻlidagi kamera* (_eye-in-hand_) — robot bilagi yoki tutqichiga oʻrnatiladi; obyektga yaqinlashib, uni katta ruxsat bilan koʻradi, lekin koʻrish maydoni tor va kamera harakatlanadi.
+Robotga nisbatan kamera ikki xil joylaştiriladi:
+- *qözğalmas kamera* (_eye-to-hand_) — robot işçi zonasi tepasida yoki yonida örnatiladi; butun zonani va robotning özini köradi, lekin robot qöli obyektni tösib qolişi mumkin;
+- *robot qölidagi kamera* (_eye-in-hand_) — robot bilagi yoki tutqiçiga örnatiladi; obyektga yaqinlaşib, uni katta ruxsat bilan köradi, lekin köriş maydoni tor va kamera harakatlanadi.
 
-TKT natijalarini robot ishlata olishi uchun tizim *kalibrlanadi*:
-+ *ichki kalibrlash* — kameraning fokus masofalari, bosh nuqtasi va distorsiya koeffitsientlarini aniqlash (odatda shaxmat taxtasi shaklidagi kalibrlash namunasi yordamida);
-+ *tashqi kalibrlash* — kamera koordinatalar tizimining robot koordinatalar tizimiga nisbatan joylashuvi va yoʻnalishini aniqlash (_hand-eye_ kalibrlash).
+TKT natijalarini robot işlata olişi uçun tizim *kalibrlanadi*:
++ *içki kalibrlaş* — kameraning fokus masofalari, boş nuqtasi va distorsiya koeffitsientlarini aniqlaş (odatda şaxmat taxtasi şaklidagi kalibrlaş namunasi yordamida);
++ *taşqi kalibrlaş* — kamera koordinatalar tizimining robot koordinatalar tizimiga nisbatan joylaşuvi va yönalişini aniqlaş (_hand-eye_ kalibrlaş).
 
-Kalibrlash xatoligi bevosita robot pozitsiyalash xatoligiga aylanadi, shuning uchun kamera yoki robot qayta oʻrnatilganda, shuningdek muntazam ravishda kalibrlash tekshiriladi.
+Kalibrlaş xatoligi bevosita robot pozitsiyalaş xatoligiga aylanadi, şuning uçun kamera yoki robot qayta örnatilganda, şuningdek muntazam ravişda kalibrlaş tekşiriladi.
 
 // =====================================================================
 = Xulosa
 // =====================================================================
 
-Texnik koʻrish tizimi robotga eng boy axborot beradi: obyektlarni tanib olish, ularning holatini aniqlash, sifat nazorati va navigatsiya uchun. Uning umumlashgan tuzilishi yoritish, optik tizim, videodatchik, raqamlash, tasvirga ishlov berish, tahlil va robot boshqaruv tizimidan iborat. Tasvir hosil boʻlishi teshikli kamera modeli bilan tavsiflanadi; koʻrish maydoni va fazoviy ruxsat matritsa oʻlchami, obyektiv fokus masofasi va masofaga bogʻliq. TKT ning ishlash tamoyili tasvirni bosqichma-bosqich — olish, oldindan ishlov, segmentatsiya, belgilarni ajratish, tanib olish va talqin qilish orqali — qayta ishlashdan iborat.
+Texnik köriş tizimi robotga eng boy axborot beradi: obyektlarni tanib oliş, ularning holatini aniqlaş, sifat nazorati va navigatsiya uçun. Uning umumlaşgan tuzilişi yoritiş, optik tizim, videodatçik, raqamlaş, tasvirga işlov beriş, tahlil va robot boşqaruv tizimidan iborat. Tasvir hosil bölişi teşikli kamera modeli bilan tavsiflanadi; köriş maydoni va fazoviy ruxsat matritsa ölçami, obyektiv fokus masofasi va masofaga boğliq. TKT ning işlaş tamoyili tasvirni bosqiçma-bosqiç — oliş, oldindan işlov, segmentatsiya, belgilarni ajratiş, tanib oliş va talqin qiliş orqali — qayta işlaşdan iborat.
 
-Zamonaviy TKT larda asosan CMOS videodatchiklar qoʻllanadi; ularning ruxsati, piksel oʻlchami, zatvor turi, kadrlar chastotasi va dinamik diapazoni vazifaga mos tanlanadi. Videokameralar sanoat, aqlli, 3D va termal turlarga boʻlinadi; chuqurlik axborotini stereokameralar, strukturalangan yorugʻlik va ToF kameralari beradi. Robotda kamera qoʻzgʻalmas yoki robot qoʻliga oʻrnatiladi va ichki hamda tashqi kalibrlash talab qiladi.
+Zamonaviy TKT larda asosan CMOS videodatçiklar qöllanadi; ularning ruxsati, piksel ölçami, zatvor turi, kadrlar çastotasi va dinamik diapazoni vazifaga mos tanlanadi. Videokameralar sanoat, aqlli, 3D va termal turlarga bölinadi; çuqurlik axborotini stereokameralar, strukturalangan yoruğlik va ToF kameralari beradi. Robotda kamera qözğalmas yoki robot qöliga örnatiladi va içki hamda taşqi kalibrlaş talab qiladi.
 
 // =====================================================================
 = Nazorat savollari
@@ -400,17 +400,17 @@ Zamonaviy TKT larda asosan CMOS videodatchiklar qoʻllanadi; ularning ruxsati, p
 
 #block[
   #set par(first-line-indent: 0pt)
-  + Texnik koʻrish tizimi robototexnikada qanday vazifalarni bajaradi?
-  + TKT ning umumlashgan struktura sxemasini chizing va elementlarining vazifasini tushuntiring.
-  + Yoritish tizimi TKT da qanday ahamiyatga ega?
-  + Teshikli kamera modelini tushuntiring. Nima uchun bitta kamera masofani bevosita oʻlchay olmaydi?
-  + $w = 8","8$ mm matritsa va $f = 16$ mm obyektiv uchun gorizontal koʻrish maydonini va 2 m masofadagi sahna kengligini toping.
-  + Tasvirga ishlov berish bosqichlarini sanab bering va har birining natijasini ayting.
+  + Texnik köriş tizimi robototexnikada qanday vazifalarni bajaradi?
+  + TKT ning umumlaşgan struktura sxemasini çizing va elementlarining vazifasini tuşuntiring.
+  + Yoritiş tizimi TKT da qanday ahamiyatga ega?
+  + Teşikli kamera modelini tuşuntiring. Nima uçun bitta kamera masofani bevosita ölçay olmaydi?
+  + $w = 8","8$ mm matritsa va $f = 16$ mm obyektiv uçun gorizontal köriş maydonini va 2 m masofadagi sahna kengligini toping.
+  + Tasvirga işlov beriş bosqiçlarini sanab bering va har birining natijasini ayting.
   + CCD va CMOS matritsalar qanday farqlanadi?
-  + Global va qatorli zatvorlar qanday farqlanadi? Robotlarda qaysi biri afzal va nima uchun?
+  + Global va qatorli zatvorlar qanday farqlanadi? Robotlarda qaysi biri afzal va nima uçun?
   + Bayer filtri nima va u tasvir ruxsatiga qanday taʼsir qiladi?
-  + Videodatchikning dinamik diapazoni nimani anglatadi?
+  + Videodatçikning dinamik diapazoni nimani anglatadi?
   + Aqlli kamera oddiy sanoat kamerasidan nimasi bilan farq qiladi?
-  + $f = 600$ piksel, $B = 0","1$ m va $d = 20$ piksel boʻlsa, stereokamera obyektgacha qanday masofani aniqlaydi?
-  + Eye-in-hand va eye-to-hand joylashuvlarning afzallik va kamchiliklari nimada?
+  + $f = 600$ piksel, $B = 0","1$ m va $d = 20$ piksel bölsa, stereokamera obyektgaça qanday masofani aniqlaydi?
+  + Eye-in-hand va eye-to-hand joylaşuvlarning afzallik va kamçiliklari nimada?
 ]

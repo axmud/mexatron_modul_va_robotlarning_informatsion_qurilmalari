@@ -9,7 +9,7 @@
 
 #let headingblue = rgb(20, 50, 120)
 
-#set document(title: "Mexatron modullarning asosiy turlari bilan tanishish")
+#set document(title: "Mexatron modullarning asosiy turlari bilan tanişiş")
 #set page(
   paper: "a4",
   margin: (top: 2.5cm, bottom: 2.5cm, left: 3cm, right: 2cm),
@@ -29,7 +29,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.65em)
 #set heading(numbering: "1.1")
 #set math.equation(numbering: "(1)", supplement: none)
@@ -44,44 +44,44 @@
 
 // ---------------- Sarlavha ----------------
 #align(center)[
-  #text(size: 20pt, weight: "bold", fill: headingblue)[AMALIYOT MASHGʻULOTI № 1]
+  #text(size: 20pt, weight: "bold", fill: headingblue)[AMALIYOT MAŞĞULOTI № 1]
   #v(0.4cm)
-  #text(size: 14pt, weight: "bold")[Mavzu: Mexatron modullarning asosiy turlari bilan tanishish]
+  #text(size: 14pt, weight: "bold")[Mavzu: Mexatron modullarning asosiy turlari bilan tanişiş]
   #v(0.6cm)
   #line(length: 100%, stroke: 1pt)
 ]
 #v(0.3cm)
 
-= Ishning maqsadi
+= Işning maqsadi
 
-*Mashgʻulotning maqsadi:* zamonaviy robototexnika va avtomatlashtirilgan sanoat tizimlarida qoʻllaniladigan mexatron modullarning funksional tuzilishi, klassifikatsiyasi, sensorli hamda ijrochi tugunlarining oʻzaro integratsiyasi boʻyicha nazariy va amaliy koʻnikmalarni shakllantirish.
+*Maşğulotning maqsadi:* zamonaviy robototexnika va avtomatlaştirilgan sanoat tizimlarida qöllaniladigan mexatron modullarning funksional tuzilişi, klassifikatsiyasi, sensorli hamda ijroçi tugunlarining özaro integratsiyasi böyiça nazariy va amaliy könikmalarni şakllantiriş.
 
-*Oʻquv vazifalari:*
+*Öquv vazifalari:*
 
-+ Mexatronika fani va mexatron modul tushunchasining zamonaviy muhandislikdagi oʻrnini oʻrganish.
-+ Mexatronik tizimlarning JSPMI (_Japan Society for the Promotion of Machine Industry_) klassifikatsiya modelini tahlil qilish.
-+ Mexatron modulni tashkil etuvchi 5 ta asosiy funksional elementni (fizik model, sensor/aktuator, signallar, kompyuter mantiqi, dasturiy taʼminot) oʻrganish.
-+ Axborot-oʻlchov (sensor), ijrochi (aktuator), boshqaruv (mikrokontroller/PLC) va mexanik harakat uzatish modullari oʻrtasidagi energetik hamda axborot zanjirlarini tuzish.
-+ Sanoat roboti (Pick-and-Place) va avtomobil avtomatik tizimlari misolida mexatron modullarning signallar va quvvat drayverlari parametrlarini hisoblash.
++ Mexatronika fani va mexatron modul tuşunçasining zamonaviy muhandislikdagi örnini örganiş.
++ Mexatronik tizimlarning JSPMI (_Japan Society for the Promotion of Machine Industry_) klassifikatsiya modelini tahlil qiliş.
++ Mexatron modulni taşkil etuvçi 5 ta asosiy funksional elementni (fizik model, sensor/aktuator, signallar, kompyuter mantiqi, dasturiy taʼminot) örganiş.
++ Axborot-ölçov (sensor), ijroçi (aktuator), boşqaruv (mikrokontroller/PLC) va mexanik harakat uzatiş modullari örtasidagi energetik hamda axborot zanjirlarini tuziş.
++ Sanoat roboti (Pick-and-Place) va avtomobil avtomatik tizimlari misolida mexatron modullarning signallar va quvvat drayverlari parametrlarini hisoblaş.
 
 = Kerakli asbob-uskunalar va dasturiy taʼminot
 
-- *Laboratoriya jihozlari:* mexatron modullar boʻyicha koʻrgazmali oʻquv stendi, oʻzgarmas va oʻzgaruvchan tok elektr motorlari, pnevmatik silindrlar hamda solenoidli klapanlar.
-- *Sensor va mikrokontrollerlar:* optik va magnit enkoderlar, LVDT chiziqli siljish datchiklari, MEMS akselerometrlar, STM32 / Arduino / PLC S7-1200 boshqaruv modullari.
-- *Oʻlchov va diagnostika vositalari:* ikki kanalli raqamli ossillograf, raqamli multimetr, quvvat manbai ($0 dots 30 "V DC"$).
+- *Laboratoriya jihozlari:* mexatron modullar böyiça körgazmali öquv stendi, özgarmas va özgaruvçan tok elektr motorlari, pnevmatik silindrlar hamda solenoidli klapanlar.
+- *Sensor va mikrokontrollerlar:* optik va magnit enkoderlar, LVDT çiziqli siljiş datçiklari, MEMS akselerometrlar, STM32 / Arduino / PLC S7-1200 boşqaruv modullari.
+- *Ölçov va diagnostika vositalari:* ikki kanalli raqamli ossillograf, raqamli multimetr, quvvat manbai ($0 dots 30 "V DC"$).
 - *Dasturiy muhit:* MATLAB / Simulink, LabVIEW, Proteus.
 
 = Nazariy maʼlumotlar va konseptual tizimlar
 
-== Mexatronika va mexatron modul tushunchasi
+== Mexatronika va mexatron modul tuşunçasi
 
-*Mexatronika* --- bu mexanika, elektronika, kompyuter boshqaruvi va axborot texnologiyalarining muhandislik mahsulotlarini loyihalash hamda ishlab chiqarishdagi sinergetik integratsiyasidir. Anʼanaviy ketma-ket loyihalash usulidan farqli oʻlaroq, mexatronik yondashuv barcha kichik tizimlarni parallel va oʻzaro uzviy bogʻliqlikda loyihalashni taqozo etadi (_concurrent engineering_).
+*Mexatronika* --- bu mexanika, elektronika, kompyuter boşqaruvi va axborot texnologiyalarining muhandislik mahsulotlarini loyihalaş hamda işlab çiqarişdagi sinergetik integratsiyasidir. Anʼanaviy ketma-ket loyihalaş usulidan farqli ölaroq, mexatronik yondaşuv barça kiçik tizimlarni parallel va özaro uzviy boğliqlikda loyihalaşni taqozo etadi (_concurrent engineering_).
 
-*Mexatron modul* deb, tizimning muayyan harakat yoki signalni qayta ishlash funksiyasini mustaqil ravishda bajaruvchi, aniq belgilangan kirish va chiqish interfeyslariga ega boʻlgan, konstruktiv hamda funksional jihatdan birlashtirilgan kichik tizimga aytiladi.
+*Mexatron modul* deb, tizimning muayyan harakat yoki signalni qayta işlaş funksiyasini mustaqil ravişda bajaruvçi, aniq belgilangan kiriş va çiqiş interfeyslariga ega bölgan, konstruktiv hamda funksional jihatdan birlaştirilgan kiçik tizimga aytiladi.
 
 == Mexatronik tizimlar va modullarning JSPMI klassifikatsiyasi
 
-Yaponiyaning Mashinasozlikni rivojlantirish jamiyati (JSPMI) tomonidan ishlab chiqilgan va xalqaro miqyosda tan olingan klassifikatsiyaga koʻra, mexatronik modullar va tizimlar 4 ta asosiy sinfga ajratiladi (@tab-jspmi).
+Yaponiyaning Maşinasozlikni rivojlantiriş jamiyati (JSPMI) tomonidan işlab çiqilgan va xalqaro miqyosda tan olingan klassifikatsiyaga köra, mexatronik modullar va tizimlar 4 ta asosiy sinfga ajratiladi (@tab-jspmi).
 
 #figure(
   {
@@ -93,20 +93,20 @@ Yaponiyaning Mashinasozlikni rivojlantirish jamiyati (JSPMI) tomonidan ishlab ch
       stroke: none,
       inset: (x: 5pt, y: 5pt),
       table.hline(stroke: 1pt),
-      table.header([*Sinf*], [*Klassifikatsiya tavsifi*], [*Sanoat va maishiy texnikadagi misollar*]),
+      table.header([*Sinf*], [*Klassifikatsiya tavsifi*], [*Sanoat va maişiy texnikadagi misollar*]),
       table.hline(stroke: 0.5pt),
       [*Class I*],
-      [Asosan mexanik mahsulotlar boʻlib, funksionalligini oshirish uchun elektronika kiritilgan.],
-      [Sonli dastur bilan boshqariladigan (NC) stanoklar, oʻzgaruvchan tezlikli elektr drayverlar.],
+      [Asosan mexanik mahsulotlar bölib, funksionalligini oşiriş uçun elektronika kiritilgan.],
+      [Sonli dastur bilan boşqariladigan (NC) stanoklar, özgaruvçan tezlikli elektr drayverlar.],
       [*Class II*],
-      [Anʼanaviy mexanik tizimlar boʻlib, ichki mexanizmlari elektron modullar va datchiklar bilan yangilangan.],
-      [Zamonaviy avtomatik tikuv mashinalari, avtomatlashtirilgan konveyer va qadoqlash liniyalari.],
+      [Anʼanaviy mexanik tizimlar bölib, içki mexanizmlari elektron modullar va datçiklar bilan yangilangan.],
+      [Zamonaviy avtomatik tikuv maşinalari, avtomatlaştirilgan konveyer va qadoqlaş liniyalari.],
       [*Class III*],
-      [Mexanik tizim funksiyalarini saqlagan holda, ichki kinematik zanjirlari toʻliq elektronika bilan almashtirilgan.],
-      [Raqamli soatlar, elektron tarozilar, raqamli oʻlchov indikatorlari.],
+      [Mexanik tizim funksiyalarini saqlagan holda, içki kinematik zanjirlari töliq elektronika bilan almaştirilgan.],
+      [Raqamli soatlar, elektron tarozilar, raqamli ölçov indikatorlari.],
       [*Class IV*],
       [Mexanik va elektron texnologiyalarning sinergetik integratsiyasi asosida noldan loyihalangan.],
-      [Sanoat robotlari, avtofokusli raqamli kameralar, nusxalash apparatlari, avtomobil ABS va dvigatelni boshqarish (Engine Management) tizimlari.],
+      [Sanoat robotlari, avtofokusli raqamli kameralar, nusxalaş apparatlari, avtomobil ABS va dvigatelni boşqariş (Engine Management) tizimlari.],
       table.hline(stroke: 1pt),
     )
   },
@@ -115,26 +115,26 @@ Yaponiyaning Mashinasozlikni rivojlantirish jamiyati (JSPMI) tomonidan ishlab ch
 
 #figure(
   image("images/robotic_actuator_module.png"),
-  caption: "Robot yurituvchi mexatron modulining 3D texnik illyustratsiyasi.",
+  caption: "Robot yurituvçi mexatron modulining 3D texnik illyustratsiyasi.",
 )
 
 == Mexatron modulning 5 ta asosiy funksional elementi
 
-M. Anjanappa va R. Bishop tomonidan taklif etilgan konseptual modelga koʻra, har qanday mexatronik modul quyidagi 5 ta asosiy sohaga tayangan holda ishlaydi (@fig-5el):
+M. Anjanappa va R. Bishop tomonidan taklif etilgan konseptual modelga köra, har qanday mexatronik modul quyidagi 5 ta asosiy sohaga tayangan holda işlaydi (@fig-5el):
 
-+ *Fizik tizimlarni modellashtirish:* mexanik, elektr, pnevmatik va gidravlik jarayonlarning differensial tenglama hamda uzatish funksiyasi shaklidagi matematik modellari.
-+ *Datchiklar va aktuatorlar:* fizik kattaliklarni elektr signaliga (sensor) hamda elektr energiyasini mexanik harakatga (aktuator) aylantiruvchi oʻzgartirgichlar.
-+ *Signallar va tizimlar:* analog va raqamli signallarni kuchaytirish, filtrlash, modulyatsiya qilish (PWM) va chastotaviy tahlil.
++ *Fizik tizimlarni modellaştiriş:* mexanik, elektr, pnevmatik va gidravlik jarayonlarning differensial tenglama hamda uzatiş funksiyasi şaklidagi matematik modellari.
++ *Datçiklar va aktuatorlar:* fizik kattaliklarni elektr signaliga (sensor) hamda elektr energiyasini mexanik harakatga (aktuator) aylantiruvçi özgartirgiçlar.
++ *Signallar va tizimlar:* analog va raqamli signallarni kuçaytiriş, filtrlaş, modulyatsiya qiliş (PWM) va çastotaviy tahlil.
 + *Kompyuter va mantiqiy tizimlar:* mikrokontrollerlar (MCU), signal protsessorlari (DSP), dasturlanadigan mantiqiy kontrollerlar (PLC).
-+ *Dasturiy taʼminot va maʼlumotlarni yigʻish (DAQ):* real vaqt rejimida boshqarish algoritmlari (PID, Fuzzy Logic), ADC/DAC va qayta aloqa dasturiy taʼminoti.
++ *Dasturiy taʼminot va maʼlumotlarni yiğiş (DAQ):* real vaqt rejimida boşqariş algoritmlari (PID, Fuzzy Logic), ADC/DAC va qayta aloqa dasturiy taʼminoti.
 
 #figure(
   cetz.canvas(length: 1cm, {
     import cetz.draw: *
 
     let labels = (
-      [1. Fizik tizimlarni modellashtirish],
-      [2. Datchiklar va aktuatorlar],
+      [1. Fizik tizimlarni modellaştiriş],
+      [2. Datçiklar va aktuatorlar],
       [3. Signallar va tizimlar],
       [4. Kompyuter va mantiqiy tizimlar],
       [5. Dasturiy taʼminot va DAQ],
@@ -185,62 +185,62 @@ M. Anjanappa va R. Bishop tomonidan taklif etilgan konseptual modelga koʻra, ha
     circle((0, 0), radius: rc, fill: orange.lighten(80%), stroke: 2pt + orange.darken(10%))
     content((0, 0), align(center, text(size: 9pt, weight: "bold")[MEXATRON \ MODUL]))
   }),
-  caption: [Mexatron modulni tashkil etuvchi 5 ta asosiy funksional element],
+  caption: [Mexatron modulni taşkil etuvçi 5 ta asosiy funksional element],
 ) <fig-5el>
 
 #figure(
   image("images/adaptive_gripper_module.png"),
-  caption: "Taktil datchikli va o'rnatilgan mikroyuritgichli adaptiv robot tutqichi moduli.",
+  caption: "Taktil datçikli va örnatilgan mikroyuritgiçli adaptiv robot tutqiçi moduli.",
   placement: auto,
 )
 
-#figure(image("images/embedded_controller_module.png"), placement: auto, caption: "Adaptiv robotik tutqich moduli.")
+#figure(image("images/embedded_controller_module.png"), placement: auto, caption: "Adaptiv robotik tutqiç moduli.")
 
 == Mexatron modullarning funksional va strukturaviy turlari
 
-Mexatron modullar bajaradigan vazifasiga koʻra 4 ta asosiy guruhga boʻlinadi.
+Mexatron modullar bajaradigan vazifasiga köra 4 ta asosiy guruhga bölinadi.
 
-=== Axborot-oʻlchov (sensor) modullari
+=== Axborot-ölçov (sensor) modullari
 
-Mexatronik tizimda obyektning fizik holatini oʻlchovchi va uni raqamli koʻrinishga keltiruvchi modullardir:
+Mexatronik tizimda obyektning fizik holatini ölçovçi va uni raqamli körinişga keltiruvçi modullardir:
 
-- *Siljish va burchak datchiklari:* LVDT (_Linear Variable Differential Transformer_), optik va magnit inkremental hamda absolyut enkoderlar, potensiometrlar.
-- *Tezlik va tezlanish datchiklari:* taxogeneratorlar, MEMS akselerometrlar va giroskopik modullar.
-- *Kuch, moment va bosim datchiklari:* tenzometrik koʻpriklar (_strain gauges_), pyezoelektrik va taktil sensorli matritsalar.
-- *Signalni konditsiyalash bloklari:* instrumental kuchaytirgichlar, past chastotali filtrlar va ADC modullari.
+- *Siljiş va burçak datçiklari:* LVDT (_Linear Variable Differential Transformer_), optik va magnit inkremental hamda absolyut enkoderlar, potensiometrlar.
+- *Tezlik va tezlaniş datçiklari:* taxogeneratorlar, MEMS akselerometrlar va giroskopik modullar.
+- *Kuç, moment va bosim datçiklari:* tenzometrik köpriklar (_strain gauges_), pyezoelektrik va taktil sensorli matritsalar.
+- *Signalni konditsiyalaş bloklari:* instrumental kuçaytirgiçlar, past çastotali filtrlar va ADC modullari.
 
-=== Ijrochi (aktuator) modullari
+=== Ijroçi (aktuator) modullari
 
-Boshqaruv signallarini mexanik kuch, moment yoki bosimga aylantiruvchi quvvatli tugunlar:
+Boşqaruv signallarini mexanik kuç, moment yoki bosimga aylantiruvçi quvvatli tugunlar:
 
-- *Elektr yuritmalar:* oʻzgarmas tok motorlari (DC), kollektorsiz motorlar (BLDC), qadamli motorlar (_stepper motor_), servomotorlar.
-- *Pnevmatik va gidravlik aktuatorlar:* bir va ikki tomonlama harakatlanuvchi pnevmo- va gidrosilindrlar, pnevmo- va gidromotorlar, solenoidli taqsimlagichlar.
-- *Aqlli materialli aktuatorlar:* pyezoelektrik va magnitostriktiv aktuatorlar, shakl xotirasiga ega qotishmalar (_Shape Memory Alloys_ --- SMA).
+- *Elektr yuritmalar:* özgarmas tok motorlari (DC), kollektorsiz motorlar (BLDC), qadamli motorlar (_stepper motor_), servomotorlar.
+- *Pnevmatik va gidravlik aktuatorlar:* bir va ikki tomonlama harakatlanuvçi pnevmo- va gidrosilindrlar, pnevmo- va gidromotorlar, solenoidli taqsimlagiçlar.
+- *Aqlli materialli aktuatorlar:* pyezoelektrik va magnitostriktiv aktuatorlar, şakl xotirasiga ega qotişmalar (_Shape Memory Alloys_ --- SMA).
 
-=== Boshqaruv va signalni qayta ishlash modullari
+=== Boşqaruv va signalni qayta işlaş modullari
 
-Sensordan kelgan axborotni tahlil qilib, ijrochi qurilmalarga moʻljallangan boshqaruv signallarini shakllantiruvchi intellektual modullar:
+Sensordan kelgan axborotni tahlil qilib, ijroçi qurilmalarga möljallangan boşqaruv signallarini şakllantiruvçi intellektual modullar:
 
 - Mikrokontrollerli modullar (STM32, ARM Cortex-M, Microchip PIC, AVR).
 - Sanoat mantiqiy kontrollerlari (PLC --- _Programmable Logic Controller_).
 - Quvvat drayverlari va modulyatorlar (H-Bridge, MOSFET / IGBT tranzistorli drayverlar, PWM modullari).
 
-=== Mexanik va harakatni uzatuvchi modullar
+=== Mexanik va harakatni uzatuvçi modullar
 
-Aktuatordagi harakat turini va parametrlarini obyektga moslab beruvchi mexanik tugunlar:
+Aktuatordagi harakat turini va parametrlarini obyektga moslab beruvçi mexanik tugunlar:
 
-- Sharik-vintli uzatmalar (_ball-screw assemblies_).
-- Tishli, tasmali va reykali reduksiya mexanizmlari.
-- Robotlarning tutqich (_gripper_) va boʻgʻin mexanizmlari.
+- Şarik-vintli uzatmalar (_ball-screw assemblies_).
+- Tişli, tasmali va reykali reduksiya mexanizmlari.
+- Robotlarning tutqiç (_gripper_) va böğin mexanizmlari.
 
 #figure(
   image("images/smart_sensor_module.png"),
-  caption: "Intellektual sezgi (smart sensor) modulining strukturaviy chizmasi.",
+  caption: "Intellektual sezgi (smart sensor) modulining strukturaviy çizmasi.",
 )
 
 == Mexatron modulning funksional va quvvat zanjiri
 
-Mexatron modulda axborot (past quvvatli) hamda quvvat (yuqori quvvatli) domenlari oʻzaro quyidagi zanjir boʻyicha integratsiyalashadi (@fig-chain).
+Mexatron modulda axborot (past quvvatli) hamda quvvat (yuqori quvvatli) domenlari özaro quyidagi zanjir böyiça integratsiyalaşadi (@fig-chain).
 
 #figure(
   {
@@ -265,39 +265,39 @@ Mexatron modulda axborot (past quvvatli) hamda quvvat (yuqori quvvatli) domenlar
         fill: blue.lighten(96%),
       ),
       node(
-        (2, -0.6),
-        text(size: 8pt, fill: headingblue, strong[MEXATRON MODUL CHEGARASI (sezish + boshqaruv + ijro)]),
+        enclose: ((1, -0.6), (3, -0.8)),
+        text(size: 8pt, fill: headingblue, strong[MEXATRON MODUL ÇEGARASI\ (seziş + boşqaruv + ijro)]),
         stroke: none,
         fill: none,
       ),
 
       node((0, 0.5), b[Fizik obyekt / \ mexanik jarayon], width: 2.5cm, height: 1.1cm, name: <proc>),
-      node((1, 0), b[Sensor moduli \ (datchik)], width: 2.5cm, height: 1.1cm, name: <sens>),
-      node((2, 0), b[Signal shakllantirish \ va ADC], width: 2.5cm, height: 1.1cm, name: <adc>),
-      node((3, 0.5), b[Boshqaruv moduli \ (MCU / PLC)], width: 2.5cm, height: 1.1cm, name: <ctrl>),
-      node((2, 1), b[Quvvat drayveri \ (H-Bridge PWM)], width: 2.7cm, height: 1.1cm, name: <dac>),
-      node((1, 1), b[Ijrochi modul \ (aktuator / motor)], width: 2.9cm, height: 1.1cm, name: <act>),
+      node((1, 0), b[Sensor moduli \ (datçik)], width: 2.5cm, height: 1.1cm, name: <sens>),
+      node((2, 0), b[Signal şakllantiriş \ va ADC], width: 2.5cm, height: 1.1cm, name: <adc>),
+      node((3, 0.5), b[Boşqaruv moduli \ (MCU / PLC)], width: 3cm, height: 1.1cm, name: <ctrl>),
+      node((2, 1), b[Quvvat drayveri \ (H-Bridge PWM)], width: 3cm, height: 1.1cm, name: <dac>),
+      node((1, 1), b[Ijroçi modul \ (aktuator / motor)], width: 3.5cm, height: 1.1cm, name: <act>),
 
-      edge(<proc>, (0, 0), <sens>, "-|>", stroke: info, label: small[Oʻlchash], label-pos: 0.75),
+      edge(<proc>, (0, 0), <sens>, "-|>", stroke: info, label: small[Ölçaş], label-pos: 0.75),
       edge(<sens>, <adc>, "-|>", stroke: info, label: small[Analog signal]),
       edge(<adc>, (3, 0), <ctrl>, "-|>", stroke: info, label: small[Raqamli kod], label-pos: 0.3),
-      edge(<ctrl>, (3, 1), <dac>, "-|>", stroke: info, label: small[Boshqaruv kodi], label-pos: 0.7),
+      edge(<ctrl>, (3, 1), <dac>, "-|>", stroke: info, label: small[Boşqaruv kodi], label-pos: 0.7),
       edge(<dac>, <act>, "-|>", stroke: pwr, label: small[Quvvat]),
-      edge(<act>, (0, 1), <proc>, "-|>", stroke: pwr, label: small[Mexanik kuch], label-pos: 0.3),
+      edge(<act>, (0, 1), <proc>, "-|>", stroke: pwr, label: small[Mexanik kuç], label-pos: 0.3),
     )
   },
-  caption: [Mexatron modulning axborot va quvvat domenlari boʻyicha funksional zanjiri],
+  caption: [Mexatron modulning axborot va quvvat domenlari böyiça funksional zanjiri],
 ) <fig-chain>
 
-#figure(image("images/vision_sensor_module.png"), placement: auto, caption: "Texnik ko'rish va smart-kamera moduli.")
+#figure(image("images/vision_sensor_module.png"), placement: auto, caption: "Texnik köriş va smart-kamera moduli.")
 
-= Amaliy topshiriqlar va tizimli tahlil
+= Amaliy topşiriqlar va tizimli tahlil
 
-== Topshiriq 1: Pick-and-Place sanoat roboti modullarini strukturaviy tahlil qilish
+== Topşiriq 1: Pick-and-Place sanoat roboti modullarini strukturaviy tahlil qiliş
 
-Sanoat konveyerida detallarni ushlab, boshqa oʻringa koʻchiruvchi 3 oʻqli Pick-and-Place roboti berilgan. Robot tizimi pnevmatik tutqich, qadamli motorlar, optik enkoderlar, pnevmo-solenoidlar hamda Siemens S7-1200 PLC bilan jihozlangan.
+Sanoat konveyerida detallarni uşlab, boşqa öringa köçiruvçi 3 öqli Pick-and-Place roboti berilgan. Robot tizimi pnevmatik tutqiç, qadamli motorlar, optik enkoderlar, pnevmo-solenoidlar hamda Siemens S7-1200 PLC bilan jihozlangan.
 
-*Vazifa:* ushbu robotni tashkil etuvchi mexatron modullarni turlar boʻyicha ajrating va ularning funksional tavsifini @tab-robot ga toʻldiring.
+*Vazifa:* uşbu robotni taşkil etuvçi mexatron modullarni turlar böyiça ajrating va ularning funksional tavsifini @tab-robot ga töldiring.
 
 #figure(
   {
@@ -311,27 +311,27 @@ Sanoat konveyerida detallarni ushlab, boshqa oʻringa koʻchiruvchi 3 oʻqli Pic
       table.hline(stroke: 1pt),
       table.header([*№*], [*Modul turi*], [*Tarkibiy komponentlari*], [*Bajaradigan funksiyasi*]),
       table.hline(stroke: 0.5pt),
-      [1], [Axborot-oʻlchov (sensor) moduli],
-      [Inkremental optik enkoderlar, pnevmo-bosim datchigi, limit kalitlari],
-      [Armning joriy koordinatalari va tutqichdagi detal bosimini oʻlchaydi.],
-      [2], [Ijrochi (aktuator) moduli],
+      [1], [Axborot-ölçov (sensor) moduli],
+      [Inkremental optik enkoderlar, pnevmo-bosim datçigi, limit kalitlari],
+      [Armning joriy koordinatalari va tutqiçdagi detal bosimini ölçaydi.],
+      [2], [Ijroçi (aktuator) moduli],
       [Qadamli motorlar, pnevmosilindr, solenoidli klapan],
-      [X, Y, Z oʻqlari boʻyicha siljishni taʼminlaydi hamda detalni qisib ushlaydi.],
-      [3], [Boshqaruv moduli],
-      [Siemens S7-1200 PLC, H-koʻprik drayverlari, PWM modullari],
-      [Datchik signallarini tahlil qilib, motor va klapanlarga boshqaruv rejimini beradi.],
-      [4], [Mexanik va harakat uzatish moduli],
-      [Sharik-vintli uzatma, pnevmo-tutqich richagi va yoʻnaltiruvchi relslar],
-      [Motorning aylanish harakatini aniq chiziqli siljishga aylantirib beradi.],
+      [X, Y, Z öqlari böyiça siljişni taʼminlaydi hamda detalni qisib uşlaydi.],
+      [3], [Boşqaruv moduli],
+      [Siemens S7-1200 PLC, H-köprik drayverlari, PWM modullari],
+      [Datçik signallarini tahlil qilib, motor va klapanlarga boşqaruv rejimini beradi.],
+      [4], [Mexanik va harakat uzatiş moduli],
+      [Şarik-vintli uzatma, pnevmo-tutqiç riçagi va yönaltiruvçi relslar],
+      [Motorning aylaniş harakatini aniq çiziqli siljişga aylantirib beradi.],
       table.hline(stroke: 1pt),
     )
   },
   caption: [Pick-and-Place roboti mexatron modullari tahlili],
 ) <tab-robot>
 
-== Topshiriq 2: H-koʻprik (H-Bridge) drayver mexatron modulining prinsipial sxemasi
+== Topşiriq 2: H-köprik (H-Bridge) drayver mexatron modulining prinsipial sxemasi
 
-Oʻzgarmas tok motori (DC motor) yoʻnalishini va tezligini boshqaruvchi H-koʻprik quvvat moduli sxemasi @fig-hbridge da keltirilgan.
+Özgarmas tok motori (DC motor) yönalişini va tezligini boşqaruvçi H-köprik quvvat moduli sxemasi @fig-hbridge da keltirilgan.
 
 #figure(
   cetz.canvas(length: 0.95cm, {
@@ -385,100 +385,100 @@ Oʻzgarmas tok motori (DC motor) yoʻnalishini va tezligini boshqaruvchi H-koʻp
     pwm((-3.4, 0.6), (-2.65, 0.6), "MCU_PWM3", "east")
     pwm((3.4, 0.6), (2.65, 0.6), "MCU_PWM4", "west")
   }),
-  caption: [DC motor tezligi va yoʻnalishini boshqaruvchi H-koʻprikli quvvat drayver moduli],
+  caption: [DC motor tezligi va yönalişini boşqaruvçi H-köprikli quvvat drayver moduli],
 ) <fig-hbridge>
 
-= Hisoblash va modellashtirish masalalari
+= Hisoblaş va modellaştiriş masalalari
 
-== Masala 1: ADC (analog-raqamli oʻzgartirgich) moduli koʻrsatkichlari hisobi
+== Masala 1: ADC (analog-raqamli özgartirgiç) moduli körsatkiçlari hisobi
 
-Mexatron modul tarkibidagi analog-raqamli oʻzgartirgich (ADC) $V_"ref" = 5.0 "V"$ tayanch kuchlanishiga ega. Bosim sensori $0 dots 5 "V"$ diapazonda analog signal beradi.
+Mexatron modul tarkibidagi analog-raqamli özgartirgiç (ADC) $V_"ref" = 5.0 "V"$ tayanç kuçlanişiga ega. Bosim sensori $0 dots 5 "V"$ diapazonda analog signal beradi.
 
 #set enum(numbering: "a)")
-+ 10-bitli va 12-bitli ADC uchun eng kichik sezgirlik boʻsagʻasi ($Delta V$, _step voltage_) qanchaga teng?
-+ Agar sensor oʻlchagan kuchlanish $V_"in" = 3.65 "V"$ boʻlsa, 12-bitli ADC chiqishidagi raqamli kod ($N_"dig"$) va nisbiy xatolik qanday boʻladi?
++ 10-bitli va 12-bitli ADC uçun eng kiçik sezgirlik bösağasi ($Delta V$, _step voltage_) qançaga teng?
++ Agar sensor ölçagan kuçlaniş $V_"in" = 3.65 "V"$ bölsa, 12-bitli ADC çiqişidagi raqamli kod ($N_"dig"$) va nisbiy xatolik qanday böladi?
 #set enum(numbering: "1.")
 
-*Yechish va formulalar:*
+*Yeçiş va formulalar:*
 
 #eq($ Delta V = V_"ref" / (2^n - 1), quad quad N_"dig" = "round"(V_"in" / (Delta V)) $)
 
-*Hisoblash bosqichlari:*
+*Hisoblaş bosqiçlari:*
 
-- 10-bitli ADC uchun ($n = 10$):
+- 10-bitli ADC uçun ($n = 10$):
   #eq($ Delta V_10 = (5.0 "V") / (2^10 - 1) = 5.0 / 1023 approx 4.8876 "mV" $)
-- 12-bitli ADC uchun ($n = 12$):
+- 12-bitli ADC uçun ($n = 12$):
   #eq($ Delta V_12 = (5.0 "V") / (2^12 - 1) = 5.0 / 4095 approx 1.2210 "mV" $)
-- $V_"in" = 3.65 "V"$ boʻlganda 12-bitli raqamli kod:
-  #eq($ N_"dig" = "round"(3.65 / 0.0012210) = 2989 quad ("ikkilik sanoq sistemasida: " 101110101101_2) $)
-- Kvantlangan kuchlanish va nisbiy xatolik:
+- $V_"in" = 3.65 "V"$ bölganda 12-bitli raqamli kod:
+  #eq($ N_"dig" = "round"(3.65 / 0.0012210) = 2989 quad \ ("ikkilik sanoq sistemasida: " 101110101101_2) $)
+- Kvantlangan kuçlaniş va nisbiy xatolik:
   #eq(
     $
       V_q = N_"dig" dot Delta V_12 = 2989 dot 5.0 / 4095 = 3.64957 "V", quad
       delta = (|V_"in" - V_q|) / V_"in" dot 100% \ = 0.427 "mV" / 3650 "mV" dot 100% approx 0.012%
     $,
   )
-- ADC kvantlashdagi maksimal xatolik:
+- ADC kvantlaşdagi maksimal xatolik:
   #eq($ E_"max" = (Delta V_12) / 2 = 0.6105 "mV" $)
 
-== Masala 2: PWM drayver moduli va motor kuchlanishi hisobi
+== Masala 2: PWM drayver moduli va motor kuçlanişi hisobi
 
-Ijrochi drayver moduli $V_"DC" = 24 "V"$ quvvat manbaiga ulangan. Mikrokontroller H-koʻprikka $f = 25 "kHz"$ chastotali PWM signal bermoqda. Toʻldirish koeffitsienti (_duty cycle_) $D = 72%$ boʻlsa:
+Ijroçi drayver moduli $V_"DC" = 24 "V"$ quvvat manbaiga ulangan. Mikrokontroller H-köprikka $f = 25 "kHz"$ çastotali PWM signal bermoqda. Töldiriş koeffitsienti (_duty cycle_) $D = 72%$ bölsa:
 
 #set enum(numbering: "a)")
-+ PWM signalining bir davri $T$ va impuls yoqilgan vaqti $t_"on"$ qanday boʻladi?
-+ Motor terminalidagi oʻrtacha kuchlanish $V_"avg"$ nechaga teng?
++ PWM signalining bir davri $T$ va impuls yoqilgan vaqti $t_"on"$ qanday böladi?
++ Motor terminalidagi örtaça kuçlaniş $V_"avg"$ neçaga teng?
 #set enum(numbering: "1.")
 
-*Yechish va formulalar:*
+*Yeçiş va formulalar:*
 
 #eq($ T = 1 / f, quad t_"on" = D dot T, quad V_"avg" = D dot V_"DC" $)
 
-*Hisoblash bosqichlari:*
+*Hisoblaş bosqiçlari:*
 
 - PWM davri:
   #eq($ T = 1 / (25000 "Hz") = 0.00004 "s" = 40 thin mu"s" $)
 - Impuls yoqilgan vaqti ($t_"on"$):
   #eq($ t_"on" = 0.72 times 40 thin mu"s" = 28.8 thin mu"s" $)
-- Motordagi oʻrtacha kuchlanish ($V_"avg"$):
+- Motordagi örtaça kuçlaniş ($V_"avg"$):
   #eq($ V_"avg" = 0.72 times 24 "V" = 17.28 "V" $)
 
-== Masala 3: Inkremental optik enkoder moduli bilan tezlikni oʻlchash
+== Masala 3: Inkremental optik enkoder moduli bilan tezlikni ölçaş
 
-Inkremental optik enkoder moduli $N = 2048 "ppr"$ (_pulses per revolution_) ajratish qobiliyatiga ega. Agar enkoder $t = 0.05 "s"$ vaqt oraligʻida $P = 8192$ ta impuls shakllantirsa, motor valining aylanish tezligi $n$ (ayl/min) va burchak tezligi $omega$ (rad/s) ni toping.
+Inkremental optik enkoder moduli $N = 2048 "ppr"$ (_pulses per revolution_) ajratiş qobiliyatiga ega. Agar enkoder $t = 0.05 "s"$ vaqt oraliğida $P = 8192$ ta impuls şakllantirsa, motor valining aylaniş tezligi $n$ (ayl/min) va burçak tezligi $omega$ (rad/s) ni toping.
 
-*Yechish va formulalar:*
+*Yeçiş va formulalar:*
 
 #eq($ n = (P dot 60) / (N dot t) quad "(ayl/min)", quad quad omega = (2 pi dot n) / 60 quad "(rad/s)" $)
 
-*Hisoblash bosqichlari:*
+*Hisoblaş bosqiçlari:*
 
 #eq($ n = (8192 times 60) / (2048 times 0.05) = 491520 / 102.4 = 4800 "ayl/min" $)
 
 #eq($ omega = (2 pi times 4800) / 60 = 160 pi approx 502.65 "rad/s" $)
 
-= Ishni bajarish tartibi va metodik tavsiyalar
+= Işni bajariş tartibi va metodik tavsiyalar
 
-Amaliy mashgʻulotni bajarishda talabalar quyidagi bosqichlarni ketma-ket amalga oshirishlari shart:
+Amaliy maşğulotni bajarişda talabalar quyidagi bosqiçlarni ketma-ket amalga oşirişlari şart:
 
-+ *1-bosqich: oʻquv stendini va xavfsizlik qoidalarini oʻrganish.* Stenddagi kuchlanish manbalari, drayver modullari, datchiklar va motorlarning ulanish sxemasi bilan tanishib chiqing.
-+ *2-bosqich: sensor modulini ulab, signalni oʻlchash.* LVDT va optik enkoder modullarini mikrokontrollerning ADC va taymer kirishlariga ulang. Datchik milini surib, analog signalning $0 dots 5 "V"$ oraligʻida oʻzgarishini multimetrda tekshiring.
-+ *3-bosqich: PWM va H-koʻprik drayver modulini sozlash.* Mikrokontrollerning PWM chiqishini H-koʻprik kirishiga ulang. Ossillograf zondlarini motor terminallariga ulagan holda PWM toʻldirish koeffitsientini $20%, 50%, 80%$ ga oʻzgartirib, impuls shaklini va $t_"on"$ vaqtini oʻlchang.
-+ *4-bosqich: qayta aloqali tezlikni boshqarishni tajribada sinash.* Mikrokontrollerga yuklangan PID boshqaruv dasturi orqali val tezligini belgilangan qiymatda ($3000 "ayl/min"$) ushlab turish jarayonini ossillografda kuzating.
-+ *5-bosqich: tajriba natijalarini qayta ishlash.* Tajribada olingan $V_"avg"$, $N_"dig"$ va $n$ (ayl/min) qiymatlarini 5-boʻlimdagi formulalar boʻyicha hisoblangan nazariy qiymatlar bilan solishtiring, nisbiy xatolikni hisoblang.
++ *1-bosqiç: öquv stendini va xavfsizlik qoidalarini örganiş.* Stenddagi kuçlaniş manbalari, drayver modullari, datçiklar va motorlarning ulaniş sxemasi bilan tanişib çiqing.
++ *2-bosqiç: sensor modulini ulab, signalni ölçaş.* LVDT va optik enkoder modullarini mikrokontrollerning ADC va taymer kirişlariga ulang. Datçik milini surib, analog signalning $0 dots 5 "V"$ oraliğida özgarişini multimetrda tekşiring.
++ *3-bosqiç: PWM va H-köprik drayver modulini sozlaş.* Mikrokontrollerning PWM çiqişini H-köprik kirişiga ulang. Ossillograf zondlarini motor terminallariga ulagan holda PWM töldiriş koeffitsientini $20%, 50%, 80%$ ga özgartirib, impuls şaklini va $t_"on"$ vaqtini ölçang.
++ *4-bosqiç: qayta aloqali tezlikni boşqarişni tajribada sinaş.* Mikrokontrollerga yuklangan PID boşqaruv dasturi orqali val tezligini belgilangan qiymatda ($3000 "ayl/min"$) uşlab turiş jarayonini ossillografda kuzating.
++ *5-bosqiç: tajriba natijalarini qayta işlaş.* Tajribada olingan $V_"avg"$, $N_"dig"$ va $n$ (ayl/min) qiymatlarini 5-bölimdagi formulalar böyiça hisoblangan nazariy qiymatlar bilan soliştiring, nisbiy xatolikni hisoblang.
 
 = Nazorat va muhokama savollari
 
-+ Mexatronika fani va mexatron modul tushunchasining anʼanaviy elektromexanikadan tub farqini tushuntiring.
-+ JSPMI boʻyicha Class IV mexatronik mahsulotlarning asosiy xususiyatlari va afzalliklari nimalardan iborat?
-+ Mexatron modulni tashkil etuvchi 5 ta asosiy funksional elementni sanang va ularning oʻzaro taʼsirini izohlang.
-+ Axborot-oʻlchov (sensor) modullari mexatronik tizimda qanday vazifalarni bajaradi?
-+ LVDT datchigi va optik enkoder moduli oʻrtasidagi fizik-texnik va signal farqlari nimada?
++ Mexatronika fani va mexatron modul tuşunçasining anʼanaviy elektromexanikadan tub farqini tuşuntiring.
++ JSPMI böyiça Class IV mexatronik mahsulotlarning asosiy xususiyatlari va afzalliklari nimalardan iborat?
++ Mexatron modulni taşkil etuvçi 5 ta asosiy funksional elementni sanang va ularning özaro taʼsirini izohlang.
++ Axborot-ölçov (sensor) modullari mexatronik tizimda qanday vazifalarni bajaradi?
++ LVDT datçigi va optik enkoder moduli örtasidagi fizik-texnik va signal farqlari nimada?
 + Aktuator modullari tarkibidagi quvvat drayverlarining (H-Bridge) roli nimadan iborat?
-+ H-koʻprik drayverlarida “shoot-through” (qisqa tutashuv) hodisasi nima va uning apparat/dasturiy yoʻl bilan qanday oldi olinadi?
-+ PWM (impuls kenglik modulyatsiyasi) signalining toʻldirish koeffitsienti ($D$) motor tezligiga qanday taʼsir koʻrsatadi?
-+ ADC modulining ajratish qobiliyati ($n$-bit) va namunalash chastotasi (_sampling rate_) mexatron modul aniqligiga qanday taʼsir qiladi?
-+ Yopiq zanjirli (_closed-loop_) mexatronik modullarda qayta aloqa (_feedback_) zanjiri qanday tashkil etiladi?
-+ Sanoat roboti tutqich modullarida pnevmatik va elektr aktuatorlarning qanday afzallik hamda kamchiliklari bor?
-+ Avtomobildagi ABS (_Anti-lock Braking System_) tizimi qanday mexatron modullardan tashkil topgan?
++ H-köprik drayverlarida “shoot-through” (qisqa tutaşuv) hodisasi nima va uning apparat/dasturiy yöl bilan qanday oldi olinadi?
++ PWM (impuls kenglik modulyatsiyasi) signalining töldiriş koeffitsienti ($D$) motor tezligiga qanday taʼsir körsatadi?
++ ADC modulining ajratiş qobiliyati ($n$-bit) va namunalaş çastotasi (_sampling rate_) mexatron modul aniqligiga qanday taʼsir qiladi?
++ Yopiq zanjirli (_closed-loop_) mexatronik modullarda qayta aloqa (_feedback_) zanjiri qanday taşkil etiladi?
++ Sanoat roboti tutqiç modullarida pnevmatik va elektr aktuatorlarning qanday afzallik hamda kamçiliklari bor?
++ Avtomobildagi ABS (_Anti-lock Braking System_) tizimi qanday mexatron modullardan taşkil topgan?
 

@@ -9,7 +9,7 @@
 
 #let headingblue = rgb(20, 50, 120)
 
-#set document(title: "Birlamchi oʻzgartirgichlar ishini tahlil qilish. Optik hamda temperatura datchiklari")
+#set document(title: "Birlamçi özgartirgiçlar işini tahlil qiliş. Optik hamda temperatura datçiklari")
 #set page(
   paper: "a4",
   margin: (top: 2.5cm, bottom: 2.5cm, left: 3cm, right: 2cm),
@@ -29,7 +29,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.65em)
 #set heading(numbering: "1.1")
 #set math.equation(numbering: "(1)", supplement: none)
@@ -45,53 +45,53 @@
 
 // ---------------- Sarlavha ----------------
 #align(center)[
-  #text(size: 20pt, weight: "bold", fill: headingblue)[AMALIYOT MASHGʻULOTI №6]
+  #text(size: 20pt, weight: "bold", fill: headingblue)[AMALIYOT MAŞĞULOTI №6]
   #v(0.4cm)
   #text(
     size: 14pt,
     weight: "bold",
-  )[Mavzu: Birlamchi oʻzgartirgichlar ishini tahlil qilish. Optik hamda temperatura datchigining ishlash tamoyilini oʻrganish]
+  )[Mavzu: Birlamçi özgartirgiçlar işini tahlil qiliş. Optik hamda temperatura datçigining işlaş tamoyilini örganiş]
   #v(0.6cm)
   #line(length: 100%, stroke: 1pt)
 ]
 
 #v(0.3cm)
 
-= Ishning maqsadi
+= Işning maqsadi
 
-*Mashgʻulotning maqsadi:* mexatron modullar va robotik tizimlarda qoʻllaniladigan birlamchi oʻzgartirgichlarning (_primary transducers_) ishlash prinsiplari, optik (fotorezistor, fotodiod, fototranzistor, optopara, enkoder) va temperatura datchiklarining (termopara, RTD Pt100, NTC/PTC termistor, yarimoʻtkazgichli IC sensorlar) fizik-texnik xarakteristikalari, signalni shakllantirish va oʻlchash zanjirlarini hisoblash hamda tahlil qilish koʻnikmalarini shakllantirish.
+*Maşğulotning maqsadi:* mexatron modullar va robotik tizimlarda qöllaniladigan birlamçi özgartirgiçlarning (_primary transducers_) işlaş prinsiplari, optik (fotorezistor, fotodiod, fototranzistor, optopara, enkoder) va temperatura datçiklarining (termopara, RTD Pt100, NTC/PTC termistor, yarimötkazgiçli IC sensorlar) fizik-texnik xarakteristikalari, signalni şakllantiriş va ölçaş zanjirlarini hisoblaş hamda tahlil qiliş könikmalarini şakllantiriş.
 
-*Oʻquv vazifalari:*
+*Öquv vazifalari:*
 
-+ Birlamchi oʻzgartirgichlar (sezgir element) va ikkilamchi oʻzgartirgichlar (signalni konditsiyalash/kuchaytirish) oʻrtasidagi funksional va strukturaviy bogʻliqlikni oʻrganish.
-+ Optik datchiklarning ishlashidagi fizik hodisalarni (ichki va tashqi fotoeffekt, yarimoʻtkazgichli $p$-$n$ oʻtishdagi fotoeffekt, foto-EYuK va fototok) hamda optoelektron modullarni tahlil qilish.
-+ Temperatura (harorat) datchiklarining ishlash tamoyillarini (Seebeck termo-EYuK effekti, metall va yarimoʻtkazgichlar qarshiligining haroratga bogʻliqligi) oʻrganish.
-+ Vitston koʻprigi (_Wheatstone bridge_), operatsion kuchaytirgichli transimpedans kuchaytirgich (TIA) hamda instrumental kuchaytirgichlarning hisoblash modellarini tuzish.
-+ Optik va harorat oʻlchov zanjirlarini modellashtirish hamda tajriba natijalarini matematik qayta ishlash.
++ Birlamçi özgartirgiçlar (sezgir element) va ikkilamçi özgartirgiçlar (signalni konditsiyalaş/kuçaytiriş) örtasidagi funksional va strukturaviy boğliqlikni örganiş.
++ Optik datçiklarning işlaşidagi fizik hodisalarni (içki va taşqi fotoeffekt, yarimötkazgiçli $p$-$n$ ötişdagi fotoeffekt, foto-EYuK va fototok) hamda optoelektron modullarni tahlil qiliş.
++ Temperatura (harorat) datçiklarining işlaş tamoyillarini (Seebeck termo-EYuK effekti, metall va yarimötkazgiçlar qarşiligining haroratga boğliqligi) örganiş.
++ Vitston köprigi (_Wheatstone bridge_), operatsion kuçaytirgiçli transimpedans kuçaytirgiç (TIA) hamda instrumental kuçaytirgiçlarning hisoblaş modellarini tuziş.
++ Optik va harorat ölçov zanjirlarini modellaştiriş hamda tajriba natijalarini matematik qayta işlaş.
 
 = Kerakli asbob-uskunalar va dasturiy taʼminot
 
-- *Oʻquv-laboratoriya stendlari:* birlamchi oʻzgartirgichlar va sensorli modullar laboratoriya stendi, optoelektron stend (yorugʻlik manbai, fotodiod, fotorezistor, optopara, optik diskli enkoder), harorat oʻlchov stendi (termostat, Pt100 RTD, K-tip termopara, NTC termistor, LM35 / DS18B20 IC datchiklar).
-- *Nazorat-oʻlchov va manba vositalari:* ikki kanalli raqamli ossillograf, raqamli multimetr, oʻzgarmas tok manbai ($0 dots 30 "V DC"$), etalon yoritilganlik oʻlchagich (lyuksmetr).
-- *Boshqaruv va DAQ modullari:* STM32F4/F7 mikrokontrollerli plata, Arduino Mega, National Instruments DAQ platasi.
+- *Öquv-laboratoriya stendlari:* birlamçi özgartirgiçlar va sensorli modullar laboratoriya stendi, optoelektron stend (yoruğlik manbai, fotodiod, fotorezistor, optopara, optik diskli enkoder), harorat ölçov stendi (termostat, Pt100 RTD, K-tip termopara, NTC termistor, LM35 / DS18B20 IC datçiklar).
+- *Nazorat-ölçov va manba vositalari:* ikki kanalli raqamli ossillograf, raqamli multimetr, özgarmas tok manbai ($0 dots 30 "V DC"$), etalon yoritilganlik ölçagiç (lyuksmetr).
+- *Boşqaruv va DAQ modullari:* STM32F4/F7 mikrokontrollerli plata, Arduino Mega, National Instruments DAQ platasi.
 - *Dasturiy muhit:* MATLAB / Simulink (Simscape Electrical), LabVIEW, Proteus.
 
 = Nazariy maʼlumotlar va konseptual tizimlar
 
-== Birlamchi oʻzgartirgichlar (primary transducers) tushunchasi va oʻrni
+== Birlamçi özgartirgiçlar (primary transducers) tuşunçasi va örni
 
-P.P.L. Regtien va W. Bolton darsliklariga koʻra, *birlamchi oʻzgartirgich (datchik/sensor)* deb oʻlchanayotgan fizik kattalikni (harorat, yoritilganlik, bosim, siljish) bevosita qabul qilib, uni keyingi qayta ishlash uchun qulay boʻlgan elektr signaliga (kuchlanish, tok, qarshilik, sigʻim, chastota) aylantiruvchi elementga aytiladi.
+P.P.L. Regtien va W. Bolton darsliklariga köra, *birlamçi özgartirgiç (datçik/sensor)* deb ölçanayotgan fizik kattalikni (harorat, yoritilganlik, bosim, siljiş) bevosita qabul qilib, uni keyingi qayta işlaş uçun qulay bölgan elektr signaliga (kuçlaniş, tok, qarşilik, siğim, çastota) aylantiruvçi elementga aytiladi.
 
-Birlamchi oʻzgartirgichlar fizik hodisalarga tayangan holda ikkita katta guruhga boʻlinadi:
+Birlamçi özgartirgiçlar fizik hodisalarga tayangan holda ikkita katta guruhga bölinadi:
 
-+ *Generatorli (aktiv) oʻzgartirgichlar:* tashqi energiya manbaisiz fizik energiyani bevosita elektr energiyasiga (EYuK yoki tok) aylantiradi. Misol: termopara (termo-EYuK), pyezoelektr datchik, fotoelement (fotogalvanik rejim).
-+ *Parametrik (passiv) oʻzgartirgichlar:* oʻlchanayotgan kattalik taʼsirida oʻzining elektr parametrini (qarshilik $R$, sigʻim $C$, induktivlik $L$) oʻzgartiradi va ishlashi uchun tashqi quvvat manbaini talab qiladi. Misol: termistor, RTD Pt100, fotorezistor, tenzorezistor, LVDT.
++ *Generatorli (aktiv) özgartirgiçlar:* taşqi energiya manbaisiz fizik energiyani bevosita elektr energiyasiga (EYuK yoki tok) aylantiradi. Misol: termopara (termo-EYuK), pyezoelektr datçik, fotoelement (fotogalvanik rejim).
++ *Parametrik (passiv) özgartirgiçlar:* ölçanayotgan kattalik taʼsirida özining elektr parametrini (qarşilik $R$, siğim $C$, induktivlik $L$) özgartiradi va işlaşi uçun taşqi quvvat manbaini talab qiladi. Misol: termistor, RTD Pt100, fotorezistor, tenzorezistor, LVDT.
 
-_Izoh:_ ushbu nomlash rus tilidagi adabiyot anʼanasiga mos. Ingliz tilidagi ayrim manbalarda (masalan, J. Fraden) aksincha: tashqi manbasiz ishlovchi datchiklar _passive_, manba talab qiluvchilar esa _active_ deb ataladi.
+_Izoh:_ uşbu nomlaş rus tilidagi adabiyot anʼanasiga mos. Ingliz tilidagi ayrim manbalarda (masalan, J. Fraden) aksinça: taşqi manbasiz işlovçi datçiklar _passive_, manba talab qiluvçilar esa _active_ deb ataladi.
 
-== Optik datchiklarning ishlash tamoyillari va turlari
+== Optik datçiklarning işlaş tamoyillari va turlari
 
-Optik datchiklar elektromagnit nurlanishni (koʻrinuvchi, infraqizil va ultrabinafsha diapazonlar) elektr signaliga aylantiradi (@tab-optical).
+Optik datçiklar elektromagnit nurlanişni (körinuvçi, infraqizil va ultrabinafşa diapazonlar) elektr signaliga aylantiradi (@tab-optical).
 
 #figure(
   {
@@ -104,26 +104,26 @@ Optik datchiklar elektromagnit nurlanishni (koʻrinuvchi, infraqizil va ultrabin
       inset: (x: 4pt, y: 5pt),
       table.hline(stroke: 1pt),
       table.header(
-        [*№*], [*Optik datchik turi*], [*Fizik hodisasi / tamoyili*], [*Asosiy xarakteristikasi va qoʻllanilishi*]
+        [*№*], [*Optik datçik turi*], [*Fizik hodisasi / tamoyili*], [*Asosiy xarakteristikasi va qöllanilişi*]
       ),
       table.hline(stroke: 0.5pt),
-      [1], [*Fotorezistor (LDR)*], [Ichki fotoeffekt: yorugʻlik tushganda qarshilik $R_"LDR"$ keskin kamayadi.],
-      [Nochiziqli $R(E)$ bogʻliqlik; sezgirligi yuqori, lekin inersiyasi katta ($10 dots 100 "ms"$). Yorugʻlik kalitlari.],
-      [2], [*Fotodiod* (Photodiode)], [$p$-$n$ oʻtish teskari siljitilganda fototok $I_"ph"$ hosil boʻlishi.],
-      [Yuqori tezkorlik (ns tartibida); chiziqli $I_"ph" (E)$ tavsifi. Optik enkoder va optik tola aloqasi.],
-      [3], [*Fototranzistor*], [Fotodiod va tranzistor kuchaytirgichining birikmasi.],
-      [Sezgirligi fotodiodga nisbatan $100 dots 500$ baravar yuqori, lekin chastotasi pastroq. Optopara (optocoupler).],
-      [4], [*Optik enkoder*], [Diskdagi tirqishlar orqali nur oʻtishini sanash (inkremental/absolyut).],
-      [Yuqori ajratish qobiliyati ($1024 dots 65536 "ppr"$). Robot boʻgʻinlari va motor vallari.],
+      [1], [*Fotorezistor (LDR)*], [Içki fotoeffekt: yoruğlik tuşganda qarşilik $R_"LDR"$ keskin kamayadi.],
+      [Noçiziqli $R(E)$ boğliqlik; sezgirligi yuqori, lekin inersiyasi katta ($10 dots 100 "ms"$). Yoruğlik kalitlari.],
+      [2], [*Fotodiod* (Photodiode)], [$p$-$n$ ötiş teskari siljitilganda fototok $I_"ph"$ hosil bölişi.],
+      [Yuqori tezkorlik (ns tartibida); çiziqli $I_"ph" (E)$ tavsifi. Optik enkoder va optik tola aloqasi.],
+      [3], [*Fototranzistor*], [Fotodiod va tranzistor kuçaytirgiçining birikmasi.],
+      [Sezgirligi fotodiodga nisbatan $100 dots 500$ baravar yuqori, lekin çastotasi pastroq. Optopara (optocoupler).],
+      [4], [*Optik enkoder*], [Diskdagi tirqişlar orqali nur ötişini sanaş (inkremental/absolyut).],
+      [Yuqori ajratiş qobiliyati ($1024 dots 65536 "ppr"$). Robot böğinlari va motor vallari.],
       table.hline(stroke: 1pt),
     )
   },
-  caption: [Optik datchiklarning turlari va fizik-texnik koʻrsatkichlari],
+  caption: [Optik datçiklarning turlari va fizik-texnik körsatkiçlari],
 ) <tab-optical>
 
-== Temperatura (harorat) datchiklarining ishlash tamoyillari
+== Temperatura (harorat) datçiklarining işlaş tamoyillari
 
-Harorat mexatronik tizimlarda termodinamik holatni va xavfsizlikni nazorat qiluvchi eng muhim parametrlardan biridir. Asosiy harorat datchiklari @tab-temp da keltirilgan.
+Harorat mexatronik tizimlarda termodinamik holatni va xavfsizlikni nazorat qiluvçi eng muhim parametrlardan biridir. Asosiy harorat datçiklari @tab-temp da keltirilgan.
 
 #figure(
   {
@@ -135,34 +135,34 @@ Harorat mexatronik tizimlarda termodinamik holatni va xavfsizlikni nazorat qiluv
       stroke: none,
       inset: (x: 4pt, y: 5pt),
       table.hline(stroke: 1pt),
-      table.header([*№*], [*Datchik turi*], [*Ishlash tamoyili / formula*], [*Diapazoni*], [*Afzalligi va kamchiligi*]),
+      table.header([*№*], [*Datçik turi*], [*Işlaş tamoyili / formula*], [*Diapazoni*], [*Afzalligi va kamçiligi*]),
       table.hline(stroke: 0.5pt),
       [1],
       [*Termopara* (Thermocouple)],
       [Seebeck effekti: \ $E = S dot (T_"hot" - T_"cold")$],
       [$-200 dots +1800 degree"C"$],
-      [Juda keng diapazon, metall konstruksiya; signal kichik (mV).],
-      [2], [*RTD Pt100*], [Metall qarshiligi: \ $R(T) = R_0 (1 + alpha T)$], [$-200 dots +850 degree"C"$],
-      [Yuqori aniqlik va chiziqlilik; sezgirligi oʻrtacha ($0.385 thin Omega\/degree"C"$).],
+      [Juda keng diapazon, metall konstruksiya; signal kiçik (mV).],
+      [2], [*RTD Pt100*], [Metall qarşiligi: \ $R(T) = R_0 (1 + alpha T)$], [$-200 dots +850 degree"C"$],
+      [Yuqori aniqlik va çiziqlilik; sezgirligi örtaça ($0.385 thin Omega\/degree"C"$).],
       [3],
       [*NTC termistor*],
-      [Yarimoʻtkazgich qarshiligi: \ $R(T) = R_0 e^(beta (1\/T - 1\/T_0))$ \ ($T$ --- kelvinda)],
+      [Yarimötkazgiç qarşiligi: \ $R(T) = R_0 e^(beta (1\/T - 1\/T_0))$ \ ($T$ --- kelvinda)],
       [$-50 dots +150 degree"C"$],
-      [Yuqori sezgirlik; keskin nochiziqli tavsif.],
+      [Yuqori sezgirlik; keskin noçiziqli tavsif.],
       [4],
       [*IC sensor* (LM35)],
-      [$p$-$n$ oʻtish kuchlanishi: \ $V_"out" = 10 "mV"\/degree"C"$],
+      [$p$-$n$ ötiş kuçlanişi: \ $V_"out" = 10 "mV"\/degree"C"$],
       [$-55 dots +150 degree"C"$],
-      [Tayyor chiziqli kuchlanish chiqishi; diapazoni kichik.],
+      [Tayyor çiziqli kuçlaniş çiqişi; diapazoni kiçik.],
       table.hline(stroke: 1pt),
     )
   },
-  caption: [Harorat datchiklarining qiyosiy texnik xarakteristikalari],
+  caption: [Harorat datçiklarining qiyosiy texnik xarakteristikalari],
 ) <tab-temp>
 
-= Mavzuga oid chizmalar va sxemalar
+= Mavzuga oid çizmalar va sxemalar
 
-== Birlamchi va ikkilamchi oʻzgartirgichlarning ketma-ket funksional zanjiri
+== Birlamçi va ikkilamçi özgartirgiçlarning ketma-ket funksional zanjiri
 
 #figure(
   {
@@ -178,10 +178,10 @@ Harorat mexatronik tizimlarda termodinamik holatni va xavfsizlikni nazorat qiluv
       edge-stroke: 2pt + headingblue,
 
       node((0, 0), b[Fizik kattalik \ ($T, E, x, P$)], width: 2.3cm, height: 1.3cm),
-      node((1, 0), b[*Birlamchi* \ *oʻzgartirgich* \ (Pt100, fotodiod)], width: 2.3cm, height: 1.3cm),
-      node((2, 0), b[*Ikkilamchi* \ *oʻzgartirgich* \ (Vitston koʻprigi / TIA)], width: 2.5cm, height: 1.3cm),
-      node((3, 0), b[Signalni \ konditsiyalash \ (Op-Amp / LPF)], width: 2.3cm, height: 1.3cm),
-      node((4, 0), b[ADC va MCU \ (STM32 / DSP)], width: 2.3cm, height: 1.3cm),
+      node((1, 0), b[*Birlamçi* \ *özgartirgiç* \ (Pt100, fotodiod)], width: 2.5cm, height: 1.3cm),
+      node((2, 0), b[*Ikkilamçi* \ *özgartirgiç* \ (Vitston köprigi / TIA)], width: 2.5cm, height: 1.5cm),
+      node((3, 0), b[Signalni \ konditsiyalaş \ (Op-Amp / LPF)], width: 2.5cm, height: 1.3cm),
+      node((4, 0), b[ADC va MCU \ (STM32 / DSP)], width: 2.5cm, height: 1.3cm),
 
       edge((0, 0), (1, 0), "-|>", label: small[Fizik taʼsir], stroke: 1pt, label-sep: 19pt),
       edge((1, 0), (2, 0), "-|>", label: small[$R, I, E$], stroke: 1pt, label-sep: 19pt),
@@ -189,10 +189,10 @@ Harorat mexatronik tizimlarda termodinamik holatni va xavfsizlikni nazorat qiluv
       edge((3, 0), (4, 0), "-|>", label: small[$0 dots 3.3 "V"$], stroke: 1pt, label-sep: 19pt),
     )
   },
-  caption: [Birlamchi va ikkilamchi oʻzgartirgichlarning axborot shakllantirish zanjiri],
+  caption: [Birlamçi va ikkilamçi özgartirgiçlarning axborot şakllantiriş zanjiri],
 ) <fig-chain>
 
-== Fotodiod va transimpedans kuchaytirgichli (TIA) optik oʻlchov zanjiri
+== Fotodiod va transimpedans kuçaytirgiçli (TIA) optik ölçov zanjiri
 
 #figure(
   cetz.canvas(length: 1.1cm, {
@@ -243,10 +243,10 @@ Harorat mexatronik tizimlarda termodinamik holatni va xavfsizlikni nazorat qiluv
     line((3.0, 1.0), (4.0, 1.0), stroke: w)
     content((4.05, 1.0), anchor: "west", text(size: 9pt, weight: "bold")[$V_"out" = I_"ph" dot R_f$])
   }),
-  caption: [Fotodiod va transimpedans kuchaytirgichli (TIA) optik oʻlchov zanjiri],
+  caption: [Fotodiod va transimpedans kuçaytirgiçli (TIA) optik ölçov zanjiri],
 ) <fig-tia>
 
-== Pt100 RTD datchigi uchun Vitston koʻprigi va instrumental kuchaytirgich
+== Pt100 RTD datçigi uçun Vitston köprigi va instrumental kuçaytirgiç
 
 #figure(
   cetz.canvas(length: 1cm, {
@@ -267,9 +267,9 @@ Harorat mexatronik tizimlarda termodinamik holatni va xavfsizlikni nazorat qiluv
 
     // Koʻprik elkalari
     res(top, a, $R_2$)
-    res(a, bot, $R_3$)
+    res(a, bot, box(baseline: -100%)[$R_3$])
     res(top, b, $R_1$)
-    res(b, bot, [#text(size: 5pt)[Pt100 ($R_T$)]], fill: orange.lighten(75%))
+    res(b, bot, box(baseline: -100%)[#text(size: 4pt)[Pt100 ($R_T$)]], fill: orange.lighten(75%))
 
     // Manba va yer
     line(top, (1.5, 4.1), stroke: w)
@@ -287,7 +287,7 @@ Harorat mexatronik tizimlarda termodinamik holatni va xavfsizlikni nazorat qiluv
     // Differensial chiqish kuchaytirgichga
     line(a, (-0.5, 2), (-0.5, 1.2), (4.0, 1.2), stroke: w)
     line(b, (4.0, 2), stroke: w)
-    content((3.5, 2.05), anchor: "south", text(size: 8pt)[$V_"bridge"$])
+    content((3.6, 1.6), anchor: "south", text(size: 8pt)[$V_"bridge"$])
 
     // Instrumental kuchaytirgich
     rect((4.0, 0.8), (6.5, 2.4), radius: 0.12, fill: blue.lighten(90%), stroke: 1.2pt + headingblue)
@@ -295,18 +295,18 @@ Harorat mexatronik tizimlarda termodinamik holatni va xavfsizlikni nazorat qiluv
       size: 8pt,
       weight: "bold",
       fill: headingblue,
-    )[Instrumental \ kuchaytirgich \ ($G = 40$)]))
+    )[Instrumental \ kuçaytirgiç \ ($G = 40$)]))
     line((6.5, 1.6), (7.4, 1.6), stroke: 2.5pt + headingblue, mark: (end: "stealth", fill: headingblue))
     content((7.5, 1.6), anchor: "west", text(size: 9pt, weight: "bold")[$V_"out" = G dot V_"bridge"$])
   }),
-  caption: [Pt100 RTD datchigi va Vitston koʻprigi asosidagi harorat oʻlchash sxemasi],
+  caption: [Pt100 RTD datçigi va Vitston köprigi asosidagi harorat ölçaş sxemasi],
 ) <fig-bridge>
 
-= Amaliy topshiriqlar va tizimli tahlil
+= Amaliy topşiriqlar va tizimli tahlil
 
-== Topshiriq 1: optik va temperatura datchiklarini qiyosiy tahlil qilish
+== Topşiriq 1: optik va temperatura datçiklarini qiyosiy tahlil qiliş
 
-Har bir datchik turining fizik, metrologik va ekspluatatsion xususiyatlarini tahlil qiling va @tab-compare ni toʻldiring.
+Har bir datçik turining fizik, metrologik va ekspluatatsion xususiyatlarini tahlil qiling va @tab-compare ni töldiring.
 
 #figure(
   {
@@ -319,137 +319,134 @@ Har bir datchik turining fizik, metrologik va ekspluatatsion xususiyatlarini tah
       inset: (x: 5pt, y: 5pt),
       table.hline(stroke: 1pt),
       table.header(
-        [*Datchik turi*],
-        [*Reaksiya tezligi (dinamika)*],
-        [*Chiziqlilik va sezgirlik*],
-        [*Asosiy ustunligi va kamchiligi*],
+        [*Datçik turi*], [*Reaksiya tezligi (dinamika)*], [*Çiziqlilik va sezgirlik*], [*Asosiy ustunligi va kamçiligi*]
       ),
       table.hline(stroke: 0.5pt),
-      [*Fotorezistor (LDR)*], [Sekin ($10 dots 100 "ms"$)], [Nochiziqli; yuqori sezgirlik],
-      [*Ustunligi:* arzon, sodda. \ *Kamchiligi:* inersion, haroratga bogʻliq.],
-      [*Fotodiod*], [Oʻta tez ($< 1 thin mu"s"$)], [Yuqori chiziqlilik; sezgirligi oʻrtacha],
-      [*Ustunligi:* aniq va tezkor. \ *Kamchiligi:* fototok kichik (nA $dots$ µA).],
-      [*RTD Pt100*], [Oʻrtacha ($0.5 dots 2 "s"$)], [Yuqori chiziqlilik ($0.385 thin Omega\/degree"C"$)],
-      [*Ustunligi:* etalon darajadagi aniqlik. \ *Kamchiligi:* oʻz-oʻzini qizdirish xatosi.],
+      [*Fotorezistor (LDR)*], [Sekin ($10 dots 100 "ms"$)], [Noçiziqli; yuqori sezgirlik],
+      [*Ustunligi:* arzon, sodda. \ *Kamçiligi:* inersion, haroratga boğliq.],
+      [*Fotodiod*], [Öta tez ($< 1 thin mu"s"$)], [Yuqori çiziqlilik; sezgirligi örtaça],
+      [*Ustunligi:* aniq va tezkor. \ *Kamçiligi:* fototok kiçik (nA $dots$ µA).],
+      [*RTD Pt100*], [Örtaça ($0.5 dots 2 "s"$)], [Yuqori çiziqlilik ($0.385 thin Omega\/degree"C"$)],
+      [*Ustunligi:* etalon darajadagi aniqlik. \ *Kamçiligi:* öz-özini qizdiriş xatosi.],
       [*Termopara (K-tip)*],
-      [Oʻrtacha / tez ($0.1 dots 1 "s"$)],
-      [Sezilarli nochiziqli ($approx 41 thin mu"V"\/degree"C"$)],
-      [*Ustunligi:* juda yuqori haroratlarda ishlaydi. \ *Kamchiligi:* sovuq tutashuv kompensatsiyasi shart.],
+      [Örtaça / tez ($0.1 dots 1 "s"$)],
+      [Sezilarli noçiziqli ($approx 41 thin mu"V"\/degree"C"$)],
+      [*Ustunligi:* juda yuqori haroratlarda işlaydi. \ *Kamçiligi:* sovuq tutaşuv kompensatsiyasi şart.],
       table.hline(stroke: 1pt),
     )
   },
-  caption: [Birlamchi optik va harorat oʻzgartirgichlarining qiyosiy tahlili],
+  caption: [Birlamçi optik va harorat özgartirgiçlarining qiyosiy tahlili],
 ) <tab-compare>
 
-== Topshiriq 2: sanoat pechi va robot tutqichi uchun datchik tanlash
+== Topşiriq 2: sanoat peçi va robot tutqiçi uçun datçik tanlaş
 
-Quyidagi ikkita texnologik modul uchun birlamchi oʻzgartirgich va signalni konditsiyalash zanjirini tanlang hamda asoslang:
+Quyidagi ikkita texnologik modul uçun birlamçi özgartirgiç va signalni konditsiyalaş zanjirini tanlang hamda asoslang:
 
-+ *1-modul:* $800 degree"C"$ haroratli metall eritish pechi haroratini oʻlchash.
-+ *2-modul:* robot tutqichida obyekt bor-yoʻqligini $2 "mm"$ masofadan kontaktsiz aniqlash (javob vaqti $< 1 "ms"$).
++ *1-modul:* $800 degree"C"$ haroratli metall eritiş peçi haroratini ölçaş.
++ *2-modul:* robot tutqiçida obyekt bor-yöqligini $2 "mm"$ masofadan kontaktsiz aniqlaş (javob vaqti $< 1 "ms"$).
 
-*Tahlil va yechim:*
+*Tahlil va yeçim:*
 
-- *1-modul uchun:* _K-tip (xromel–alyumel) termopara_. Sababi: yuqori harorat diapazoni ($1200 degree"C"$ gacha) va chidamliligi. Signalni konditsiyalash: sovuq tutashuv kompensatsiyasiga ega MAX31855 ADC mikrosxemasi.
-- *2-modul uchun:* _fotodiodli optopara / reflektiv optik sensor_. Sababi: mikrosekund darajasidagi tezkorlik va kontaktsizlik. Signalni konditsiyalash: komparator (LM393) va LED drayveri.
+- *1-modul uçun:* _K-tip (xromel–alyumel) termopara_. Sababi: yuqori harorat diapazoni ($1200 degree"C"$ gaça) va çidamliligi. Signalni konditsiyalaş: sovuq tutaşuv kompensatsiyasiga ega MAX31855 ADC mikrosxemasi.
+- *2-modul uçun:* _fotodiodli optopara / reflektiv optik sensor_. Sababi: mikrosekund darajasidagi tezkorlik va kontaktsizlik. Signalni konditsiyalaş: komparator (LM393) va LED drayveri.
 
-= Hisoblash va modellashtirish masalalari
+= Hisoblaş va modellaştiriş masalalari
 
-== Masala 1: Pt100 RTD va Vitston koʻprigi oʻlchov zanjiri hisobi
+== Masala 1: Pt100 RTD va Vitston köprigi ölçov zanjiri hisobi
 
-Pt100 datchigining $T = 0 degree"C"$ dagi qarshiligi $R_0 = 100.0 thin Omega$, harorat koeffitsienti $alpha = 0.00385 thin degree"C"^(-1)$. Datchik Vitston koʻprigining bitta elkasiga ulangan ($R_1 = R_2 = R_3 = 100.0 thin Omega$, @fig-bridge). Koʻprik manba kuchlanishi $V_"ex" = 5.0 "V"$.
+Pt100 datçigining $T = 0 degree"C"$ dagi qarşiligi $R_0 = 100.0 thin Omega$, harorat koeffitsienti $alpha = 0.00385 thin degree"C"^(-1)$. Datçik Vitston köprigining bitta elkasiga ulangan ($R_1 = R_2 = R_3 = 100.0 thin Omega$, @fig-bridge). Köprik manba kuçlanişi $V_"ex" = 5.0 "V"$.
 
 #set enum(numbering: "a)")
-+ Harorat $T = 80 degree"C"$ boʻlganda Pt100 qarshiligi $R_T$ nechaga teng boʻladi?
-+ Koʻprik diagonalidagi kuchlanish $V_"bridge"$ ni hisoblang.
-+ Agar instrumental kuchaytirgichning kuchaytirish koeffitsienti $G = 40$ boʻlsa, chiqish kuchlanishi $V_"out"$ nechaga teng?
++ Harorat $T = 80 degree"C"$ bölganda Pt100 qarşiligi $R_T$ neçaga teng böladi?
++ Köprik diagonalidagi kuçlaniş $V_"bridge"$ ni hisoblang.
++ Agar instrumental kuçaytirgiçning kuçaytiriş koeffitsienti $G = 40$ bölsa, çiqiş kuçlanişi $V_"out"$ neçaga teng?
 #set enum(numbering: "1.")
 
-*Yechish va formulalar:*
+*Yeçiş va formulalar:*
 
 #eq($ R_T = R_0 (1 + alpha T) $)
 #eq($ V_"bridge" = V_B - V_A = V_"ex" (R_T / (R_1 + R_T) - R_3 / (R_2 + R_3)) $)
 #eq($ V_"out" = G dot V_"bridge" $)
 
-*Hisoblash bosqichlari:*
+*Hisoblaş bosqiçlari:*
 
-- $T = 80 degree"C"$ da Pt100 qarshiligi:
+- $T = 80 degree"C"$ da Pt100 qarşiligi:
   #eq($ R_T = 100.0 times (1 + 0.00385 times 80) = 100.0 times (1 + 0.308) = 130.8 thin Omega $)
-- Koʻprik kuchlanishi ($R_1 = R_2 = R_3 = 100 thin Omega$):
+- Köprik kuçlanişi ($R_1 = R_2 = R_3 = 100 thin Omega$):
   #eq(
     $
       R_3 / (R_2 + R_3) = 100 / 200 = 0.500, quad quad R_T / (R_1 + R_T) = 130.8 / (100 + 130.8) = 130.8 / 230.8 approx 0.56672
     $,
   )
   #eq($ V_"bridge" = 5.0 times (0.56672 - 0.50000) = 5.0 times 0.06672 = 0.3336 "V" = 333.6 "mV" $)
-- Kuchaytirgich chiqish kuchlanishi ($G = 40$):
+- Kuçaytirgiç çiqiş kuçlanişi ($G = 40$):
   #eq($ V_"out" = 40 times 0.3336 "V" = 13.344 "V" $)
 
-_Izoh:_ bu sxemada Pt100 orqali taxminan $5 "V" \/ 230.8 thin Omega approx 21.7 "mA"$ tok oqadi. Pt100 uchun odatda $lt.eq 1 "mA"$ tavsiya etiladi, aks holda oʻz-oʻzini qizdirish sezilarli xatolik beradi. Shuningdek, $13.3 "V"$ chiqish kamida $plus.minus 15 "V"$ taʼminotli kuchaytirgichni talab qiladi. $0 dots 3.3 "V"$ ADC kirishi uchun $G approx 9.9$ yetarli boʻlardi.
+_Izoh:_ bu sxemada Pt100 orqali taxminan $5 "V" \/ 230.8 thin Omega approx 21.7 "mA"$ tok oqadi. Pt100 uçun odatda $lt.eq 1 "mA"$ tavsiya etiladi, aks holda öz-özini qizdiriş sezilarli xatolik beradi. Şuningdek, $13.3 "V"$ çiqiş kamida $plus.minus 15 "V"$ taʼminotli kuçaytirgiçni talab qiladi. $0 dots 3.3 "V"$ ADC kirişi uçun $G approx 9.9$ yetarli bölardi.
 
-== Masala 2: termopara termo-EYuK va sovuq tutashuv kompensatsiyasi hisobi
+== Masala 2: termopara termo-EYuK va sovuq tutaşuv kompensatsiyasi hisobi
 
-K-tip termoparaning Seebeck koeffitsienti $S = 41.2 thin mu"V"\/degree"C"$ ga teng. Termoparaning sovuq tutashuvi (_cold junction_) joylashgan xonadagi harorat $T_"cold" = 25 degree"C"$. Issiq tutashuv (_hot junction_) harorati $T_"hot" = 450 degree"C"$.
+K-tip termoparaning Seebeck koeffitsienti $S = 41.2 thin mu"V"\/degree"C"$ ga teng. Termoparaning sovuq tutaşuvi (_cold junction_) joylaşgan xonadagi harorat $T_"cold" = 25 degree"C"$. Issiq tutaşuv (_hot junction_) harorati $T_"hot" = 450 degree"C"$.
 
 #set enum(numbering: "a)")
-+ Termoparada hosil boʻladigan sof termo-EYuK kuchlanishi $E_"raw"$ ni hisoblang.
-+ Sovuq tutashuv kompensatsiyasi amalga oshirilgandan keyingi kompensatsiyalangan umumiy kuchlanish $E_"comp"$ ni toping.
++ Termoparada hosil böladigan sof termo-EYuK kuçlanişi $E_"raw"$ ni hisoblang.
++ Sovuq tutaşuv kompensatsiyasi amalga oşirilgandan keyingi kompensatsiyalangan umumiy kuçlaniş $E_"comp"$ ni toping.
 #set enum(numbering: "1.")
 
-*Yechish va formulalar:*
+*Yeçiş va formulalar:*
 
 #eq($ E_"raw" = S dot (T_"hot" - T_"cold"), quad quad E_"comp" = S dot T_"hot" = E_"raw" + S dot T_"cold" $)
 
-*Hisoblash bosqichlari:*
+*Hisoblaş bosqiçlari:*
 
-- Termoparaning sof kuchlanishi:
+- Termoparaning sof kuçlanişi:
   #eq($ Delta T = 450 degree"C" - 25 degree"C" = 425 degree"C" $)
   #eq($ E_"raw" = 41.2 thin mu"V"\/degree"C" times 425 degree"C" = 17510 thin mu"V" = 17.51 "mV" $)
-- Kompensatsiya kuchlanishi ($T_"cold" = 25 degree"C"$ uchun):
+- Kompensatsiya kuçlanişi ($T_"cold" = 25 degree"C"$ uçun):
   #eq($ E_"cj" = 41.2 times 25 = 1030 thin mu"V" = 1.03 "mV" $)
   #eq($ E_"comp" = 17.51 "mV" + 1.03 "mV" = 18.54 "mV" $)
 
-== Masala 3: fotodiod va transimpedans kuchaytirgich (TIA) hisobi
+== Masala 3: fotodiod va transimpedans kuçaytirgiç (TIA) hisobi
 
-Fotodiodning monoxromatik nurlanishga spektral sezgirligi (_responsivity_) $R_"photo" = 0.55 "A/W"$. Optik nurlanish quvvati $P_"opt" = 120 thin mu"W"$ boʻlganda:
+Fotodiodning monoxromatik nurlanişga spektral sezgirligi (_responsivity_) $R_"photo" = 0.55 "A/W"$. Optik nurlaniş quvvati $P_"opt" = 120 thin mu"W"$ bölganda:
 
 #set enum(numbering: "a)")
-+ Fotodiodda hosil boʻladigan fototok $I_"ph"$ ni hisoblang.
-+ TIA kuchaytirgichining qayta aloqa qarshiligi $R_f = 22 "k"Omega$ boʻlsa, chiqish kuchlanishi $V_"out"$ nechaga teng?
++ Fotodiodda hosil böladigan fototok $I_"ph"$ ni hisoblang.
++ TIA kuçaytirgiçining qayta aloqa qarşiligi $R_f = 22 "k"Omega$ bölsa, çiqiş kuçlanişi $V_"out"$ neçaga teng?
 #set enum(numbering: "1.")
 
-*Yechish va formulalar:*
+*Yeçiş va formulalar:*
 
 #eq($ I_"ph" = R_"photo" dot P_"opt", quad quad V_"out" = I_"ph" dot R_f $)
 
-*Hisoblash bosqichlari:*
+*Hisoblaş bosqiçlari:*
 
 - Fototok hisobi:
   #eq($ I_"ph" = 0.55 "A/W" times 120 times 10^(-6) "W" = 66 times 10^(-6) "A" = 66 thin mu"A" $)
-- TIA chiqish kuchlanishi:
+- TIA çiqiş kuçlanişi:
   #eq($ V_"out" = 66 times 10^(-6) "A" times 22000 thin Omega = 1.452 "V" $)
 
-= Ishni bajarish tartibi va metodik tavsiyalar
+= Işni bajariş tartibi va metodik tavsiyalar
 
-Amaliy mashgʻulotni bajarishda talabalar quyidagi bosqichlarni ketma-ket amalga oshirishlari shart:
+Amaliy maşğulotni bajarişda talabalar quyidagi bosqiçlarni ketma-ket amalga oşirişlari şart:
 
-+ *1-bosqich: birlamchi optik va harorat datchiklarini vizual va elektr jihatdan oʻrganish.* Stenddagi datchiklarning (Pt100, K-termopara, LM35, fotodiod, LDR) chiqish kontaktlarini va ularning drayver modullarini oʻrganing.
-+ *2-bosqich: optik datchik xarakteristikasini tajribada olish.* Yorugʻlik manbai (LED) tokini oʻzgartirib, LDR qarshiligi $R_"LDR"$ va fotodiod fototoki $I_"ph"$ ning yoritilganlikka (lk) bogʻliqligini multimetrda qayd eting va grafigini quring.
-+ *3-bosqich: harorat datchigini statsionar kalibrlash tajribasi.* Pt100 va K-termoparani termostatik idishga tushirib, haroratni $20 degree"C"$ dan $100 degree"C"$ gacha $10 degree"C"$ qadam bilan oshirib, $R_T$ ($Omega$) va $E_"termopara"$ (mV) qiymatlarini yozib oling.
-+ *4-bosqich: Vitston koʻprigi va kuchaytirgich chiqishini ossillografda tahlil qilish.* Pt100 datchigi ulangan Vitston koʻprigi va instrumental kuchaytirgich chiqish kuchlanishi $V_"out"$ ni ossillografda oʻlchang.
-+ *5-bosqich: natijalarni tahlil qilish va hisobot tayyorlash.* Nazariy hisoblangan va tajribada olingan qiymatlarni solishtiring.
++ *1-bosqiç: birlamçi optik va harorat datçiklarini vizual va elektr jihatdan örganiş.* Stenddagi datçiklarning (Pt100, K-termopara, LM35, fotodiod, LDR) çiqiş kontaktlarini va ularning drayver modullarini örganing.
++ *2-bosqiç: optik datçik xarakteristikasini tajribada oliş.* Yoruğlik manbai (LED) tokini özgartirib, LDR qarşiligi $R_"LDR"$ va fotodiod fototoki $I_"ph"$ ning yoritilganlikka (lk) boğliqligini multimetrda qayd eting va grafigini quring.
++ *3-bosqiç: harorat datçigini statsionar kalibrlaş tajribasi.* Pt100 va K-termoparani termostatik idişga tuşirib, haroratni $20 degree"C"$ dan $100 degree"C"$ gaça $10 degree"C"$ qadam bilan oşirib, $R_T$ ($Omega$) va $E_"termopara"$ (mV) qiymatlarini yozib oling.
++ *4-bosqiç: Vitston köprigi va kuçaytirgiç çiqişini ossillografda tahlil qiliş.* Pt100 datçigi ulangan Vitston köprigi va instrumental kuçaytirgiç çiqiş kuçlanişi $V_"out"$ ni ossillografda ölçang.
++ *5-bosqiç: natijalarni tahlil qiliş va hisobot tayyorlaş.* Nazariy hisoblangan va tajribada olingan qiymatlarni soliştiring.
 
 = Nazorat va muhokama savollari
 
-+ Birlamchi oʻzgartirgich (datchik) va ikkilamchi oʻzgartirgichlar oʻrtasidagi funksional farqni tushuntiring.
-+ Generatorli (aktiv) va parametrik (passiv) datchiklarning ishlash prinsipi va misollarini ayting.
-+ Fotorezistor (LDR) va fotodiodning fotoeffekt hodisasi va reaksiya tezligi boʻyicha farqi nimada?
-+ Transimpedans kuchaytirgich (TIA) optik oʻlchov zanjirlarida qanday vazifani bajaradi?
-+ Termopara datchiklarida Seebeck effekti va sovuq tutashuv kompensatsiyasi (_cold-junction compensation_) nimani anglatadi?
-+ RTD Pt100 datchigining $R_0 = 100 thin Omega$ va $alpha = 0.00385 thin degree"C"^(-1)$ parametrlari nimani ifodalaydi?
-+ Vitston koʻprigi (_Wheatstone bridge_) nima uchun parametrik datchiklarni (Pt100, tenzometr) oʻlchashda keng qoʻllaniladi?
-+ NTC va PTC termistorlarning qarshilik-harorat tavsifidagi farqi nimada?
-+ Optopara (_optocoupler_) modullari mexatronikada galvanik ajratish (_galvanic isolation_) uchun qanday ishlatiladi?
-+ Optik enkoderlarda inkremental va absolyut turlarning metrologik farqini tushuntiring.
-+ Nima uchun termopara signalini kuchaytirish uchun instrumental kuchaytirgich (_instrumentation amplifier_) talab qilinadi?
-+ Yarimoʻtkazgichli IC harorat datchiklarining (LM35 / DS18B20) RTD va termoparaga nisbatan afzalliklari nimalardan iborat?
++ Birlamçi özgartirgiç (datçik) va ikkilamçi özgartirgiçlar örtasidagi funksional farqni tuşuntiring.
++ Generatorli (aktiv) va parametrik (passiv) datçiklarning işlaş prinsipi va misollarini ayting.
++ Fotorezistor (LDR) va fotodiodning fotoeffekt hodisasi va reaksiya tezligi böyiça farqi nimada?
++ Transimpedans kuçaytirgiç (TIA) optik ölçov zanjirlarida qanday vazifani bajaradi?
++ Termopara datçiklarida Seebeck effekti va sovuq tutaşuv kompensatsiyasi (_cold-junction compensation_) nimani anglatadi?
++ RTD Pt100 datçigining $R_0 = 100 thin Omega$ va $alpha = 0.00385 thin degree"C"^(-1)$ parametrlari nimani ifodalaydi?
++ Vitston köprigi (_Wheatstone bridge_) nima uçun parametrik datçiklarni (Pt100, tenzometr) ölçaşda keng qöllaniladi?
++ NTC va PTC termistorlarning qarşilik-harorat tavsifidagi farqi nimada?
++ Optopara (_optocoupler_) modullari mexatronikada galvanik ajratiş (_galvanic isolation_) uçun qanday işlatiladi?
++ Optik enkoderlarda inkremental va absolyut turlarning metrologik farqini tuşuntiring.
++ Nima uçun termopara signalini kuçaytiriş uçun instrumental kuçaytirgiç (_instrumentation amplifier_) talab qilinadi?
++ Yarimötkazgiçli IC harorat datçiklarining (LM35 / DS18B20) RTD va termoparaga nisbatan afzalliklari nimalardan iborat?

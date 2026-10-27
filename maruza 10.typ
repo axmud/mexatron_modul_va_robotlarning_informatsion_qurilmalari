@@ -11,7 +11,7 @@
 #let lightorange = rgb("#fbe3cf")
 
 #set document(
-  title: "Maʼruza №10. Mexatron modullar va robotlarning informatsion tizimlari uchun dasturiy taʼminotlar",
+  title: "Maʼruza №10. Mexatron modullar va robotlarning informatsion tizimlari uçun dasturiy taʼminotlar",
 )
 #set page(
   paper: "a4",
@@ -32,7 +32,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -72,7 +72,7 @@
   #text(
     size: 14pt,
     weight: "bold",
-  )[Mavzu: Mexatron modullar va robotlarning informatsion tizimlari uchun dasturiy taʼminotlar]
+  )[Mavzu: Mexatron modullar va robotlarning informatsion tizimlari uçun dasturiy taʼminotlar]
 ]
 
 #v(0.8em)
@@ -82,23 +82,23 @@
   *Reja:*
   + Informatsion tizim dasturiy taʼminotining darajalari.
   + Real vaqt talablari va real vaqt operatsion tizimlari.
-  + Datchik maʼlumotlarini olish dasturlari.
-  + Datchik maʼlumotlariga dasturiy ishlov berish: kalibrlash, filtrlash, birlashtirish.
+  + Datçik maʼlumotlarini oliş dasturlari.
+  + Datçik maʼlumotlariga dasturiy işlov beriş: kalibrlaş, filtrlaş, birlaştiriş.
   + Robototexnika oraliq dasturiy taʼminoti: ROS 2.
-  + Texnik koʻrish va sunʼiy intellekt kutubxonalari.
-  + Modellashtirish, simulyatsiya va sanoat dasturiy vositalari.
-  + Dasturiy taʼminot sifati, ishonchliligi va xavfsizligi.
+  + Texnik köriş va sunʼiy intellekt kutubxonalari.
+  + Modellaştiriş, simulyatsiya va sanoat dasturiy vositalari.
+  + Dasturiy taʼminot sifati, işonçliligi va xavfsizligi.
 
-  *Tayanch iboralar:* mikrodastur (firmware), oʻrnatilgan dastur, real vaqt, kechikish, jitter, RTOS, uzilish, DMA, drayver, raqamli filtr, eksponensial filtr, komplementar filtr, kalibrlash, ROS 2, tugun, mavzu, xabar, xizmat, tf2, DDS, OpenCV, PCL, neyron tarmoq, simulyator, SIL, HIL, IEC 61131-3, Git, funksional xavfsizlik.
+  *Tayanç iboralar:* mikrodastur (firmware), örnatilgan dastur, real vaqt, keçikiş, jitter, RTOS, uziliş, DMA, drayver, raqamli filtr, eksponensial filtr, komplementar filtr, kalibrlaş, ROS 2, tugun, mavzu, xabar, xizmat, tf2, DDS, OpenCV, PCL, neyron tarmoq, simulyator, SIL, HIL, IEC 61131-3, Git, funksional xavfsizlik.
 ]
 
 // =====================================================================
 = Informatsion tizim dasturiy taʼminotining darajalari
 // =====================================================================
 
-Oldingi maʼruzalarda robot informatsion tizimining apparat qismi — datchiklar, oʻlchash sxemalari, kameralar koʻrib chiqildi. Lekin datchik signali boshqaruv uchun foydali axborotga aylanishi uchun uni olish, qayta ishlash, tahlil qilish va uzatish kerak — bu vazifalarni *dasturiy taʼminot* bajaradi. Zamonaviy robotlarda informatsion tizim imkoniyatlari koʻp jihatdan aynan dasturiy taʼminot bilan belgilanadi: bir xil kamera oddiy dastur bilan faqat tasvir beradi, chuqur neyron tarmoq bilan esa obyektlarni tanib oladi.
+Oldingi maʼruzalarda robot informatsion tizimining apparat qismi — datçiklar, ölçaş sxemalari, kameralar körib çiqildi. Lekin datçik signali boşqaruv uçun foydali axborotga aylanişi uçun uni oliş, qayta işlaş, tahlil qiliş va uzatiş kerak — bu vazifalarni *dasturiy taʼminot* bajaradi. Zamonaviy robotlarda informatsion tizim imkoniyatlari köp jihatdan aynan dasturiy taʼminot bilan belgilanadi: bir xil kamera oddiy dastur bilan faqat tasvir beradi, çuqur neyron tarmoq bilan esa obyektlarni tanib oladi.
 
-Robot informatsion tizimining dasturiy taʼminoti bir necha darajadan iborat (1-rasm, 1-jadval).
+Robot informatsion tizimining dasturiy taʼminoti bir neça darajadan iborat (1-rasm, 1-jadval).
 
 #figure(
   {
@@ -111,15 +111,15 @@ Robot informatsion tizimining dasturiy taʼminoti bir necha darajadan iborat (1-
       edge-stroke: 1pt,
       node(
         (0, 0),
-        [*Amaliy dasturlar:* koʻrish, lokalizatsiya, rejalashtirish],
+        [*Amaliy dasturlar:* köriş, lokalizatsiya, rejalaştiriş],
         width: 12cm,
         fill: lightorange,
         name: <a>,
       ),
       node((0, 1), [*Oraliq dasturiy taʼminot:* ROS 2, DDS, kutubxonalar], width: 12cm, fill: lightblue, name: <b>),
       node((0, 2), [*Operatsion tizim:* Linux (PREEMPT_RT), RTOS], width: 12cm, fill: lightblue, name: <c>),
-      node((0, 3), [*Oʻrnatilgan dasturlar:* mikrokontroller, drayverlar], width: 12cm, fill: lightblue, name: <d>),
-      node((0, 4), [*Mikrodastur:* datchik, kamera, drayver ichida], width: 12cm, fill: white, name: <e>),
+      node((0, 3), [*Örnatilgan dasturlar:* mikrokontroller, drayverlar], width: 12cm, fill: lightblue, name: <d>),
+      node((0, 4), [*Mikrodastur:* datçik, kamera, drayver içida], width: 12cm, fill: white, name: <e>),
       edge(<e>, <d>, "<->"),
       edge(<d>, <c>, "<->"),
       edge(<c>, <b>, "<->"),
@@ -134,128 +134,128 @@ Robot informatsion tizimining dasturiy taʼminoti bir necha darajadan iborat (1-
     columns: (auto, 1.3fr, 1fr),
     header: ([Daraja], [Vazifasi], [Misollar]),
     [Mikrodastur],
-    [Datchik yoki kamera ichida oʻlchash, kalibrlash, kompensatsiya, diagnostika],
-    [Intellektual datchik, aqlli kamera, servodrayver dasturi],
-    [Oʻrnatilgan dasturlar],
-    [Datchiklarni soʻrash, signallarni raqamlash, birlamchi filtrlash, tez boshqaruv konturlari],
-    [STM32, ESP32 kabi mikrokontrollerlar uchun C/C++ dasturlar],
+    [Datçik yoki kamera içida ölçaş, kalibrlaş, kompensatsiya, diagnostika],
+    [Intellektual datçik, aqlli kamera, servodrayver dasturi],
+    [Örnatilgan dasturlar],
+    [Datçiklarni söraş, signallarni raqamlaş, birlamçi filtrlaş, tez boşqaruv konturlari],
+    [STM32, ESP32 kabi mikrokontrollerlar uçun C/C++ dasturlar],
     [Operatsion tizim],
-    [Vazifalarni rejalashtirish, xotira va qurilmalarni boshqarish, vaqtni taʼminlash],
+    [Vazifalarni rejalaştiriş, xotira va qurilmalarni boşqariş, vaqtni taʼminlaş],
     [FreeRTOS, Zephyr, Linux PREEMPT_RT],
     [Oraliq dasturiy taʼminot],
-    [Dastur komponentlari orasida maʼlumot almashish, koordinatalar tizimlari, vositalar],
+    [Dastur komponentlari orasida maʼlumot almaşiş, koordinatalar tizimlari, vositalar],
     [ROS 2, DDS, OPC UA],
     [Amaliy dasturlar],
-    [Koʻrish, tanib olish, xarita qurish, lokalizatsiya, qaror qabul qilish],
+    [Köriş, tanib oliş, xarita quriş, lokalizatsiya, qaror qabul qiliş],
     [OpenCV, PCL, neyron tarmoqlar, SLAM paketlari],
   ),
   caption: [Dasturiy taʼminot darajalari],
 ) <tab-daraja>
 
-Quyi darajalarda dasturlar qatʼiy vaqt cheklovlari ostida, kichik resursli qurilmalarda ishlaydi va koʻpincha C yoki C++ tilida yoziladi. Yuqori darajalarda esa murakkab algoritmlar kuchli kompyuterlarda bajariladi; bu yerda C++ bilan bir qatorda Python keng qoʻllanadi.
+Quyi darajalarda dasturlar qatʼiy vaqt çeklovlari ostida, kiçik resursli qurilmalarda işlaydi va köpinça C yoki C++ tilida yoziladi. Yuqori darajalarda esa murakkab algoritmlar kuçli kompyuterlarda bajariladi; bu yerda C++ bilan bir qatorda Python keng qöllanadi.
 
 // =====================================================================
 = Real vaqt talablari va real vaqt operatsion tizimlari
 // =====================================================================
 
-== Real vaqt tushunchasi
+== Real vaqt tuşunçasi
 
-*Real vaqt tizimi* — natijaning toʻgʻriligi nafaqat hisoblash natijasiga, balki uning qachon olinganiga ham bogʻliq boʻlgan tizim. Masalan, yuritmaning tezlik konturi enkoder qiymatini har 1 ms da olib, yangi boshqaruv signalini hisoblashi kerak; natija kechiksa, boshqaruv sifati yomonlashadi yoki tizim beqaror boʻladi. Real vaqt tizimlari ikki turga boʻlinadi:
-- *qatʼiy real vaqt* — muddatni buzish yoʻl qoʻyilmaydi (yuritma konturlari, xavfsizlik funksiyalari, avariya toʻxtatish);
-- *yumshoq real vaqt* — vaqti-vaqti bilan kechikish sifatni pasaytiradi, lekin halokatga olib kelmaydi (videoni koʻrsatish, xarita yangilash).
+*Real vaqt tizimi* — natijaning töğriligi nafaqat hisoblaş natijasiga, balki uning qaçon olinganiga ham boğliq bölgan tizim. Masalan, yuritmaning tezlik konturi enkoder qiymatini har 1 ms da olib, yangi boşqaruv signalini hisoblaşi kerak; natija keçiksa, boşqaruv sifati yomonlaşadi yoki tizim beqaror böladi. Real vaqt tizimlari ikki turga bölinadi:
+- *qatʼiy real vaqt* — muddatni buziş yöl qöyilmaydi (yuritma konturlari, xavfsizlik funksiyalari, avariya töxtatiş);
+- *yumşoq real vaqt* — vaqti-vaqti bilan keçikiş sifatni pasaytiradi, lekin halokatga olib kelmaydi (videoni körsatiş, xarita yangilaş).
 
-Real vaqt dasturining asosiy vaqt koʻrsatkichlari: *diskretlash davri* (vazifa qanchalik tez-tez bajariladi), *kechikish* (hodisadan javobgacha vaqt) va *jitter* (davr yoki kechikishning tasodifiy oʻzgarishi). Raqamli boshqaruv va filtrlash algoritmlari diskretlash davri oʻzgarmas deb hisoblaydi, shuning uchun katta jitter ularning ishini buzadi.
+Real vaqt dasturining asosiy vaqt körsatkiçlari: *diskretlaş davri* (vazifa qançalik tez-tez bajariladi), *keçikiş* (hodisadan javobgaça vaqt) va *jitter* (davr yoki keçikişning tasodifiy özgarişi). Raqamli boşqaruv va filtrlaş algoritmlari diskretlaş davri özgarmas deb hisoblaydi, şuning uçun katta jitter ularning işini buzadi.
 
-== Vazifalarni rejalashtirish
+== Vazifalarni rejalaştiriş
 
-Robot kontrollerida bir vaqtda bir nechta davriy vazifa ishlaydi: enkoderlarni soʻrash, IMU maʼlumotini olish, kamerani qayta ishlash va boshqalar. *Real vaqt operatsion tizimlari* (RTOS) vazifalarga ustuvorlik beradi va muhimroq vazifa kamroq muhimini darhol toʻxtatib, bajarilishini kafolatlaydi. Davri qisqaroq vazifaga yuqoriroq ustuvorlik berish usulida (_Rate Monotonic Scheduling_) $n$ ta davriy vazifaning barcha muddatlari bajarilishining yetarli sharti:
+Robot kontrollerida bir vaqtda bir neçta davriy vazifa işlaydi: enkoderlarni söraş, IMU maʼlumotini oliş, kamerani qayta işlaş va boşqalar. *Real vaqt operatsion tizimlari* (RTOS) vazifalarga ustuvorlik beradi va muhimroq vazifa kamroq muhimini darhol töxtatib, bajarilişini kafolatlaydi. Davri qisqaroq vazifaga yuqoriroq ustuvorlik beriş usulida (_Rate Monotonic Scheduling_) $n$ ta davriy vazifaning barça muddatlari bajarilişining yetarli şarti:
 
 #eq($ U = sum_(i=1)^n C_i / T_i <= n (2^(1 slash n) - 1), $)
 
-bu yerda $C_i$ — $i$-vazifaning eng uzoq bajarilish vaqti, $T_i$ — uning davri, $U$ — protsessor yuklamasi. *Misol.* Enkoder vazifasi ($C = 0","1$ ms, $T = 1$ ms), IMU vazifasi ($C = 0","5$ ms, $T = 5$ ms) va tasvirga ishlov berish ($C = 20$ ms, $T = 100$ ms) uchun $U = 0","1 + 0","1 + 0","2 = 0","4$. Uch vazifa uchun chegara $3 (2^(1 slash 3) - 1) approx 0","78$, demak barcha muddatlar bajariladi. Agar tasvirga ishlov berish 60 ms ga choʻzilsa, $U = 0","8 > 0","78$ va kafolat yoʻqoladi — bunday holatda ogʻir vazifa alohida protsessorga oʻtkaziladi.
+bu yerda $C_i$ — $i$-vazifaning eng uzoq bajariliş vaqti, $T_i$ — uning davri, $U$ — protsessor yuklamasi. *Misol.* Enkoder vazifasi ($C = 0","1$ ms, $T = 1$ ms), IMU vazifasi ($C = 0","5$ ms, $T = 5$ ms) va tasvirga işlov beriş ($C = 20$ ms, $T = 100$ ms) uçun $U = 0","1 + 0","1 + 0","2 = 0","4$. Uç vazifa uçun çegara $3 (2^(1 slash 3) - 1) approx 0","78$, demak barça muddatlar bajariladi. Agar tasvirga işlov beriş 60 ms ga çözilsa, $U = 0","8 > 0","78$ va kafolat yöqoladi — bunday holatda oğir vazifa alohida protsessorga ötkaziladi.
 
-Mikrokontrollerlarda keng tarqalgan RTOS lar — FreeRTOS va Zephyr. Kuchliroq kompyuterlarda real vaqt yamogʻi (PREEMPT_RT) qoʻllangan Linux ishlatiladi. Oddiy (real vaqt boʻlmagan) operatsion tizimlarda vazifa bajarilish vaqti kafolatlanmaydi, shuning uchun tez boshqaruv konturlari odatda alohida mikrokontroller yoki drayverda bajariladi, yuqori darajadagi kompyuter esa sekinroq, lekin murakkab vazifalarni hal qiladi.
-
-// =====================================================================
-= Datchik maʼlumotlarini olish dasturlari
-// =====================================================================
-
-Datchik maʼlumotlarini olish dasturi (drayver) datchik bilan uning interfeysi orqali aloqa qiladi, maʼlumotni oʻqiydi va uni yuqori darajadagi dasturlarga qulay koʻrinishda beradi. Maʼlumot olishning uch asosiy usuli bor:
-- *soʻrov (polling)* — dastur datchikni davriy ravishda oʻzi soʻraydi; sodda, lekin protsessor vaqtini behuda sarflashi mumkin;
-- *uzilish (interrupt)* — datchik yoki apparat moduli yangi maʼlumot tayyor boʻlganda protsessorga signal beradi va maxsus qism-dastur (uzilishga xizmat koʻrsatish dasturi) uni darhol qayta ishlaydi; hodisalarga tez javob beradi;
-- *xotiraga toʻgʻridan-toʻgʻri murojaat (DMA)* — apparat kontroller maʼlumotlarni (masalan, ARO natijalari yoki kamera kadrlarini) protsessor ishtirokisiz xotiraga koʻchiradi; katta oqimlar uchun eng samarali usul.
-
-Mikrokontrollerlarda koʻp vazifalarni maxsus apparat modullari bajaradi va dastur ularni faqat sozlaydi: masalan, taymerlarning *enkoder rejimi* A va B kvadratur signallarini apparat darajasida sanaydi (5-maʼruza), *ushlash rejimi* impulslar orasidagi vaqtni oʻlchaydi (T-usul), ARO esa taymer signali boʻyicha qatʼiy davr bilan diskretlaydi. Bu jitterni kamaytiradi va protsessorni boʻshatadi.
-
-Datchik maʼlumotlarini olishda quyidagi qoidalarga amal qilinadi:
-- har bir oʻlchashga *vaqt belgisi* (timestamp) qoʻyiladi — turli datchiklar maʼlumotlarini birlashtirish uchun ular qachon olingani aniq maʼlum boʻlishi kerak;
-- maʼlumotlar *halqasimon bufer* orqali uzatiladi — tez yozuvchi va sekin oʻquvchi vazifalar bir-birini kutmaydi;
-- datchik javobining toʻgʻriligi tekshiriladi (nazorat yigʻindisi, ruxsat etilgan diapazon, javob vaqti) va nosozlik aniqlanganda xavfsiz holatga oʻtiladi.
+Mikrokontrollerlarda keng tarqalgan RTOS lar — FreeRTOS va Zephyr. Kuçliroq kompyuterlarda real vaqt yamoği (PREEMPT_RT) qöllangan Linux işlatiladi. Oddiy (real vaqt bölmagan) operatsion tizimlarda vazifa bajariliş vaqti kafolatlanmaydi, şuning uçun tez boşqaruv konturlari odatda alohida mikrokontroller yoki drayverda bajariladi, yuqori darajadagi kompyuter esa sekinroq, lekin murakkab vazifalarni hal qiladi.
 
 // =====================================================================
-= Datchik maʼlumotlariga dasturiy ishlov berish
+= Datçik maʼlumotlarini oliş dasturlari
 // =====================================================================
 
-== Kalibrlash va birliklarga oʻtkazish
+Datçik maʼlumotlarini oliş dasturi (drayver) datçik bilan uning interfeysi orqali aloqa qiladi, maʼlumotni öqiydi va uni yuqori darajadagi dasturlarga qulay körinişda beradi. Maʼlumot olişning uç asosiy usuli bor:
+- *sörov (polling)* — dastur datçikni davriy ravişda özi söraydi; sodda, lekin protsessor vaqtini behuda sarflaşi mumkin;
+- *uziliş (interrupt)* — datçik yoki apparat moduli yangi maʼlumot tayyor bölganda protsessorga signal beradi va maxsus qism-dastur (uzilişga xizmat körsatiş dasturi) uni darhol qayta işlaydi; hodisalarga tez javob beradi;
+- *xotiraga töğridan-töğri murojaat (DMA)* — apparat kontroller maʼlumotlarni (masalan, ARO natijalari yoki kamera kadrlarini) protsessor iştirokisiz xotiraga köçiradi; katta oqimlar uçun eng samarali usul.
 
-ARO kodi yoki datchik chiqishi dasturda fizik birliklarga oʻtkaziladi. Chiziqli datchik uchun ikki nuqtali kalibrlash qoʻllanadi: maʼlum ikki qiymat $x_1, x_2$ da datchik kodlari $y_1, y_2$ yozib olinadi va oʻtkazish formulasi topiladi:
+Mikrokontrollerlarda köp vazifalarni maxsus apparat modullari bajaradi va dastur ularni faqat sozlaydi: masalan, taymerlarning *enkoder rejimi* A va B kvadratur signallarini apparat darajasida sanaydi (5-maʼruza), *uşlaş rejimi* impulslar orasidagi vaqtni ölçaydi (T-usul), ARO esa taymer signali böyiça qatʼiy davr bilan diskretlaydi. Bu jitterni kamaytiradi va protsessorni böşatadi.
+
+Datçik maʼlumotlarini olişda quyidagi qoidalarga amal qilinadi:
+- har bir ölçaşga *vaqt belgisi* (timestamp) qöyiladi — turli datçiklar maʼlumotlarini birlaştiriş uçun ular qaçon olingani aniq maʼlum bölişi kerak;
+- maʼlumotlar *halqasimon bufer* orqali uzatiladi — tez yozuvçi va sekin öquvçi vazifalar bir-birini kutmaydi;
+- datçik javobining töğriligi tekşiriladi (nazorat yiğindisi, ruxsat etilgan diapazon, javob vaqti) va nosozlik aniqlanganda xavfsiz holatga ötiladi.
+
+// =====================================================================
+= Datçik maʼlumotlariga dasturiy işlov beriş
+// =====================================================================
+
+== Kalibrlaş va birliklarga ötkaziş
+
+ARO kodi yoki datçik çiqişi dasturda fizik birliklarga ötkaziladi. Çiziqli datçik uçun ikki nuqtali kalibrlaş qöllanadi: maʼlum ikki qiymat $x_1, x_2$ da datçik kodlari $y_1, y_2$ yozib olinadi va ötkaziş formulasi topiladi:
 
 #eq($ x = x_1 + (x_2 - x_1) / (y_2 - y_1) dot (y - y_1). $)
 
-*Misol.* Harorat datchigi 0 °C da $y_1 = 410$, 100 °C da $y_2 = 3686$ kod bersa, $y = 2048$ kodga $x = 100 slash 3276 dot (2048 - 410) approx 50","0$ °C mos keladi. Nochiziqli datchiklar uchun polinomlar yoki jadval va chiziqli interpolyatsiya qoʻllanadi (7-maʼruza).
+*Misol.* Harorat datçigi 0 °C da $y_1 = 410$, 100 °C da $y_2 = 3686$ kod bersa, $y = 2048$ kodga $x = 100 slash 3276 dot (2048 - 410) approx 50","0$ °C mos keladi. Noçiziqli datçiklar uçun polinomlar yoki jadval va çiziqli interpolyatsiya qöllanadi (7-maʼruza).
 
-== Raqamli filtrlash
+== Raqamli filtrlaş
 
-Datchik signalidagi shovqinni kamaytirish uchun dasturda raqamli filtrlar ishlatiladi:
-- *sirpanuvchi oʻrtacha* — oxirgi $N$ ta oʻlchash oʻrtachasi; oddiy, lekin $N$ ortgan sari kechikish ortadi;
-- *median filtr* — oxirgi oʻlchashlarning medianasi; alohida keskin sakrashlarni (qoʻpol xatoliklarni) yaxshi yoʻqotadi;
-- *eksponensial (birinchi tartibli past chastotali) filtr* — har bir yangi qiymat oldingi natija bilan tortib qoʻshiladi:
+Datçik signalidagi şovqinni kamaytiriş uçun dasturda raqamli filtrlar işlatiladi:
+- *sirpanuvçi örtaça* — oxirgi $N$ ta ölçaş örtaçasi; oddiy, lekin $N$ ortgan sari keçikiş ortadi;
+- *median filtr* — oxirgi ölçaşlarning medianasi; alohida keskin sakraşlarni (qöpol xatoliklarni) yaxşi yöqotadi;
+- *eksponensial (birinçi tartibli past çastotali) filtr* — har bir yangi qiymat oldingi natija bilan tortib qöşiladi:
 
 #eq($ hat(y)_k = alpha dot x_k + (1 - alpha) dot hat(y)_(k-1), quad alpha = T_s / (tau + T_s), $)
 
-bu yerda $x_k$ — yangi oʻlchash, $hat(y)_k$ — filtrlangan qiymat, $T_s$ — diskretlash davri, $tau$ — filtrning vaqt doimiysi. *Misol.* $T_s = 1$ ms va $tau = 10$ ms uchun $alpha approx 0","091$. Filtr juda kam xotira va hisoblash talab qiladi, shuning uchun mikrokontrollerlarda keng qoʻllanadi. Har qanday filtr shovqinni kamaytirish bilan birga signalni kechiktiradi (9-maʼruzadagi dinamik xatolik), shuning uchun $tau$ boshqaruv talablariga mos tanlanadi.
+bu yerda $x_k$ — yangi ölçaş, $hat(y)_k$ — filtrlangan qiymat, $T_s$ — diskretlaş davri, $tau$ — filtrning vaqt doimiysi. *Misol.* $T_s = 1$ ms va $tau = 10$ ms uçun $alpha approx 0","091$. Filtr juda kam xotira va hisoblaş talab qiladi, şuning uçun mikrokontrollerlarda keng qöllanadi. Har qanday filtr şovqinni kamaytiriş bilan birga signalni keçiktiradi (9-maʼruzadagi dinamik xatolik), şuning uçun $tau$ boşqaruv talablariga mos tanlanadi.
 
-== Datchiklar maʼlumotlarini birlashtirish
+== Datçiklar maʼlumotlarini birlaştiriş
 
-Turli datchiklarning kuchli tomonlarini birlashtirish uchun maʼlumotlarni birlashtirish algoritmlari qoʻllanadi (1-maʼruza). Eng oddiy misol — IMU yordamida qiyalik burchagini aniqlovchi *komplementar filtr*. Giroskop burchak tezligini integrallash qisqa muddatda aniq, lekin drift tufayli xato toʻplanadi; akselerometr esa gravitatsiya yoʻnalishi boʻyicha burchakni driftsiz, lekin shovqin va tezlanish taʼsirida beradi. Filtr ularni quyidagicha birlashtiradi:
+Turli datçiklarning kuçli tomonlarini birlaştiriş uçun maʼlumotlarni birlaştiriş algoritmlari qöllanadi (1-maʼruza). Eng oddiy misol — IMU yordamida qiyalik burçagini aniqlovçi *komplementar filtr*. Giroskop burçak tezligini integrallaş qisqa muddatda aniq, lekin drift tufayli xato töplanadi; akselerometr esa gravitatsiya yönalişi böyiça burçakni driftsiz, lekin şovqin va tezlaniş taʼsirida beradi. Filtr ularni quyidagiça birlaştiradi:
 
 #eq($ theta_k = gamma dot (theta_(k-1) + omega_k T_s) + (1 - gamma) dot theta_k^"aks", $)
 
-bu yerda $omega_k$ — giroskop oʻlchagan burchak tezligi, $theta_k^"aks"$ — akselerometr boʻyicha hisoblangan burchak, $gamma$ — 1 ga yaqin koeffitsient (masalan, 0,98). Shunday qilib, natijaning yuqori chastotali qismi giroskopdan, past chastotali qismi esa akselerometrdan olinadi. Murakkabroq vazifalarda (navigatsiya, lokalizatsiya) Kalman filtri va uning nochiziqli kengaytmalari qoʻllanadi.
+bu yerda $omega_k$ — giroskop ölçagan burçak tezligi, $theta_k^"aks"$ — akselerometr böyiça hisoblangan burçak, $gamma$ — 1 ga yaqin koeffitsient (masalan, 0,98). Şunday qilib, natijaning yuqori çastotali qismi giroskopdan, past çastotali qismi esa akselerometrdan olinadi. Murakkabroq vazifalarda (navigatsiya, lokalizatsiya) Kalman filtri va uning noçiziqli kengaytmalari qöllanadi.
 
 // =====================================================================
 = Robototexnika oraliq dasturiy taʼminoti: ROS 2
 // =====================================================================
 
-== Asosiy tushunchalar
+== Asosiy tuşunçalar
 
-Zamonaviy robotlarning dasturiy taʼminoti koʻplab mustaqil komponentlardan iborat: datchik drayverlari, filtrlar, lokalizatsiya, rejalashtirish, boshqaruv. Ularni birlashtirish uchun *oraliq dasturiy taʼminot* qoʻllanadi. Robototexnikada eng keng tarqalgan ochiq platforma — *ROS 2* (_Robot Operating System 2_). U operatsion tizim emas, balki dastur komponentlari orasida maʼlumot almashishni taʼminlovchi kutubxonalar, vositalar va kelishuvlar toʻplamidir. ROS 2 da maʼlumot almashish DDS (_Data Distribution Service_) standarti asosida amalga oshiriladi. Asosiy tushunchalar 3-jadvalda keltirilgan.
+Zamonaviy robotlarning dasturiy taʼminoti köplab mustaqil komponentlardan iborat: datçik drayverlari, filtrlar, lokalizatsiya, rejalaştiriş, boşqaruv. Ularni birlaştiriş uçun *oraliq dasturiy taʼminot* qöllanadi. Robototexnikada eng keng tarqalgan oçiq platforma — *ROS 2* (_Robot Operating System 2_). U operatsion tizim emas, balki dastur komponentlari orasida maʼlumot almaşişni taʼminlovçi kutubxonalar, vositalar va kelişuvlar töplamidir. ROS 2 da maʼlumot almaşiş DDS (_Data Distribution Service_) standarti asosida amalga oşiriladi. Asosiy tuşunçalar 3-jadvalda keltirilgan.
 
 #figure(
   btable(
     columns: (auto, 1.5fr),
-    header: ([Tushuncha], [Mazmuni]),
+    header: ([Tuşunça], [Mazmuni]),
     [Tugun (node)],
-    [Bitta vazifani bajaruvchi mustaqil dastur komponenti (masalan, LiDAR drayveri yoki filtr)],
+    [Bitta vazifani bajaruvçi mustaqil dastur komponenti (masalan, LiDAR drayveri yoki filtr)],
     [Mavzu (topic)],
-    [Nomlangan maʼlumot kanali; tugunlar unga xabar eʼlon qiladi (publish) yoki obuna boʻladi (subscribe)],
+    [Nomlangan maʼlumot kanali; tugunlar unga xabar eʼlon qiladi (publish) yoki obuna böladi (subscribe)],
     [Xabar (message)],
-    [Belgilangan tuzilishdagi maʼlumot: `sensor_msgs/Imu`, `LaserScan`, `Image`, `JointState` va boshqalar],
+    [Belgilangan tuzilişdagi maʼlumot: `sensor_msgs/Imu`, `LaserScan`, `Image`, `JointState` va boşqalar],
     [Xizmat (service)],
-    [Soʻrov-javob koʻrinishidagi aloqa (masalan, datchikni kalibrlash buyrugʻi)],
+    [Sörov-javob körinişidagi aloqa (masalan, datçikni kalibrlaş buyruği)],
     [Harakat (action)],
-    [Uzoq davom etadigan, oraliq natija beradigan topshiriq (masalan, nuqtaga borish)],
+    [Uzoq davom etadigan, oraliq natija beradigan topşiriq (masalan, nuqtaga boriş)],
     [tf2],
-    [Robot qismlari va datchiklarning koordinatalar tizimlari orasidagi oʻzgarishlarni boshqarish],
+    [Robot qismlari va datçiklarning koordinatalar tizimlari orasidagi özgarişlarni boşqariş],
     [QoS sozlamalari],
-    [Ishonchlilik, xabarlar navbati chuqurligi va boshqa uzatish xossalari],
+    [Işonçlilik, xabarlar navbati çuqurligi va boşqa uzatiş xossalari],
     [Vositalar],
-    [RViz (vizualizatsiya), rosbag (maʼlumotlarni yozish va qayta ijro etish), launch (ishga tushirish)],
+    [RViz (vizualizatsiya), rosbag (maʼlumotlarni yoziş va qayta ijro etiş), launch (işga tuşiriş)],
   ),
-  caption: [ROS 2 ning asosiy tushunchalari],
+  caption: [ROS 2 ning asosiy tuşunçalari],
 ) <tab-ros>
 
-Mobil robot informatsion tizimining ROS 2 dagi tipik tuzilishi 2-rasmda koʻrsatilgan: har bir datchik drayveri oʻz mavzusiga maʼlumot eʼlon qiladi, filtr va lokalizatsiya tugunlari ularga obuna boʻlib, natijani boshqa mavzularga uzatadi.
+Mobil robot informatsion tizimining ROS 2 dagi tipik tuzilişi 2-rasmda körsatilgan: har bir datçik drayveri öz mavzusiga maʼlumot eʼlon qiladi, filtr va lokalizatsiya tugunlari ularga obuna bölib, natijani boşqa mavzularga uzatadi.
 
 #figure(
   diagram(
@@ -270,21 +270,21 @@ Mobil robot informatsion tizimining ROS 2 dagi tipik tuzilishi 2-rasmda koʻrsat
     node((0, 2), [LiDAR \ drayveri], name: <lid>),
     node((1, 0), [Filtr va \ odometriya], name: <odo>),
     node((2, 1), [Lokalizatsiya \ va xarita], fill: lightorange, name: <loc>),
-    node((3, 1), [Rejalashtirish \ va boshqaruv], name: <ctl>),
+    node((3, 1), [Rejalaştiriş \ va boşqaruv], name: <ctl>),
     edge(<imu>, <odo>, "->", [`/imu`], label-size: 8pt),
     edge(<enc>, <odo>, "->", [`/joint_states`], label-size: 8pt, label-side: right, label-pos: 0.5),
     edge(<odo>, <loc>, "->", [`/odom`], label-size: 8pt),
     edge(<lid>, <loc>, "->", [`/scan`], label-size: 8pt, label-side: right),
     edge(<loc>, <ctl>, "->", [`/pose`], label-size: 8pt),
   ),
-  caption: [Mobil robot informatsion tizimining ROS 2 dagi tuzilishi (tugunlar va mavzular)],
+  caption: [Mobil robot informatsion tizimining ROS 2 dagi tuzilişi (tugunlar va mavzular)],
 ) <fig-ros>
 
-Bunday tuzilishning afzalligi — modullik: masalan, LiDAR boshqa modelga almashtirilsa, faqat uning drayveri oʻzgaradi, qolgan tugunlar oʻsha `/scan` mavzusidan maʼlumot olishda davom etadi. Yozib olingan maʼlumotlar (rosbag) yordamida algoritmlarni robotsiz, laboratoriyada qayta-qayta sinash mumkin.
+Bunday tuzilişning afzalligi — modullik: masalan, LiDAR boşqa modelga almaştirilsa, faqat uning drayveri özgaradi, qolgan tugunlar öşa `/scan` mavzusidan maʼlumot olişda davom etadi. Yozib olingan maʼlumotlar (rosbag) yordamida algoritmlarni robotsiz, laboratoriyada qayta-qayta sinaş mumkin.
 
 == Dastur namunasi
 
-Quyida Python tilidagi ROS 2 tuguniga misol keltirilgan: u IMU ning xom maʼlumotlariga obuna boʻladi, vertikal tezlanishni eksponensial filtr (3) bilan silliqlaydi va natijani yangi mavzuga eʼlon qiladi.
+Quyida Python tilidagi ROS 2 tuguniga misol keltirilgan: u IMU ning xom maʼlumotlariga obuna böladi, vertikal tezlanişni eksponensial filtr (3) bilan silliqlaydi va natijani yangi mavzuga eʼlon qiladi.
 
 ```python
 import rclpy
@@ -317,76 +317,76 @@ if __name__ == "__main__":
     main()
 ```
 
-Dastur ROS 2 ning asosiy gʻoyasini koʻrsatadi: tugun faqat oʻz vazifasini bajaradi va boshqa tugunlar bilan mavzular orqali bogʻlanadi; datchik qaysi interfeys bilan ulangani va uning drayveri qanday ishlashi bu tugun uchun ahamiyatsiz.
+Dastur ROS 2 ning asosiy ğoyasini körsatadi: tugun faqat öz vazifasini bajaradi va boşqa tugunlar bilan mavzular orqali boğlanadi; datçik qaysi interfeys bilan ulangani va uning drayveri qanday işlaşi bu tugun uçun ahamiyatsiz.
 
 // =====================================================================
-= Texnik koʻrish va sunʼiy intellekt kutubxonalari
+= Texnik köriş va sunʼiy intellekt kutubxonalari
 // =====================================================================
 
-Texnik koʻrish tizimlari (8-maʼruza) uchun tasvir va nuqtalar bulutiga ishlov beruvchi tayyor kutubxonalar keng qoʻllanadi (4-jadval).
+Texnik köriş tizimlari (8-maʼruza) uçun tasvir va nuqtalar bulutiga işlov beruvçi tayyor kutubxonalar keng qöllanadi (4-jadval).
 
 #figure(
   btable(
     columns: (auto, 1.5fr),
     header: ([Vosita], [Vazifasi]),
     [OpenCV],
-    [Tasvirga ishlov berishning klassik algoritmlari: filtrlash, segmentatsiya, konturlar, xarakterli nuqtalar, kamerani kalibrlash, stereo koʻrish],
+    [Tasvirga işlov berişning klassik algoritmlari: filtrlaş, segmentatsiya, konturlar, xarakterli nuqtalar, kamerani kalibrlaş, stereo köriş],
     [PCL, Open3D],
-    [3D nuqtalar bulutiga ishlov berish: filtrlash, tekisliklarni ajratish, bulutlarni moslashtirish (registratsiya)],
+    [3D nuqtalar bulutiga işlov beriş: filtrlaş, tekisliklarni ajratiş, bulutlarni moslaştiriş (registratsiya)],
     [PyTorch, TensorFlow],
-    [Neyron tarmoqlarni oʻqitish: obyektlarni aniqlash, segmentatsiya, tasniflash],
+    [Neyron tarmoqlarni öqitiş: obyektlarni aniqlaş, segmentatsiya, tasniflaş],
     [ONNX Runtime, TensorRT],
-    [Oʻqitilgan tarmoqlarni robot kompyuterida tez bajarish (inferens)],
+    [Öqitilgan tarmoqlarni robot kompyuterida tez bajariş (inferens)],
     [Kamera SDK lari, GenICam],
-    [Kameralarni sozlash va kadrlarni olishning ishlab chiqaruvchi va standart interfeyslari],
-    [Tijorat koʻrish paketlari],
-    [Sanoat sifat nazorati va robotni yoʻnaltirish uchun tayyor, sertifikatlangan vositalar],
+    [Kameralarni sozlaş va kadrlarni olişning işlab çiqaruvçi va standart interfeyslari],
+    [Tijorat köriş paketlari],
+    [Sanoat sifat nazorati va robotni yönaltiriş uçun tayyor, sertifikatlangan vositalar],
   ),
-  caption: [Texnik koʻrish dasturiy vositalari],
+  caption: [Texnik köriş dasturiy vositalari],
 ) <tab-kor>
 
-Neyron tarmoqlarga asoslangan usullar obyektlarni tanib olishda klassik algoritmlardan ancha ustun, lekin katta hajmdagi belgilangan oʻqitish maʼlumotlarini va kuchli hisoblash resurslarini (grafik protsessorlar yoki maxsus tezlatkichlar) talab qiladi. Amaliyotda ikkala yondashuv birga ishlatiladi: masalan, neyron tarmoq obyektni topadi, klassik geometrik algoritm esa uning aniq holatini hisoblaydi.
+Neyron tarmoqlarga asoslangan usullar obyektlarni tanib olişda klassik algoritmlardan ança ustun, lekin katta hajmdagi belgilangan öqitiş maʼlumotlarini va kuçli hisoblaş resurslarini (grafik protsessorlar yoki maxsus tezlatkiçlar) talab qiladi. Amaliyotda ikkala yondaşuv birga işlatiladi: masalan, neyron tarmoq obyektni topadi, klassik geometrik algoritm esa uning aniq holatini hisoblaydi.
 
 // =====================================================================
-= Modellashtirish, simulyatsiya va sanoat dasturiy vositalari
+= Modellaştiriş, simulyatsiya va sanoat dasturiy vositalari
 // =====================================================================
 
-== Modellashtirish va simulyatsiya
+== Modellaştiriş va simulyatsiya
 
-Informatsion tizim va uning algoritmlari real robotda sinashdan oldin modellashtiriladi:
-- *MATLAB / Simulink* — datchik va filtr modellarini qurish, signalga ishlov berish va boshqaruv algoritmlarini ishlab chiqish, ulardan mikrokontroller uchun kod generatsiya qilish;
-- *LabVIEW* — oʻlchash va maʼlumot yigʻish tizimlarini grafik dasturlash;
-- *robot simulyatorlari* (Gazebo, Webots, CoppeliaSim, NVIDIA Isaac Sim) — robot, uning datchiklari (kamera, LiDAR, IMU) va muhitning virtual modeli; avtonom transport uchun maxsus simulyatorlar (masalan, CARLA) ham mavjud.
+Informatsion tizim va uning algoritmlari real robotda sinaşdan oldin modellaştiriladi:
+- *MATLAB / Simulink* — datçik va filtr modellarini quriş, signalga işlov beriş va boşqaruv algoritmlarini işlab çiqiş, ulardan mikrokontroller uçun kod generatsiya qiliş;
+- *LabVIEW* — ölçaş va maʼlumot yiğiş tizimlarini grafik dasturlaş;
+- *robot simulyatorlari* (Gazebo, Webots, CoppeliaSim, NVIDIA Isaac Sim) — robot, uning datçiklari (kamera, LiDAR, IMU) va muhitning virtual modeli; avtonom transport uçun maxsus simulyatorlar (masalan, CARLA) ham mavjud.
 
-Ishlab chiqish jarayonida bosqichma-bosqich sinov qoʻllanadi: *SIL* (_Software-in-the-Loop_) bosqichida dastur simulyatsiyalangan robot va datchiklar bilan kompyuterda sinaladi; *HIL* (_Hardware-in-the-Loop_) bosqichida haqiqiy kontroller yoki drayver real vaqtda ishlaydigan virtual obyekt bilan ulanib sinaladi. Bu xavfli va qimmat sinovlarni real robotga oʻtishdan oldin bajarish imkonini beradi.
+Işlab çiqiş jarayonida bosqiçma-bosqiç sinov qöllanadi: *SIL* (_Software-in-the-Loop_) bosqiçida dastur simulyatsiyalangan robot va datçiklar bilan kompyuterda sinaladi; *HIL* (_Hardware-in-the-Loop_) bosqiçida haqiqiy kontroller yoki drayver real vaqtda işlaydigan virtual obyekt bilan ulanib sinaladi. Bu xavfli va qimmat sinovlarni real robotga ötişdan oldin bajariş imkonini beradi.
 
 == Sanoat dasturiy vositalari
 
-Sanoat robototexnik majmualarida datchiklar va robot bilan ishlash uchun quyidagi vositalar qoʻllanadi:
-- *PLC dasturlash muhitlari* — IEC 61131-3 standartidagi tillar: zinapoyasimon diagrammalar (LD), funksional bloklar (FBD), strukturalangan matn (ST), ketma-ket funksional diagrammalar (SFC);
-- *robot ishlab chiqaruvchilarining dasturlash tillari va muhitlari* — robot harakatini datchik signallari (masalan, kuch-moment datchigi yoki kamera) bilan bogʻlash uchun;
-- *datchiklarni sozlash vositalari* — IO-Link datchiklari parametrlarini oʻrnatish, intellektual datchiklar diagnostikasini koʻrish;
-- *SCADA va OPC UA* — uskunalar holatini yuqori darajada kuzatish va maʼlumotlarni korxona tizimlariga uzatish.
+Sanoat robototexnik majmualarida datçiklar va robot bilan işlaş uçun quyidagi vositalar qöllanadi:
+- *PLC dasturlaş muhitlari* — IEC 61131-3 standartidagi tillar: zinapoyasimon diagrammalar (LD), funksional bloklar (FBD), strukturalangan matn (ST), ketma-ket funksional diagrammalar (SFC);
+- *robot işlab çiqaruvçilarining dasturlaş tillari va muhitlari* — robot harakatini datçik signallari (masalan, kuç-moment datçigi yoki kamera) bilan boğlaş uçun;
+- *datçiklarni sozlaş vositalari* — IO-Link datçiklari parametrlarini örnatiş, intellektual datçiklar diagnostikasini köriş;
+- *SCADA va OPC UA* — uskunalar holatini yuqori darajada kuzatiş va maʼlumotlarni korxona tizimlariga uzatiş.
 
 // =====================================================================
-= Dasturiy taʼminot sifati, ishonchliligi va xavfsizligi
+= Dasturiy taʼminot sifati, işonçliligi va xavfsizligi
 // =====================================================================
 
-Informatsion tizim dasturidagi xato datchik nosozligi kabi xavfli boʻlishi mumkin: notoʻgʻri kalibrlash koeffitsienti yoki kechikkan maʼlumot robotning notoʻgʻri harakatiga olib keladi. Shuning uchun dasturiy taʼminotni ishlab chiqishda quyidagi tamoyillarga amal qilinadi:
-- *versiyalarni boshqarish* (Git) — har bir oʻzgarish saqlanadi va kerak boʻlsa oldingi holatga qaytish mumkin;
-- *testlash* — alohida funksiyalar (modul testlari), komponentlar birgalikda (integratsion testlar) va yozib olingan real maʼlumotlar bilan sinash;
-- *diagnostika va jurnal yuritish* — datchiklar holati, xatolar va muhim hodisalarni qayd etish, nosozlik sabablarini keyinchalik tahlil qilish;
-- *nosozlikka chidamlilik* — datchik maʼlumoti kelmasa yoki ruxsat etilgan chegaradan chiqsa, tizimni xavfsiz holatga oʻtkazish;
-- *funksional xavfsizlik* — xavfsizlik funksiyalari dasturlari IEC 61508, ISO 13849, avtomobillar uchun ISO 26262 talablariga muvofiq ishlab chiqiladi;
-- *kiberxavfsizlik* — tarmoqqa ulangan robot va datchiklarni ruxsatsiz kirishdan himoyalash, dasturiy yangilanishlarni tekshirish.
+Informatsion tizim dasturidagi xato datçik nosozligi kabi xavfli bölişi mumkin: notöğri kalibrlaş koeffitsienti yoki keçikkan maʼlumot robotning notöğri harakatiga olib keladi. Şuning uçun dasturiy taʼminotni işlab çiqişda quyidagi tamoyillarga amal qilinadi:
+- *versiyalarni boşqariş* (Git) — har bir özgariş saqlanadi va kerak bölsa oldingi holatga qaytiş mumkin;
+- *testlaş* — alohida funksiyalar (modul testlari), komponentlar birgalikda (integratsion testlar) va yozib olingan real maʼlumotlar bilan sinaş;
+- *diagnostika va jurnal yuritiş* — datçiklar holati, xatolar va muhim hodisalarni qayd etiş, nosozlik sabablarini keyinçalik tahlil qiliş;
+- *nosozlikka çidamlilik* — datçik maʼlumoti kelmasa yoki ruxsat etilgan çegaradan çiqsa, tizimni xavfsiz holatga ötkaziş;
+- *funksional xavfsizlik* — xavfsizlik funksiyalari dasturlari IEC 61508, ISO 13849, avtomobillar uçun ISO 26262 talablariga muvofiq işlab çiqiladi;
+- *kiberxavfsizlik* — tarmoqqa ulangan robot va datçiklarni ruxsatsiz kirişdan himoyalaş, dasturiy yangilanişlarni tekşiriş.
 
 // =====================================================================
 = Xulosa
 // =====================================================================
 
-Robot informatsion tizimining dasturiy taʼminoti mikrodastur, oʻrnatilgan dasturlar, operatsion tizim, oraliq dasturiy taʼminot va amaliy dasturlardan iborat koʻp darajali tuzilmadir. Quyi darajalarda qatʼiy real vaqt talablari ustun boʻladi: vazifalar RTOS yordamida rejalashtiriladi, datchik maʼlumotlari uzilishlar, DMA va apparat modullari orqali olinadi, har bir oʻlchashga vaqt belgisi qoʻyiladi.
+Robot informatsion tizimining dasturiy taʼminoti mikrodastur, örnatilgan dasturlar, operatsion tizim, oraliq dasturiy taʼminot va amaliy dasturlardan iborat köp darajali tuzilmadir. Quyi darajalarda qatʼiy real vaqt talablari ustun böladi: vazifalar RTOS yordamida rejalaştiriladi, datçik maʼlumotlari uzilişlar, DMA va apparat modullari orqali olinadi, har bir ölçaşga vaqt belgisi qöyiladi.
 
-Dasturda datchik maʼlumotlari kalibrlanadi, raqamli filtrlar bilan shovqindan tozalanadi va komplementar yoki Kalman filtrlari yordamida birlashtiriladi. ROS 2 dastur komponentlarini tugunlar va mavzular orqali bogʻlab, modulli va qayta foydalaniladigan tizim qurish imkonini beradi. Texnik koʻrish uchun OpenCV, PCL va neyron tarmoq kutubxonalari, algoritmlarni ishlab chiqish va sinash uchun MATLAB/Simulink va robot simulyatorlari qoʻllanadi. Dasturiy taʼminot sifati versiyalarni boshqarish, testlash, diagnostika va xavfsizlik standartlariga rioya qilish orqali taʼminlanadi.
+Dasturda datçik maʼlumotlari kalibrlanadi, raqamli filtrlar bilan şovqindan tozalanadi va komplementar yoki Kalman filtrlari yordamida birlaştiriladi. ROS 2 dastur komponentlarini tugunlar va mavzular orqali boğlab, modulli va qayta foydalaniladigan tizim quriş imkonini beradi. Texnik köriş uçun OpenCV, PCL va neyron tarmoq kutubxonalari, algoritmlarni işlab çiqiş va sinaş uçun MATLAB/Simulink va robot simulyatorlari qöllanadi. Dasturiy taʼminot sifati versiyalarni boşqariş, testlaş, diagnostika va xavfsizlik standartlariga rioya qiliş orqali taʼminlanadi.
 
 // =====================================================================
 = Nazorat savollari
@@ -395,16 +395,16 @@ Dasturda datchik maʼlumotlari kalibrlanadi, raqamli filtrlar bilan shovqindan t
 #block[
   #set par(first-line-indent: 0pt)
   + Robot informatsion tizimi dasturiy taʼminoti qanday darajalardan iborat?
-  + Qatʼiy va yumshoq real vaqt tizimlari qanday farqlanadi? Robotdan misollar keltiring.
-  + Kechikish va jitter nima? Ular boshqaruv sifatiga qanday taʼsir qiladi?
-  + Uchta vazifa uchun $C_1 = 0","2$ ms, $T_1 = 1$ ms; $C_2 = 1$ ms, $T_2 = 5$ ms; $C_3 = 30$ ms, $T_3 = 100$ ms boʻlsa, ular RMS chegarasini qanoatlantiradimi?
-  + Soʻrov, uzilish va DMA usullari qanday farqlanadi?
-  + Nima uchun datchik maʼlumotlariga vaqt belgisi qoʻyish kerak?
-  + Ikki nuqtali kalibrlash qanday bajariladi?
-  + Eksponensial filtrda $T_s = 2$ ms va $tau = 20$ ms boʻlsa, $alpha$ qanchaga teng?
-  + Komplementar filtr giroskop va akselerometr maʼlumotlarini qanday birlashtiradi?
-  + ROS 2 dagi tugun, mavzu, xabar va xizmat tushunchalarini tushuntiring.
-  + ROS 2 ning modulli tuzilishi qanday afzalliklar beradi?
+  + Qatʼiy va yumşoq real vaqt tizimlari qanday farqlanadi? Robotdan misollar keltiring.
+  + Keçikiş va jitter nima? Ular boşqaruv sifatiga qanday taʼsir qiladi?
+  + Uçta vazifa uçun $C_1 = 0","2$ ms, $T_1 = 1$ ms; $C_2 = 1$ ms, $T_2 = 5$ ms; $C_3 = 30$ ms, $T_3 = 100$ ms bölsa, ular RMS çegarasini qanoatlantiradimi?
+  + Sörov, uziliş va DMA usullari qanday farqlanadi?
+  + Nima uçun datçik maʼlumotlariga vaqt belgisi qöyiş kerak?
+  + Ikki nuqtali kalibrlaş qanday bajariladi?
+  + Eksponensial filtrda $T_s = 2$ ms va $tau = 20$ ms bölsa, $alpha$ qançaga teng?
+  + Komplementar filtr giroskop va akselerometr maʼlumotlarini qanday birlaştiradi?
+  + ROS 2 dagi tugun, mavzu, xabar va xizmat tuşunçalarini tuşuntiring.
+  + ROS 2 ning modulli tuzilişi qanday afzalliklar beradi?
   + SIL va HIL sinovlari qanday farqlanadi?
-  + Informatsion tizim dasturiy taʼminotining ishonchliligi qanday taʼminlanadi?
+  + Informatsion tizim dasturiy taʼminotining işonçliligi qanday taʼminlanadi?
 ]

@@ -32,7 +32,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -81,35 +81,35 @@
 #block[
   #set par(first-line-indent: 0pt)
   *Reja:*
-  + Axborot, xabar va signal tushunchalari. Axborot uzatish tizimi.
-  + Axborot miqdori va entropiya. Oʻlchash natijasida olinadigan axborot.
-  + Signal va shovqin. Kanalning oʻtkazish qobiliyati.
-  + Signallarni diskretlash va kvantlash.
-  + Axborotni kodlash.
+  + Axborot, xabar va signal tuşunçalari. Axborot uzatiş tizimi.
+  + Axborot miqdori va entropiya. Ölçaş natijasida olinadigan axborot.
+  + Signal va şovqin. Kanalning ötkaziş qobiliyati.
+  + Signallarni diskretlaş va kvantlaş.
+  + Axborotni kodlaş.
   + Mexatron modullarning asosiy turlari.
   + Robotlarning asosiy turlari va ularning informatsion qurilmalari.
 
-  *Tayanch iboralar:* axborot, xabar, signal, aloqa kanali, shovqin, bit, entropiya, axborot miqdori, signal/shovqin nisbati, oʻtkazish qobiliyati, diskretlash, kvantlash, Kotelnikov teoremasi, Grey kodi, harakat moduli, intellektual mexatron modul, sanoat roboti, servis roboti, mobil robot, manipulyator, erkinlik darajasi.
+  *Tayanç iboralar:* axborot, xabar, signal, aloqa kanali, şovqin, bit, entropiya, axborot miqdori, signal/şovqin nisbati, ötkaziş qobiliyati, diskretlaş, kvantlaş, Kotelnikov teoremasi, Grey kodi, harakat moduli, intellektual mexatron modul, sanoat roboti, servis roboti, mobil robot, manipulyator, erkinlik darajasi.
 ]
 
 // =====================================================================
-= Axborot, xabar va signal tushunchalari
+= Axborot, xabar va signal tuşunçalari
 // =====================================================================
 
-Oldingi maʼruzada robotning informatsion qurilmalari uning ichki holati va tashqi muhit haqidagi axborotni olishini koʻrdik. Bu qurilmalarni toʻgʻri loyihalash va baholash uchun avvalo «axborot» tushunchasining oʻzini aniq taʼriflash va uni miqdoriy oʻlchashni oʻrganish kerak. Bu masalalar bilan *informatsiya nazariyasi* shugʻullanadi. Uning asoslari R.~Xartli (1928) va K.~Shennon (1948) ishlarida yaratilgan, sovet olimi V.~A.~Kotelnikov esa 1933-yilda uzluksiz signallarni diskret qiymatlar orqali tiklash teoremasini isbotlagan.
+Oldingi maʼruzada robotning informatsion qurilmalari uning içki holati va taşqi muhit haqidagi axborotni olişini kördik. Bu qurilmalarni töğri loyihalaş va baholaş uçun avvalo «axborot» tuşunçasining özini aniq taʼriflaş va uni miqdoriy ölçaşni örganiş kerak. Bu masalalar bilan *informatsiya nazariyasi* şuğullanadi. Uning asoslari R.~Xartli (1928) va K.~Şennon (1948) işlarida yaratilgan, sovet olimi V.~A.~Kotelnikov esa 1933-yilda uzluksiz signallarni diskret qiymatlar orqali tiklaş teoremasini isbotlagan.
 
-*Axborot (informatsiya)* — obyekt yoki jarayon holati haqidagi, qabul qiluvchida mavjud boʻlgan noaniqlikni kamaytiradigan maʼlumot. Masalan, robot boʻgʻinining burchagi oʻlchanmaguncha u faqat maʼlum oraliqda yotishi maʼlum; oʻlchashdan soʻng bu oraliq oʻlchash xatoligi chegarasigacha torayadi. Aynan shu noaniqlikning kamayishi olingan axborot miqdorini belgilaydi.
+*Axborot (informatsiya)* — obyekt yoki jarayon holati haqidagi, qabul qiluvçida mavjud bölgan noaniqlikni kamaytiradigan maʼlumot. Masalan, robot böğinining burçagi ölçanmagunça u faqat maʼlum oraliqda yotişi maʼlum; ölçaşdan söng bu oraliq ölçaş xatoligi çegarasigaça torayadi. Aynan şu noaniqlikning kamayişi olingan axborot miqdorini belgilaydi.
 
-*Xabar* — axborotni ifodalash shakli (raqamlar, matn, tasvir, ovoz). *Signal* — xabarni uzatuvchi va saqlovchi fizik jarayon: elektr kuchlanishi, tok, yorugʻlik oqimi, tovush toʻlqini va hokazo. Bitta xabar turli signallar bilan uzatilishi mumkin: masalan, harorat qiymati termojuftning kuchlanishi, 4–20 mA tok signali yoki CAN shinasidagi raqamli kadr koʻrinishida boʻladi.
+*Xabar* — axborotni ifodalaş şakli (raqamlar, matn, tasvir, ovoz). *Signal* — xabarni uzatuvçi va saqlovçi fizik jarayon: elektr kuçlanişi, tok, yoruğlik oqimi, tovuş tölqini va hokazo. Bitta xabar turli signallar bilan uzatilişi mumkin: masalan, harorat qiymati termojuftning kuçlanişi, 4–20 mA tok signali yoki CAN şinasidagi raqamli kadr körinişida böladi.
 
-Signallar vaqt va qiymat boʻyicha quyidagicha farqlanadi:
-- *uzluksiz (analog) signal* — vaqtning istalgan paytida aniqlangan va istalgan qiymatni qabul qila oladi (potensiometr, tenzodatchik chiqishi);
+Signallar vaqt va qiymat böyiça quyidagiça farqlanadi:
+- *uzluksiz (analog) signal* — vaqtning istalgan paytida aniqlangan va istalgan qiymatni qabul qila oladi (potensiometr, tenzodatçik çiqişi);
 - *diskret signal* — faqat ayrim vaqt paytlarida aniqlangan (diskretlangan) signal;
-- *raqamli signal* — vaqt boʻyicha diskretlangan va qiymat boʻyicha kvantlangan, yaʼni chekli sondagi qiymatlarni qabul qiladigan signal (inkremental enkoder impulslari, ARO chiqishi).
+- *raqamli signal* — vaqt böyiça diskretlangan va qiymat böyiça kvantlangan, yaʼni çekli sondagi qiymatlarni qabul qiladigan signal (inkremental enkoder impulslari, ARO çiqişi).
 
-== Axborot uzatish tizimi
+== Axborot uzatiş tizimi
 
-Shennon taklif etgan umumlashgan axborot uzatish tizimi 1-rasmda keltirilgan. *Manba* xabarni hosil qiladi, *uzatgich (koder)* uni aloqa kanalida uzatishga qulay signalga aylantiradi, *kanalda* signalga shovqin qoʻshiladi, *qabul qilgich (dekoder)* esa buzilgan signaldan xabarni tiklaydi va uni *qabul qiluvchiga* yetkazadi.
+Şennon taklif etgan umumlaşgan axborot uzatiş tizimi 1-rasmda keltirilgan. *Manba* xabarni hosil qiladi, *uzatgiç (koder)* uni aloqa kanalida uzatişga qulay signalga aylantiradi, *kanalda* signalga şovqin qöşiladi, *qabul qilgiç (dekoder)* esa buzilgan signaldan xabarni tiklaydi va uni *qabul qiluvçiga* yetkazadi.
 
 #figure(
   diagram(
@@ -120,123 +120,123 @@ Shennon taklif etgan umumlashgan axborot uzatish tizimi 1-rasmda keltirilgan. *M
     node-shape: rect,
     edge-stroke: 1pt,
     node((0, 0), [Axborot \ manbai], name: <m>),
-    node((1, 0), [Uzatgich \ (koder)], name: <k>),
+    node((1, 0), [Uzatgiç \ (koder)], name: <k>),
     node((2, 0), [Aloqa \ kanali], name: <c>, fill: lightorange),
-    node((3, 0), [Qabul qilgich \ (dekoder)], name: <d>),
-    node((4, 0), [Qabul \ qiluvchi], name: <q>),
-    node((2, 1), [Shovqin \ manbai], name: <n>, fill: white),
+    node((3, 0), [Qabul qilgiç \ (dekoder)], name: <d>),
+    node((4, 0), [Qabul \ qiluvçi], name: <q>),
+    node((2, 1), [Şovqin \ manbai], name: <n>, fill: white),
     edge(<m>, <k>, "->", [xabar], label-sep: 6pt, label-side: left),
     edge(<k>, <c>, "->", [signal], label-sep: 6pt, label-side: left),
     edge(<c>, <d>, "->"),
     edge(<d>, <q>, "->", [xabar], label-sep: 6pt, label-side: left),
     edge(<n>, <c>, "->"),
   ),
-  caption: [Axborot uzatish tizimining umumlashgan sxemasi (Shennon boʻyicha)],
+  caption: [Axborot uzatiş tizimining umumlaşgan sxemasi (Şennon böyiça)],
 ) <fig-shennon>
 
-Robotning informatsion tizimi ham aynan shu sxema asosida ishlaydi. Manba — oʻlchanayotgan obyekt (boʻgʻin burchagi, toʻsiqqacha masofa), uzatgich — datchik va uning oʻlchash sxemasi, kanal — kabel, shina yoki simsiz aloqa, qabul qilgich — analog-raqamli oʻzgartkich (ARO) va signalga ishlov berish algoritmlari, qabul qiluvchi — boshqaruv tizimi. Shovqin esa har bir bosqichda — sezgir elementda, kuchaytirgichda, kabelda va ARO da — paydo boʻladi. Shuning uchun *oʻlchash* jarayonini ham axborot uzatish jarayoni sifatida koʻrish mumkin: oʻlchash vositasi obyektdan qabul qiluvchiga axborot yetkazuvchi kanaldir.
+Robotning informatsion tizimi ham aynan şu sxema asosida işlaydi. Manba — ölçanayotgan obyekt (böğin burçagi, tösiqqaça masofa), uzatgiç — datçik va uning ölçaş sxemasi, kanal — kabel, şina yoki simsiz aloqa, qabul qilgiç — analog-raqamli özgartkiç (ARO) va signalga işlov beriş algoritmlari, qabul qiluvçi — boşqaruv tizimi. Şovqin esa har bir bosqiçda — sezgir elementda, kuçaytirgiçda, kabelda va ARO da — paydo böladi. Şuning uçun *ölçaş* jarayonini ham axborot uzatiş jarayoni sifatida köriş mumkin: ölçaş vositasi obyektdan qabul qiluvçiga axborot yetkazuvçi kanaldir.
 
 // =====================================================================
 = Axborot miqdori va entropiya
 // =====================================================================
 
-== Xartli va Shennon oʻlchovlari
+== Xartli va Şennon ölçovlari
 
-Agar tizim $N$ ta teng ehtimolli holatdan birida boʻlishi mumkin boʻlsa, uning qaysi holatda ekanini bilib olishda olinadigan axborot miqdori Xartli formulasi bilan aniqlanadi:
+Agar tizim $N$ ta teng ehtimolli holatdan birida bölişi mumkin bölsa, uning qaysi holatda ekanini bilib olişda olinadigan axborot miqdori Xartli formulasi bilan aniqlanadi:
 
 #eq($ I = log_2 N. $)
 
-Axborot birligi — *bit*: ikkita teng ehtimolli holatdan birini tanlash (masalan, tanga tashlash natijasi) haqidagi axborot. Oʻyin soqqasi tashlanganda olinadigan axborot $I = log_2 6 approx 2","585$ bit. Sakkiz bit bir baytni tashkil qiladi.
+Axborot birligi — *bit*: ikkita teng ehtimolli holatdan birini tanlaş (masalan, tanga taşlaş natijasi) haqidagi axborot. Öyin soqqasi taşlanganda olinadigan axborot $I = log_2 6 approx 2","585$ bit. Sakkiz bit bir baytni taşkil qiladi.
 
-Holatlar teng ehtimolli boʻlmasa, Shennon formulasidan foydalaniladi. Tizim $i$-holatda $p_i$ ehtimollik bilan boʻlsa, bitta xabardagi oʻrtacha axborot miqdori, yaʼni *entropiya*:
+Holatlar teng ehtimolli bölmasa, Şennon formulasidan foydalaniladi. Tizim $i$-holatda $p_i$ ehtimollik bilan bölsa, bitta xabardagi örtaça axborot miqdori, yaʼni *entropiya*:
 
 #eq($ H = -sum_(i=1)^N p_i log_2 p_i. $)
 
-Entropiya tizim holati haqidagi noaniqlik oʻlchovidir. U barcha holatlar teng ehtimolli boʻlganda eng katta qiymatga ($H_max = log_2 N$) erishadi va bu holda (2) formula (1) ga aylanadi. Agar holatlardan biri aniq maʼlum boʻlsa ($p = 1$), $H = 0$: bunday xabar hech qanday yangi axborot bermaydi.
+Entropiya tizim holati haqidagi noaniqlik ölçovidir. U barça holatlar teng ehtimolli bölganda eng katta qiymatga ($H_max = log_2 N$) erişadi va bu holda (2) formula (1) ga aylanadi. Agar holatlardan biri aniq maʼlum bölsa ($p = 1$), $H = 0$: bunday xabar heç qanday yangi axborot bermaydi.
 
-*Misol.* Robotning diagnostika datchigi ikki holatni koʻrsatadi: «normal» ($p_1 = 0","9$) va «nosozlik» ($p_2 = 0","1$). Entropiya:
+*Misol.* Robotning diagnostika datçigi ikki holatni körsatadi: «normal» ($p_1 = 0","9$) va «nosozlik» ($p_2 = 0","1$). Entropiya:
 $ H = -0","9 log_2 0","9 - 0","1 log_2 0","1 approx 0","137 + 0","332 = 0","469 "bit". $
-Bu teng ehtimolli holatdagi 1 bitdan ancha kam: datchik koʻp hollarda kutilgan natijani beradi, shuning uchun uning har bir xabari oʻrtacha kam axborot olib keladi. Shu bilan birga, kamdan-kam uchraydigan «nosozlik» xabarining oʻzi katta axborot tashiydi ($-log_2 0","1 approx 3","32$ bit).
+Bu teng ehtimolli holatdagi 1 bitdan ança kam: datçik köp hollarda kutilgan natijani beradi, şuning uçun uning har bir xabari örtaça kam axborot olib keladi. Şu bilan birga, kamdan-kam uçraydigan «nosozlik» xabarining özi katta axborot taşiydi ($-log_2 0","1 approx 3","32$ bit).
 
-== Oʻlchash natijasida olinadigan axborot
+== Ölçaş natijasida olinadigan axborot
 
-Olingan axborot miqdori xabar olishdan oldingi va keyingi entropiyalar farqiga teng:
+Olingan axborot miqdori xabar olişdan oldingi va keyingi entropiyalar farqiga teng:
 
 #eq($ I = H_0 - H_1, $)
 
-bu yerda $H_0$ — oʻlchashgacha boʻlgan, $H_1$ — oʻlchashdan keyin qolgan noaniqlik. Oʻlchanayotgan kattalik $D$ diapazonda istalgan qiymatni teng ehtimol bilan qabul qilsin, oʻlchash xatoligi esa $plus.minus Delta$ chegarada boʻlsin. U holda oʻlchash diapazonni $2 Delta$ kenglikdagi farqlanadigan oraliqlarga ajratadi va bitta oʻlchashda olinadigan axborot miqdori:
+bu yerda $H_0$ — ölçaşgaça bölgan, $H_1$ — ölçaşdan keyin qolgan noaniqlik. Ölçanayotgan kattalik $D$ diapazonda istalgan qiymatni teng ehtimol bilan qabul qilsin, ölçaş xatoligi esa $plus.minus Delta$ çegarada bölsin. U holda ölçaş diapazonni $2 Delta$ kenglikdagi farqlanadigan oraliqlarga ajratadi va bitta ölçaşda olinadigan axborot miqdori:
 
 #eq($ I = log_2 D / (2 Delta). $)
 
-*Misol.* Siljish datchigining diapazoni $D = 100$ mm, xatoligi $plus.minus 0","05$ mm. Farqlanadigan holatlar soni $100 slash 0","1 = 1000$, axborot miqdori $I = log_2 1000 approx 9","97$ bit. Demak, bu datchik signalini raqamga aylantirish uchun kamida 10 razryadli ARO kerak; undan kam razryadli ARO datchik bergan axborotning bir qismini yoʻqotadi, ancha koʻp razryadli ARO esa qoʻshimcha axborot bermaydi.
+*Misol.* Siljiş datçigining diapazoni $D = 100$ mm, xatoligi $plus.minus 0","05$ mm. Farqlanadigan holatlar soni $100 slash 0","1 = 1000$, axborot miqdori $I = log_2 1000 approx 9","97$ bit. Demak, bu datçik signalini raqamga aylantiriş uçun kamida 10 razryadli ARO kerak; undan kam razryadli ARO datçik bergan axborotning bir qismini yöqotadi, ança köp razryadli ARO esa qöşimça axborot bermaydi.
 
-(4) ifoda muhim amaliy xulosaga olib keladi: oʻlchash vositasining axborot imkoniyati uning *nisbiy* aniqligi bilan belgilanadi. Xatolikni ikki marta kamaytirish bitta oʻlchashdagi axborotni atigi 1 bitga oshiradi.
+(4) ifoda muhim amaliy xulosaga olib keladi: ölçaş vositasining axborot imkoniyati uning *nisbiy* aniqligi bilan belgilanadi. Xatolikni ikki marta kamaytiriş bitta ölçaşdagi axborotni atigi 1 bitga oşiradi.
 
 // =====================================================================
-= Signal va shovqin. Kanalning oʻtkazish qobiliyati
+= Signal va şovqin. Kanalning ötkaziş qobiliyati
 // =====================================================================
 
-Real kanalda foydali signalga har doim shovqin qoʻshiladi: rezistorlarning issiqlik shovqini, kuchaytirgich shovqini, elektromagnit xalaqitlar, kvantlash shovqini. Signal sifati *signal/shovqin nisbati* (SNR) bilan baholanadi va odatda detsibellarda ifodalanadi:
+Real kanalda foydali signalga har doim şovqin qöşiladi: rezistorlarning issiqlik şovqini, kuçaytirgiç şovqini, elektromagnit xalaqitlar, kvantlaş şovqini. Signal sifati *signal/şovqin nisbati* (SNR) bilan baholanadi va odatda detsibellarda ifodalanadi:
 
 #eq($ "SNR" = 10 lg P_s / P_n = 20 lg U_s / U_n quad ["dB"], $)
 
-bu yerda $P_s, P_n$ — signal va shovqin quvvatlari, $U_s, U_n$ — ularning oʻrtacha kvadratik qiymatlari. Masalan, 60 dB signal kuchlanishi shovqinnikidan 1000 marta katta ekanini bildiradi.
+bu yerda $P_s, P_n$ — signal va şovqin quvvatlari, $U_s, U_n$ — ularning örtaça kvadratik qiymatlari. Masalan, 60 dB signal kuçlanişi şovqinnikidan 1000 marta katta ekanini bildiradi.
 
-Shennon — Xartli teoremasiga koʻra, oʻtkazish polosasi $B$ va signal/shovqin nisbati $P_s slash P_n$ boʻlgan kanal orqali xatosiz uzatilishi mumkin boʻlgan axborotning eng katta tezligi, yaʼni kanalning *oʻtkazish qobiliyati*:
+Şennon — Xartli teoremasiga köra, ötkaziş polosasi $B$ va signal/şovqin nisbati $P_s slash P_n$ bölgan kanal orqali xatosiz uzatilişi mumkin bölgan axborotning eng katta tezligi, yaʼni kanalning *ötkaziş qobiliyati*:
 
 #eq($ C = B log_2 (1 + P_s / P_n) quad ["bit/s"]. $)
 
-*Misol.* Datchik kanalining polosasi $B = 1$ kHz, SNR = 60 dB ($P_s slash P_n = 10^6$). U holda $C = 1000 dot log_2 (1 + 10^6) approx 19","9$ kbit/s. Oʻtkazish qobiliyatini polosani kengaytirish yoki shovqinni kamaytirish orqali oshirish mumkin.
+*Misol.* Datçik kanalining polosasi $B = 1$ kHz, SNR = 60 dB ($P_s slash P_n = 10^6$). U holda $C = 1000 dot log_2 (1 + 10^6) approx 19","9$ kbit/s. Ötkaziş qobiliyatini polosani kengaytiriş yoki şovqinni kamaytiriş orqali oşiriş mumkin.
 
-(6) formula datchik loyihalovchisi uchun ikki muhim xulosa beradi. Birinchidan, kuchli shovqin sharoitida signaldan olinadigan axborot cheklangan va uni hech qanday keyingi ishlov bilan oshirib boʻlmaydi — shovqinni iloji boricha manbaning oʻzida (sezgir element va birinchi kuchaytirgichda) kamaytirish kerak. Ikkinchidan, kerakli axborotni olish uchun polosa va aniqlik oʻrtasida murosaga erishish mumkin: masalan, signalni filtrlash yoki koʻp marta oʻlchab oʻrtachalash shovqinni kamaytiradi, lekin oʻlchash tezligini pasaytiradi.
+(6) formula datçik loyihalovçisi uçun ikki muhim xulosa beradi. Birinçidan, kuçli şovqin şaroitida signaldan olinadigan axborot çeklangan va uni heç qanday keyingi işlov bilan oşirib bölmaydi — şovqinni iloji boriça manbaning özida (sezgir element va birinçi kuçaytirgiçda) kamaytiriş kerak. Ikkinçidan, kerakli axborotni oliş uçun polosa va aniqlik örtasida murosaga erişiş mumkin: masalan, signalni filtrlaş yoki köp marta ölçab örtaçalaş şovqinni kamaytiradi, lekin ölçaş tezligini pasaytiradi.
 
 // =====================================================================
-= Signallarni diskretlash va kvantlash
+= Signallarni diskretlaş va kvantlaş
 // =====================================================================
 
-Zamonaviy robotlarda axborot mikrokontroller yoki kompyuterda raqamli shaklda qayta ishlanadi. Shuning uchun datchikning analog signali ARO yordamida raqamli signalga aylantiriladi. Bu ikki amalni oʻz ichiga oladi: vaqt boʻyicha *diskretlash* va qiymat boʻyicha *kvantlash*.
+Zamonaviy robotlarda axborot mikrokontroller yoki kompyuterda raqamli şaklda qayta işlanadi. Şuning uçun datçikning analog signali ARO yordamida raqamli signalga aylantiriladi. Bu ikki amalni öz içiga oladi: vaqt böyiça *diskretlaş* va qiymat böyiça *kvantlaş*.
 
-== Diskretlash. Kotelnikov teoremasi
+== Diskretlaş. Kotelnikov teoremasi
 
-Diskretlashda signal qiymatlari faqat $T_d$ qadam bilan, yaʼni $f_d = 1 slash T_d$ chastotada olinadi. Kotelnikov (Naykvist — Shennon) teoremasiga koʻra, spektri $f_max$ chastotadan yuqori tashkil etuvchilarga ega boʻlmagan uzluksiz signal uning diskret qiymatlari orqali toʻliq tiklanishi mumkin, agar diskretlash chastotasi quyidagi shartni qanoatlantirsa:
+Diskretlaşda signal qiymatlari faqat $T_d$ qadam bilan, yaʼni $f_d = 1 slash T_d$ çastotada olinadi. Kotelnikov (Naykvist — Şennon) teoremasiga köra, spektri $f_max$ çastotadan yuqori taşkil etuvçilarga ega bölmagan uzluksiz signal uning diskret qiymatlari orqali töliq tiklanişi mumkin, agar diskretlaş çastotasi quyidagi şartni qanoatlantirsa:
 
 #eq($ f_d >= 2 f_max. $)
 
-Bu shart bajarilmasa, yuqori chastotali tashkil etuvchilar past chastotali boʻlib «koʻrinadi» — bu hodisa *chastota almashinuvi* (aliasing) deb ataladi. Masalan, 900 Hz chastotali tebranish 1000 Hz chastotada diskretlansa, raqamli signalda u 100 Hz chastotali soxta tebranish sifatida namoyon boʻladi. Buning oldini olish uchun ARO oldidan $f_d slash 2$ dan yuqori chastotalarni soʻndiruvchi past chastotali filtr (antialiasing filtri) oʻrnatiladi. Amaliyotda diskretlash chastotasi $f_max$ dan 5–10 marta katta tanlanadi.
+Bu şart bajarilmasa, yuqori çastotali taşkil etuvçilar past çastotali bölib «körinadi» — bu hodisa *çastota almaşinuvi* (aliasing) deb ataladi. Masalan, 900 Hz çastotali tebraniş 1000 Hz çastotada diskretlansa, raqamli signalda u 100 Hz çastotali soxta tebraniş sifatida namoyon böladi. Buning oldini oliş uçun ARO oldidan $f_d slash 2$ dan yuqori çastotalarni söndiruvçi past çastotali filtr (antialiasing filtri) örnatiladi. Amaliyotda diskretlaş çastotasi $f_max$ dan 5–10 marta katta tanlanadi.
 
-== Kvantlash
+== Kvantlaş
 
-Kvantlashda signalning uzluksiz qiymatlari chekli sondagi sathlarga yaxlitlanadi. $N$ razryadli ARO $2^N$ ta sathga ega, uning kvantlash qadami (eng kichik razryad qiymati):
+Kvantlaşda signalning uzluksiz qiymatlari çekli sondagi sathlarga yaxlitlanadi. $N$ razryadli ARO $2^N$ ta sathga ega, uning kvantlaş qadami (eng kiçik razryad qiymati):
 
 #eq($ q = U_"max" / 2^N, $)
 
-bu yerda $U_"max"$ — ARO kirish diapazoni. Yaxlitlash natijasida $plus.minus q slash 2$ chegarada tasodifiy xatolik paydo boʻladi. U teng taqsimlangan deb hisoblansa, *kvantlash shovqinining* oʻrtacha kvadratik qiymati:
+bu yerda $U_"max"$ — ARO kiriş diapazoni. Yaxlitlaş natijasida $plus.minus q slash 2$ çegarada tasodifiy xatolik paydo böladi. U teng taqsimlangan deb hisoblansa, *kvantlaş şovqinining* örtaça kvadratik qiymati:
 
 #eq($ sigma_q = q / sqrt(12). $)
 
-Ideal ARO uchun toʻliq diapazonli sinusoidal signalda kvantlash shovqini bilan cheklangan signal/shovqin nisbati:
+Ideal ARO uçun töliq diapazonli sinusoidal signalda kvantlaş şovqini bilan çeklangan signal/şovqin nisbati:
 
 #eq($ "SNR" approx 6","02 N + 1","76 quad ["dB"]. $)
 
-*Misol.* 12 razryadli ARO, kirish diapazoni 10 V: $q = 10 slash 4096 approx 2","44$ mV, $sigma_q approx 0","70$ mV, SNR $approx 74$ dB. Har bir qoʻshimcha razryad SNR ni taxminan 6 dB ga oshiradi. Biroq real ARO ning samarali razryadlar soni datchik va sxema shovqinlari tufayli nominaldan kam boʻladi, shuning uchun datchik shovqini kvantlash qadamidan ancha katta boʻlsa, ARO razryadini oshirish foyda bermaydi — bu (4) bilan olingan xulosaga mos keladi.
+*Misol.* 12 razryadli ARO, kiriş diapazoni 10 V: $q = 10 slash 4096 approx 2","44$ mV, $sigma_q approx 0","70$ mV, SNR $approx 74$ dB. Har bir qöşimça razryad SNR ni taxminan 6 dB ga oşiradi. Biroq real ARO ning samarali razryadlar soni datçik va sxema şovqinlari tufayli nominaldan kam böladi, şuning uçun datçik şovqini kvantlaş qadamidan ança katta bölsa, ARO razryadini oşiriş foyda bermaydi — bu (4) bilan olingan xulosaga mos keladi.
 
 // =====================================================================
-= Axborotni kodlash
+= Axborotni kodlaş
 // =====================================================================
 
-*Kodlash* — xabarni maʼlum qoidaga koʻra belgilar (kod soʻzlari) ketma-ketligiga aylantirish. Raqamli datchiklar va boshqaruv tizimlarida asosan ikkilik (binar) kodlar qoʻllanadi: $n$ razryadli ikkilik kod $2^n$ ta turli qiymatni ifodalaydi.
+*Kodlaş* — xabarni maʼlum qoidaga köra belgilar (kod sözlari) ketma-ketligiga aylantiriş. Raqamli datçiklar va boşqaruv tizimlarida asosan ikkilik (binar) kodlar qöllanadi: $n$ razryadli ikkilik kod $2^n$ ta turli qiymatni ifodalaydi.
 
-Oddiy ikkilik kodning kamchiligi shundaki, qoʻshni qiymatlarga oʻtishda bir vaqtning oʻzida bir nechta razryad oʻzgarishi mumkin (masalan, $0111 -> 1000$ da toʻrttala razryad). Absolyut enkoderda kodli diskning yoʻlakchalari hech qachon mutlaqo bir vaqtda almashmaydi, shuning uchun oʻtish paytida mutlaqo notoʻgʻri qiymat oʻqilishi mumkin. Bu muammo *Grey kodi* yordamida hal qilinadi: unda qoʻshni qiymatlar faqat bitta razryad bilan farqlanadi. Ikkilik koddan Grey kodiga oʻtish quyidagicha amalga oshiriladi:
+Oddiy ikkilik kodning kamçiligi şundaki, qöşni qiymatlarga ötişda bir vaqtning özida bir neçta razryad özgarişi mumkin (masalan, $0111 -> 1000$ da törttala razryad). Absolyut enkoderda kodli diskning yölakçalari heç qaçon mutlaqo bir vaqtda almaşmaydi, şuning uçun ötiş paytida mutlaqo notöğri qiymat öqilişi mumkin. Bu muammo *Grey kodi* yordamida hal qilinadi: unda qöşni qiymatlar faqat bitta razryad bilan farqlanadi. Ikkilik koddan Grey kodiga ötiş quyidagiça amalga oşiriladi:
 
 #eq($ g_i = b_i ⊕ b_(i+1), $)
 
-bu yerda $b_i$ — ikkilik kodning $i$-razryadi, $g_i$ — Grey kodining $i$-razryadi, $⊕$ — «istisno qiluvchi YOKI» amali (eng katta razryad oʻzgarmaydi). Uch razryadli kodlar 1-jadvalda taqqoslangan.
+bu yerda $b_i$ — ikkilik kodning $i$-razryadi, $g_i$ — Grey kodining $i$-razryadi, $⊕$ — «istisno qiluvçi YOKI» amali (eng katta razryad özgarmaydi). Uç razryadli kodlar 1-jadvalda taqqoslangan.
 
 #figure(
   btable(
     columns: (auto, auto, auto),
     align: center,
-    header: ([Oʻnlik qiymat], [Ikkilik kod], [Grey kodi]),
+    header: ([Önlik qiymat], [Ikkilik kod], [Grey kodi]),
     [0],
     [000],
     [000],
@@ -262,20 +262,20 @@ bu yerda $b_i$ — ikkilik kodning $i$-razryadi, $g_i$ — Grey kodining $i$-raz
     [111],
     [100],
   ),
-  caption: [Uch razryadli ikkilik kod va Grey kodi],
+  caption: [Uç razryadli ikkilik kod va Grey kodi],
 ) <tab-grey>
 
-Aloqa kanalida yuzaga keladigan xatolarni aniqlash uchun xabarga *ortiqcha* (qoʻshimcha) razryadlar qoʻshiladi. Eng oddiy usul — juftlik biti: kod soʻzidagi birlar soni doim juft yoki toq boʻlishi uchun bitta bit qoʻshiladi. Sanoat shinalarida (masalan, robot boʻgʻinlari kontrollerlarini bogʻlovchi CAN shinasida) sikl boʻyicha ortiqcha kod (CRC) qoʻllanadi, u xatolarning juda katta qismini aniqlash imkonini beradi. Shunday qilib, ortiqchalik — entropiya nuqtai nazaridan «keraksiz» axborot — uzatishning ishonchliligini taʼminlash uchun ataylab kiritiladi.
+Aloqa kanalida yuzaga keladigan xatolarni aniqlaş uçun xabarga *ortiqça* (qöşimça) razryadlar qöşiladi. Eng oddiy usul — juftlik biti: kod sözidagi birlar soni doim juft yoki toq bölişi uçun bitta bit qöşiladi. Sanoat şinalarida (masalan, robot böğinlari kontrollerlarini boğlovçi CAN şinasida) sikl böyiça ortiqça kod (CRC) qöllanadi, u xatolarning juda katta qismini aniqlaş imkonini beradi. Şunday qilib, ortiqçalik — entropiya nuqtai nazaridan «keraksiz» axborot — uzatişning işonçliligini taʼminlaş uçun ataylab kiritiladi.
 
 // =====================================================================
 = Mexatron modullarning asosiy turlari
 // =====================================================================
 
-Avvalgi maʼruzada taʼriflanganidek, mexatron modul harakatlantiruvchi, informatsion va boshqaruv qismlarini yagona konstruksiyada birlashtiradi. Rus mexatronika maktabida (Yu.~V.~Podurayev) modullar integratsiya darajasiga koʻra uch turga ajratiladi (2-rasm):
+Avvalgi maʼruzada taʼriflanganidek, mexatron modul harakatlantiruvçi, informatsion va boşqaruv qismlarini yagona konstruksiyada birlaştiradi. Rus mexatronika maktabida (Yu.~V.~Podurayev) modullar integratsiya darajasiga köra uç turga ajratiladi (2-rasm):
 
-- *harakat moduli* — dvigatel va mexanik uzatma (reduktor, vintli uzatma) konstruktiv jihatdan birlashtirilgan qurilma. Masalan, motor-reduktor;
-- *mexatron harakat moduli* — harakat moduliga informatsion qurilmalar (enkoder, rezolver, tok va harorat datchiklari) qoʻshilgan qurilma. Masalan, oʻrnatilgan enkoderli servodvigatel;
-- *intellektual mexatron modul* — yuqoridagilarga boshqaruv kontrolleri, quvvat elektronikasi (drayver) va tarmoq interfeysi ham qoʻshilgan qurilma. U yuqori darajadagi tizimdan buyruq olib, harakatni mustaqil boshqaradi va oʻz holati haqida axborot uzatadi.
+- *harakat moduli* — dvigatel va mexanik uzatma (reduktor, vintli uzatma) konstruktiv jihatdan birlaştirilgan qurilma. Masalan, motor-reduktor;
+- *mexatron harakat moduli* — harakat moduliga informatsion qurilmalar (enkoder, rezolver, tok va harorat datçiklari) qöşilgan qurilma. Masalan, örnatilgan enkoderli servodvigatel;
+- *intellektual mexatron modul* — yuqoridagilarga boşqaruv kontrolleri, quvvat elektronikasi (drayver) va tarmoq interfeysi ham qöşilgan qurilma. U yuqori darajadagi tizimdan buyruq olib, harakatni mustaqil boşqaradi va öz holati haqida axborot uzatadi.
 
 #figure(
   diagram(
@@ -288,7 +288,7 @@ Avvalgi maʼruzada taʼriflanganidek, mexatron modul harakatlantiruvchi, informa
     node((1, 0), [*Harakat \ moduli*], fill: lightblue, name: <hm>),
     node((2, 0), [*Mexatron \ harakat moduli*], fill: lightblue, name: <mhm>),
     node((3, 0), [*Intellektual \ mexatron modul*], fill: lightorange, name: <imm>),
-    node((2, 1), [Datchiklar: \ enkoder, rezolver, \ tok, harorat], fill: white, name: <iq>),
+    node((2, 1), [Datçiklar: \ enkoder, rezolver, \ tok, harorat], fill: white, name: <iq>),
     node((3, 1), [Kontroller, \ drayver, \ interfeys], fill: white, name: <bt>),
     edge(<a>, <hm>, "->"),
     edge(<hm>, <mhm>, "->"),
@@ -296,34 +296,34 @@ Avvalgi maʼruzada taʼriflanganidek, mexatron modul harakatlantiruvchi, informa
     edge(<iq>, <mhm>, "->", [+], label-side: left),
     edge(<bt>, <imm>, "->", [+], label-side: left),
   ),
-  caption: [Mexatron modullarning integratsiya darajasi boʻyicha turlari],
+  caption: [Mexatron modullarning integratsiya darajasi böyiça turlari],
 ) <fig-modul>
 
-Integratsiya darajasi oshgan sari modulning oʻlchamlari va kabellar soni kamayadi, ishonchliligi va aniqligi ortadi, robotni yigʻish va sozlash soddalashadi. Zamonaviy kollaborativ robotlarning har bir boʻgʻini aynan intellektual mexatron modul boʻlib, uning ichida dvigatel, toʻlqinli reduktor, ikkita enkoder (dvigatel va chiqish valida), moment datchigi, tormoz va drayver joylashgan.
+Integratsiya darajasi oşgan sari modulning ölçamlari va kabellar soni kamayadi, işonçliligi va aniqligi ortadi, robotni yiğiş va sozlaş soddalaşadi. Zamonaviy kollaborativ robotlarning har bir böğini aynan intellektual mexatron modul bölib, uning içida dvigatel, tölqinli reduktor, ikkita enkoder (dvigatel va çiqiş valida), moment datçigi, tormoz va drayver joylaşgan.
 
-Harakat turi boʻyicha mexatron modullar *aylanma* va *chiziqli* turlarga boʻlinadi. Ularning keng tarqalgan misollari 2-jadvalda keltirilgan.
+Harakat turi böyiça mexatron modullar *aylanma* va *çiziqli* turlarga bölinadi. Ularning keng tarqalgan misollari 2-jadvalda keltirilgan.
 
 #figure(
   btable(
     columns: (1fr, 1.4fr, 1.2fr),
-    header: ([Modul], [Tarkibi va informatsion qurilmalari], [Qoʻllanilishi]),
+    header: ([Modul], [Tarkibi va informatsion qurilmalari], [Qöllanilişi]),
     [Servodvigatel],
-    [Sinxron dvigatel, enkoder yoki rezolver, harorat datchigi],
+    [Sinxron dvigatel, enkoder yoki rezolver, harorat datçigi],
     [Dastgohlar va robotlar yuritmalari],
     [Motor-reduktor],
-    [Dvigatel va reduktor; ixtiyoriy ravishda enkoder],
+    [Dvigatel va reduktor; ixtiyoriy ravişda enkoder],
     [Konveyerlar, mobil robotlar],
-    [Robot boʻgʻini moduli],
-    [Dvigatel, toʻlqinli reduktor, ikki enkoder, moment datchigi, tormoz, drayver],
+    [Robot böğini moduli],
+    [Dvigatel, tölqinli reduktor, ikki enkoder, moment datçigi, tormoz, drayver],
     [Kollaborativ va servis robotlari],
-    [Chiziqli modul],
-    [Dvigatel, sharikli vintli yoki tasmali uzatma, enkoder, chegara datchiklari],
-    [Dekart robotlari, 3D printerlar, yigʻish tizimlari],
-    [Chiziqli dvigatel],
-    [Uzatmasiz chiziqli dvigatel, chiziqli optik yoki magnit shkala],
-    [Yuqori tezlikli va aniq pozitsiyalash],
-    [Motor-gʻildirak],
-    [Gʻildirak ichidagi dvigatel, Xoll datchiklari, enkoder],
+    [Çiziqli modul],
+    [Dvigatel, şarikli vintli yoki tasmali uzatma, enkoder, çegara datçiklari],
+    [Dekart robotlari, 3D printerlar, yiğiş tizimlari],
+    [Çiziqli dvigatel],
+    [Uzatmasiz çiziqli dvigatel, çiziqli optik yoki magnit şkala],
+    [Yuqori tezlikli va aniq pozitsiyalaş],
+    [Motor-ğildirak],
+    [Ğildirak içidagi dvigatel, Xoll datçiklari, enkoder],
     [Mobil robotlar, elektr transport],
   ),
   caption: [Mexatron modullarning keng tarqalgan turlari],
@@ -333,106 +333,106 @@ Harakat turi boʻyicha mexatron modullar *aylanma* va *chiziqli* turlarga boʻli
 = Robotlarning asosiy turlari
 // =====================================================================
 
-Robotlar juda xilma-xil boʻlgani uchun ularni bir nechta belgi boʻyicha tasniflash qabul qilingan.
+Robotlar juda xilma-xil bölgani uçun ularni bir neçta belgi böyiça tasniflaş qabul qilingan.
 
-== Qoʻllanish sohasi boʻyicha
+== Qöllaniş sohasi böyiça
 
 ISO 8373 standarti robotlarni ikki asosiy guruhga ajratadi:
-- *sanoat robotlari* — avtomatik boshqariladigan, qayta dasturlanadigan, koʻp maqsadli, uch yoki undan ortiq oʻq boʻyicha dasturlanadigan manipulyatorlar. Ular payvandlash, boʻyash, yigʻish, yuklash-tushirish, qadoqlash ishlarida qoʻllanadi;
-- *servis robotlari* — sanoat avtomatlashtirishidan tashqari sohalarda inson yoki uskunalar uchun foydali ish bajaradigan robotlar. Ular *professional* (tibbiyot, logistika, qishloq xoʻjaligi, inspeksiya robotlari) va *maishiy* (changyutgich robotlar, oʻyinchoq robotlar) turlarga boʻlinadi.
+- *sanoat robotlari* — avtomatik boşqariladigan, qayta dasturlanadigan, köp maqsadli, uç yoki undan ortiq öq böyiça dasturlanadigan manipulyatorlar. Ular payvandlaş, böyaş, yiğiş, yuklaş-tuşiriş, qadoqlaş işlarida qöllanadi;
+- *servis robotlari* — sanoat avtomatlaştirişidan taşqari sohalarda inson yoki uskunalar uçun foydali iş bajaradigan robotlar. Ular *professional* (tibbiyot, logistika, qişloq xöjaligi, inspeksiya robotlari) va *maişiy* (çangyutgiç robotlar, öyinçoq robotlar) turlarga bölinadi.
 
-Bundan tashqari, alohida guruh sifatida ekstremal sharoitlarda ishlaydigan *maxsus robotlar* (kosmik, suv osti, harbiy, avariya-qutqaruv, yadro energetikasi robotlari) ajratiladi.
+Bundan taşqari, alohida guruh sifatida ekstremal şaroitlarda işlaydigan *maxsus robotlar* (kosmik, suv osti, harbiy, avariya-qutqaruv, yadro energetikasi robotlari) ajratiladi.
 
-== Boshqarish usuli boʻyicha
+== Boşqariş usuli böyiça
 
-Oldingi maʼruzada koʻrilgan robotlar avlodlariga mos ravishda *dasturiy*, *adaptiv* va *intellektual* robotlar farqlanadi. Inson ishtiroki darajasiga koʻra esa robotlar:
-- *masofadan boshqariladigan (teleoperatsion)* — harakatni operator real vaqtda boshqaradi (masalan, jarrohlik robotlari, suv osti apparatlari); robot operatorga kamera tasviri va kuch haqidagi axborotni qaytaradi;
-- *yarim avtonom* — operator umumiy topshiriq beradi, oddiy harakatlarni robot mustaqil bajaradi;
-- *avtonom* — topshiriqni inson aralashuvisiz, oʻz datchiklari axboroti asosida bajaradi.
+Oldingi maʼruzada körilgan robotlar avlodlariga mos ravişda *dasturiy*, *adaptiv* va *intellektual* robotlar farqlanadi. Inson iştiroki darajasiga köra esa robotlar:
+- *masofadan boşqariladigan (teleoperatsion)* — harakatni operator real vaqtda boşqaradi (masalan, jarrohlik robotlari, suv osti apparatlari); robot operatorga kamera tasviri va kuç haqidagi axborotni qaytaradi;
+- *yarim avtonom* — operator umumiy topşiriq beradi, oddiy harakatlarni robot mustaqil bajaradi;
+- *avtonom* — topşiriqni inson aralaşuvisiz, öz datçiklari axboroti asosida bajaradi.
 
-Avtonomlik darajasi qanchalik yuqori boʻlsa, robotning informatsion tizimiga qoʻyiladigan talablar shunchalik ortadi.
+Avtonomlik darajasi qançalik yuqori bölsa, robotning informatsion tizimiga qöyiladigan talablar şunçalik ortadi.
 
-== Harakatlanish usuli boʻyicha
+== Harakatlaniş usuli böyiça
 
-*Statsionar robotlar* asosi qoʻzgʻalmas boʻlib, ular asosan manipulyatorlardir. *Mobil robotlar* esa ishchi zonada harakatlanadi:
-- *gʻildirakli* — eng keng tarqalgan; avtomatik boshqariladigan aravachalar (AGV), avtonom mobil robotlar (AMR), avtonom avtomobillar;
-- *tirtilli* — notekis joylarda ishlash uchun (qutqaruv, harbiy robotlar);
-- *yuruvchi* — ikki oyoqli (gumanoid) va toʻrt oyoqli robotlar; murakkab relyefda yuqori oʻtuvchanlikka ega, lekin muvozanatni saqlash uchun murakkab informatsion tizim talab qiladi;
-- *uchuvchi* — uchuvchisiz uchish apparatlari (dronlar);
-- *suzuvchi* — suv usti va suv osti robotlari.
+*Statsionar robotlar* asosi qözğalmas bölib, ular asosan manipulyatorlardir. *Mobil robotlar* esa işçi zonada harakatlanadi:
+- *ğildirakli* — eng keng tarqalgan; avtomatik boşqariladigan aravaçalar (AGV), avtonom mobil robotlar (AMR), avtonom avtomobillar;
+- *tirtilli* — notekis joylarda işlaş uçun (qutqaruv, harbiy robotlar);
+- *yuruvçi* — ikki oyoqli (gumanoid) va tört oyoqli robotlar; murakkab relyefda yuqori ötuvçanlikka ega, lekin muvozanatni saqlaş uçun murakkab informatsion tizim talab qiladi;
+- *uçuvçi* — uçuvçisiz uçiş apparatlari (dronlar);
+- *suzuvçi* — suv usti va suv osti robotlari.
 
-Mobil platformaga manipulyator oʻrnatilgan robotlar *mobil manipulyatorlar* deb ataladi.
+Mobil platformaga manipulyator örnatilgan robotlar *mobil manipulyatorlar* deb ataladi.
 
-== Manipulyatorlarning kinematik tuzilishi
+== Manipulyatorlarning kinematik tuzilişi
 
-Manipulyatorning harakatchanligi *erkinlik darajalari soni* bilan tavsiflanadi. Fazodagi qattiq jismning holati va yoʻnalishini toʻliq belgilash uchun oltita erkinlik darajasi kerak (uchta siljish va uchta burilish). Fazoviy mexanizmning erkinlik darajalari soni Somov — Malishev formulasi bilan aniqlanadi:
+Manipulyatorning harakatçanligi *erkinlik darajalari soni* bilan tavsiflanadi. Fazodagi qattiq jismning holati va yönalişini töliq belgilaş uçun oltita erkinlik darajasi kerak (uçta siljiş va uçta buriliş). Fazoviy mexanizmning erkinlik darajalari soni Somov — Malişev formulasi bilan aniqlanadi:
 
 #eq($ W = 6n - 5p_5 - 4p_4 - 3p_3 - 2p_2 - p_1, $)
 
-bu yerda $n$ — harakatlanuvchi zvenolar soni, $p_k$ — $k$-sinf kinematik juftlar soni ($k$ — juftning harakatga qoʻyadigan cheklovlar soni). Robotlarda asosan beshinchi sinf juftlar — aylanma (R) va ilgarilanma (P) boʻgʻinlar qoʻllanadi. Masalan, oltita aylanma boʻgʻinli ketma-ket manipulyator uchun $n = 6$, $p_5 = 6$ va $W = 36 - 30 = 6$.
+bu yerda $n$ — harakatlanuvçi zvenolar soni, $p_k$ — $k$-sinf kinematik juftlar soni ($k$ — juftning harakatga qöyadigan çeklovlar soni). Robotlarda asosan beşinçi sinf juftlar — aylanma (R) va ilgarilanma (P) böğinlar qöllanadi. Masalan, oltita aylanma böğinli ketma-ket manipulyator uçun $n = 6$, $p_5 = 6$ va $W = 36 - 30 = 6$.
 
-Ketma-ket manipulyatorlarning aksariyatida dastlabki uchta boʻgʻin ishchi organning *pozitsiyasini*, oxirgi boʻgʻinlar (bilak) esa uning *yoʻnalishini* belgilaydi. Shu sababli manipulyatorlar dastlabki uchta boʻgʻinning turi boʻyicha tasniflanadi (3-jadval).
+Ketma-ket manipulyatorlarning aksariyatida dastlabki uçta böğin işçi organning *pozitsiyasini*, oxirgi böğinlar (bilak) esa uning *yönalişini* belgilaydi. Şu sababli manipulyatorlar dastlabki uçta böğinning turi böyiça tasniflanadi (3-jadval).
 
 #figure(
   btable(
     columns: (auto, auto, 0.75fr, 1.8fr),
-    header: ([Turi], [Boʻgʻinlar], [Ishchi zona], [Xususiyatlari va qoʻllanilishi]),
+    header: ([Turi], [Böğinlar], [Işçi zona], [Xususiyatlari va qöllanilişi]),
     [Dekart (portal)],
     [PPP],
-    [Toʻgʻri burchakli \ parallelepiped],
-    [Bikr, juda katta oʻlchamli boʻlishi mumkin, teskari kinematika masalasi oddiy; jihozlar robot «ichida» joylashadi. Portal tizimlari, yuklash, 3D chop etish],
+    [Töğri burçakli \ parallelepiped],
+    [Bikr, juda katta ölçamli bölişi mumkin, teskari kinematika masalasi oddiy; jihozlar robot «içida» joylaşadi. Portal tizimlari, yuklaş, 3D çop etiş],
     [Silindrik],
     [RPP],
     [Silindr],
-    [Vertikal siljish va radial chiqish; yuklash-tushirish ishlari],
+    [Vertikal siljiş va radial çiqiş; yuklaş-tuşiriş işlari],
     [Sferik],
     [RRP],
     [Sfera qismi],
-    [Burchakli manipulyatorga oʻxshash, tirsak oʻrnida teleskopik boʻgʻin],
+    [Burçakli manipulyatorga öxşaş, tirsak örnida teleskopik böğin],
     [SCARA],
     [RRP (+R)],
     [Silindr qismi],
-    [Dastlabki boʻgʻinlar yuk ogʻirligini koʻtarmaydi, juda tez; tekislikdagi yigʻish ishlari],
-    [Burchakli \ (antropomorf)],
+    [Dastlabki böğinlar yuk oğirligini kötarmaydi, juda tez; tekislikdagi yiğiş işlari],
+    [Burçakli \ (antropomorf)],
     [RRR],
     [Sfera qismi],
-    [Ishchi zonaga kam xalaqit beradi, tor joylarga kira oladi; eng universal sanoat roboti],
+    [Işçi zonaga kam xalaqit beradi, tor joylarga kira oladi; eng universal sanoat roboti],
     [Parallel (delta)],
     [Yopiq zanjir],
-    [Kichik, gumbazsimon],
-    [Yuqori bikrlik va juda katta tezlik; oziq-ovqat va farmatsevtikada saralash],
+    [Kiçik, gumbazsimon],
+    [Yuqori bikrlik va juda katta tezlik; oziq-ovqat va farmatsevtikada saralaş],
   ),
-  caption: [Manipulyatorlarning kinematik tuzilish boʻyicha turlari],
+  caption: [Manipulyatorlarning kinematik tuziliş böyiça turlari],
 ) <tab-kinematika>
 
-Ishchi zona shakli, erkinlik darajalari soni va boʻgʻinlar turi informatsion qurilmalarni tanlashga bevosita taʼsir qiladi: aylanma boʻgʻinlarda burchak datchiklari (enkoder, rezolver), ilgarilanma boʻgʻinlarda chiziqli siljish datchiklari (chiziqli shkala, magnitostriktsion datchik) qoʻllanadi. Bundan tashqari, aylanma boʻgʻinli manipulyatorda burchak xatoligi ishchi organda zveno uzunligiga proporsional ravishda kattalashadi, shuning uchun bunday robotlarga aniqroq burchak datchiklari kerak boʻladi.
+Işçi zona şakli, erkinlik darajalari soni va böğinlar turi informatsion qurilmalarni tanlaşga bevosita taʼsir qiladi: aylanma böğinlarda burçak datçiklari (enkoder, rezolver), ilgarilanma böğinlarda çiziqli siljiş datçiklari (çiziqli şkala, magnitostriktsion datçik) qöllanadi. Bundan taşqari, aylanma böğinli manipulyatorda burçak xatoligi işçi organda zveno uzunligiga proporsional ravişda kattalaşadi, şuning uçun bunday robotlarga aniqroq burçak datçiklari kerak böladi.
 
 == Robot turlari va ularning informatsion qurilmalari
 
-Turli robotlar oʻz vazifasiga koʻra turli informatsion qurilmalar majmuasi bilan jihozlanadi (4-jadval). Jadvaldan koʻrinadiki, barcha robotlarda ichki holat datchiklari (enkoderlar, inersial datchiklar) mavjud, tashqi muhit datchiklarining tarkibi esa robotning qanchalik oʻzgaruvchan muhitda ishlashiga bogʻliq.
+Turli robotlar öz vazifasiga köra turli informatsion qurilmalar majmuasi bilan jihozlanadi (4-jadval). Jadvaldan körinadiki, barça robotlarda içki holat datçiklari (enkoderlar, inersial datçiklar) mavjud, taşqi muhit datçiklarining tarkibi esa robotning qançalik özgaruvçan muhitda işlaşiga boğliq.
 
 #figure(
   btable(
     columns: (auto, 1fr, 1fr),
-    header: ([Robot turi], [Ichki holat datchiklari], [Tashqi muhit datchiklari]),
+    header: ([Robot turi], [Içki holat datçiklari], [Taşqi muhit datçiklari]),
     [Sanoat manipulyatori],
-    [Boʻgʻin enkoderlari, chegara datchiklari, dvigatel toki],
-    [Kuch-moment datchigi, kamera, xavfsizlik toʻsiqlari va yorugʻlik pardalari],
+    [Böğin enkoderlari, çegara datçiklari, dvigatel toki],
+    [Kuç-moment datçigi, kamera, xavfsizlik tösiqlari va yoruğlik pardalari],
     [Kollaborativ robot],
-    [Ikki tomonlama enkoderlar, boʻgʻin moment datchiklari],
-    [Yaqinlik datchiklari, kamera, taktil qoplama],
+    [Ikki tomonlama enkoderlar, böğin moment datçiklari],
+    [Yaqinlik datçiklari, kamera, taktil qoplama],
     [AGV / AMR],
-    [Gʻildirak enkoderlari (odometriya), IMU],
-    [Lazer skaneri (LiDAR), ultratovush datchiklari, kamera],
+    [Ğildirak enkoderlari (odometriya), IMU],
+    [Lazer skaneri (LiDAR), ultratovuş datçiklari, kamera],
     [Dron],
     [IMU (akselerometr, giroskop), magnitometr, barometr],
-    [GNSS, kamera, masofa oʻlchagich],
+    [GNSS, kamera, masofa ölçagiç],
     [Avtonom avtomobil],
-    [Gʻildirak tezligi datchiklari, IMU, rul burchagi datchigi],
-    [Kameralar, radarlar, LiDAR, ultratovush datchiklari, GNSS],
-    [Yuruvchi robot],
-    [Boʻgʻin enkoderlari, IMU, oyoq kuch datchiklari],
-    [Chuqurlik kameralari, LiDAR],
+    [Ğildirak tezligi datçiklari, IMU, rul burçagi datçigi],
+    [Kameralar, radarlar, LiDAR, ultratovuş datçiklari, GNSS],
+    [Yuruvçi robot],
+    [Böğin enkoderlari, IMU, oyoq kuç datçiklari],
+    [Çuqurlik kameralari, LiDAR],
   ),
   caption: [Robot turlari va ularning odatiy informatsion qurilmalari],
 ) <tab-robot-datchik>
@@ -441,9 +441,9 @@ Turli robotlar oʻz vazifasiga koʻra turli informatsion qurilmalar majmuasi bil
 = Xulosa
 // =====================================================================
 
-Informatsiya nazariyasi robotning informatsion qurilmalarini miqdoriy baholash uchun umumiy til beradi. Datchik — axborot kanali, uning aniqligi va shovqini esa bitta oʻlchashda qancha axborot olish mumkinligini belgilaydi. Diskretlash chastotasi Kotelnikov teoremasi asosida, ARO razryadi esa datchikning nisbiy aniqligi va shovqiniga mos tanlanishi kerak. Grey kodi va ortiqcha kodlar axborotni ishonchli oʻqish va uzatishni taʼminlaydi.
+Informatsiya nazariyasi robotning informatsion qurilmalarini miqdoriy baholaş uçun umumiy til beradi. Datçik — axborot kanali, uning aniqligi va şovqini esa bitta ölçaşda qança axborot oliş mumkinligini belgilaydi. Diskretlaş çastotasi Kotelnikov teoremasi asosida, ARO razryadi esa datçikning nisbiy aniqligi va şovqiniga mos tanlanişi kerak. Grey kodi va ortiqça kodlar axborotni işonçli öqiş va uzatişni taʼminlaydi.
 
-Mexatron modullar integratsiya darajasi boʻyicha harakat moduli, mexatron harakat moduli va intellektual mexatron modulga ajratiladi; informatsion qurilmalarning modul ichiga kiritilishi uning aniqligi va ishonchliligini oshiradi. Robotlar qoʻllanish sohasi, boshqarish usuli, harakatlanish usuli va kinematik tuzilishi boʻyicha tasniflanadi. Har bir turdagi robot oʻziga xos informatsion qurilmalar majmuasini talab qiladi va robot qanchalik avtonom boʻlsa, bu majmua shunchalik murakkab boʻladi.
+Mexatron modullar integratsiya darajasi böyiça harakat moduli, mexatron harakat moduli va intellektual mexatron modulga ajratiladi; informatsion qurilmalarning modul içiga kiritilişi uning aniqligi va işonçliligini oşiradi. Robotlar qöllaniş sohasi, boşqariş usuli, harakatlaniş usuli va kinematik tuzilişi böyiça tasniflanadi. Har bir turdagi robot öziga xos informatsion qurilmalar majmuasini talab qiladi va robot qançalik avtonom bölsa, bu majmua şunçalik murakkab böladi.
 
 // =====================================================================
 = Nazorat savollari
@@ -451,16 +451,16 @@ Mexatron modullar integratsiya darajasi boʻyicha harakat moduli, mexatron harak
 
 #block[
   #set par(first-line-indent: 0pt)
-  + Axborot, xabar va signal tushunchalarini taʼriflang.
-  + Shennon boʻyicha axborot uzatish tizimi qanday elementlardan iborat? Uni robotning oʻlchash kanaliga qanday qoʻllash mumkin?
-  + Xartli va Shennon formulalari oʻrtasidagi farq nimada? Entropiya qachon eng katta qiymatga erishadi?
-  + Diapazoni 0…360°, xatoligi $plus.minus 0","1°$ boʻlgan burchak datchigi bitta oʻlchashda qancha axborot beradi? Uning uchun necha razryadli ARO kerak?
-  + Signal/shovqin nisbati va kanalning oʻtkazish qobiliyati qanday bogʻlangan?
-  + Kotelnikov teoremasini tushuntiring. Chastota almashinuvi nima va uning oldi qanday olinadi?
-  + ARO razryadi, kvantlash qadami va kvantlash shovqini oʻrtasidagi bogʻliqlikni yozing.
-  + Absolyut enkoderlarda nima uchun Grey kodi qoʻllanadi?
+  + Axborot, xabar va signal tuşunçalarini taʼriflang.
+  + Şennon böyiça axborot uzatiş tizimi qanday elementlardan iborat? Uni robotning ölçaş kanaliga qanday qöllaş mumkin?
+  + Xartli va Şennon formulalari örtasidagi farq nimada? Entropiya qaçon eng katta qiymatga erişadi?
+  + Diapazoni 0…360°, xatoligi $plus.minus 0","1°$ bölgan burçak datçigi bitta ölçaşda qança axborot beradi? Uning uçun neça razryadli ARO kerak?
+  + Signal/şovqin nisbati va kanalning ötkaziş qobiliyati qanday boğlangan?
+  + Kotelnikov teoremasini tuşuntiring. Çastota almaşinuvi nima va uning oldi qanday olinadi?
+  + ARO razryadi, kvantlaş qadami va kvantlaş şovqini örtasidagi boğliqlikni yozing.
+  + Absolyut enkoderlarda nima uçun Grey kodi qöllanadi?
   + Harakat moduli, mexatron harakat moduli va intellektual mexatron modul qanday farqlanadi?
-  + ISO 8373 boʻyicha sanoat va servis robotlariga taʼrif bering.
-  + Manipulyatorlarning kinematik tuzilish boʻyicha turlarini sanab bering va ularning ishchi zonalarini taqqoslang.
-  + Avtonom mobil robot va sanoat manipulyatorining informatsion qurilmalari nima uchun farq qiladi?
+  + ISO 8373 böyiça sanoat va servis robotlariga taʼrif bering.
+  + Manipulyatorlarning kinematik tuziliş böyiça turlarini sanab bering va ularning işçi zonalarini taqqoslang.
+  + Avtonom mobil robot va sanoat manipulyatorining informatsion qurilmalari nima uçun farq qiladi?
 ]

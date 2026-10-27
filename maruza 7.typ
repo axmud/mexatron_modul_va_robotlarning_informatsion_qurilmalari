@@ -11,7 +11,7 @@
 #let lightorange = rgb("#fbe3cf")
 
 #set document(
-  title: "Maʼruza №7. Akustik datchiklar, sigʻim datchiklari, induktiv datchiklar va Xoll datchiklari. Intellektual datchiklar",
+  title: "Maʼruza №7. Akustik datçiklar, siğim datçiklari, induktiv datçiklar va Xoll datçiklari. Intellektual datçiklar",
 )
 #set page(
   paper: "a4",
@@ -32,7 +32,7 @@
   line(length: 100%, stroke: 0.4pt + luma(170))
 })
 // ===================
-#set text(size: 12pt, lang: "uz")
+#set text(size: 12pt, lang: "uz", font: info.font)
 #set par(justify: true, leading: 0.75em, first-line-indent: (amount: 1.25cm, all: true))
 #set heading(numbering: "1.1.")
 #show heading: set text(fill: headingblue)
@@ -72,7 +72,7 @@
   #text(
     size: 14pt,
     weight: "bold",
-  )[Mavzu: Akustik datchiklar, sigʻim datchiklari, induktiv datchiklar \ va Xoll datchiklari. Intellektual datchiklar]
+  )[Mavzu: Akustik datçiklar, siğim datçiklari, induktiv datçiklar \ va Xoll datçiklari. Intellektual datçiklar]
 ]
 
 #v(0.8em)
@@ -80,117 +80,117 @@
 #block[
   #set par(first-line-indent: 0pt)
   *Reja:*
-  + Akustik (ultratovush) datchiklar.
-  + Sigʻim datchiklari va ularning oʻlchash sxemalari.
-  + Induktiv datchiklar. Induktiv yaqinlik datchiklari.
-  + Xoll datchiklari va ularning robototexnikadagi qoʻllanilishi.
-  + Yaqinlik va masofa datchiklarini taqqoslash.
-  + Intellektual datchiklar: tuzilishi, funksiyalari va interfeyslari.
+  + Akustik (ultratovuş) datçiklar.
+  + Siğim datçiklari va ularning ölçaş sxemalari.
+  + Induktiv datçiklar. Induktiv yaqinlik datçiklari.
+  + Xoll datçiklari va ularning robototexnikadagi qöllanilişi.
+  + Yaqinlik va masofa datçiklarini taqqoslaş.
+  + Intellektual datçiklar: tuzilişi, funksiyalari va interfeyslari.
 
-  *Tayanch iboralar:* ultratovush, piezoelektrik oʻzgartirgich, aks-sado, tovush tezligi, oʻlik zona, sigʻim datchigi, differensial kondensator, RC-generator, yaqinlik datchigi, uyurma toklar, LC-kontur, ishga tushish masofasi, tuzatish koeffitsienti, Xoll kaliti, chiziqli Xoll datchigi, kommutatsiya, tok datchigi, intellektual datchik, TEDS, IO-Link, oʻz-oʻzini diagnostika.
+  *Tayanç iboralar:* ultratovuş, piezoelektrik özgartirgiç, aks-sado, tovuş tezligi, ölik zona, siğim datçigi, differensial kondensator, RC-generator, yaqinlik datçigi, uyurma toklar, LC-kontur, işga tuşiş masofasi, tuzatiş koeffitsienti, Xoll kaliti, çiziqli Xoll datçigi, kommutatsiya, tok datçigi, intellektual datçik, TEDS, IO-Link, öz-özini diagnostika.
 ]
 
 // =====================================================================
-= Akustik (ultratovush) datchiklar
+= Akustik (ultratovuş) datçiklar
 // =====================================================================
 
-*Akustik datchiklar* tovush toʻlqinlari yordamida axborot oladi. Robototexnikada ularning eng keng tarqalgan turi — chastotasi 20 kHz dan yuqori boʻlgan *ultratovush* toʻlqinlaridan foydalanadigan masofa oʻlchagichlar va yaqinlik datchiklari. Bundan tashqari, mikrofonlar ovozli buyruqlarni qabul qilish va tovush manbaini aniqlashda, akustik emissiya datchiklari esa mexanizmlardagi nosozliklarni (podshipnik yeyilishi, yoriqlar) aniqlashda qoʻllanadi.
+*Akustik datçiklar* tovuş tölqinlari yordamida axborot oladi. Robototexnikada ularning eng keng tarqalgan turi — çastotasi 20 kHz dan yuqori bölgan *ultratovuş* tölqinlaridan foydalanadigan masofa ölçagiçlar va yaqinlik datçiklari. Bundan taşqari, mikrofonlar ovozli buyruqlarni qabul qiliş va tovuş manbaini aniqlaşda, akustik emissiya datçiklari esa mexanizmlardagi nosozliklarni (podşipnik yeyilişi, yoriqlar) aniqlaşda qöllanadi.
 
-== Ishlash prinsipi
+== Işlaş prinsipi
 
-Ultratovush datchigida piezoelektrik oʻzgartirgich qisqa ultratovush impulsini (odatda 40 kHz atrofida) nurlantiradi, keyin qabul qilgich rejimiga oʻtib, obyektdan qaytgan aks-sadoni kutadi. Impuls yuborilgandan aks-sado qabul qilingunga qadar oʻtgan vaqt $t$ oʻlchanadi va masofa topiladi:
+Ultratovuş datçigida piezoelektrik özgartirgiç qisqa ultratovuş impulsini (odatda 40 kHz atrofida) nurlantiradi, keyin qabul qilgiç rejimiga ötib, obyektdan qaytgan aks-sadoni kutadi. Impuls yuborilgandan aks-sado qabul qilingunga qadar ötgan vaqt $t$ ölçanadi va masofa topiladi:
 
 #eq($ D = (v dot t) / 2, $)
 
-bu yerda $v$ — havoda tovush tezligi. Tovush tezligi harorat $T$ (°C) ga sezilarli bogʻliq:
+bu yerda $v$ — havoda tovuş tezligi. Tovuş tezligi harorat $T$ (°C) ga sezilarli boğliq:
 
 #eq($ v approx 331","3 + 0","606 dot T quad ["m/s"]. $)
 
-*Misol.* 20 °C da $v approx 343","4$ m/s. Aks-sado $t = 5","83$ ms dan keyin qaytsa, $D = 343","4 dot 0","00583 slash 2 approx 1","0$ m. Agar datchik 20 °C uchun sozlangan boʻlib, havo harorati 30 °C ($v approx 349","5$ m/s) boʻlsa, masofa taxminan 1,8 % ga kam oʻlchanadi. Shuning uchun aniq ultratovush datchiklarida harorat datchigi orqali tovush tezligi kompensatsiya qilinadi.
+*Misol.* 20 °C da $v approx 343","4$ m/s. Aks-sado $t = 5","83$ ms dan keyin qaytsa, $D = 343","4 dot 0","00583 slash 2 approx 1","0$ m. Agar datçik 20 °C uçun sozlangan bölib, havo harorati 30 °C ($v approx 349","5$ m/s) bölsa, masofa taxminan 1,8 % ga kam ölçanadi. Şuning uçun aniq ultratovuş datçiklarida harorat datçigi orqali tovuş tezligi kompensatsiya qilinadi.
 
-Ultratovush toʻlqin uzunligi:
+Ultratovuş tölqin uzunligi:
 
 #eq($ lambda = v / f. $)
 
-40 kHz uchun $lambda = 343 slash 40 000 approx 8","6$ mm. Toʻlqin uzunligidan ancha kichik obyektlar yaxshi aks ettirmaydi, toʻlqin uzunligi esa datchikning koʻndalang ruxsat qobiliyatini ham cheklaydi.
+40 kHz uçun $lambda = 343 slash 40 000 approx 8","6$ mm. Tölqin uzunligidan ança kiçik obyektlar yaxşi aks ettirmaydi, tölqin uzunligi esa datçikning köndalang ruxsat qobiliyatini ham çeklaydi.
 
-== Xususiyatlari va cheklovlari
+== Xususiyatlari va çeklovlari
 
-Ultratovush datchiklarining muhim xususiyatlari:
-- *oʻlik zona* — nurlantirgich impulsdan keyin bir muddat tebranishda davom etadi va bu vaqtda aks-sadoni qabul qila olmaydi; shuning uchun datchik juda yaqin obyektlarni (odatda bir necha santimetrgacha) koʻrmaydi;
-- *nurlanish konusi* — ultratovush keng konus (bir necha oʻn gradus) boʻylab tarqaladi; bu katta zonani qamrab olish imkonini beradi, lekin obyektning aniq yoʻnalishini aniqlashni qiyinlashtiradi;
-- *aks ettirish xususiyatlari* — silliq sirt toʻlqinni koʻzgudek aks ettiradi va qiya joylashsa, aks-sado datchikka qaytmaydi; yumshoq gʻovak materiallar (mato, porolon) tovushni yutadi;
-- *tezkorlik* — tovush sekin tarqalgani uchun oʻlchash sikli yorugʻlikka asoslangan datchiklarga qaraganda ancha uzun: 5 m masofa uchun bitta oʻlchash taxminan 30 ms davom etadi;
-- *oʻzaro xalaqit* — bir nechta ultratovush datchigi bir vaqtda ishlasa, biri ikkinchisining signalini qabul qilib qolishi mumkin; shuning uchun ular navbatma-navbat ishga tushiriladi.
+Ultratovuş datçiklarining muhim xususiyatlari:
+- *ölik zona* — nurlantirgiç impulsdan keyin bir muddat tebranişda davom etadi va bu vaqtda aks-sadoni qabul qila olmaydi; şuning uçun datçik juda yaqin obyektlarni (odatda bir neça santimetrgaça) körmaydi;
+- *nurlaniş konusi* — ultratovuş keng konus (bir neça ön gradus) böylab tarqaladi; bu katta zonani qamrab oliş imkonini beradi, lekin obyektning aniq yönalişini aniqlaşni qiyinlaştiradi;
+- *aks ettiriş xususiyatlari* — silliq sirt tölqinni közgudek aks ettiradi va qiya joylaşsa, aks-sado datçikka qaytmaydi; yumşoq ğovak materiallar (mato, porolon) tovuşni yutadi;
+- *tezkorlik* — tovuş sekin tarqalgani uçun ölçaş sikli yoruğlikka asoslangan datçiklarga qaraganda ança uzun: 5 m masofa uçun bitta ölçaş taxminan 30 ms davom etadi;
+- *özaro xalaqit* — bir neçta ultratovuş datçigi bir vaqtda işlasa, biri ikkinçisining signalini qabul qilib qolişi mumkin; şuning uçun ular navbatma-navbat işga tuşiriladi.
 
-Ultratovush datchiklari optik datchiklardan farqli ravishda obyekt rangi va shaffofligiga bogʻliq emas: shisha, shaffof plastik va suyuqlik sathini ishonchli aniqlaydi, chang va tutunda ham ishlaydi. Ular arzon va sodda boʻlgani uchun mobil robotlarda yaqin toʻsiqlarni aniqlash, avtomobillarda parkovka tizimlari va sanoatda sath oʻlchash uchun keng qoʻllanadi.
+Ultratovuş datçiklari optik datçiklardan farqli ravişda obyekt rangi va şaffofligiga boğliq emas: şişa, şaffof plastik va suyuqlik sathini işonçli aniqlaydi, çang va tutunda ham işlaydi. Ular arzon va sodda bölgani uçun mobil robotlarda yaqin tösiqlarni aniqlaş, avtomobillarda parkovka tizimlari va sanoatda sath ölçaş uçun keng qöllanadi.
 
 // =====================================================================
-= Sigʻim datchiklari va ularning oʻlchash sxemalari
+= Siğim datçiklari va ularning ölçaş sxemalari
 // =====================================================================
 
-== Sigʻim oʻzgartirgichlarning turlari
+== Siğim özgartirgiçlarning turlari
 
-Yassi kondensator sigʻimi $C = epsilon_0 epsilon_r S slash d$ (4-maʼruza) uchta parametrga bogʻliq, shunga koʻra sigʻim datchiklarining uch turi mavjud:
-- *tirqishi oʻzgaruvchan* — elektrodlar orasidagi masofa $d$ oʻzgaradi; sezgirlik yuqori, lekin tavsif nochiziqli ($C ~ 1 slash d$);
-- *yuzasi oʻzgaruvchan* — elektrodlarning ustma-ust tushgan yuzasi $S$ oʻzgaradi; tavsif chiziqli, katta siljishlarni oʻlchash mumkin (sigʻim enkoderlari, chiziqli shkalalar);
-- *dielektrigi oʻzgaruvchan* — elektrodlar orasidagi muhit $epsilon_r$ oʻzgaradi; suyuqlik va sochiluvchan materiallar sathi, namlik, metall boʻlmagan obyektlar yaqinligini aniqlash.
+Yassi kondensator siğimi $C = epsilon_0 epsilon_r S slash d$ (4-maʼruza) uçta parametrga boğliq, şunga köra siğim datçiklarining uç turi mavjud:
+- *tirqişi özgaruvçan* — elektrodlar orasidagi masofa $d$ özgaradi; sezgirlik yuqori, lekin tavsif noçiziqli ($C ~ 1 slash d$);
+- *yuzasi özgaruvçan* — elektrodlarning ustma-ust tuşgan yuzasi $S$ özgaradi; tavsif çiziqli, katta siljişlarni ölçaş mumkin (siğim enkoderlari, çiziqli şkalalar);
+- *dielektrigi özgaruvçan* — elektrodlar orasidagi muhit $epsilon_r$ özgaradi; suyuqlik va soçiluvçan materiallar sathi, namlik, metall bölmagan obyektlar yaqinligini aniqlaş.
 
-== Differensial sigʻim datchigi
+== Differensial siğim datçigi
 
-Tirqishi oʻzgaruvchan datchikning nochiziqliligini yoʻqotish uchun *differensial* sxema qoʻllanadi: harakatlanuvchi elektrod ikkita qoʻzgʻalmas elektrod oʻrtasida joylashadi. U $x$ ga siljiganda bir kondensator tirqishi kamayadi, ikkinchisiniki ortadi:
+Tirqişi özgaruvçan datçikning noçiziqliligini yöqotiş uçun *differensial* sxema qöllanadi: harakatlanuvçi elektrod ikkita qözğalmas elektrod örtasida joylaşadi. U $x$ ga siljiganda bir kondensator tirqişi kamayadi, ikkinçisiniki ortadi:
 
 #eq($ C_1 = (epsilon S) / (d - x), quad C_2 = (epsilon S) / (d + x), quad (C_1 - C_2) / (C_1 + C_2) = x / d. $)
 
-Shunday qilib, sigʻimlar ayirmasining yigʻindisiga nisbati siljishga *qatʼiy chiziqli* bogʻliq, bundan tashqari harorat va dielektrik singdiruvchanlik oʻzgarishining taʼsiri ham kamayadi. Masalan, $d = 1$ mm, $x = 0","1$ mm boʻlsa, nisbat aniq 0,1 ga teng. Aynan shu sxema MEMS akselerometr va giroskoplarda (6-maʼruza) qoʻllanadi.
+Şunday qilib, siğimlar ayirmasining yiğindisiga nisbati siljişga *qatʼiy çiziqli* boğliq, bundan taşqari harorat va dielektrik singdiruvçanlik özgarişining taʼsiri ham kamayadi. Masalan, $d = 1$ mm, $x = 0","1$ mm bölsa, nisbat aniq 0,1 ga teng. Aynan şu sxema MEMS akselerometr va giroskoplarda (6-maʼruza) qöllanadi.
 
-== Oʻlchash sxemalari
+== Ölçaş sxemalari
 
-Sigʻim datchiklarining sigʻimi va uning oʻzgarishi juda kichik (pikofaradlar va undan kam), shuning uchun maxsus sxemalar kerak:
-- *RC- yoki LC-generatorlar* — sigʻim generator chastotasini belgilaydi, chastota esa raqamli usulda oson va aniq oʻlchanadi;
-- *oʻzgaruvchan tok koʻprigi* — differensial datchiklar uchun;
-- *zaryadni koʻchirish (charge transfer) va sigma-delta oʻzgartirgichlar* — zamonaviy sigʻim oʻlchash mikrosxemalari bilvosita sigʻimni raqamga aylantiradi.
+Siğim datçiklarining siğimi va uning özgarişi juda kiçik (pikofaradlar va undan kam), şuning uçun maxsus sxemalar kerak:
+- *RC- yoki LC-generatorlar* — siğim generator çastotasini belgilaydi, çastota esa raqamli usulda oson va aniq ölçanadi;
+- *özgaruvçan tok köprigi* — differensial datçiklar uçun;
+- *zaryadni köçiriş (charge transfer) va sigma-delta özgartirgiçlar* — zamonaviy siğim ölçaş mikrosxemalari bilvosita siğimni raqamga aylantiradi.
 
-Ulovchi kabellarning parazit sigʻimi datchik sigʻimi bilan solishtirarli boʻlishi mumkin, shuning uchun oʻlchash elektronikasi datchikka iloji boricha yaqin joylashtiriladi va ekranlanadi.
+Ulovçi kabellarning parazit siğimi datçik siğimi bilan soliştirarli bölişi mumkin, şuning uçun ölçaş elektronikasi datçikka iloji boriça yaqin joylaştiriladi va ekranlanadi.
 
-== Robototexnikada qoʻllanilishi
+== Robototexnikada qöllanilişi
 
-*Sigʻim yaqinlik datchiklari* metall va metall boʻlmagan obyektlarni kontaktsiz sezadi. *Sensorli (touch) panellar* va *robotlarning sigʻim «terisi»* insonning yaqinlashishi yoki tegishini sezadi: inson tanasi elektrodlar sigʻimini oʻzgartiradi. Kollaborativ robotlarda bunday qoplama robot insonga tegishidan oldin uni sekinlashtirish imkonini beradi. Sigʻim prinsipi MEMS inersial datchiklar, bosim datchiklari va taktil matritsalarning ham asosidir.
+*Siğim yaqinlik datçiklari* metall va metall bölmagan obyektlarni kontaktsiz sezadi. *Sensorli (touch) panellar* va *robotlarning siğim «terisi»* insonning yaqinlaşişi yoki tegişini sezadi: inson tanasi elektrodlar siğimini özgartiradi. Kollaborativ robotlarda bunday qoplama robot insonga tegişidan oldin uni sekinlaştiriş imkonini beradi. Siğim prinsipi MEMS inersial datçiklar, bosim datçiklari va taktil matritsalarning ham asosidir.
 
 // =====================================================================
-= Induktiv datchiklar. Induktiv yaqinlik datchiklari
+= Induktiv datçiklar. Induktiv yaqinlik datçiklari
 // =====================================================================
 
-== Induktiv datchiklarning turlari
+== Induktiv datçiklarning turlari
 
-Induktiv datchiklar magnit maydon va elektromagnit induksiya hodisalariga asoslanadi. Ularning asosiy turlari:
-- *magnit qarshiligi oʻzgaruvchan datchiklar* — yakor siljiganda magnit zanjir tirqishi va gʻaltak induktivligi oʻzgaradi (4-maʼruza); nochiziqlilikni kamaytirish uchun differensial sxemada quriladi;
-- *transformatorli datchiklar* — LVDT va rezolverlar (5-maʼruza);
-- *uyurma tokli datchiklar* — yuqori chastotali maydon oʻtkazuvchi obyektda uyurma toklar hosil qiladi; ular gʻaltak parametrlarini oʻzgartiradi; metall obyektgacha masofa va tebranishlarni kontaktsiz, mikrometr aniqlikda oʻlchaydi;
-- *induksion datchiklar* — magnit oqim oʻzgarganda EYuK hosil qiladi; tezlik va tishli gʻildirak tishlarini sanash uchun (6-maʼruza).
+Induktiv datçiklar magnit maydon va elektromagnit induksiya hodisalariga asoslanadi. Ularning asosiy turlari:
+- *magnit qarşiligi özgaruvçan datçiklar* — yakor siljiganda magnit zanjir tirqişi va ğaltak induktivligi özgaradi (4-maʼruza); noçiziqlilikni kamaytiriş uçun differensial sxemada quriladi;
+- *transformatorli datçiklar* — LVDT va rezolverlar (5-maʼruza);
+- *uyurma tokli datçiklar* — yuqori çastotali maydon ötkazuvçi obyektda uyurma toklar hosil qiladi; ular ğaltak parametrlarini özgartiradi; metall obyektgaça masofa va tebranişlarni kontaktsiz, mikrometr aniqlikda ölçaydi;
+- *induksion datçiklar* — magnit oqim özgarganda EYuK hosil qiladi; tezlik va tişli ğildirak tişlarini sanaş uçun (6-maʼruza).
 
-== Induktiv yaqinlik datchigi
+== Induktiv yaqinlik datçigi
 
-*Induktiv yaqinlik datchigi* robototexnika va sanoat avtomatikasidagi eng koʻp ishlatiladigan diskret datchiklardan biri. U LC-generator, uning gʻaltagi joylashgan ochiq ferrit oʻzak, demodulyator, komparator (Shmitt triggeri) va chiqish kaliti (PNP yoki NPN) dan iborat. Generator gʻaltagi datchik oldida yuqori chastotali magnit maydon hosil qiladi. Rezonans chastotasi:
+*Induktiv yaqinlik datçigi* robototexnika va sanoat avtomatikasidagi eng köp işlatiladigan diskret datçiklardan biri. U LC-generator, uning ğaltagi joylaşgan oçiq ferrit özak, demodulyator, komparator (Şmitt triggeri) va çiqiş kaliti (PNP yoki NPN) dan iborat. Generator ğaltagi datçik oldida yuqori çastotali magnit maydon hosil qiladi. Rezonans çastotasi:
 
 #eq($ f_0 = 1 / (2 pi sqrt(L C)). $)
 
-Metall obyekt maydonga kirganda unda uyurma toklar hosil boʻladi va ular generator energiyasini soʻradi: tebranish amplitudasi kamayadi. Amplituda belgilangan chegaradan pastga tushganda komparator chiqish kalitini ulaydi.
+Metall obyekt maydonga kirganda unda uyurma toklar hosil böladi va ular generator energiyasini söradi: tebraniş amplitudasi kamayadi. Amplituda belgilangan çegaradan pastga tuşganda komparator çiqiş kalitini ulaydi.
 
-Datchikning pasportida koʻrsatilgan *nominal ishga tushish masofasi* $S_n$ standart poʻlat namuna uchun belgilanadi. Boshqa metallar uyurma toklarga boshqacha javob bergani uchun haqiqiy masofa kichikroq boʻladi:
+Datçikning pasportida körsatilgan *nominal işga tuşiş masofasi* $S_n$ standart pölat namuna uçun belgilanadi. Boşqa metallar uyurma toklarga boşqaça javob bergani uçun haqiqiy masofa kiçikroq böladi:
 
 #eq($ S_r = k_m dot S_n, $)
 
-bu yerda $k_m$ — material tuzatish koeffitsienti. Uning taxminiy qiymatlari 1-jadvalda keltirilgan (aniq qiymatlar datchik turiga bogʻliq va uning pasportida beriladi).
+bu yerda $k_m$ — material tuzatiş koeffitsienti. Uning taxminiy qiymatlari 1-jadvalda keltirilgan (aniq qiymatlar datçik turiga boğliq va uning pasportida beriladi).
 
 #figure(
   btable(
     columns: (1fr, auto),
     align: (left, center),
-    header: ([Obyekt materiali], [Tuzatish koeffitsienti $k_m$ (taxminan)]),
-    [Konstruksion poʻlat],
+    header: ([Obyekt materiali], [Tuzatiş koeffitsienti $k_m$ (taxminan)]),
+    [Konstruksion pölat],
     [1,0],
-    [Zanglamaydigan poʻlat],
+    [Zanglamaydigan pölat],
     [0,6…0,9],
     [Latun],
     [0,35…0,5],
@@ -199,31 +199,31 @@ bu yerda $k_m$ — material tuzatish koeffitsienti. Uning taxminiy qiymatlari 1-
     [Mis],
     [0,25…0,4],
   ),
-  caption: [Induktiv yaqinlik datchigi uchun material tuzatish koeffitsientlari],
+  caption: [Induktiv yaqinlik datçigi uçun material tuzatiş koeffitsientlari],
 ) <tab-km>
 
-*Misol.* $S_n = 8$ mm boʻlgan datchik alyuminiy detalni ($k_m approx 0","4$) taxminan $S_r approx 3","2$ mm masofadan sezadi. Datchikni oʻrnatishda bu albatta hisobga olinishi kerak. Induktiv yaqinlik datchiklari robot boʻgʻinlarining chekka va boshlangʻich holatlarini aniqlash, metall detallar mavjudligini tekshirish va tishli gʻildirak orqali tezlikni oʻlchashda qoʻllanadi. Ular kontaktsiz, chang, yogʻ va namlikka juda chidamli.
+*Misol.* $S_n = 8$ mm bölgan datçik alyuminiy detalni ($k_m approx 0","4$) taxminan $S_r approx 3","2$ mm masofadan sezadi. Datçikni örnatişda bu albatta hisobga olinişi kerak. Induktiv yaqinlik datçiklari robot böğinlarining çekka va boşlanğiç holatlarini aniqlaş, metall detallar mavjudligini tekşiriş va tişli ğildirak orqali tezlikni ölçaşda qöllanadi. Ular kontaktsiz, çang, yoğ va namlikka juda çidamli.
 
 // =====================================================================
-= Xoll datchiklari va ularning robototexnikadagi qoʻllanilishi
+= Xoll datçiklari va ularning robototexnikadagi qöllanilişi
 // =====================================================================
 
-== Xoll datchiklarining turlari
+== Xoll datçiklarining turlari
 
-Xoll effekti va Xoll kuchlanishi formulasi 4-maʼruzada koʻrildi. Xoll elementining kuchlanishi juda kichik (millivoltlar) boʻlgani uchun amaliyotda bitta kristallda Xoll elementi, kuchaytirgich, harorat kompensatsiyasi va chiqish bosqichi birlashtirilgan *integral Xoll datchiklari* qoʻllanadi. Chiqish signaliga koʻra ular ikki turga boʻlinadi:
-- *chiziqli (analog) Xoll datchiklari* — chiqish kuchlanishi magnit induksiyasiga proporsional; masofa, burchak va tokni oʻlchash uchun;
-- *Xoll kalitlari (raqamli)* — magnit induksiyasi belgilangan chegaradan oshganda chiqish holatini oʻzgartiradi. Ular gisterezisga ega: yoqilish va oʻchish induksiyalari farq qiladi. Bir qutbli kalitlar bitta qutbga, *latch* (ushlab qoluvchi) turlari esa navbatma-navbat shimoliy va janubiy qutblarga javob beradi.
+Xoll effekti va Xoll kuçlanişi formulasi 4-maʼruzada körildi. Xoll elementining kuçlanişi juda kiçik (millivoltlar) bölgani uçun amaliyotda bitta kristallda Xoll elementi, kuçaytirgiç, harorat kompensatsiyasi va çiqiş bosqiçi birlaştirilgan *integral Xoll datçiklari* qöllanadi. Çiqiş signaliga köra ular ikki turga bölinadi:
+- *çiziqli (analog) Xoll datçiklari* — çiqiş kuçlanişi magnit induksiyasiga proporsional; masofa, burçak va tokni ölçaş uçun;
+- *Xoll kalitlari (raqamli)* — magnit induksiyasi belgilangan çegaradan oşganda çiqiş holatini özgartiradi. Ular gisterezisga ega: yoqiliş va öçiş induksiyalari farq qiladi. Bir qutbli kalitlar bitta qutbga, *latch* (uşlab qoluvçi) turlari esa navbatma-navbat şimoliy va janubiy qutblarga javob beradi.
 
-== Kollektorsiz dvigatellarda rotor holatini aniqlash
+== Kollektorsiz dvigatellarda rotor holatini aniqlaş
 
-Kollektorsiz oʻzgarmas tok dvigatellarida (BLDC) chulgʻamlarni toʻgʻri navbatda ulash (kommutatsiya) uchun rotor holatini bilish kerak. Buning uchun stator ichiga elektr burchak boʻyicha 120° ga siljitilgan uchta Xoll kaliti oʻrnatiladi. Rotor magniti aylanganda ular har 60° elektr burchakda bitta razryadi oʻzgaradigan uch bitli kod hosil qiladi (2-jadval).
+Kollektorsiz özgarmas tok dvigatellarida (BLDC) çulğamlarni töğri navbatda ulaş (kommutatsiya) uçun rotor holatini biliş kerak. Buning uçun stator içiga elektr burçak böyiça 120° ga siljitilgan uçta Xoll kaliti örnatiladi. Rotor magniti aylanganda ular har 60° elektr burçakda bitta razryadi özgaradigan uç bitli kod hosil qiladi (2-jadval).
 
 #figure(
   btable(
     columns: (auto, auto, auto, auto, auto, auto, auto),
     align: center,
     header: ([Sektor], [1], [2], [3], [4], [5], [6]),
-    [Elektr burchak],
+    [Elektr burçak],
     [0…60°],
     [60…120°],
     [120…180°],
@@ -238,64 +238,64 @@ Kollektorsiz oʻzgarmas tok dvigatellarida (BLDC) chulgʻamlarni toʻgʻri navba
     [011],
     [001],
   ),
-  caption: [Uchta Xoll datchigi kodlarining ketma-ketligi (bitta yoʻnalish uchun misol)],
+  caption: [Uçta Xoll datçigi kodlarining ketma-ketligi (bitta yönaliş uçun misol)],
 ) <tab-xoll>
 
-Har bir kodga chulgʻamlarning maʼlum ulanish kombinatsiyasi mos keladi. 000 va 111 kodlari normal ishlashda hech qachon uchramaydi, shuning uchun ular paydo boʻlsa, drayver Xoll datchiklari yoki ularning ulanishi nosozligini aniqlaydi — bu oddiy, lekin samarali diagnostika usuli. Sektorlarning faza chulgʻamlariga aniq mosligi dvigatel konstruksiyasiga bogʻliq va drayver hujjatlarida beriladi.
+Har bir kodga çulğamlarning maʼlum ulaniş kombinatsiyasi mos keladi. 000 va 111 kodlari normal işlaşda heç qaçon uçramaydi, şuning uçun ular paydo bölsa, drayver Xoll datçiklari yoki ularning ulanişi nosozligini aniqlaydi — bu oddiy, lekin samarali diagnostika usuli. Sektorlarning faza çulğamlariga aniq mosligi dvigatel konstruksiyasiga boğliq va drayver hujjatlarida beriladi.
 
-== Tok va burchak datchiklari
+== Tok va burçak datçiklari
 
-*Xoll tok datchigida* oʻlchanayotgan tok oʻtkazgichi tirqishli ferromagnit oʻzak ichidan oʻtadi, Xoll elementi esa tirqishga joylashtiriladi. Tirqishdagi magnit induksiyasi tokka proporsional:
+*Xoll tok datçigida* ölçanayotgan tok ötkazgiçi tirqişli ferromagnit özak içidan ötadi, Xoll elementi esa tirqişga joylaştiriladi. Tirqişdagi magnit induksiyasi tokka proporsional:
 
 #eq($ B approx (mu_0 dot I) / delta, $)
 
-bu yerda $delta$ — tirqish uzunligi (oʻzakning magnit qarshiligi tirqishnikidan ancha kichik deb olingan). *Misol.* $delta = 2$ mm, $I = 50$ A boʻlsa, $B approx 4 pi dot 10^(-7) dot 50 slash 0","002 approx 31$ mT. Bunday datchik tok zanjiriga galvanik ulanmasdan oʻzgarmas va oʻzgaruvchan tokni oʻlchaydi. Robot drayverlarida dvigatel toki (demak, moment) shu tarzda nazorat qilinadi.
+bu yerda $delta$ — tirqiş uzunligi (özakning magnit qarşiligi tirqişnikidan ança kiçik deb olingan). *Misol.* $delta = 2$ mm, $I = 50$ A bölsa, $B approx 4 pi dot 10^(-7) dot 50 slash 0","002 approx 31$ mT. Bunday datçik tok zanjiriga galvanik ulanmasdan özgarmas va özgaruvçan tokni ölçaydi. Robot drayverlarida dvigatel toki (demak, moment) şu tarzda nazorat qilinadi.
 
-*Xoll burchak datchiklari (magnit enkoderlar)* valga oʻrnatilgan diametral magnit maydonining ikki perpendikulyar komponentini oʻlchaydi; burchak sin/cos signallar nisbatidan topiladi. Ular ixcham, kontaktsiz va ifloslanishga chidamli. Shuningdek, Xoll datchiklari kontaktsiz chegara kalitlari, joystiklar va pnevmosilindr porshenining holatini aniqlashda (porshendagi magnit orqali) keng qoʻllanadi.
+*Xoll burçak datçiklari (magnit enkoderlar)* valga örnatilgan diametral magnit maydonining ikki perpendikulyar komponentini ölçaydi; burçak sin/cos signallar nisbatidan topiladi. Ular ixçam, kontaktsiz va ifloslanişga çidamli. Şuningdek, Xoll datçiklari kontaktsiz çegara kalitlari, joystiklar va pnevmosilindr porşenining holatini aniqlaşda (porşendagi magnit orqali) keng qöllanadi.
 
-Xoll datchiklariga yaqin vazifalarni *magnitorezistiv* datchiklar ham bajaradi: ularda magnit maydon taʼsirida qarshilik oʻzgaradi. Ular sezgirroq va magnit enkoderlar hamda elektron kompaslarda (magnitometrlarda) qoʻllanadi.
+Xoll datçiklariga yaqin vazifalarni *magnitorezistiv* datçiklar ham bajaradi: ularda magnit maydon taʼsirida qarşilik özgaradi. Ular sezgirroq va magnit enkoderlar hamda elektron kompaslarda (magnitometrlarda) qöllanadi.
 
 // =====================================================================
-= Yaqinlik va masofa datchiklarini taqqoslash
+= Yaqinlik va masofa datçiklarini taqqoslaş
 // =====================================================================
 
-Koʻrib chiqilgan datchiklar va optik datchiklar (6-maʼruza) robotlarda obyekt yaqinligi va masofasini aniqlashda bir-birini toʻldiradi. Ularning asosiy xususiyatlari 3-jadvalda taqqoslangan.
+Körib çiqilgan datçiklar va optik datçiklar (6-maʼruza) robotlarda obyekt yaqinligi va masofasini aniqlaşda bir-birini töldiradi. Ularning asosiy xususiyatlari 3-jadvalda taqqoslangan.
 
 #figure(
   btable(
     columns: (auto, 1fr, 1fr, 1fr),
-    header: ([Datchik], [Sezadigan obyektlar], [Afzalligi], [Cheklovi]),
+    header: ([Datçik], [Sezadigan obyektlar], [Afzalligi], [Çeklovi]),
     [Induktiv],
     [Faqat metallar],
-    [Juda chidamli, ifloslanishga sezgir emas],
-    [Kichik masofa, material taʼsir qiladi],
-    [Sigʻim],
-    [Deyarli barcha materiallar, suyuqliklar],
-    [Metall boʻlmagan obyektlar, devor orqali sath],
-    [Namlik va ifloslanishga sezgir],
+    [Juda çidamli, ifloslanişga sezgir emas],
+    [Kiçik masofa, material taʼsir qiladi],
+    [Siğim],
+    [Deyarli barça materiallar, suyuqliklar],
+    [Metall bölmagan obyektlar, devor orqali sath],
+    [Namlik va ifloslanişga sezgir],
     [Xoll],
     [Magnitlar],
-    [Kontaktsiz holat va tok, ixcham],
-    [Obyektda magnit boʻlishi kerak],
-    [Ultratovush],
-    [Tovushni aks ettiruvchi obyektlar],
-    [Rang va shaffoflikka bogʻliq emas, arzon],
-    [Sekin, keng konus, oʻlik zona],
+    [Kontaktsiz holat va tok, ixçam],
+    [Obyektda magnit bölişi kerak],
+    [Ultratovuş],
+    [Tovuşni aks ettiruvçi obyektlar],
+    [Rang va şaffoflikka boğliq emas, arzon],
+    [Sekin, keng konus, ölik zona],
     [Optik],
-    [Yorugʻlikni aks ettiruvchi yoki toʻsuvchi obyektlar],
+    [Yoruğlikni aks ettiruvçi yoki tösuvçi obyektlar],
     [Katta masofa, tezkor, aniq],
-    [Shaffof va qora obyektlar, chang],
+    [Şaffof va qora obyektlar, çang],
   ),
-  caption: [Yaqinlik va masofa datchiklarini taqqoslash],
+  caption: [Yaqinlik va masofa datçiklarini taqqoslaş],
 ) <tab-taqqos>
 
 // =====================================================================
-= Intellektual datchiklar: tuzilishi, funksiyalari va interfeyslari
+= Intellektual datçiklar: tuzilişi, funksiyalari va interfeyslari
 // =====================================================================
 
-== Tuzilishi
+== Tuzilişi
 
-*Intellektual (smart) datchik* — birlamchi oʻzgartirgich, signalga ishlov berish sxemasi, analog-raqamli oʻzgartirgich, mikroprotsessor, xotira va raqamli aloqa interfeysi bitta qurilmada birlashtirilgan datchik (1-rasm). U faqat oʻlchab qolmay, natijani qayta ishlaydi, oʻzining holatini nazorat qiladi va boshqaruv tizimi bilan raqamli tarmoq orqali muloqot qiladi.
+*Intellektual (smart) datçik* — birlamçi özgartirgiç, signalga işlov beriş sxemasi, analog-raqamli özgartirgiç, mikroprotsessor, xotira va raqamli aloqa interfeysi bitta qurilmada birlaştirilgan datçik (1-rasm). U faqat ölçab qolmay, natijani qayta işlaydi, özining holatini nazorat qiladi va boşqaruv tizimi bilan raqamli tarmoq orqali muloqot qiladi.
 
 #figure(
   diagram(
@@ -310,9 +310,9 @@ Koʻrib chiqilgan datchiklar va optik datchiklar (6-maʼruza) robotlarda obyekt 
     node((2, 0), [ARO], name: <aro>),
     node((3, 0), [Mikro- \ protsessor], fill: lightorange, name: <mp>),
     node((4, 0), [Raqamli \ interfeys], name: <if>),
-    node((1, 1), [Harorat \ datchigi], fill: white, name: <td>),
-    node((3, 1), [Xotira: kalibrlash, \ TEDS, jurnal], fill: white, name: <xt>),
-    node((4.6, 1), [Boshqaruv \ tizimi], fill: white, name: <bt>),
+    node((1, 1), [Harorat \ datçigi], fill: white, name: <td>),
+    node((3, 1), [Xotira: kalibrlaş, \ TEDS, jurnal], fill: white, name: <xt>),
+    node((4.6, 1), [Boşqaruv \ tizimi], fill: white, name: <bt>),
     edge(<se>, <aq>, "->"),
     edge(<aq>, <aro>, "->"),
     edge(<aro>, <mp>, "->"),
@@ -321,46 +321,46 @@ Koʻrib chiqilgan datchiklar va optik datchiklar (6-maʼruza) robotlarda obyekt 
     edge(<xt>, <mp>, "<->"),
     edge(<if>, <bt>, "<->"),
   ),
-  caption: [Intellektual datchikning tuzilishi],
+  caption: [Intellektual datçikning tuzilişi],
 ) <fig-smart>
 
 == Funksiyalari
 
-Intellektual datchik quyidagi funksiyalarni bajaradi:
-- *raqamli kalibrlash va chiziqlashtirish* — xotiradagi kalibrlash koeffitsientlari yordamida nochiziqli tavsifni tuzatish;
-- *harorat kompensatsiyasi* — ichki harorat datchigi orqali nol siljishi va sezgirlikning haroratga bogʻliqligini tuzatish;
-- *raqamli filtrlash va oʻrtachalash* — shovqinni kamaytirish;
-- *oʻlchov birliklariga oʻtkazish* — natijani bevosita fizik birliklarda (°C, bar, mm) berish;
-- *chegaraviy qiymatlarni nazorat qilish* — chegaradan chiqilganda signal berish;
-- *oʻz-oʻzini diagnostika qilish* — sezgir element uzilishi yoki qisqa tutashuvi, taʼminot buzilishi, ifloslanish, ish resursi tugashini aniqlash;
-- *identifikatsiya* — ishlab chiqaruvchi, model, seriya raqami va kalibrlash maʼlumotlarini xotirada saqlash (masalan, IEEE 1451 standartidagi TEDS — _Transducer Electronic Data Sheet_ — elektron pasport);
-- *parametrlash* — oʻlchash diapazoni, filtr, chegaralar kabi sozlamalarni masofadan oʻzgartirish.
+Intellektual datçik quyidagi funksiyalarni bajaradi:
+- *raqamli kalibrlaş va çiziqlaştiriş* — xotiradagi kalibrlaş koeffitsientlari yordamida noçiziqli tavsifni tuzatiş;
+- *harorat kompensatsiyasi* — içki harorat datçigi orqali nol siljişi va sezgirlikning haroratga boğliqligini tuzatiş;
+- *raqamli filtrlaş va örtaçalaş* — şovqinni kamaytiriş;
+- *ölçov birliklariga ötkaziş* — natijani bevosita fizik birliklarda (°C, bar, mm) beriş;
+- *çegaraviy qiymatlarni nazorat qiliş* — çegaradan çiqilganda signal beriş;
+- *öz-özini diagnostika qiliş* — sezgir element uzilişi yoki qisqa tutaşuvi, taʼminot buzilişi, ifloslaniş, iş resursi tugaşini aniqlaş;
+- *identifikatsiya* — işlab çiqaruvçi, model, seriya raqami va kalibrlaş maʼlumotlarini xotirada saqlaş (masalan, IEEE 1451 standartidagi TEDS — _Transducer Electronic Data Sheet_ — elektron pasport);
+- *parametrlaş* — ölçaş diapazoni, filtr, çegaralar kabi sozlamalarni masofadan özgartiriş.
 
-Raqamli kalibrlashda chiqish signali $y$ va ichki harorat $T$ boʻyicha oʻlchanayotgan kattalikning bahosi koʻpincha ikki oʻzgaruvchili polinom bilan hisoblanadi:
+Raqamli kalibrlaşda çiqiş signali $y$ va içki harorat $T$ böyiça ölçanayotgan kattalikning bahosi köpinça ikki özgaruvçili polinom bilan hisoblanadi:
 
 #eq($ hat(x) = sum_(i=0)^n sum_(j=0)^m a_(i j) dot y^i dot T^j, $)
 
-bu yerda $a_(i j)$ — har bir datchik uchun ishlab chiqarishda alohida aniqlanib, uning xotirasiga yozilgan kalibrlash koeffitsientlari. Shu tufayli arzon, lekin nochiziqli va haroratga sezgir sezgir element bilan ham yuqori aniqlikka erishiladi.
+bu yerda $a_(i j)$ — har bir datçik uçun işlab çiqarişda alohida aniqlanib, uning xotirasiga yozilgan kalibrlaş koeffitsientlari. Şu tufayli arzon, lekin noçiziqli va haroratga sezgir sezgir element bilan ham yuqori aniqlikka erişiladi.
 
 == Interfeyslar
 
-Intellektual datchiklar boshqaruv tizimiga raqamli interfeyslar orqali ulanadi:
-- *I²C va SPI* — plata ichidagi qisqa masofali aloqa; MEMS akselerometrlar, giroskoplar, magnitometrlar, harorat va bosim datchiklari;
-- *IO-Link* (IEC 61131-9) — datchik va boshqaruv tizimi orasidagi «nuqta-nuqta» raqamli aloqa; oddiy ekranlanmagan uch simli kabel orqali (20 m gacha) oʻlchash natijasi, parametrlar va diagnostika uzatiladi;
-- *CAN, EtherCAT, PROFINET* kabi sanoat tarmoqlari — robot boʻgʻinlari, enkoderlar va kuch-moment datchiklarini real vaqtda ulash;
-- *SSI, BiSS, EnDat* — enkoderlar uchun maxsus ketma-ket interfeyslar (5-maʼruza).
+Intellektual datçiklar boşqaruv tizimiga raqamli interfeyslar orqali ulanadi:
+- *I²C va SPI* — plata içidagi qisqa masofali aloqa; MEMS akselerometrlar, giroskoplar, magnitometrlar, harorat va bosim datçiklari;
+- *IO-Link* (IEC 61131-9) — datçik va boşqaruv tizimi orasidagi «nuqta-nuqta» raqamli aloqa; oddiy ekranlanmagan uç simli kabel orqali (20 m gaça) ölçaş natijasi, parametrlar va diagnostika uzatiladi;
+- *CAN, EtherCAT, PROFINET* kabi sanoat tarmoqlari — robot böğinlari, enkoderlar va kuç-moment datçiklarini real vaqtda ulaş;
+- *SSI, BiSS, EnDat* — enkoderlar uçun maxsus ketma-ket interfeyslar (5-maʼruza).
 
 == Afzalliklari
 
-Anʼanaviy analog datchiklarga nisbatan intellektual datchiklar quyidagi afzalliklarga ega: yuqori aniqlik (raqamli kalibrlash va kompensatsiya tufayli), uzatishda xalaqitga chidamlilik, kabellar sonining kamayishi (bir nechta datchik bitta tarmoqqa ulanadi), oʻrnatish va almashtirishning soddaligi (parametrlar avtomatik yuklanadi), nosozliklarni oldindan aniqlash va bashorat qilish imkoniyati. Bu Sanoat 4.0 konsepsiyasidagi uskunalarni uzluksiz kuzatish va bashoratli texnik xizmat koʻrsatishning asosidir. Kamchiliklari — narxning yuqoriligi va qoʻshimcha kechikish (raqamli ishlov va uzatish vaqti), bu tez boshqaruv konturlarida hisobga olinishi kerak.
+Anʼanaviy analog datçiklarga nisbatan intellektual datçiklar quyidagi afzalliklarga ega: yuqori aniqlik (raqamli kalibrlaş va kompensatsiya tufayli), uzatişda xalaqitga çidamlilik, kabellar sonining kamayişi (bir neçta datçik bitta tarmoqqa ulanadi), örnatiş va almaştirişning soddaligi (parametrlar avtomatik yuklanadi), nosozliklarni oldindan aniqlaş va başorat qiliş imkoniyati. Bu Sanoat 4.0 konsepsiyasidagi uskunalarni uzluksiz kuzatiş va başoratli texnik xizmat körsatişning asosidir. Kamçiliklari — narxning yuqoriligi va qöşimça keçikiş (raqamli işlov va uzatiş vaqti), bu tez boşqaruv konturlarida hisobga olinişi kerak.
 
 // =====================================================================
 = Xulosa
 // =====================================================================
 
-Ultratovush datchiklari aks-sado vaqti boʻyicha masofani oʻlchaydi; ular obyekt rangi va shaffofligiga bogʻliq emas, lekin tovush tezligining haroratga bogʻliqligi, oʻlik zona va sekinlik ularning cheklovlaridir. Sigʻim datchiklari tirqish, yuza yoki dielektrik oʻzgarishiga asoslanadi; differensial sxema ularning tavsifini chiziqli qiladi. Induktiv yaqinlik datchiklari uyurma toklar hisobiga metall obyektlarni sezadi, ularning ishga tushish masofasi obyekt materialiga bogʻliq. Xoll datchiklari kollektorsiz dvigatellarda rotor holatini aniqlash, tokni galvanik ajratilgan holda oʻlchash va kontaktsiz burchak datchiklarida keng qoʻllanadi.
+Ultratovuş datçiklari aks-sado vaqti böyiça masofani ölçaydi; ular obyekt rangi va şaffofligiga boğliq emas, lekin tovuş tezligining haroratga boğliqligi, ölik zona va sekinlik ularning çeklovlaridir. Siğim datçiklari tirqiş, yuza yoki dielektrik özgarişiga asoslanadi; differensial sxema ularning tavsifini çiziqli qiladi. Induktiv yaqinlik datçiklari uyurma toklar hisobiga metall obyektlarni sezadi, ularning işga tuşiş masofasi obyekt materialiga boğliq. Xoll datçiklari kollektorsiz dvigatellarda rotor holatini aniqlaş, tokni galvanik ajratilgan holda ölçaş va kontaktsiz burçak datçiklarida keng qöllanadi.
 
-Intellektual datchiklar oʻlchash, raqamli kalibrlash, kompensatsiya, filtrlash, diagnostika va raqamli aloqani bitta qurilmada birlashtiradi. Ular zamonaviy robotlarning informatsion tizimini soddaroq, aniqroq va ishonchliroq qiladi.
+Intellektual datçiklar ölçaş, raqamli kalibrlaş, kompensatsiya, filtrlaş, diagnostika va raqamli aloqani bitta qurilmada birlaştiradi. Ular zamonaviy robotlarning informatsion tizimini soddaroq, aniqroq va işonçliroq qiladi.
 
 // =====================================================================
 = Nazorat savollari
@@ -368,17 +368,17 @@ Intellektual datchiklar oʻlchash, raqamli kalibrlash, kompensatsiya, filtrlash,
 
 #block[
   #set par(first-line-indent: 0pt)
-  + Ultratovush datchigi qanday prinsipda masofani oʻlchaydi?
-  + Nima uchun ultratovush datchigida harorat kompensatsiyasi kerak? 0 °C da $t = 10$ ms aks-sado qanday masofaga mos keladi?
-  + Ultratovush datchigining oʻlik zonasi va nurlanish konusi nimani anglatadi?
-  + Sigʻim datchiklarining qanday turlari bor? Ularning tavsiflari qanday farqlanadi?
-  + Differensial sigʻim datchigi nima uchun chiziqli tavsifga ega?
-  + Sigʻim datchiklarida parazit sigʻimning taʼsiri qanday kamaytiriladi?
-  + Induktiv yaqinlik datchigi qanday ishlaydi?
-  + $S_n = 10$ mm boʻlgan induktiv datchik mis detalni ($k_m = 0","3$) qanday masofadan sezadi?
-  + Chiziqli Xoll datchigi va Xoll kaliti qanday farqlanadi?
-  + BLDC dvigatelda uchta Xoll datchigi qanday vazifani bajaradi? 000 kodi nimani bildiradi?
-  + Xoll tok datchigining afzalligi nimada?
-  + Intellektual datchik qanday qismlardan iborat va qanday funksiyalarni bajaradi?
+  + Ultratovuş datçigi qanday prinsipda masofani ölçaydi?
+  + Nima uçun ultratovuş datçigida harorat kompensatsiyasi kerak? 0 °C da $t = 10$ ms aks-sado qanday masofaga mos keladi?
+  + Ultratovuş datçigining ölik zonasi va nurlaniş konusi nimani anglatadi?
+  + Siğim datçiklarining qanday turlari bor? Ularning tavsiflari qanday farqlanadi?
+  + Differensial siğim datçigi nima uçun çiziqli tavsifga ega?
+  + Siğim datçiklarida parazit siğimning taʼsiri qanday kamaytiriladi?
+  + Induktiv yaqinlik datçigi qanday işlaydi?
+  + $S_n = 10$ mm bölgan induktiv datçik mis detalni ($k_m = 0","3$) qanday masofadan sezadi?
+  + Çiziqli Xoll datçigi va Xoll kaliti qanday farqlanadi?
+  + BLDC dvigatelda uçta Xoll datçigi qanday vazifani bajaradi? 000 kodi nimani bildiradi?
+  + Xoll tok datçigining afzalligi nimada?
+  + Intellektual datçik qanday qismlardan iborat va qanday funksiyalarni bajaradi?
   + IO-Link interfeysining afzalliklari nimada?
 ]
