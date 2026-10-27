@@ -73,7 +73,7 @@
   #text(
     size: 14pt,
     weight: "bold",
-  )[Informatsiya nazariyasidan umumiy maʼlumotlar. \ Mexatron modullar va robotlarning asosiy turlari]
+  )[Mavzu: Informatsiya nazariyasidan umumiy maʼlumotlar. \ Mexatron modullar va robotlarning asosiy turlari]
 ]
 
 #v(0.8em)
@@ -198,7 +198,7 @@ Zamonaviy robotlarda axborot mikrokontroller yoki kompyuterda raqamli shaklda qa
 
 == Diskretlash. Kotelnikov teoremasi
 
-Diskretlashda signal qiymatlari faqat $T_d$ qadam bilan, yaʼni $f_d = 1 slash T_d$ chastotada olinadi. Kotelnikov (Naykvist — Shennon) teoremasiga koʻra, spektri $f_max$ chastotadan yuqori tashkil etuvchilarga ega boʻlmagan uzluksiz signal uning diskret qiymatlari orqali toʻliq tiklanishi mumkin, agar diskretlash chastotasi quyidagi shartni qanoatlantirsa [1]:
+Diskretlashda signal qiymatlari faqat $T_d$ qadam bilan, yaʼni $f_d = 1 slash T_d$ chastotada olinadi. Kotelnikov (Naykvist — Shennon) teoremasiga koʻra, spektri $f_max$ chastotadan yuqori tashkil etuvchilarga ega boʻlmagan uzluksiz signal uning diskret qiymatlari orqali toʻliq tiklanishi mumkin, agar diskretlash chastotasi quyidagi shartni qanoatlantirsa:
 
 #eq($ f_d >= 2 f_max. $)
 
@@ -226,7 +226,7 @@ Ideal ARO uchun toʻliq diapazonli sinusoidal signalda kvantlash shovqini bilan 
 
 *Kodlash* — xabarni maʼlum qoidaga koʻra belgilar (kod soʻzlari) ketma-ketligiga aylantirish. Raqamli datchiklar va boshqaruv tizimlarida asosan ikkilik (binar) kodlar qoʻllanadi: $n$ razryadli ikkilik kod $2^n$ ta turli qiymatni ifodalaydi.
 
-Oddiy ikkilik kodning kamchiligi shundaki, qoʻshni qiymatlarga oʻtishda bir vaqtning oʻzida bir nechta razryad oʻzgarishi mumkin (masalan, $0111 -> 1000$ da toʻrttala razryad). Absolyut enkoderda kodli diskning yoʻlakchalari hech qachon mutlaqo bir vaqtda almashmaydi, shuning uchun oʻtish paytida mutlaqo notoʻgʻri qiymat oʻqilishi mumkin. Bu muammo *Grey kodi* yordamida hal qilinadi: unda qoʻshni qiymatlar faqat bitta razryad bilan farqlanadi [1]. Ikkilik koddan Grey kodiga oʻtish quyidagicha amalga oshiriladi:
+Oddiy ikkilik kodning kamchiligi shundaki, qoʻshni qiymatlarga oʻtishda bir vaqtning oʻzida bir nechta razryad oʻzgarishi mumkin (masalan, $0111 -> 1000$ da toʻrttala razryad). Absolyut enkoderda kodli diskning yoʻlakchalari hech qachon mutlaqo bir vaqtda almashmaydi, shuning uchun oʻtish paytida mutlaqo notoʻgʻri qiymat oʻqilishi mumkin. Bu muammo *Grey kodi* yordamida hal qilinadi: unda qoʻshni qiymatlar faqat bitta razryad bilan farqlanadi. Ikkilik koddan Grey kodiga oʻtish quyidagicha amalga oshiriladi:
 
 #eq($ g_i = b_i ⊕ b_(i+1), $)
 
@@ -271,7 +271,7 @@ Aloqa kanalida yuzaga keladigan xatolarni aniqlash uchun xabarga *ortiqcha* (qo�
 = Mexatron modullarning asosiy turlari
 // =====================================================================
 
-Avvalgi maʼruzada taʼriflanganidek, mexatron modul harakatlantiruvchi, informatsion va boshqaruv qismlarini yagona konstruksiyada birlashtiradi. Rus mexatronika maktabida (Yu.~V.~Podurayev) modullar integratsiya darajasiga koʻra uch turga ajratiladi [8] (2-rasm):
+Avvalgi maʼruzada taʼriflanganidek, mexatron modul harakatlantiruvchi, informatsion va boshqaruv qismlarini yagona konstruksiyada birlashtiradi. Rus mexatronika maktabida (Yu.~V.~Podurayev) modullar integratsiya darajasiga koʻra uch turga ajratiladi (2-rasm):
 
 - *harakat moduli* — dvigatel va mexanik uzatma (reduktor, vintli uzatma) konstruktiv jihatdan birlashtirilgan qurilma. Masalan, motor-reduktor;
 - *mexatron harakat moduli* — harakat moduliga informatsion qurilmalar (enkoder, rezolver, tok va harorat datchiklari) qoʻshilgan qurilma. Masalan, oʻrnatilgan enkoderli servodvigatel;
@@ -371,7 +371,7 @@ Manipulyatorning harakatchanligi *erkinlik darajalari soni* bilan tavsiflanadi. 
 
 bu yerda $n$ — harakatlanuvchi zvenolar soni, $p_k$ — $k$-sinf kinematik juftlar soni ($k$ — juftning harakatga qoʻyadigan cheklovlar soni). Robotlarda asosan beshinchi sinf juftlar — aylanma (R) va ilgarilanma (P) boʻgʻinlar qoʻllanadi. Masalan, oltita aylanma boʻgʻinli ketma-ket manipulyator uchun $n = 6$, $p_5 = 6$ va $W = 36 - 30 = 6$.
 
-Ketma-ket manipulyatorlarning aksariyatida dastlabki uchta boʻgʻin ishchi organning *pozitsiyasini*, oxirgi boʻgʻinlar (bilak) esa uning *yoʻnalishini* belgilaydi. Shu sababli manipulyatorlar dastlabki uchta boʻgʻinning turi boʻyicha tasniflanadi [4] (3-jadval).
+Ketma-ket manipulyatorlarning aksariyatida dastlabki uchta boʻgʻin ishchi organning *pozitsiyasini*, oxirgi boʻgʻinlar (bilak) esa uning *yoʻnalishini* belgilaydi. Shu sababli manipulyatorlar dastlabki uchta boʻgʻinning turi boʻyicha tasniflanadi (3-jadval).
 
 #figure(
   btable(
@@ -464,19 +464,3 @@ Mexatron modullar integratsiya darajasi boʻyicha harakat moduli, mexatron harak
   + Manipulyatorlarning kinematik tuzilish boʻyicha turlarini sanab bering va ularning ishchi zonalarini taqqoslang.
   + Avtonom mobil robot va sanoat manipulyatorining informatsion qurilmalari nima uchun farq qiladi?
 ]
-
-// =====================================================================
-#heading(numbering: none)[Adabiyotlar]
-// =====================================================================
-
-#set par(first-line-indent: 0pt, justify: false)
-#set enum(numbering: "[1]")
-
-+ Bolton W. Mechatronics: Electronic Control Systems in Mechanical and Electrical Engineering. 6th ed. — Harlow: Pearson Education, 2015.
-+ Regtien P., Dertien E. Sensors for Mechatronics. 2nd ed. — Amsterdam: Elsevier, 2018.
-+ Bishop R. H. (ed.). The Mechatronics Handbook. 2nd ed. — Boca Raton: CRC Press, 2008.
-+ Craig J. J. Introduction to Robotics: Mechanics and Control. 3rd ed. — Upper Saddle River: Pearson Prentice Hall, 2005.
-+ Воротников С. А. Информационные устройства робототехнических систем. — М.: Изд-во МГТУ им. Н. Э. Баумана, 2005. — 384 с.
-+ Интеллектуальные роботы / под общ. ред. Е. И. Юревича. — М.: Машиностроение, 2007. — 360 с.
-+ Интеллектуальные сенсорные системы / под ред. Дж. К. М. Мейджера. — М.: Техносфера, 2011. — 464 с.
-+ Подураев Ю. В. Мехатроника: основы, методы, применение. — М.: Машиностроение, 2006. — 256 с.

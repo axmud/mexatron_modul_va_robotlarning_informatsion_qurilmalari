@@ -65,7 +65,7 @@
 #align(center)[
   #text(size: 16pt, weight: "bold", fill: headingblue)[MAʼRUZA №1]
   #v(0.3em)
-  #text(size: 14pt, weight: "bold")[Fanning tarixi, rivojlanishi, dolzarb muammolari]
+  #text(size: 14pt, weight: "bold")[Mavzu: Fanning tarixi, rivojlanishi, dolzarb muammolari]
   #v(0.2em)
   #text(size: 12pt, style: "italic")[(kirish maʼruzasi)]
 ]
@@ -137,17 +137,17 @@ Fan mazmuni 1-jadvalda keltirilgan yettita boʻlimga ajratiladi. Fan «Oʻlchash
 = Asosiy tushunchalar
 // =====================================================================
 
-*Robot* — atrof-muhitdan keladigan signallarga javob bergan holda, inson bevosita aralashuvisiz, avtomatik ravishda harakatlarni bajaradigan qayta dasturlanadigan mashina. Bolton taʼrificha, operator boshqaradigan oddiy qoʻl qurilmasidan farqli ravishda, robot kompyuter tomonidan boshqariladi va keyingi harakat haqidagi qarorni muhitdan olingan signallar asosida oʻzi qabul qiladi~[1].
+*Robot* — atrof-muhitdan keladigan signallarga javob bergan holda, inson bevosita aralashuvisiz, avtomatik ravishda harakatlarni bajaradigan qayta dasturlanadigan mashina. Bolton taʼrificha, operator boshqaradigan oddiy qoʻl qurilmasidan farqli ravishda, robot kompyuter tomonidan boshqariladi va keyingi harakat haqidagi qarorni muhitdan olingan signallar asosida oʻzi qabul qiladi.
 
 *Robototexnika* — robotlarni loyihalash, yaratish, boshqarish va qoʻllash bilan shugʻullanadigan fan va texnika sohasi.
 
-*Mexatronika* — mexanika, elektronika, boshqarish nazariyasi va hisoblash texnikasining sinergetik birlashuvi asosida mashina va tizimlarni yaratuvchi fan sohasi. Mexatron tizimni oʻrganish odatda beshta yoʻnalishga ajratiladi: fizik tizimlarni modellashtirish, datchiklar va ijro qurilmalari, signallar va tizimlar, kompyuter va mantiqiy tizimlar, dasturiy taʼminot va maʼlumotlarni yigʻish~[3].
+*Mexatronika* — mexanika, elektronika, boshqarish nazariyasi va hisoblash texnikasining sinergetik birlashuvi asosida mashina va tizimlarni yaratuvchi fan sohasi. Mexatron tizimni oʻrganish odatda beshta yoʻnalishga ajratiladi: fizik tizimlarni modellashtirish, datchiklar va ijro qurilmalari, signallar va tizimlar, kompyuter va mantiqiy tizimlar, dasturiy taʼminot va maʼlumotlarni yigʻish.
 
 *Mexatron modul* — harakatlantiruvchi qism (dvigatel, uzatma), informatsion qism (datchiklar) va boshqaruv qismi (kontroller, quvvat elektronikasi) yagona konstruksiyada birlashtirilgan, funksional va konstruktiv jihatdan tugallangan qurilma. Masalan, robot boʻgʻinining servoyuritmasi dvigatel, reduktor, enkoder, tormoz va drayverdan iborat yagona modul boʻlishi mumkin.
 
 *Informatsion qurilma* — robotning ichki holati va tashqi muhit haqidagi maʼlumotni olish, oʻzgartirish, uzatish va dastlabki qayta ishlashni taʼminlovchi qurilma. Uning asosiy elementi — datchik.
 
-Terminologiyada maʼlum farqlar mavjud. Regtien va Dertien taʼrifiga koʻra, *oʻzgartkich* (transducer) — oʻlchanayotgan kattalik haqidagi axborotni bir fizik sohadan (mexanik, issiqlik, optik, magnit) boshqasiga, ideal holda axborotni yoʻqotmasdan oʻtkazuvchi qurilma. Kirishi noelektrik, chiqishi elektrik boʻlgan oʻzgartkich *sensor (datchik)*, aksincha, elektrik signalni noelektrik kattalikka aylantiruvchi oʻzgartkich esa *aktuator (ijro qurilmasi)* deb ataladi~[2]. Xalqaro metrologik lugʻat (VIM) boʻyicha sensor — oʻlchash tizimining oʻlchanayotgan kattalik bevosita taʼsir qiladigan elementi. Zamonaviy datchiklar sezgir elementdan tashqari kuchaytirish, filtrlash, analog-raqamli oʻzgartirish va raqamli interfeysni ham oʻz ichiga oladi, shuning uchun amaliyotda «datchik» va «oʻzgartkich» chegarasi tobora yoʻqolib bormoqda~[2].
+Terminologiyada maʼlum farqlar mavjud. Regtien va Dertien taʼrifiga koʻra, *oʻzgartkich* (transducer) — oʻlchanayotgan kattalik haqidagi axborotni bir fizik sohadan (mexanik, issiqlik, optik, magnit) boshqasiga, ideal holda axborotni yoʻqotmasdan oʻtkazuvchi qurilma. Kirishi noelektrik, chiqishi elektrik boʻlgan oʻzgartkich *sensor (datchik)*, aksincha, elektrik signalni noelektrik kattalikka aylantiruvchi oʻzgartkich esa *aktuator (ijro qurilmasi)* deb ataladi. Xalqaro metrologik lugʻat (VIM) boʻyicha sensor — oʻlchash tizimining oʻlchanayotgan kattalik bevosita taʼsir qiladigan elementi. Zamonaviy datchiklar sezgir elementdan tashqari kuchaytirish, filtrlash, analog-raqamli oʻzgartirish va raqamli interfeysni ham oʻz ichiga oladi, shuning uchun amaliyotda «datchik» va «oʻzgartkich» chegarasi tobora yoʻqolib bormoqda.
 
 Robototexnik tizimdagi informatsion qurilmalarning oʻrni 1-rasmda koʻrsatilgan. Informatsion qurilmalar ikki xil axborot oqimini shakllantiradi: mexanizmning ichki holati (boʻgʻinlar burchaklari, tezliklari, dvigatel toklari) va tashqi muhit (obyektlar, toʻsiqlar, kontakt kuchlari) haqidagi axborot.
 
@@ -193,15 +193,15 @@ bu yerda $S$ — sezgirlik, $y_0$ — nol siljishi. Datchiklar texnikasining aso
 
 == Qayta aloqali qurilmalarning ilk namunalari
 
-Avtomatik qurilmalar yaratishga urinishlar uzoq tarixga ega. Miloddan avvalgi III–I asrlarda Qadimgi Yunonistonda qalqovichli rostlagichlar paydo boʻlgan: Ktesibiosning suv soati va Filonning moy chirogʻi suyuqlik sathini qalqovich yordamida barqaror ushlab turgan. Milodiy I asrda Iskandariyalik Geron «Pnevmatika» asarida qalqovichli sath rostlagichlarining turli xillarini tasvirlagan~[3].
+Avtomatik qurilmalar yaratishga urinishlar uzoq tarixga ega. Miloddan avvalgi III–I asrlarda Qadimgi Yunonistonda qalqovichli rostlagichlar paydo boʻlgan: Ktesibiosning suv soati va Filonning moy chirogʻi suyuqlik sathini qalqovich yordamida barqaror ushlab turgan. Milodiy I asrda Iskandariyalik Geron «Pnevmatika» asarida qalqovichli sath rostlagichlarining turli xillarini tasvirlagan.
 
-XVII–XIX asrlarda Yevropa va Rossiyada mexatronikaning kelajakdagi asoslari boʻlgan muhim qurilmalar ixtiro qilingan. Gollandiyalik Kornelis Drebbel (1572–1633) birinchi qayta aloqali tizimlardan biri — harorat rostlagichini yaratgan. Deni Papen 1681-yilda bugʻ qozonlari uchun bosim saqlagich klapanini ixtiro qilgan. 1765-yilda I. I. Polzunov bugʻ qozoni uchun suv sathining qalqovichli rostlagichini ishlab chiqqan. Jeyms Uattning markazdan qochma (sharli) rostlagichi bugʻ mashinasi valining tezligini oʻlchab, unga beriladigan bugʻ miqdorini avtomatik oʻzgartirgan~[3].
+XVII–XIX asrlarda Yevropa va Rossiyada mexatronikaning kelajakdagi asoslari boʻlgan muhim qurilmalar ixtiro qilingan. Gollandiyalik Kornelis Drebbel (1572–1633) birinchi qayta aloqali tizimlardan biri — harorat rostlagichini yaratgan. Deni Papen 1681-yilda bugʻ qozonlari uchun bosim saqlagich klapanini ixtiro qilgan. 1765-yilda I. I. Polzunov bugʻ qozoni uchun suv sathining qalqovichli rostlagichini ishlab chiqqan. Jeyms Uattning markazdan qochma (sharli) rostlagichi bugʻ mashinasi valining tezligini oʻlchab, unga beriladigan bugʻ miqdorini avtomatik oʻzgartirgan.
 
 Bu misollarning barchasida bitta umumiy gʻoya bor: tizim *oʻzining holatini oʻlchaydi* va natijaga qarab taʼsirni oʻzgartiradi. Demak, informatsion qurilma (qalqovich, sharli mexanizm) qayta aloqali boshqaruvning ajralmas qismi sifatida eng boshidanoq mavjud boʻlgan.
 
 == «Robot» tushunchasining paydo boʻlishi
 
-«Robot» soʻzi chex yozuvchisi Karel Chapekning 1920-yilda yozilgan va 1921-yilda sahnalashtirilgan «R.U.R.» («Rossumning universal robotlari») pyesasi orqali keng tarqalgan. Pyesada sunʼiy odamlar ishlab chiqaradigan zavod tasvirlangan, soʻz esa slavyan tillaridagi «robota» — «mehnat», «ogʻir ish» soʻzidan olingan~[1]. «Robototexnika» (robotics) atamasini fantast yozuvchi Ayzek Azimov 1940-yillar boshida oʻz hikoyalarida qoʻllagan va robototexnikaning mashhur uch qonunini taklif etgan:
+«Robot» soʻzi chex yozuvchisi Karel Chapekning 1920-yilda yozilgan va 1921-yilda sahnalashtirilgan «R.U.R.» («Rossumning universal robotlari») pyesasi orqali keng tarqalgan. Pyesada sunʼiy odamlar ishlab chiqaradigan zavod tasvirlangan, soʻz esa slavyan tillaridagi «robota» — «mehnat», «ogʻir ish» soʻzidan olingan. «Robototexnika» (robotics) atamasini fantast yozuvchi Ayzek Azimov 1940-yillar boshida oʻz hikoyalarida qoʻllagan va robototexnikaning mashhur uch qonunini taklif etgan:
 
 + Robot insonga zarar yetkazmasligi yoki harakatsizligi bilan insonga zarar yetishiga yoʻl qoʻymasligi kerak.
 + Robot birinchi qonunga zid boʻlmagan holda inson buyruqlariga boʻysunishi kerak.
@@ -245,7 +245,7 @@ Jadvaldan muhim bir qonuniyatni koʻrish mumkin: dastlabki robotlar gidravlik yu
 
 == Mexatronikaning shakllanishi
 
-«Mexatronika» atamasini 1969-yilda yapon kompaniyasi Yaskawa Electric muhandisi mexanika va elektronikani birlashtirgan tizimlarni ifodalash uchun taklif etgan. Kompaniya 1972-yilda bu atamaga savdo belgisi huquqini olgan, ammo atama keng tarqalgach, 1982-yilda bu huquqdan voz kechgan~[1, 3]. Dastlab mexatronika hisoblash qismisiz elektromexanik tizimlarni (avtomatik eshiklar, savdo avtomatlari) anglatgan.
+«Mexatronika» atamasini 1969-yilda yapon kompaniyasi Yaskawa Electric muhandisi mexanika va elektronikani birlashtirgan tizimlarni ifodalash uchun taklif etgan. Kompaniya 1972-yilda bu atamaga savdo belgisi huquqini olgan, ammo atama keng tarqalgach, 1982-yilda bu huquqdan voz kechgan. Dastlab mexatronika hisoblash qismisiz elektromexanik tizimlarni (avtomatik eshiklar, savdo avtomatlari) anglatgan.
 
 1970-yillar oxirida Yaponiya mashinasozlik sanoatini rivojlantirish jamiyati (JSPMI) mexatron mahsulotlarni toʻrt sinfga ajratgan (3-jadval).
 
@@ -269,7 +269,7 @@ Jadvaldan muhim bir qonuniyatni koʻrish mumkin: dastlabki robotlar gidravlik yu
   caption: [Mexatron mahsulotlarning JSPMI tasnifi~[3]],
 ) <tab-jspmi>
 
-Haqiqiy mexatron tizimlar mikroprotsessor (Intel, 1970-yillar) paydo boʻlgandan keyingina amaliy jihatdan mumkin boʻldi. Avtomobil buning yaqqol misoli: 1960-yillargacha avtomobildagi yagona jiddiy elektron qurilma radio boʻlgan. 1970-yillar oxirida tirsakli val va taqsimlash vali holati datchiklari (dastlab Xoll datchigi), havo sarfi va drossel holati datchiklari hamda mikrokontrollerdan iborat elektron oʻt oldirish tizimi, shuningdek gʻildiraklar aylanish tezligi datchiklariga asoslangan bloklanishga qarshi tormoz tizimi (ABS) joriy etilgan~[3]. Bugungi avtomobilda yuzlab datchiklar mavjud, avtonom avtomobil esa koʻp jihatdan gʻildirakli robotdir.
+Haqiqiy mexatron tizimlar mikroprotsessor (Intel, 1970-yillar) paydo boʻlgandan keyingina amaliy jihatdan mumkin boʻldi. Avtomobil buning yaqqol misoli: 1960-yillargacha avtomobildagi yagona jiddiy elektron qurilma radio boʻlgan. 1970-yillar oxirida tirsakli val va taqsimlash vali holati datchiklari (dastlab Xoll datchigi), havo sarfi va drossel holati datchiklari hamda mikrokontrollerdan iborat elektron oʻt oldirish tizimi, shuningdek gʻildiraklar aylanish tezligi datchiklariga asoslangan bloklanishga qarshi tormoz tizimi (ABS) joriy etilgan. Bugungi avtomobilda yuzlab datchiklar mavjud, avtonom avtomobil esa koʻp jihatdan gʻildirakli robotdir.
 
 // =====================================================================
 = Datchiklar texnikasining rivojlanishi va robotlar avlodlari
@@ -382,7 +382,7 @@ Robotlarning informatsion qurilmalarini bir nechta belgi boʻyicha tasniflash mu
 
 *Energiya manbai boʻyicha:* passiv datchiklar oʻlchanayotgan obyekt energiyasidan foydalanadi (masalan, termojuft, piezoelektrik datchik, oddiy kamera); aktiv datchiklar muhitga oʻzi signal yuboradi va qaytgan signalni tahlil qiladi (ultratovush lokatori, lazer skaneri, radar).
 
-*Fizik ishlash prinsipi boʻyicha:* rezistiv, sigʻim, induktiv va magnit, optik, piezoelektrik, akustik datchiklar. Regtien va Dertien datchiklarni aynan shu belgi boʻyicha tasniflashni tavsiya etadi, chunki datchikning tavsiflari asosan uning fizik prinsipi bilan belgilanadi: masalan, pozitsiya datchigini rezistiv, sigʻim, induktiv, akustik yoki optik usulda qurish mumkin va ularning har biri turli imkoniyat va cheklovlarga ega~[2].
+*Fizik ishlash prinsipi boʻyicha:* rezistiv, sigʻim, induktiv va magnit, optik, piezoelektrik, akustik datchiklar. Regtien va Dertien datchiklarni aynan shu belgi boʻyicha tasniflashni tavsiya etadi, chunki datchikning tavsiflari asosan uning fizik prinsipi bilan belgilanadi: masalan, pozitsiya datchigini rezistiv, sigʻim, induktiv, akustik yoki optik usulda qurish mumkin va ularning har biri turli imkoniyat va cheklovlarga ega.
 
 Asosiy tasnif belgilari 2-rasmda umumlashtirilgan.
 
@@ -419,9 +419,9 @@ Asosiy tasnif belgilari 2-rasmda umumlashtirilgan.
 = Zamonaviy rivojlanish tendensiyalari
 // =====================================================================
 
-*Miniatyurizatsiya va MEMS texnologiyasi.* Integral sxemalar texnologiyasi va mikroishlov berish yutuqlari tufayli koʻplab anʼanaviy mexanik datchiklar oʻrnini kremniy asosidagi mikroelektromexanik tizimlar (MEMS) egallamoqda. Eng ommaviy MEMS datchiklar — akselerometrlar va giroskoplar. Ommaviy ishlab chiqarish tufayli datchik narxi yakka nusxalar uchun bir necha oʻn ming yevrodan yuz millionlab partiyalar uchun bir necha yevrosentgacha tushadi~[2]. Bu robototexnikada koʻp sonli datchiklardan foydalanish imkonini beradi.
+*Miniatyurizatsiya va MEMS texnologiyasi.* Integral sxemalar texnologiyasi va mikroishlov berish yutuqlari tufayli koʻplab anʼanaviy mexanik datchiklar oʻrnini kremniy asosidagi mikroelektromexanik tizimlar (MEMS) egallamoqda. Eng ommaviy MEMS datchiklar — akselerometrlar va giroskoplar. Ommaviy ishlab chiqarish tufayli datchik narxi yakka nusxalar uchun bir necha oʻn ming yevrodan yuz millionlab partiyalar uchun bir necha yevrosentgacha tushadi. Bu robototexnikada koʻp sonli datchiklardan foydalanish imkonini beradi.
 
-*Intellektual (smart) datchiklar.* Bitta kristallda sezgir element bilan birga kuchaytirgich, filtr, analog-raqamli oʻzgartkich va mikroprotsessor joylashtiriladi. Bunday datchik raqamli interfeys (I²C, SPI, CAN, EtherCAT, IO-Link) orqali tayyor, kalibrlangan va haroratga kompensatsiya qilingan natijani beradi, oʻzini oʻzi diagnostika qila oladi~[2, 3].
+*Intellektual (smart) datchiklar.* Bitta kristallda sezgir element bilan birga kuchaytirgich, filtr, analog-raqamli oʻzgartkich va mikroprotsessor joylashtiriladi. Bunday datchik raqamli interfeys (I²C, SPI, CAN, EtherCAT, IO-Link) orqali tayyor, kalibrlangan va haroratga kompensatsiya qilingan natijani beradi, oʻzini oʻzi diagnostika qila oladi.
 
 *Sensorlar kompleksirovaniyasi (sensor fusion).* Bitta datchik har doim cheklangan va shovqinli axborot beradi. Turli datchiklar maʼlumotlarini birlashtirish natijaning aniqligi va ishonchliligini oshiradi. Eng oddiy holatda, bir kattalikni dispersiyalari $sigma_1^2$ va $sigma_2^2$ boʻlgan ikki mustaqil datchik bilan oʻlchab, natijalarni optimal tortish mumkin:
 
@@ -431,7 +431,7 @@ Asosiy tasnif belgilari 2-rasmda umumlashtirilgan.
   $,
 )
 
-(3) ifodadan koʻrinadiki, birlashtirilgan natija dispersiyasi $sigma^2$ har ikkala datchik dispersiyasidan kichik boʻladi. Bu gʻoya Kalman filtrining asosida yotadi va IMU bilan GPS, kamera bilan LiDAR, enkoder bilan giroskop maʼlumotlarini birlashtirishda keng qoʻllanadi~[3].
+(3) ifodadan koʻrinadiki, birlashtirilgan natija dispersiyasi $sigma^2$ har ikkala datchik dispersiyasidan kichik boʻladi. Bu gʻoya Kalman filtrining asosida yotadi va IMU bilan GPS, kamera bilan LiDAR, enkoder bilan giroskop maʼlumotlarini birlashtirishda keng qoʻllanadi.
 
 *Texnik koʻrish va sunʼiy intellekt.* Chuqur neyron tarmoqlar obyektlarni tanib olish, tasvirni segmentatsiyalash va sahnani tushunish masalalarida klassik algoritmlardan sezilarli ustunlikka erishdi. Natijada kamera eng universal va arzon datchikka aylanib bormoqda. Shu bilan birga, neyron tarmoqqa asoslangan tizimlar katta hajmdagi oʻqitish maʼlumotlarini va kuchli hisoblash resurslarini talab qiladi.
 
@@ -496,19 +496,3 @@ Robotlarning informatsion qurilmalari qadimgi qalqovichli rostlagichlardan zamon
   + Sensorlar kompleksirovaniyasi oʻlchash aniqligini qanday oshiradi?
   + Robotlarning informatsion qurilmalari sohasidagi uchta asosiy dolzarb muammoni izohlang.
 ]
-
-// =====================================================================
-#heading(numbering: none)[Adabiyotlar]
-// =====================================================================
-
-#set par(first-line-indent: 0pt, justify: false)
-
-#set enum(numbering: "[1]")
-
-+ Bolton W. Mechatronics: Electronic Control Systems in Mechanical and Electrical Engineering. 6th ed. — Harlow: Pearson Education, 2015.
-+ Regtien P., Dertien E. Sensors for Mechatronics. 2nd ed. — Amsterdam: Elsevier, 2018.
-+ Bishop R. H. (ed.). The Mechatronics Handbook. 2nd ed. — Boca Raton: CRC Press, 2008.
-+ Craig J. J. Introduction to Robotics: Mechanics and Control. 3rd ed. — Upper Saddle River: Pearson Prentice Hall, 2005.
-+ Воротников С. А. Информационные устройства робототехнических систем. — М.: Изд-во МГТУ им. Н. Э. Баумана, 2005. — 384 с.
-+ Интеллектуальные роботы / под общ. ред. Е. И. Юревича. — М.: Машиностроение, 2007. — 360 с.
-+ Интеллектуальные сенсорные системы / под ред. Дж. К. М. Мейджера. — М.: Техносфера, 2011. — 464 с.
